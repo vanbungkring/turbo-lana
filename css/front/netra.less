@@ -14,7 +14,7 @@ html, body,#map_canvas{
 	margin: 0 auto;
 	width: 100%;
 	.navbar-header{
-		width: 385px;
+		width: 285px;
 	}
 }
 
@@ -39,43 +39,32 @@ html, body,#map_canvas{
 }
 
 .search-section{
-	width: 700px;
+	width: 800px;
 	float: left;
-	background: #196bb5;
 
 	.search-button{
-		margin-top: 3px;
+		margin-top: 6px;
 		font-size: 12px;
 		font-weight: bold;
-		color: #196bb5;
-		background: #91c3f0;
 		border: none;
 		float: left;
 		.border-radius(3px);
-		padding: 0px 50px;
-		height: 32px;
+		padding: 5px 50px;
+		height: 37px;
+		color: #fff;
+		font-weight: 100;
+		background: #4285f4;
 	}
-	.search-button:hover{
-		background: #fff;
-	}
-	.search-button:active{
-		background: #fff;
-	}
-
-	.search-button:focus{
-		outline: none;
-	}
-
 	.search-box{
 		width: 550px;
+		border:1px solid #ccc;
 		padding: 10px;
 		.border-radius(0);
-		border: none;
-		margin-top: 1px;
+		margin-top: 5px;
 		padding: 19px 10px 18px 10px;
-		background: #196bb5;
+		margin-right: 10px;
 		float: left;
-		color: #fff;
+		outline: none;
 	}
 	.search-box :focus{
 		background: #124b7f;
@@ -98,14 +87,14 @@ html, body,#map_canvas{
 	}
 }
 .content-wrapper{
-	width: 400px;
+	width: 300px;
 	overflow: scroll;
 	position: fixed;
-	top: 40px;
+	top: 51px;
 	border-right: 1px solid #ccc;
 	height: 100%;
 	background: #fff;
-	z-index: 9999;
+	z-index: 1;
 	float: left;
 	overflow:hidden;
 	.nav-header{
