@@ -27,7 +27,7 @@ var nowTemp = new Date();
 		map:{
 			options:{
 				center:[48.8620722, 2.352047],
-				zoom: 5,
+				zoom: 13,
 				mapTypeId:google.maps.MapTypeId.ROADMAP,
 				mapTypeControl: false,
 				navigationControl: false,
@@ -41,7 +41,7 @@ var nowTemp = new Date();
 			values:[
 			{
 				latLng:[48.8620722, 2.352047],
-				data:"Paris !"},
+				data:"Jakarta"},
 				{
 					address:"86000 Poitiers, France",
 					data:"Poitiers : great city !"
@@ -54,7 +54,7 @@ var nowTemp = new Date();
 			}
 			],
 			options:{
-				draggable: false
+				draggable: true
 			},
 			events:{
 				mouseover: function(marker, event, context){
@@ -77,6 +77,9 @@ var nowTemp = new Date();
 					if (infowindow){
 						infowindow.close();
 					}
+				},
+				click:function(){
+					 $('#billboard-popup').modal('show');
 				}
 			}
 		}
