@@ -24,8 +24,27 @@
 
 <div class="container container-full fill">
   <div class="content-wrapper">
-    
-  </div>
+    <div class="filter-list">
+      <div class="nav-header"> Banner Categories </div>
+      <ul>
+        <li><label><input type="checkbox" value="1"> Alternative</label></li> 
+        <li><label><input type="checkbox" value="2"> Billboard</label></li> 
+        <li><label><input type="checkbox" value="3"> Digital Network (DOOH)</label></li> 
+        <li><label><input type="checkbox" value="4"> Indoor/Place Based</label></li> 
+        <li><label><input type="checkbox" value="5"> Station &amp; Port</label></li> 
+        <li><label><input type="checkbox" value="6"> Street Furniture</label></li> 
+        <li><label><input type="checkbox" value="7"> Transit &amp; Mobile</label></li> 
+      </ul>
+    </li>
+  </ul>
+  <div class="nav-header"> Banner Categories </div>
+  <ul class="types">
+    <li><label><input type="radio" name="type" value="both" checked="checked"> Digital &amp; Traditional</label></li>
+    <li><label><input type="radio" name="type" value="digital"> Digital</label></li>
+    <li><label><input type="radio" name="type" value="traditional"> Traditional</label></li>
+  </ul>
+</div>
+</div>
 <div id="map-wrapper"></div>
 </div> 
 

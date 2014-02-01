@@ -49,16 +49,27 @@ html, body,#map_canvas{
 #search-section{
 	.border-radius(2px);
 	background: #fff;
-	width: 960px;
+	width: 700px;
 	margin: 0 auto;
 	height: auto;
 	padding: 5px;
 	overflow: hidden;
-	padding: 10px 3px;
+	padding: 10px;
 	border:1px solid #000;
 	background: rgba(0, 0, 0, .5);
-	input{
+	input[type=text]{
 		.border-radius(2px);
+		padding: 20px 5px;
+		font-size: 14px;
+		outline: none;
+		border: 1px solid #ed9c28;
+	}
+	input[type=text]:focus{
+		border: 1px solid #ed9c28;
+	}
+	button{
+		padding: 10.5px 15px;
+		font-size: 13px;	
 	}
 	.no-padding{
 		padding: 0px 5px;
@@ -124,14 +135,37 @@ html, body,#map_canvas{
 	z-index: 1;
 	float: left;
 	overflow:hidden;
-	.nav-header{
+	.filter-count{
 		display: block;
-		padding: 3px 15px;
-		font-size: 10px;
-		font-weight: bold;
-		line-height: 20px;
-		color: #685D5D;
-		text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
-		text-transform: uppercase;
+		float: left;
+		width: 100%;
+		padding: 20px;
+	}
+	.filter-list{
+		display: block;
+		float: left;
+		margin: 0 auto;
+		width: 100%;
+			.nav-header{
+				background: none;
+				padding: 0;
+				font-weight: bold;
+				font-size: 14px;
+				color: #333;
+				margin-top: 15px;
+				padding: 5px 10px;
+				display: block;
+			}
+			ul{
+				 li{
+					list-style: none;
+					margin-left: -30px;
+					label{
+						font-weight: 400;
+						font-size: 12px;
+						line-height: 22px;
+					}
+				}
+			}
 	}
 }
