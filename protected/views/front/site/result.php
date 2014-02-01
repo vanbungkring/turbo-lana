@@ -1,7 +1,7 @@
 <!-- Fixed navbar -->
 <div class="navbar navbar-default navbar-fixed-top" role="navigation">
 
-  <div class="container container-full">
+  <div class="container">
 
     <div class="navbar-header">
       <a class="navbar-brand" href="#">Kiviads</a>
@@ -23,18 +23,12 @@
 </div>
 
 <div class="container container-full fill">
-  <div id="map-wrapper">
+  <div class="content-wrapper">
+    
   </div>
-
-  <!-- filter -->
-
-  <div class="row content-wrapper">
-    <div class="row filter">
-
-    </div>
-  </div>
-
+<div id="map-wrapper"></div>
 </div> 
+
 <div class="modal fade bs-modal-lg" id="billboard-popup" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
