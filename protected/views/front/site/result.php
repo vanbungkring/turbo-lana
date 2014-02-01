@@ -25,6 +25,18 @@
 <div class="container container-full fill">
   <div class="content-wrapper">
     <div class="filter-list">
+
+      <div class="nav-header"> Price range </div>
+      <div class="row">
+       
+        <div class="price-tag">
+          <input type="text" class="rate-min" id="rate-min" readonly>  
+          <input type="text" class="rate-max" id="rate-max" readonly>  
+        </div>
+       
+        <div class="price-slider"></div>
+      </div>
+
       <div class="nav-header"> Banner Categories </div>
       <ul>
         <li><label><input type="checkbox" value="1"> Alternative</label></li> 
@@ -43,17 +55,16 @@
         <li><label><input type="checkbox" value="7"> Transit &amp; Mobile</label></li> 
 
       </ul>
+      <div class="nav-header"> Banner Categories </div>
+      <ul>
+        <li><label><input type="radio" name="type" value="both" checked="checked"> Digital &amp; Traditional</label></li>
+        <li><label><input type="radio" name="type" value="digital"> Digital</label></li>
+        <li><label><input type="radio" name="type" value="traditional"> Traditional</label></li>
+      </ul>
+    </div>
 
-  <div class="nav-header"> Banner Categories </div>
-    <ul>
-      <li><label><input type="radio" name="type" value="both" checked="checked"> Digital &amp; Traditional</label></li>
-      <li><label><input type="radio" name="type" value="digital"> Digital</label></li>
-      <li><label><input type="radio" name="type" value="traditional"> Traditional</label></li>
-    </ul>
   </div>
-
-</div>
-<div id="map-wrapper"></div>
+  <div id="map-wrapper"></div>
 </div> 
 
 <div class="modal fade bs-modal-lg" id="billboard-popup" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">

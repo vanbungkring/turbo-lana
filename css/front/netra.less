@@ -135,6 +135,7 @@ html, body,#map_canvas{
 	z-index: 1;
 	float: left;
 	overflow:auto;
+	padding: 10px;
 	padding-bottom: 50px;
 	.filter-count{
 		display: block;
@@ -143,30 +144,77 @@ html, body,#map_canvas{
 		padding: 20px;
 	}
 	.filter-list{
+
+		#amount{
+
+		}
+
 		display: block;
 		float: left;
 		margin: 0 auto;
 		width: 100%;
-			.nav-header{
-				background: none;
-				padding: 0;
-				font-weight: bold;
-				font-size: 14px;
-				color: #333;
-				margin-top: 15px;
-				padding: 5px 10px;
-				display: block;
+
+		.ui-slider-horizontal .ui-slider-handle {
+			margin-left:-0.6em;
+			top:-0.3em;
+			background: none repeat scroll 0 0 #FFFFFF;
+			border-radius: 50% 50% 50% 50%;
+			.box-shadow(0,2px,1px,0);
+			padding: 8px;
+			outline: none;
+		}
+
+		.ui-slider-range{
+			background: #efefef;
+		}
+
+		.price-slider{
+			width: 230px;
+			margin-left: 25px;
+			float: left;
+			display: block;
+		}
+		.price-tag{
+			width: 230px;
+			margin-left: 25px;
+			float: left;
+			display: block;
+			margin-bottom: 20px;
+			input[type=text]{
+				background: transparent;
+				border: none;
 			}
-			ul{
-				 li{
-					list-style: none;
-					margin-left: -30px;
-					label{
-						font-weight: 400;
-						font-size: 12px;
-						line-height: 22px;
-					}
+			.rate-min{
+				width: 100px;
+				float: left;
+			}
+			.rate-max{
+				width: 100px;
+				float: right;
+				text-align: right;
+			}
+		}
+
+		.nav-header{
+			background: none;
+			padding: 0;
+			font-weight: bold;
+			font-size: 14px;
+			color: #333;
+			margin-top: 15px;
+			padding: 5px 10px;
+			display: block;
+		}
+		ul{
+			li{
+				list-style: none;
+				margin-left: -30px;
+				label{
+					font-weight: 400;
+					font-size: 12px;
+					line-height: 22px;
 				}
 			}
+		}
 	}
 }
