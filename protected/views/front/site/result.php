@@ -126,3 +126,64 @@
       </div>
     </div>
   </div>
+
+<?php
+
+$markers = array();
+foreach ($banners as $key => $value) {
+    $markers[] = array(
+        'latLng' => array((double)$value->lat,(double)$value->long),
+        'data'   => $value->nama,
+    );
+}
+
+//google maps render
+$js =    '$("#map-wrapper").gmap3({
+            map:{
+                    options:{
+                            center:[48.8620722, 2.352047],
+                            zoom: 13,
+                            mapTypeId:google.maps.MapTypeId.ROADMAP,
+                            mapTypeControl: false,
+                            navigationControl: false,
+                            scrollwheel: true,
+                            streetViewControl: false
+                    }
+            },
+            trafficlayer:{
+            },
+            marker:{
+                    values: '.  json_encode($markers).',
+                    options:{
+                            draggable: true
+                    },
+                    events:{
+                            mouseover: function(marker, event, context){
+                                    var map = $(this).gmap3("get"),
+                                    infowindow = $(this).gmap3({get:{name:"infowindow"}});
+                                    if (infowindow){
+                                            infowindow.open(map, marker);
+                                            infowindow.setContent(context.data);
+                                    } else {
+                                            $(this).gmap3({
+                                                    infowindow:{
+                                                            anchor:marker, 
+                                                            options:{content: context.data}
+                                                    }
+                                            });
+                                    }
+                            },
+                            mouseout: function(){
+                                    var infowindow = $(this).gmap3({get:{name:"infowindow"}});
+                                    if (infowindow){
+                                            infowindow.close();
+                                    }
+                            },
+                            click:function(){
+                                    $("#billboard-popup").modal("show");
+                            }
+                    }
+            }
+    });';
+Yii::app()->clientScript->registerScript('script',$js,  CClientScript::POS_END);
+?>
