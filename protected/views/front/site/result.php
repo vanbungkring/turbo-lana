@@ -8,10 +8,18 @@
     </div>
 
     <div class="search-section">
-      <input type="text" class="form-control search-box" placeholder="type your location" required id="boxcari" />
-      <input type="text" class="form-control search-box calendar" placeholder="date" id="startPicker">
-      <input type="text" class="form-control search-box calendar" placeholder="type your location" id="endPicker">
-      <button type="button" class="btn btn-default search-button">Search</button>
+      <div class="col-md-4">
+        <input type="text" placeholder="Enter email" id="boxcari" class="form-control">
+      </div>
+      <div class="col-md-3">
+        <input type="text" class="form-control" placeholder="date" id="startPicker">
+      </div>
+      <div class="col-md-3">
+        <input type="text" class="form-control" placeholder="type your location" id="endPicker">
+      </div>
+      <div class="col-md-2">
+        <button type="button" class="btn btn-default">Search</button>
+      </div>
     </div>
 
     <div class="navbar-collapse collapse">
@@ -83,43 +91,43 @@
           <h4>Overflowing text to show scroll behavior</h4>
           <p>Overflowing text to show scroll behavior
             Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla. Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
-        </div>
-        <div class="billboard-spec">
-          <table class="table table-bordered">
-      <thead>
-        <tr>
-          <th>#</th>
-          <th>First Name</th>
-          <th>Last Name</th>
-          <th>Username</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td rowspan="2">1</td>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>@mdo</td>
-        </tr>
-        <tr>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>@TwBootstrap</td>
-        </tr>
-        <tr>
-          <td>2</td>
-          <td>Jacob</td>
-          <td>Thornton</td>
-          <td>@fat</td>
-        </tr>
-        <tr>
-          <td>3</td>
-          <td colspan="2">Larry the Bird</td>
-          <td>@twitter</td>
-        </tr>
-      </tbody>
-    </table>
-        </div>
+          </div>
+          <div class="billboard-spec">
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>First Name</th>
+                  <th>Last Name</th>
+                  <th>Username</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td rowspan="2">1</td>
+                  <td>Mark</td>
+                  <td>Otto</td>
+                  <td>@mdo</td>
+                </tr>
+                <tr>
+                  <td>Mark</td>
+                  <td>Otto</td>
+                  <td>@TwBootstrap</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>Jacob</td>
+                  <td>Thornton</td>
+                  <td>@fat</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td colspan="2">Larry the Bird</td>
+                  <td>@twitter</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
