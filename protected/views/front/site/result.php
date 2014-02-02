@@ -178,6 +178,24 @@ $js =    '
                                     var marker = new google.maps.Marker({
                                         position: latLng
                                     });
+                                    google.maps.event.addListener(marker, "click", function() {
+                                        $("#billboard-popup").modal("show");
+                                    });
+                                    google.maps.event.addListener(marker, "mouseover", function() {
+                                            var infowindow = $("#map-wrapper").gmap3({get:{name:"infowindow"}});
+                                            if (infowindow){
+                                                    infowindow.open(map, marker);
+                                                    infowindow.setContent(row.nama);
+                                            } else {
+                                                    $("#map-wrapper").gmap3({
+                                                            infowindow:{
+                                                                    anchor:marker, 
+                                                                    options:{content: row.nama}
+                                                            }
+                                                    });
+                                            }
+                                    });
+
                                     newMarker.push(marker);
                                 }
                                 console.log(markers)
