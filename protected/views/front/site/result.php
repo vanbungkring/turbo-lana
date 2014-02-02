@@ -8,7 +8,7 @@
     </div>
 
     <div class="search-section">
-      <input type="text" class="form-control search-box" placeholder="type your location" required>
+      <input type="text" class="form-control search-box" placeholder="type your location" required id="boxcari" />
       <input type="text" class="form-control search-box calendar" placeholder="type your location">
       <input type="text" class="form-control search-box calendar" placeholder="type your location">
       <button type="button" class="btn btn-default search-button">Search</button>
@@ -188,4 +188,7 @@ $js =    '$("#map-wrapper").gmap3({
             }
     });';
 Yii::app()->clientScript->registerScript('script',$js,  CClientScript::POS_END);
+Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl.'/js/jquery.geocomplete.js',  CClientScript::POS_END);
+Yii::app()->clientScript->registerScript('script','$("#boxcari").geocomplete();',  CClientScript::POS_END);
+
 ?>
