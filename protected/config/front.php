@@ -8,6 +8,7 @@ return CMap::mergeArray(
 			'urlManager'=>array(
 				'urlFormat'=>'path',
 				'rules'=>array(
+                                        'regristrasi'=>'site/registrasi',
 					'search-result'=>'site/result',
 					'<controller:\w+>/<id:\d+>'=>'<controller>/view',
 					'<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',

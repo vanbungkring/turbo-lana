@@ -22,6 +22,13 @@ class SiteController extends FrontEndController
                     'banners'=>$banners,
                 ));
 	}
+        
+        public function actionRegistrasi()
+	{
+		// renders the view file 'protected/views/site/index.php'
+		// using the default layout 'protected/views/layouts/main.php'
+		$this->render('regristrasi');
+	}
 	/**
 	 * This is the action to handle external exceptions.
 	 */
