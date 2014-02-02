@@ -66,7 +66,7 @@
     </div>
 
   </div>
-  <div id="map-wrapper"></div>
+  <div id="map-wrapper-result"></div>
 </div> 
 
 <div class="modal fade bs-modal-lg" id="billboard-popup" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -140,7 +140,7 @@ foreach ($banners as $key => $value) {
 }
 
 //google maps render
-$js =    '$("#map-wrapper").gmap3({
+$js =    '$("#map-wrapper-result").gmap3({
             map:{
                     options:{
                             center:[48.8620722, 2.352047],
@@ -150,45 +150,17 @@ $js =    '$("#map-wrapper").gmap3({
                             navigationControl: false,
                             scrollwheel: true,
                             streetViewControl: false
+                    },
+                    events : {
+                        "idle" : function(){ alert("nanti load marker ajax"); }
                     }
             },
             trafficlayer:{
             },
-            marker:{
-                    values: '.  json_encode($markers).',
-                    options:{
-                            draggable: true
-                    },
-                    events:{
-                            mouseover: function(marker, event, context){
-                                    var map = $(this).gmap3("get"),
-                                    infowindow = $(this).gmap3({get:{name:"infowindow"}});
-                                    if (infowindow){
-                                            infowindow.open(map, marker);
-                                            infowindow.setContent(context.data);
-                                    } else {
-                                            $(this).gmap3({
-                                                    infowindow:{
-                                                            anchor:marker, 
-                                                            options:{content: context.data}
-                                                    }
-                                            });
-                                    }
-                            },
-                            mouseout: function(){
-                                    var infowindow = $(this).gmap3({get:{name:"infowindow"}});
-                                    if (infowindow){
-                                            infowindow.close();
-                                    }
-                            },
-                            click:function(){
-                                    $("#billboard-popup").modal("show");
-                            }
-                    }
-            }
-    });';
-Yii::app()->clientScript->registerScript('script',$js,  CClientScript::POS_END);
+            });
+';
+Yii::app()->clientScript->registerScript('script-map',$js,  CClientScript::POS_END);
 Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl.'/js/jquery.geocomplete.js',  CClientScript::POS_END);
-Yii::app()->clientScript->registerScript('script','$("#boxcari").geocomplete();',  CClientScript::POS_END);
+Yii::app()->clientScript->registerScript('script-box','$("#boxcari").geocomplete();',  CClientScript::POS_END);
 
 ?>
