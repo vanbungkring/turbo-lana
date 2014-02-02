@@ -66,7 +66,7 @@
     </div>
 
   </div>
-  <div id="map-wrapper-result"></div>
+  <div id="map-wrapper"></div>
 </div> 
 
 <div class="modal fade bs-modal-lg" id="billboard-popup" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -130,35 +130,64 @@
   </div>
 
 <?php
-
-$markers = array();
-foreach ($banners as $key => $value) {
-    $markers[] = array(
-        'latLng' => array((double)$value->lat,(double)$value->long),
-        'data'   => $value->nama,
-    );
-}
-
 //google maps render
-$js =    '$("#map-wrapper-result").gmap3({
+$js =    '
+    var markers = {};
+    var map = null;
+    var markerCluster = null;
+    $("#map-wrapper").gmap3({
             map:{
-                    options:{
-                            center:[48.8620722, 2.352047],
-                            zoom: 13,
-                            mapTypeId:google.maps.MapTypeId.ROADMAP,
-                            mapTypeControl: false,
-                            navigationControl: false,
-                            scrollwheel: true,
-                            streetViewControl: false
-                    },
-                    events : {
-                        "idle" : function(){ alert("nanti load marker ajax"); }
+                options:{
+                        center:[48.8620722, 2.352047],
+                        zoom: 13,
+                        mapTypeId:google.maps.MapTypeId.ROADMAP,
+                        mapTypeControl: false,
+                        navigationControl: false,
+                        scrollwheel: true,
+                        streetViewControl: false
+                },
+                events : {
+                    "idle" : function(){
+                        if(map == null){
+                            map = $(this).gmap3("get");
+                            markerCluster = new MarkerClusterer(map, []);
+                        }
+                        // first get the map bounds
+                        var bounds = map.getBounds();
+                        console.log(bounds);
+                        var url = "'.Yii::app()->createUrl('site/getMarker').'";
+                        $.get(url,{ "bounds" : {
+                            ia_b : bounds.ia.b,
+                            ia_d : bounds.ia.d,
+                            ta_d : bounds.ta.d,
+                            ta_b : bounds.ta.b,
+                        }  },function(retJson){
+                            var newMarker = [];
+                            retJson.forEach(function(row) {                           
+                                if(!(row.id in markers)){
+                                    markers[row.id] = row;
+                                    var latLng = new google.maps.LatLng(row.lat,row.long);
+                                    var marker = new google.maps.Marker({
+                                        position: latLng
+                                    });
+                                    newMarker.push(marker);
+                                }
+                                console.log(markers)
+                            });
+                            markerCluster.addMarkers(newMarker);
+                        },"json");
                     }
+                }
             },
             trafficlayer:{
             },
             });
+            if(map == null){
+                map = $("#map-wrapper").gmap3("get");
+                markerCluster = new MarkerClusterer(map, []);
+            }
 ';
+Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl.'/js/markerclusterer.js',  CClientScript::POS_END);
 Yii::app()->clientScript->registerScript('script-map',$js,  CClientScript::POS_END);
 Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl.'/js/jquery.geocomplete.js',  CClientScript::POS_END);
 Yii::app()->clientScript->registerScript('script-box','$("#boxcari").geocomplete();',  CClientScript::POS_END);
