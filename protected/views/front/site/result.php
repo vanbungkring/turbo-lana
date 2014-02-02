@@ -9,8 +9,8 @@
 
     <div class="search-section">
       <input type="text" class="form-control search-box" placeholder="type your location" required id="boxcari" />
-      <input type="text" class="form-control search-box calendar" placeholder="type your location">
-      <input type="text" class="form-control search-box calendar" placeholder="type your location">
+      <input type="text" class="form-control search-box calendar" placeholder="date" id="startPicker">
+      <input type="text" class="form-control search-box calendar" placeholder="type your location" id="endPicker">
       <button type="button" class="btn btn-default search-button">Search</button>
     </div>
 
