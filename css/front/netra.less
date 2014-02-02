@@ -77,9 +77,8 @@ html, body,#map_canvas{
 }
 
 .search-section{
-	width: 800px;
+	margin-top: 3px;
 	float: left;
-
 	.search-button{
 		margin-top: 6px;
 		font-size: 12px;
@@ -87,22 +86,32 @@ html, body,#map_canvas{
 		border: none;
 		float: left;
 		.border-radius(3px);
-		padding: 5px 50px;
-		height: 37px;
+		padding: 6px 50px;
+		border: 1px solid #00a7e5;
 		color: #fff;
-		font-weight: 100;
+		font-weight: 600;
+		font-size: 14px;
 		background: #4285f4;
+
 	}
 	.search-box{
-		width: 550px;
+		width: 300px;
 		border:1px solid #ccc;
 		padding: 10px;
 		.border-radius(0);
 		margin-top: 5px;
-		padding: 19px 10px 18px 10px;
+		padding: 15px 10px 18px 10px;
 		margin-right: 10px;
 		float: left;
 		outline: none;
+		box-shadow: 0 1px 0 #fff,1px 1px 1px rgba(204,204,204,0.5) inset,-1px 1px 1px rgba(204,204,204,0.5) inset;
+	}
+	search-box :focus{
+		background: #fff;
+		box-shadow: none;
+	}
+	.calendar{
+		width: 170px;
 	}
 	.search-box :focus{
 		background: #124b7f;
@@ -222,7 +231,7 @@ html, body,#map_canvas{
 .billboard-preview{
 	
 	.modal-container{
-	
+
 		.modal-header{
 		}
 		.modal-body{

@@ -1,7 +1,7 @@
 <!-- Fixed navbar -->
 <div class="navbar navbar-default navbar-fixed-top" role="navigation">
 
-  <div class="container">
+  <div class="container container-full">
 
     <div class="navbar-header">
       <a class="navbar-brand" href="#">Kiviads</a>
@@ -9,7 +9,9 @@
 
     <div class="search-section">
       <input type="text" class="form-control search-box" placeholder="type your location" required>
-      <button type="button" class="btn btn-default search-button">Default</button>
+      <input type="text" class="form-control search-box calendar" placeholder="type your location">
+      <input type="text" class="form-control search-box calendar" placeholder="type your location">
+      <button type="button" class="btn btn-default search-button">Search</button>
     </div>
 
     <div class="navbar-collapse collapse">
