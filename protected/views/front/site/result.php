@@ -8,9 +8,15 @@
     </div>
 
     <div class="search-section">
-      <input type="text" class="form-control search-box" placeholder="type your location" required id="boxcari" />
-      <input type="text" class="form-control search-box calendar" placeholder="date" id="startPicker">
-      <input type="text" class="form-control search-box calendar" placeholder="type your location" id="endPicker">
+      <div class="col-md-4">
+        <input type="text" placeholder="Enter email" id="boxcari" class="form-control">
+      </div>
+      <div class="col-md-3">
+        <input type="text" class="form-control" placeholder="date" id="startPicker">
+      </div>
+      <div class="col-md-3">
+        <input type="text" class="form-control" placeholder="type your location" id="endPicker">
+      </div>
       <button type="button" class="btn btn-default search-button">Search</button>
     </div>
 
