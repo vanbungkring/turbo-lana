@@ -3,30 +3,6 @@
 
   <div class="container">
 
-    <div class="row search-header">
-      
-      <div class="col-xs-3 free-transform">
-        <input type="text" class="form-control" placeholder="Search Location" id="boxcari">
-      </div>
-      
-       <div class="col-xs-2 free-transform">
-        <input type="text" class="form-control" placeholder="Calendar" id="startPicker">
-      </div>
-      
-      <div class="col-xs-2 free-transform">
-        <input type="text" class="form-control" placeholder="Calendar" id="endPicker">
-      </div>
-      
-      <div class="col-xs-1 free-transform">
-       <button type="button" class="btn btn-success">Search</button>
-      </div>
-
-      <div class="btn-group left">
-        <button type="button" class="btn btn-default">List View</button>
-        <button type="button" class="btn btn-default active">Map View</button>
-      </div>
-    </div>
-    
     <div class="navbar-header">
       <a class="navbar-brand" href="#"><img src="http://www.kiviads.net/img/icn_logo.png"></a>
     </div>
@@ -39,8 +15,37 @@
       </ul>
     </div><!--/.nav-collapse -->
   </div>
-</div>xw
+</div>
 
+<div class="search-header">
+  <div class="container">
+    <div class="col-xs-3 free-transform">
+      <input type="text" class="form-control" placeholder="Search Location" id="boxcari">
+    </div>
+
+    <div class="col-xs-2 free-transform">
+      <input type="text" class="form-control" placeholder="Calendar" id="startPicker">
+    </div>
+
+    <div class="col-xs-2 free-transform">
+      <input type="text" class="form-control" placeholder="Calendar" id="endPicker">
+    </div>
+
+    <div class="col-xs-2 free-transform">
+      <input type="text" class="form-control" placeholder="Calendar" id="endPicker">
+    </div>
+
+    <div class="col-xs-1 free-transform">
+     <button type="button" class="btn btn-success">Search</button>
+   </div>
+
+
+   <div class="btn-group left">
+    <button type="button" class="btn btn-default">List View</button>
+    <button type="button" class="btn btn-default active">Map View</button>
+  </div>
+</div>
+</div>
 <div class="container container-full fill">
   <div id="map-wrapper"></div>
 </div> 
@@ -142,8 +147,7 @@ trafficlayer:{
 if(map == null){
   map = $("#map-wrapper").gmap3("get");
   markerCluster = new MarkerClusterer(map, []);
-}
-';
+}';
 Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl.'/js/markerclusterer.js',  CClientScript::POS_END);
 Yii::app()->clientScript->registerScript('script-map',$js,  CClientScript::POS_END);
 Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl.'/js/jquery.geocomplete.js',  CClientScript::POS_END);
