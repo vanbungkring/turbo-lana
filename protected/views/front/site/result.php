@@ -4,6 +4,23 @@
   <div class="container">
 
     <div class="row search-header">
+      
+      <div class="col-xs-3 free-transform">
+        <input type="text" class="form-control" placeholder="Search Location" id="boxcari">
+      </div>
+      
+       <div class="col-xs-2 free-transform">
+        <input type="text" class="form-control" placeholder="Calendar" id="startPicker">
+      </div>
+      
+      <div class="col-xs-2 free-transform">
+        <input type="text" class="form-control" placeholder="Calendar" id="endPicker">
+      </div>
+      
+      <div class="col-xs-1 free-transform">
+       <button type="button" class="btn btn-success">Search</button>
+      </div>
+
       <div class="btn-group left">
         <button type="button" class="btn btn-default">List View</button>
         <button type="button" class="btn btn-default active">Map View</button>
@@ -22,50 +39,9 @@
       </ul>
     </div><!--/.nav-collapse -->
   </div>
-</div>
+</div>xw
 
 <div class="container container-full fill">
-  <div class="content-wrapper">
-    <div class="filter-list">
-
-      <div class="nav-header"> Price range </div>
-      <div class="row">
-
-        <div class="price-tag">
-          <input type="text" class="rate-min" id="rate-min" readonly>  
-          <input type="text" class="rate-max" id="rate-max" readonly>  
-        </div>
-
-        <div class="price-slider"></div>
-      </div>
-
-      <div class="nav-header"> Banner Categories </div>
-      <ul>
-        <li><label><input type="checkbox" value="1"> Alternative</label></li> 
-        <li><label><input type="checkbox" value="2"> Billboard</label></li> 
-        <li><label><input type="checkbox" value="3"> Digital Network (DOOH)</label></li> 
-        <li><label><input type="checkbox" value="4"> Indoor/Place Based</label></li> 
-        <li><label><input type="checkbox" value="5"> Station &amp; Port</label></li> 
-        <li><label><input type="checkbox" value="6"> Street Furniture</label></li> 
-        <li><label><input type="checkbox" value="7"> Transit &amp; Mobile</label></li> 
-        <li><label><input type="checkbox" value="1"> Alternative</label></li> 
-        <li><label><input type="checkbox" value="2"> Billboard</label></li> 
-        <li><label><input type="checkbox" value="3"> Digital Network (DOOH)</label></li> 
-        <li><label><input type="checkbox" value="4"> Indoor/Place Based</label></li> 
-        <li><label><input type="checkbox" value="5"> Station &amp; Port</label></li> 
-        <li><label><input type="checkbox" value="6"> Street Furniture</label></li> 
-        <li><label><input type="checkbox" value="7"> Transit &amp; Mobile</label></li> 
-
-      </ul>
-      <div class="nav-header"> Banner Categories </div>
-      <ul>
-        <li><label><input type="radio" name="type" value="both" checked="checked"> Digital &amp; Traditional</label></li>
-        <li><label><input type="radio" name="type" value="digital"> Digital</label></li>
-        <li><label><input type="radio" name="type" value="traditional"> Traditional</label></li>
-      </ul>
-    </div>
-
-  </div>
   <div id="map-wrapper"></div>
 </div> 
 
