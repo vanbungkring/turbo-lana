@@ -1,4 +1,4 @@
-/index.php
+./index.php
 protected/config/db.php
 protected/yiic.php
 index.php
