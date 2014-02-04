@@ -35,7 +35,7 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <?php Yii::app()->getClientScript()->registerCoreScript('jquery'); ?>
     <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDs1qmbiT6eTk-57wbzQ3Ivk8TRx02lXm4&sensor=true&libraries=places"></script>
     <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>

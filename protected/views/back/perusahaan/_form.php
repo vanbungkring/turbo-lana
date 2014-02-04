@@ -27,42 +27,42 @@
 
 	<div class="form-group">
 		<?php echo $form->labelEx($model,'alamat'); ?>
-		<?php echo $form->textField($model,'alamat',array('size'=>60,'maxlength'=>255)); ?>
+		<?php echo $form->textArea($model,'alamat',array('size'=>100,'height'=>10,'maxlength'=>255,'class'=>'form-control')); ?>
 		<?php echo $form->error($model,'alamat'); ?>
 	</div>
 
 	<div class="form-group">
 		<?php echo $form->labelEx($model,'noTelpon'); ?>
-		<?php echo $form->textField($model,'noTelpon',array('size'=>30,'maxlength'=>30)); ?>
+		<?php echo $form->textField($model,'noTelpon',array('size'=>30,'maxlength'=>30,'class'=>'form-control')); ?>
 		<?php echo $form->error($model,'noTelpon'); ?>
 	</div>
 
 	<div class="form-group">
 		<?php echo $form->labelEx($model,'fax'); ?>
-		<?php echo $form->textField($model,'fax',array('size'=>30,'maxlength'=>30)); ?>
+		<?php echo $form->textField($model,'fax',array('size'=>30,'maxlength'=>30,'class'=>'form-control')); ?>
 		<?php echo $form->error($model,'fax'); ?>
 	</div>
 
 	<div class="form-group">
 		<?php echo $form->labelEx($model,'kontakPerson'); ?>
-		<?php echo $form->textField($model,'kontakPerson',array('size'=>50,'maxlength'=>50)); ?>
+		<?php echo $form->textField($model,'kontakPerson',array('size'=>50,'maxlength'=>50,'class'=>'form-control')); ?>
 		<?php echo $form->error($model,'kontakPerson'); ?>
 	</div>
 
 	<div class="form-group">
 		<?php echo $form->labelEx($model,'website'); ?>
-		<?php echo $form->textField($model,'website',array('size'=>60,'maxlength'=>255)); ?>
+		<?php echo $form->textField($model,'website',array('size'=>60,'maxlength'=>255,'class'=>'form-control')); ?>
 		<?php echo $form->error($model,'website'); ?>
 	</div>
 
 	<div class="form-group">
 		<?php echo $form->labelEx($model,'email'); ?>
-		<?php echo $form->textField($model,'email',array('size'=>30,'maxlength'=>30)); ?>
+		<?php echo $form->textField($model,'email',array('size'=>30,'maxlength'=>30,'class'=>'form-control')); ?>
 		<?php echo $form->error($model,'email'); ?>
 	</div>
 
-	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
+	<div class="form-group">
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save',array('class' => 'btn btn-danger')); ?>
 	</div>
 
 <?php $this->endWidget(); ?>

@@ -6,26 +6,22 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Start Bootstrap - SB Admin Version 2.0 Demo</title>
+    <title>Kiviads Backend</title>
 
     <!-- Core CSS - Include with every page -->
-    <link href="<?php echo Yii::app()->request->baseUrl; ?>/css/back/bootstrap.min.css" rel="stylesheet">
-    <link href="<?php echo Yii::app()->request->baseUrl; ?>/css/back/font-awesome/css/font-awesome.css" rel="stylesheet">
-
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+  <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
     <!-- Page-Level Plugin CSS - Dashboard -->
     <link href="<?php echo Yii::app()->request->baseUrl; ?>/css/back/plugins/morris/morris-0.4.3.min.css" rel="stylesheet">
     <link href="<?php echo Yii::app()->request->baseUrl; ?>/css/back/plugins/timeline/timeline.css" rel="stylesheet">
 
     <!-- SB Admin CSS - Include with every page -->
-    <link href="<?php echo Yii::app()->request->baseUrl; ?>/css/back/sb-admin.css" rel="stylesheet">
+    <link href="<?php echo Yii::app()->request->baseUrl; ?>/css/back/sb-admin.min.css" rel="stylesheet">
     <?php Yii::app()->getClientScript()->registerCoreScript('jquery'); ?>
 </head>
 
 <body>
-
-    <div id="wrapper">
-
-        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="margin-bottom: 0">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
                     <span class="sr-only">Toggle navigation</span>
@@ -249,7 +245,7 @@
 
         </nav>
         <!-- /.navbar-static-top -->
-
+    <div id="wrapper">
         <nav class="navbar-default navbar-static-side" role="navigation">
             <div class="sidebar-collapse">
                 <ul class="nav" id="side-menu">
