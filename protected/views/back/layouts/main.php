@@ -18,7 +18,7 @@
 
     <!-- SB Admin CSS - Include with every page -->
     <link href="<?php echo Yii::app()->request->baseUrl; ?>/css/back/sb-admin.css" rel="stylesheet">
-
+    <?php Yii::app()->getClientScript()->registerCoreScript('jquery'); ?>
 </head>
 
 <body>
@@ -286,7 +286,6 @@
     <!-- /#wrapper -->
 
     <!-- Core Scripts - Include with every page -->
-    <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/back/jquery-1.10.2.js"></script>
     <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/back/bootstrap.min.js"></script>
     <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/back/plugins/metisMenu/jquery.metisMenu.js"></script>
 
