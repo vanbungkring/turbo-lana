@@ -100,9 +100,10 @@ $("#map-wrapper").gmap3({
         var bounds = map.getBounds();
         console.log(bounds);
         var url = "'.Yii::app()->createUrl('site/getMarker').'";
+        var x = bounds.id || bounds.ga;
         $.get(url,{ "bounds" : {
-          ia_b : bounds.ia.b,
-          ia_d : bounds.ia.d,
+          ia_b : x.b,
+          ia_d : x.d,
           ta_d : bounds.ta.d,
           ta_b : bounds.ta.b,
         }  },function(retJson){
