@@ -9,9 +9,9 @@ $this->breadcrumbs=array(
 
 Yii::app()->clientScript->registerScript('search', "
     $('.search-button').click(function(){
-     $('.search-form').toggle();
-     return false;
- });
+       $('.search-form').toggle();
+       return false;
+   });
 $('.search-form form').submit(function(){
 	$('#perusahaan-grid').yiiGridView('update', {
 		data: $(this).serialize()
@@ -36,6 +36,7 @@ return false;
                 <a href="<?php echo Yii::app()->createUrl('perusahaan/create'); ?>">Tombol</a>
                 <?php $this->widget('zii.widgets.grid.CGridView', array(
                     'id'=>'perusahaan-grid',
+                    "itemsCssClass" => 'table table-bordered',
                     'dataProvider'=>$model->search(),
 //                        'filter'=>$model,
                     'cssFile'=>false,
