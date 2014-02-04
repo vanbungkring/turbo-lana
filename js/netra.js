@@ -9,6 +9,8 @@ $( ".price-slider").slider({
 		$(".rate-max").val("Rp" +ui.values[1]);
 	}
 });
+$('#more-filter').popover()
+
 $( "#startPicker" ).datepicker({
       defaultDate: "+1w",
       changeMonth: true,

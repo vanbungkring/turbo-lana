@@ -11,7 +11,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#">Home</a></li>
         <li><a href="#">About Us</a></li>
-        <li class="active"><a href="./">Job</a></li>
+        <li><a href="./">Maps</a></li>
       </ul>
     </div><!--/.nav-collapse -->
   </div>
@@ -32,18 +32,20 @@
     </div>
 
     <div class="col-xs-2 free-transform">
-      <input type="text" class="form-control" placeholder="Calendar" id="endPicker">
-    </div>
-
-    <div class="col-xs-1 free-transform">
-     <button type="button" class="btn btn-success">Search</button>
-   </div>
-
-
-   <div class="btn-group left">
-    <button type="button" class="btn btn-default">List View</button>
-    <button type="button" class="btn btn-default active">Map View</button>
+      <button type="button" id="more-filter" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="bottom" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+     More Filter
+    </button>
   </div>
+
+  <div class="col-xs-1 free-transform">
+   <button type="button" class="btn btn-success">Search</button>
+ </div>
+
+
+ <div class="btn-group left">
+  <button type="button" class="btn btn-default">List View</button>
+  <button type="button" class="btn btn-default active">Map View</button>
+</div>
 </div>
 </div>
 <div class="container container-full fill">
