@@ -29,7 +29,6 @@ class Banner extends CActiveRecord
 		return array(
 			array('nama, lat, long', 'required'),
 			array('nama', 'length', 'max'=>100),
-			array('lat, long', 'length', 'max'=>12),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, nama, lat, long', 'safe', 'on'=>'search'),
