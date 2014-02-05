@@ -9,9 +9,9 @@ $this->breadcrumbs=array(
 
 Yii::app()->clientScript->registerScript('search', "
     $('.search-button').click(function(){
-       $('.search-form').toggle();
-       return false;
-   });
+     $('.search-form').toggle();
+     return false;
+ });
 $('.search-form form').submit(function(){
 	$('#perusahaan-grid').yiiGridView('update', {
 		data: $(this).serialize()
@@ -26,6 +26,7 @@ return false;
     </div>
     <!-- /.col-lg-12 -->
 </div>
+
 <div class="row">
     <div class="col-lg-12">
         <div class="panel panel-default">

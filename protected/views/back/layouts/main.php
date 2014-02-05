@@ -266,6 +266,9 @@
                     <li>
                         <a href="<?php echo Yii::app()->createUrl('/perusahaan')?>"><i class="fa fa-table fa-fw"></i> Perusahaan</a>
                     </li>
+                                        <li>
+                        <a href="<?php echo Yii::app()->createUrl('/quotation')?>"><i class="fa fa-table fa-fw"></i> Quotation</a>
+                    </li>
                 </ul>
                 <!-- /#side-menu -->
             </div>
