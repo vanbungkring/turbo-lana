@@ -32,14 +32,14 @@
             </div>
         </div>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'lat'); ?>
+	<div class="form-group">
+		<label>Lat</label>
 		<?php echo $form->textField($model,'lat',array('size'=>12,'maxlength'=>12,'id'=>'lat')); ?>
 		<?php echo $form->error($model,'lat'); ?>
 	</div>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'long'); ?>
+	<div class="form-group">
+		<label>Long</label>
 		<?php echo $form->textField($model,'long',array('size'=>12,'maxlength'=>12,'id'=>'lng')); ?>
 		<?php echo $form->error($model,'long'); ?>
 	</div>

@@ -1,6 +1,6 @@
 <?php
 
-class BannerController extends BackEndController
+class KategoriBannerController extends BackEndController
 {
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
@@ -52,14 +52,14 @@ class BannerController extends BackEndController
 	 */
 	public function actionCreate()
 	{
-		$model=new Banner;
+		$model=new KategoriBanner;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Banner']))
+		if(isset($_POST['KategoriBanner']))
 		{
-			$model->attributes=$_POST['Banner'];
+			$model->attributes=$_POST['KategoriBanner'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -81,9 +81,9 @@ class BannerController extends BackEndController
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Banner']))
+		if(isset($_POST['KategoriBanner']))
 		{
-			$model->attributes=$_POST['Banner'];
+			$model->attributes=$_POST['KategoriBanner'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -111,10 +111,10 @@ class BannerController extends BackEndController
 	 */
 	public function actionIndex()
 	{
-		$model=new Banner('search');
+		$model=new KategoriBanner('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['Banner']))
-			$model->attributes=$_GET['Banner'];
+		if(isset($_GET['KategoriBanner']))
+			$model->attributes=$_GET['KategoriBanner'];
 
 		$this->render('admin',array(
 			'model'=>$model,
@@ -125,12 +125,12 @@ class BannerController extends BackEndController
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.
 	 * @param integer $id the ID of the model to be loaded
-	 * @return Banner the loaded model
+	 * @return KategoriBanner the loaded model
 	 * @throws CHttpException
 	 */
 	public function loadModel($id)
 	{
-		$model=Banner::model()->findByPk($id);
+		$model=KategoriBanner::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
@@ -138,11 +138,11 @@ class BannerController extends BackEndController
 
 	/**
 	 * Performs the AJAX validation.
-	 * @param Banner $model the model to be validated
+	 * @param KategoriBanner $model the model to be validated
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='banner-form')
+		if(isset($_POST['ajax']) && $_POST['ajax']==='kategori-banner-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
