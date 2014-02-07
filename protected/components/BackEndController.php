@@ -20,4 +20,8 @@ class BackEndController extends CController
             ),
         );
     }
+
+    public function uploadPath(){
+        return Yii::app()->params['uploadPath'];
+    }
 }

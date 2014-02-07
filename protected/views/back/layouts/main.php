@@ -275,6 +275,9 @@
                     <li>
                         <a href="<?php echo Yii::app()->createUrl('/quotation')?>"><i class="fa fa-table fa-fw"></i> Quotation</a>
                     </li>
+                    <li>
+                        <a href="<?php echo Yii::app()->createUrl('/kategoriSize')?>"><i class="fa fa-table fa-fw"></i> Kategori Size</a>
+                    </li>
                 </ul>
                 <!-- /#side-menu -->
             </div>
