@@ -28,7 +28,7 @@
     </head>
 
     <body>
-
+      
       <!-- Fixed navbar -->
   	<?php echo $content; ?>
 
