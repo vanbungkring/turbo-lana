@@ -40,7 +40,15 @@
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDs1qmbiT6eTk-57wbzQ3Ivk8TRx02lXm4&sensor=true&libraries=places"></script>
     <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
     <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/gmap.js"></script>
+    <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/sscrol.js"></script>
     <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/netra.min.js"></script>
    
+   <div id="c">
+    <div class="container">
+      <p>Created by <a href="http://www.blacktie.co">BLACKTIE.CO</a></p>
+    
+    </div>
+  </div>
+  
   </body>
 </html>
