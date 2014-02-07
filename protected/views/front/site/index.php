@@ -29,7 +29,7 @@
 	    <div class="container">
 	    	<div class="row centered">
 	    		<div class="col-lg-12">
-					<h1>Welcome To <b>Pratt</b></h1>
+					<h1>Welcome To <b>KiviAds</b></h1>
 					<h3>Show your product with this handsome theme.</h3>
 					<br>
 	    		</div>
@@ -228,3 +228,10 @@
 			</div>
 		</div>
 	</div>
+<div id="c">
+    <div class="container">
+      <p>Created by <a href="http://www.blacktie.co">BLACKTIE.CO</a></p>
+    
+    </div>
+  </div>
+  

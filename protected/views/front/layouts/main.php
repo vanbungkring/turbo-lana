@@ -43,12 +43,5 @@
     <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/sscrol.js"></script>
     <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/netra.min.js"></script>
    
-   <div id="c">
-    <div class="container">
-      <p>Created by <a href="http://www.blacktie.co">BLACKTIE.CO</a></p>
-    
-    </div>
-  </div>
-  
   </body>
 </html>
