@@ -49,6 +49,8 @@ $('.search-form form').submit(function(){
 					'columns'=>array(
 						'id',
 						'nama',
+						'lebar',
+						'tinggi',
 						array(
 							'value'=>'\'<a href="\'.$data->getUrl().\'" target="_blank">link</a>\'',
 							'type'=>'raw',

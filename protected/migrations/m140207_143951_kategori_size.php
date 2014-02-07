@@ -7,6 +7,8 @@ class m140207_143951_kategori_size extends CDbMigration
 		$this->createTable('kategori_size', array(
            'id'=>'pk',
            'nama'=>'VARCHAR(100) not null',
+           'lebar'=>'float',
+           'tinggi'=>'float',
         ));
 	}
 

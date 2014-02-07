@@ -28,6 +28,7 @@ class KategoriSize extends CActiveRecord
 		return array(
 			array('nama', 'required'),
 			array('nama', 'length', 'max'=>100),
+			array('lebar,tinggi', 'numerical'),
             array('image', 'file', 'types'=>'jpg, gif, png','on'=>'create'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
