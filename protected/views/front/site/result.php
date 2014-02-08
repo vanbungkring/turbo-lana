@@ -4,7 +4,7 @@
   <div class="container">
 
     <div class="navbar-header">
-      <a class="navbar-brand" href="#"><img src="http://www.kiviads.net/img/icn_logo.png"></a>
+     <a class="navbar-brand" href="#"><b>Kiviads</b></a>
     </div>
 
     <div class="navbar-collapse collapse">
@@ -33,19 +33,19 @@
 
     <div class="col-xs-2 free-transform">
       <button type="button" id="more-filter" class="btn btn-default btn-block" data-container="body" data-toggle="popover" data-placement="bottom" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
-     More Filter
-    </button>
+       More Filter
+     </button>
+   </div>
+
+   <div class="col-xs-1 free-transform">
+     <button type="button" class="btn btn-success">Search</button>
+   </div>
+
+
+   <div class="btn-group left">
+    <button type="button" class="btn btn-default"><i class="fa fa-th-list"></i></button>
+    <button type="button" class="btn btn-default active"><i class="fa fa-map-marker"></i></button>
   </div>
-
-  <div class="col-xs-1 free-transform">
-   <button type="button" class="btn btn-success">Search</button>
- </div>
-
-
- <div class="btn-group left">
-  <button type="button" class="btn btn-default">List View</button>
-  <button type="button" class="btn btn-default active">Map View</button>
-</div>
 </div>
 </div>
 <div class="container container-full fill">
