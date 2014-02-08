@@ -32,7 +32,7 @@
     </div>
 
     <div class="col-xs-2 free-transform">
-      <button type="button" id="more-filter" class="btn btn-default btn-block" data-container="body" data-toggle="popover" data-placement="bottom" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+      <button type="button" id="more-filter" class="btn btn-default btn-block" data-container="body" data-toggle="popover" data-placement="bottom">
        More Filter
      </button>
    </div>
@@ -157,3 +157,6 @@ Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl.'/js/jquery.geo
 Yii::app()->clientScript->registerScript('script-box','$("#boxcari").geocomplete();',  CClientScript::POS_END);
 
 ?>
+<div id="popover_content_wrapper" style="display: none">
+  <div style="width:100%">More Filter</div>
+</div>
