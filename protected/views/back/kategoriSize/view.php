@@ -23,6 +23,8 @@ $this->menu=array(
 	'attributes'=>array(
 		'id',
 		'nama',
+		'lebar',
+		'tinggi',
 		array(
 			'value'=>'<img src="'.$model->getUrl().'" />',
 			'type'=>'raw',

@@ -26,6 +26,18 @@
 		<?php echo $form->error($model,'nama'); ?>
 	</div>
 
+	<div class="form-group">
+        <label>Lebar</label>
+		<?php echo $form->textField($model,'lebar',array('size'=>60,'maxlength'=>100,'class'=>'form-control')); ?>
+		<?php echo $form->error($model,'lebar'); ?>
+	</div>
+
+	<div class="form-group">
+        <label>Tinggi</label>
+		<?php echo $form->textField($model,'tinggi',array('size'=>60,'maxlength'=>100,'class'=>'form-control')); ?>
+		<?php echo $form->error($model,'tinggi'); ?>
+	</div>
+
 
 	<div class="form-group">
         <label>Image</label>
