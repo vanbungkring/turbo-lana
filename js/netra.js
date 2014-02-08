@@ -1,4 +1,7 @@
 //slide
+  $('.carousel').carousel({
+    interval: 3500
+  })
 $( ".price-slider").slider({
 	range: true,
 	min: 12000000,

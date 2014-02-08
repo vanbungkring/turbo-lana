@@ -32,7 +32,7 @@
     </div>
 
     <div class="col-xs-2 free-transform">
-      <button type="button" id="more-filter" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="bottom" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+      <button type="button" id="more-filter" class="btn btn-default btn-block" data-container="body" data-toggle="popover" data-placement="bottom" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
      More Filter
     </button>
   </div>

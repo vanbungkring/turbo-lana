@@ -28,7 +28,7 @@
     </head>
 
     <body>
-      
+
       <!-- Fixed navbar -->
   	<?php echo $content; ?>
 
@@ -40,7 +40,7 @@
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDs1qmbiT6eTk-57wbzQ3Ivk8TRx02lXm4&sensor=true&libraries=places"></script>
     <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
     <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/gmap.js"></script>
-    <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/sscrol.js"></script>
+    <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/sscroll.js"></script>
     <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/netra.min.js"></script>
    
   </body>
