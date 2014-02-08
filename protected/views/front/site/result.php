@@ -42,7 +42,7 @@
    </div>
 
 
-   <div class="btn-group left">
+   <div class="btn-group right">
     <button type="button" class="btn btn-default"><i class="fa fa-th-list"></i></button>
     <button type="button" class="btn btn-default active"><i class="fa fa-map-marker"></i></button>
   </div>
