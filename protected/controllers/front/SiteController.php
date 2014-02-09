@@ -20,42 +20,42 @@ class SiteController extends FrontEndController
 		$this->render('result');
 	}
         
-        public function actionGetMarker(){
-            $long_min = (double)@$_GET['bounds']['ia_b'];
-            $long_max = (double)@$_GET['bounds']['ia_d'];
-            $lat_min = (double)@$_GET['bounds']['ta_d'];
-            $lat_max = (double)@$_GET['bounds']['ta_b'];
-            if($long_min > $long_max){
-                $res = Yii::app()->db->createCommand("select * from banner where 
-                    `lat` >= :lat_min and `lat` <= :lat_max 
-                    and
-                    (
-                        `long` >= :long_min or `long` <= :long_max
-                    )
-                ")->queryAll(true,array(
-                    ':lat_min'=>$lat_min,
-                    ':lat_max'=>$lat_max,
-                    ':long_min'=>$long_min,
-                    ':long_max'=>$long_max,
-                ));
-            }
-            else{
-                $res = Yii::app()->db->createCommand("select * from banner  where
-                    `lat` >= :lat_min and `lat` <= :lat_max 
-                    and
-                    `long` >= :long_min and `long` <= :long_max
-                ")->queryAll(true,array(
-                    ':lat_min'=>$lat_min,
-                    ':lat_max'=>$lat_max,
-                    ':long_min'=>$long_min,
-                    ':long_max'=>$long_max,
-                ));
-            }
-            header('Content-type: application/json');
-            echo json_encode($res);
+    public function actionGetMarker(){
+        $long_min = (double)@$_GET['bounds']['ia_b'];
+        $long_max = (double)@$_GET['bounds']['ia_d'];
+        $lat_min = (double)@$_GET['bounds']['ta_d'];
+        $lat_max = (double)@$_GET['bounds']['ta_b'];
+        if($long_min > $long_max){
+            $res = Yii::app()->db->createCommand("select * from banner where 
+                `lat` >= :lat_min and `lat` <= :lat_max 
+                and
+                (
+                    `long` >= :long_min or `long` <= :long_max
+                )
+            ")->queryAll(true,array(
+                ':lat_min'=>$lat_min,
+                ':lat_max'=>$lat_max,
+                ':long_min'=>$long_min,
+                ':long_max'=>$long_max,
+            ));
         }
+        else{
+            $res = Yii::app()->db->createCommand("select * from banner  where
+                `lat` >= :lat_min and `lat` <= :lat_max 
+                and
+                `long` >= :long_min and `long` <= :long_max
+            ")->queryAll(true,array(
+                ':lat_min'=>$lat_min,
+                ':lat_max'=>$lat_max,
+                ':long_min'=>$long_min,
+                ':long_max'=>$long_max,
+            ));
+        }
+        header('Content-type: application/json');
+        echo json_encode($res);
+    }
         
-        public function actionRegistrasi()
+    public function actionRegistrasi()
 	{
 		// renders the view file 'protected/views/site/index.php'
 		// using the default layout 'protected/views/layouts/main.php'
