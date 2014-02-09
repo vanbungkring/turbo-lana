@@ -21,7 +21,7 @@
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
 					<li><a href="#" data-toggle="modal" data-target="#login">Login</a></li>
-					<li><a href="#register">Getting Started</a></li>
+					<li><a href="#" data-toggle="modal" data-target="#register">Getting Started</a></li>
 				</ul>
 			</div><!--/.nav-collapse -->
 		</div>
@@ -242,19 +242,60 @@
 	<div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 		<div class="modal-dialog">
 			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-					<h4 class="modal-title" id="myModalLabel">Login to Kiviads</h4>
-				</div>
 				<div class="modal-body">
 					<form class="form-signin" role="form">
 						<h2 class="form-signin-heading">Please sign in</h2>
-						<input type="email" class="form-control" placeholder="Email address" required="" autofocus="">
-						<input type="password" class="form-control" placeholder="Password" required="">
+						<div class="form-group">
+							<input type="email" class="form-control" placeholder="Email address" required="" autofocus="">
+						</div>
+						<div class="form-group">
+							<input type="password" class="form-control" placeholder="Password" required="">
+						</div>
 						<label class="checkbox">
 							<input type="checkbox" value="remember-me"> Remember me
 						</label>
 						<button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal fade" id="register" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-body">
+					<form class="form-signin" role="form">
+						<h2 class="form-signin-heading">Who are you?</h2>
+						
+						<div class="form-group">
+							<input type="text" class="form-control" placeholder="First Name" required="" autofocus="">
+						</div>
+						
+						<div class="form-group">
+							<input type="text" class="form-control" placeholder="Last Name" required="" autofocus="">
+						</div>
+
+						<div class="form-group">
+							<input type="email" class="form-control" placeholder="Your email Address" required="" autofocus="">
+						</div>
+
+						<div class="form-group">
+							<input type="text" class="form-control" placeholder="Phone Number" required="" autofocus="">
+						</div>
+
+						<div class="form-group">
+							<input type="text" class="form-control" placeholder="Company Name" required="" autofocus="">
+						</div>
+
+						<div class="form-group">
+							<input type="text" class="form-control" placeholder="Password" required="" autofocus="">
+						</div>
+
+						<div class="form-group">
+							<input type="text" class="form-control" placeholder="Password Again" required="" autofocus="">
+						</div>
+						<button class="btn btn-lg btn-primary btn-block" type="submit">Sign Up</button>
 					</form>
 				</div>
 			</div>
