@@ -278,6 +278,9 @@
                     <li>
                         <a href="<?php echo Yii::app()->createUrl('/kategoriSize')?>"><i class="fa fa-table fa-fw"></i> Kategori Size</a>
                     </li>
+                    <li>
+                        <a href="<?php echo Yii::app()->createUrl('/member')?>"><i class="fa fa-table fa-fw"></i> Member</a>
+                    </li>
                 </ul>
                 <!-- /#side-menu -->
             </div>

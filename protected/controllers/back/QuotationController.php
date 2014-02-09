@@ -1,7 +1,7 @@
 
 <?php
 
-class QuotationController extends Controller
+class QuotationController extends BackEndController
 {
     public function actionIndex()
     {
