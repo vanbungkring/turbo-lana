@@ -19,7 +19,7 @@
 
 <div class="search-header">
   <div class="container">
-    <div class="col-xs-3 free-transform">
+    <div class="col-xs-4 free-transform">
       <input type="text" class="form-control" placeholder="Search Location" id="boxcari">
     </div>
 

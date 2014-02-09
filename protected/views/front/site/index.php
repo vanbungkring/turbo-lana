@@ -19,6 +19,10 @@
 					<li><a href="#showcase" class="smothScroll">Showcase</a></li>
 					<li><a href="#contact" class="smothScroll">Contact</a></li>
 				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="#" data-toggle="modal" data-target="#login">Login</a></li>
+					<li><a href="#register">Getting Started</a></li>
+				</ul>
 			</div><!--/.nav-collapse -->
 		</div>
 	</div>
@@ -235,3 +239,24 @@
 		</div>
 	</div>
 	
+	<div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<h4 class="modal-title" id="myModalLabel">Login to Kiviads</h4>
+				</div>
+				<div class="modal-body">
+					<form class="form-signin" role="form">
+						<h2 class="form-signin-heading">Please sign in</h2>
+						<input type="email" class="form-control" placeholder="Email address" required="" autofocus="">
+						<input type="password" class="form-control" placeholder="Password" required="">
+						<label class="checkbox">
+							<input type="checkbox" value="remember-me"> Remember me
+						</label>
+						<button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
