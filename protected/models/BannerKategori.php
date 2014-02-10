@@ -1,23 +1,20 @@
 <?php
 
 /**
- * This is the model class for table "banner".
+ * This is the model class for table "banner_kategori".
  *
- * The followings are the available columns in table 'banner':
- * @property integer $id
- * @property string $nama
- * @property string $lat
- * @property string $long
+ * The followings are the available columns in table 'banner_kategori':
+ * @property integer $idBanner
+ * @property integer $idKategori
  */
-class Banner extends CActiveRecord
+class BannerKategori extends CActiveRecord
 {
-	public $inputKategori;
 	/**
 	 * @return string the associated database table name
 	 */
 	public function tableName()
 	{
-		return 'banner';
+		return 'banner_kategori';
 	}
 
 	/**
@@ -28,12 +25,10 @@ class Banner extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('nama, lat, long, idSize, idPerusahaan', 'required'),
-			array('nama', 'length', 'max'=>100),
-			array('inputKategori,keterangan','safe'),
+			array('idBanner, idKategori', 'numerical', 'integerOnly'=>true),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, nama, lat, long', 'safe', 'on'=>'search'),
+			array('idBanner, idKategori', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -45,7 +40,6 @@ class Banner extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'kategoris'=>array(self::MANY_MANY,'KategoriBanner','banner_kategori(idBanner,idKategori)'),
 		);
 	}
 
@@ -55,12 +49,8 @@ class Banner extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'id' => 'ID',
-			'nama' => 'Nama',
-			'lat' => 'Lat',
-			'long' => 'Long',
-			'idSize' =>'Size',
-			'idPerusahaan' => 'Pemilik'
+			'idBanner' => 'Id Banner',
+			'idKategori' => 'Id Kategori',
 		);
 	}
 
@@ -82,10 +72,8 @@ class Banner extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('id',$this->id);
-		$criteria->compare('nama',$this->nama,true);
-		$criteria->compare('lat',$this->lat,true);
-		$criteria->compare('long',$this->long,true);
+		$criteria->compare('idBanner',$this->idBanner);
+		$criteria->compare('idKategori',$this->idKategori);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -96,32 +84,10 @@ class Banner extends CActiveRecord
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
 	 * @param string $className active record class name.
-	 * @return Banner the static model class
+	 * @return BannerKategori the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{
 		return parent::model($className);
-	}
-
-	public function updateKategori(){
-		BannerKategori::model()->deleteAll('idBanner = :p1',array(
-			':p1'=>$this->id,
-		));
-		if(is_array($this->inputKategori)){
-			foreach ($this->inputKategori as $key => $value) {
-				$banner = new BannerKategori();
-				$banner->idBanner = $this->id;
-				$banner->idKategori = $value;
-				$banner->save();
-			}
-		}
-	    return parent::afterSave();
-	}
-
-	public function fetchKategori(){
-		$this->inputKategori = array();
-		foreach ($this->kategoris as $key => $value) {
-			$this->inputKategori[] = $value->id;
-		}
 	}
 }

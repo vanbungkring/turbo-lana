@@ -60,8 +60,10 @@ class BannerController extends BackEndController
 		if(isset($_POST['Banner']))
 		{
 			$model->attributes=$_POST['Banner'];
-			if($model->save())
+			if($model->save()){
+				$model->updateKategori();
 				$this->redirect(array('view','id'=>$model->id));
+			}
 		}
 
 		$this->render('create',array(
@@ -77,15 +79,17 @@ class BannerController extends BackEndController
 	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);
-
+		$model->fetchKategori();
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
 		if(isset($_POST['Banner']))
 		{
 			$model->attributes=$_POST['Banner'];
-			if($model->save())
+			if($model->save()){
+				$model->updateKategori();
 				$this->redirect(array('view','id'=>$model->id));
+			}
 		}
 
 		$this->render('update',array(

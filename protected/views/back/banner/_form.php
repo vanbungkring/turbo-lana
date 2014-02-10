@@ -34,15 +34,39 @@
 
 	<div class="form-group">
 		<label>Lat</label>
-		<?php echo $form->textField($model,'lat',array('size'=>12,'maxlength'=>12,'id'=>'lat')); ?>
+		<?php echo $form->textField($model,'lat',array('size'=>12,'maxlength'=>12,'id'=>'lat','class'=>'form-control')); ?>
 		<?php echo $form->error($model,'lat'); ?>
 	</div>
 
 	<div class="form-group">
 		<label>Long</label>
-		<?php echo $form->textField($model,'long',array('size'=>12,'maxlength'=>12,'id'=>'lng')); ?>
+		<?php echo $form->textField($model,'long',array('size'=>12,'maxlength'=>12,'id'=>'lng','class'=>'form-control')); ?>
 		<?php echo $form->error($model,'long'); ?>
 	</div>
+
+  <div class="form-group">
+    <label>Keterangan</label>
+    <?php echo $form->textArea($model,'keterangan',array('class'=>'form-control')); ?>
+    <?php echo $form->error($model,'keterangan'); ?>
+  </div>
+
+  <div class="form-group">
+    <label>Kategori Banner</label>
+    <?php echo $form->dropDownList($model,'inputKategori',CHtml::listData(KategoriBanner::model()->findAll(),'id','nama'),array('multiple'=>'multiple','class'=>'form-control')); ?>
+    <?php echo $form->error($model,'inputKategori'); ?>
+  </div>
+
+  <div class="form-group">
+    <label>Kategori Size</label>
+    <?php echo $form->dropDownList($model,'idSize',CHtml::listData(KategoriSize::model()->findAll(),'id','nama'),array('class'=>'form-control')); ?>
+    <?php echo $form->error($model,'idSize'); ?>
+  </div>
+
+  <div class="form-group">
+    <label>Pemilik</label>
+    <?php echo $form->dropDownList($model,'idPerusahaan',CHtml::listData(Perusahaan::model()->findAll(),'id','nama'),array('class'=>'form-control')); ?>
+    <?php echo $form->error($model,'idPerusahaan'); ?>
+  </div>
 
 	<div class="form-group">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save',array('class' => 'btn btn-danger')); ?>
