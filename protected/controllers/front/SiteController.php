@@ -61,7 +61,12 @@ class SiteController extends FrontEndController
 		// using the default layout 'protected/views/layouts/main.php'
 		$this->render('registrasi');
 	}
-
+	public function actionUser()
+	{
+		// renders the view file 'protected/views/site/index.php'
+		// using the default layout 'protected/views/layouts/main.php'
+		$this->render('user');
+	}
 	/**
 	 * This is the action to handle external exceptions.
 	 */
