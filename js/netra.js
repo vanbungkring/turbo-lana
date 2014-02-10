@@ -16,9 +16,9 @@ $( ".price-slider").slider({
 
 $('#more-filter').popover({
  html : true,
- content: function() {
-  return $('#popover_content_wrapper').html();
-}
+    content: function() {
+    return $('#popover_content_wrapper').html();
+  }
 })
 
 $( "#startPicker" ).datepicker({
