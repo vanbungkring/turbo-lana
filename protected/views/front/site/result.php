@@ -77,84 +77,64 @@
 
 <?php
 //google maps render
-$js =    '
-var markers = {};
-var map = null;
-var markerCluster = null;
-$("#map-wrapper").gmap3({
-  map:{
-    options:{
-      center:[48.8620722, 2.352047],
-      zoom: 13,
-      mapTypeId:google.maps.MapTypeId.ROADMAP,
-      mapTypeControl: false,
-      navigationControl: false,
-      scrollwheel: true,
-      streetViewControl: false
-    },
-    events : {
-      "idle" : function(){
-        if(map == null){
-          map = $(this).gmap3("get");
-          markerCluster = new MarkerClusterer(map, []);
-        }
-                        // first get the map bounds
-        var bounds = map.getBounds();
-        console.log(bounds);
-        var url = "'.Yii::app()->createUrl('site/getMarker').'";
-        var x = bounds.id || bounds.ga;
-        $.get(url,{ "bounds" : {
-          ia_b : x.b,
-          ia_d : x.d,
-          ta_d : bounds.ta.d,
-          ta_b : bounds.ta.b,
-        }  },function(retJson){
-          var newMarker = [];
-          retJson.forEach(function(row) {                           
-            if(!(row.id in markers)){
-              markers[row.id] = row;
-              var latLng = new google.maps.LatLng(row.lat,row.long);
-              var marker = new google.maps.Marker({
-                position: latLng
+$js = '
+  var mapOptions = {
+    zoom: 13,
+    center: new google.maps.LatLng(48.8620722, 2.352047),
+  };
+  var map = new google.maps.Map(document.getElementById("map-wrapper"),
+      mapOptions);
+  var markerCluster = new MarkerClusterer(map, []);
+  var markers = [];
+  var infowindow = null;
+  function showMarkers(){
+    var bounds = map.getBounds();
+    var url = "'.Yii::app()->createUrl('site/getMarker').'";
+    var x = bounds.id || bounds.ga;
+    $.get(url,{ "bounds" : {
+      ia_b : x.b,
+      ia_d : x.d,
+      ta_d : bounds.ta.d,
+      ta_b : bounds.ta.b,
+    }},function(retJson){
+      var newMarker = [];
+      retJson.forEach(function(row) {                           
+        if(!(row.id in markers)){
+          markers[row.id] = row;
+          var latLng = new google.maps.LatLng(row.lat,row.long);
+          var marker = new google.maps.Marker({
+            position: latLng
+          });
+          google.maps.event.addListener(marker, "click", function() {
+            $("#billboard-popup").modal("show");
+          });
+          google.maps.event.addListener(marker, "mouseover", function() {
+            if (infowindow != null){
+              infowindow.open(map, marker);
+              infowindow.setContent(row.nama);
+            } else {
+              infowindow = new google.maps.InfoWindow({
+                anchor:marker, 
+                options:{content: row.nama}
               });
-google.maps.event.addListener(marker, "click", function() {
-  $("#billboard-popup").modal("show");
-});
-google.maps.event.addListener(marker, "mouseover", function() {
-  var infowindow = $("#map-wrapper").gmap3({get:{name:"infowindow"}});
-  if (infowindow){
-    infowindow.open(map, marker);
-    infowindow.setContent(row.nama);
-  } else {
-    $("#map-wrapper").gmap3({
-      infowindow:{
-        anchor:marker, 
-        options:{content: row.nama}
-      }
-    });
-}
-});
-
-newMarker.push(marker);
-}
-console.log(markers)
-});
-markerCluster.addMarkers(newMarker);
-},"json");
-}
-}
-},
-trafficlayer:{
-},
-});
-if(map == null){
-  map = $("#map-wrapper").gmap3("get");
-  markerCluster = new MarkerClusterer(map, []);
-}';
+            }
+          });
+          newMarker.push(marker);
+        }
+      });
+    markerCluster.addMarkers(newMarker);
+  },"json");
+  
+  }
+  google.maps.event.addListener(map, "idle", showMarkers);
+';
 Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl.'/js/markerclusterer.js',  CClientScript::POS_END);
 Yii::app()->clientScript->registerScript('script-map',$js,  CClientScript::POS_END);
 Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl.'/js/jquery.geocomplete.js',  CClientScript::POS_END);
-Yii::app()->clientScript->registerScript('script-box','$("#boxcari").geocomplete();',  CClientScript::POS_END);
+Yii::app()->clientScript->registerScript('script-box','$("#boxcari").geocomplete().bind("geocode:result", function(event, result){
+   console.log(map);
+    map.setCenter(new google.maps.LatLng(result.geometry.location.lat(), result.geometry.location.lng()))
+  });;',  CClientScript::POS_END);
 
 ?>
 <div id="popover_content_wrapper" style="display: none">
