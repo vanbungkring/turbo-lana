@@ -46,28 +46,18 @@
           <header class="banner-info-header">Banner Photo</header>
           <div class="image-billboard">
             <img src="http://indobillboard.co.id/wp-content/uploads/2013/02/billboard-led-senayan.jpg">
-          </div>
-        </section>
-
-        <section id="banner-image-list" class="banner-info-body">
-          <header class="banner-info-header">Jl.Rasuna Sahid Jakarta</header>
-          <div class="image-billboard">
+            <img src="http://indobillboard.co.id/wp-content/uploads/2013/02/billboard-led-senayan.jpg">
+            <img src="http://indobillboard.co.id/wp-content/uploads/2013/02/billboard-led-senayan.jpg">
+            <img src="http://indobillboard.co.id/wp-content/uploads/2013/02/billboard-led-senayan.jpg">
+            <img src="http://indobillboard.co.id/wp-content/uploads/2013/02/billboard-led-senayan.jpg">
+            <img src="http://indobillboard.co.id/wp-content/uploads/2013/02/billboard-led-senayan.jpg">
+            <img src="http://indobillboard.co.id/wp-content/uploads/2013/02/billboard-led-senayan.jpg">
             <img src="http://indobillboard.co.id/wp-content/uploads/2013/02/billboard-led-senayan.jpg">
           </div>
         </section>
 
-        <section id="banner-image-list" class="banner-info-body">
-          <header class="banner-info-header">Jl.Rasuna Sahid Jakarta</header>
-          <div class="image-billboard">
-            <img src="http://indobillboard.co.id/wp-content/uploads/2013/02/billboard-led-senayan.jpg">
-          </div>
-        </section>
-
-        <section id="banner-image-list" class="banner-info-body">
-          <header class="banner-info-header">Jl.Rasuna Sahid Jakarta</header>
-          <div class="image-billboard">
-            <img src="http://indobillboard.co.id/wp-content/uploads/2013/02/billboard-led-senayan.jpg">
-          </div>
+          <section id="banner-image-list" class="banner-info-body">
+          <header class="banner-info-header">Banner Information</header>
         </section>
       </div>
     </div>
