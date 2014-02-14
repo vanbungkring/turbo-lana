@@ -19,7 +19,14 @@ class SiteController extends FrontEndController
 		// using the default layout 'protected/views/layouts/main.php'
 		$this->render('result');
 	}
-        
+    
+	public function actionDetail()
+	{
+		// renders the view file 'protected/views/site/index.php'
+		// using the default layout 'protected/views/layouts/main.php'
+		$this->render('billboard-detail');
+	}
+
     public function actionGetMarker(){
         $long_min = (double)@$_GET['bounds']['ia_b'];
         $long_max = (double)@$_GET['bounds']['ia_d'];
