@@ -27,7 +27,7 @@
       <![endif]-->
     </head>
 
-    <body>
+   <body data-spy="scroll" data-offset="0" data-target="#navigation">
 
       <!-- Fixed navbar -->
   	<?php echo $content; ?>

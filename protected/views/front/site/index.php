@@ -1,6 +1,3 @@
-
-<body data-spy="scroll" data-offset="0" data-target="#navigation">
-
 	<!-- Fixed navbar -->
 	<div id="navigation" class="navbar navbar-default navbar-fixed-top">
 		<div class="container">
