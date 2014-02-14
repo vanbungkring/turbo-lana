@@ -20,7 +20,9 @@ $('#more-filter').popover({
     return $('#popover_content_wrapper').html();
   }
 })
-
+ $(".image-billboard").bxSlider({
+    
+  });
 $( "#startPicker" ).datepicker({
   defaultDate: "+1w",
   changeMonth: true,
