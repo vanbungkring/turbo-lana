@@ -1,11 +1,14 @@
 @import 'mixin.less';
-html,body,#map_canvas{
+html,body{
 	height: 100%;
 	width: 100%;
 	background: #fff;
 	font-family: @font-default;
 }
-
+#map_canvas{
+	height: 100%;
+	width: 100%;
+}
 body {
 	height: auto;
 	background-color: #f2f2f2;
@@ -16,6 +19,9 @@ body {
 	padding-top: 50px;
 	-webkit-font-smoothing: antialiased;
 	-webkit-overflow-scrolling: touch;
+}
+.map-body{
+	height: 100%;
 }
 h1, h2, h3, h4, h5, h6 {
 	font-family: @font-default2;
@@ -155,9 +161,10 @@ hr {
 	}
 }
 .kivi{
-	height: 100%;
-	.banner-detail{
+	min-height: 100%;
 
+	.banner-detail{
+		padding: 0;
 		.slidesjs-navigation{
 			background: #000;
 			z-index: 100;
@@ -171,10 +178,18 @@ hr {
 			position: absolute;
 			right: 10px;
 		}
-		padding: 0;
+
 		section{
 			background: #fff;
 			margin-bottom: 30px;
+		}
+		table{
+			width: 99%;
+			margin: 5px;
+			.front{
+				background: #efefef;
+				font-weight: 600;
+			}
 		}
 		.banner-info-body{
 			background: #fff;

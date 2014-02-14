@@ -1,13 +1,14 @@
 <!-- Fixed navbar -->
-<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+<body class="map-body">
+  <div class="navbar navbar-default navbar-fixed-top" role="navigation">
 
-  <div class="container">
+    <div class="container">
 
-    <div class="navbar-header">
-     <a class="navbar-brand" href="#"><b>Kiviads</b></a>
-    </div>
+      <div class="navbar-header">
+       <a class="navbar-brand" href="#"><b>Kiviads</b></a>
+     </div>
 
-    <div class="navbar-collapse collapse">
+     <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#">Home</a></li>
         <li><a href="#">About Us</a></li>
@@ -78,63 +79,63 @@
 <?php
 //google maps render
 $js = '
-  var mapOptions = {
-    zoom: 13,
-    center: new google.maps.LatLng(48.8620722, 2.352047),
-  };
-  var map = new google.maps.Map(document.getElementById("map-wrapper"),
-      mapOptions);
-  var markerCluster = new MarkerClusterer(map, []);
-  var markers = [];
-  var infowindow = null;
-  function showMarkers(){
-    var bounds = map.getBounds();
-    var url = "'.Yii::app()->createUrl('site/getMarker').'";
-    var x = bounds.id || bounds.ga;
-    $.get(url,{ "bounds" : {
-      ia_b : x.b,
-      ia_d : x.d,
-      ta_d : bounds.ta.d,
-      ta_b : bounds.ta.b,
-    }},function(retJson){
-      var newMarker = [];
-      retJson.forEach(function(row) {                           
-        if(!(row.id in markers)){
-          markers[row.id] = row;
-          var latLng = new google.maps.LatLng(row.lat,row.long);
-          var marker = new google.maps.Marker({
-            position: latLng
-          });
-          google.maps.event.addListener(marker, "click", function() {
-            $("#billboard-popup").modal("show");
-          });
-          google.maps.event.addListener(marker, "mouseover", function() {
-            if (infowindow != null){
-              infowindow.open(map, marker);
-              infowindow.setContent(row.nama);
-            } else {
-              infowindow = new google.maps.InfoWindow({
-                anchor:marker, 
-                options:{content: row.nama}
-              });
-            }
-          });
-          newMarker.push(marker);
-        }
-      });
-    markerCluster.addMarkers(newMarker);
-  },"json");
-  
-  }
-  google.maps.event.addListener(map, "idle", showMarkers);
+var mapOptions = {
+  zoom: 13,
+  center: new google.maps.LatLng(48.8620722, 2.352047),
+};
+var map = new google.maps.Map(document.getElementById("map-wrapper"),
+  mapOptions);
+var markerCluster = new MarkerClusterer(map, []);
+var markers = [];
+var infowindow = null;
+function showMarkers(){
+  var bounds = map.getBounds();
+  var url = "'.Yii::app()->createUrl('site/getMarker').'";
+  var x = bounds.id || bounds.ga;
+  $.get(url,{ "bounds" : {
+    ia_b : x.b,
+    ia_d : x.d,
+    ta_d : bounds.ta.d,
+    ta_b : bounds.ta.b,
+  }},function(retJson){
+    var newMarker = [];
+    retJson.forEach(function(row) {                           
+      if(!(row.id in markers)){
+        markers[row.id] = row;
+        var latLng = new google.maps.LatLng(row.lat,row.long);
+        var marker = new google.maps.Marker({
+          position: latLng
+        });
+google.maps.event.addListener(marker, "click", function() {
+  $("#billboard-popup").modal("show");
+});
+google.maps.event.addListener(marker, "mouseover", function() {
+  if (infowindow != null){
+    infowindow.open(map, marker);
+    infowindow.setContent(row.nama);
+  } else {
+    infowindow = new google.maps.InfoWindow({
+      anchor:marker, 
+      options:{content: row.nama}
+    });
+}
+});
+newMarker.push(marker);
+}
+});
+markerCluster.addMarkers(newMarker);
+},"json");
+
+}
+google.maps.event.addListener(map, "idle", showMarkers);
 ';
 Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl.'/js/markerclusterer.js',  CClientScript::POS_END);
 Yii::app()->clientScript->registerScript('script-map',$js,  CClientScript::POS_END);
 Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl.'/js/jquery.geocomplete.js',  CClientScript::POS_END);
 Yii::app()->clientScript->registerScript('script-box','$("#boxcari").geocomplete().bind("geocode:result", function(event, result){
-   console.log(map);
-    map.setCenter(new google.maps.LatLng(result.geometry.location.lat(), result.geometry.location.lng()))
-  });;',  CClientScript::POS_END);
+ console.log(map);
+ map.setCenter(new google.maps.LatLng(result.geometry.location.lat(), result.geometry.location.lng()))
+});;',  CClientScript::POS_END);
 
 ?>
 <div id="popover_content_wrapper" style="display: none">
