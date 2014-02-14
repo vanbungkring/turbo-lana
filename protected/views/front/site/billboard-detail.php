@@ -35,10 +35,40 @@
   </div>
 
   <div class="container kivi">
+
     <div class="row">
-      <h1>Information</h1>
+      <h1>Banner Information</h1>
     </div>
-      <div class="row banner-detail">
-        
+
+    <div class="row banner-detail">
+      <div class="col-md-8 no-padding">
+        <section id="banner-image-list" class="banner-info-body">
+          <header class="banner-info-header">Banner Photo</header>
+          <div class="image-billboard">
+            <img src="http://indobillboard.co.id/wp-content/uploads/2013/02/billboard-led-senayan.jpg">
+          </div>
+        </section>
+
+        <section id="banner-image-list" class="banner-info-body">
+          <header class="banner-info-header">Jl.Rasuna Sahid Jakarta</header>
+          <div class="image-billboard">
+            <img src="http://indobillboard.co.id/wp-content/uploads/2013/02/billboard-led-senayan.jpg">
+          </div>
+        </section>
+
+        <section id="banner-image-list" class="banner-info-body">
+          <header class="banner-info-header">Jl.Rasuna Sahid Jakarta</header>
+          <div class="image-billboard">
+            <img src="http://indobillboard.co.id/wp-content/uploads/2013/02/billboard-led-senayan.jpg">
+          </div>
+        </section>
+
+        <section id="banner-image-list" class="banner-info-body">
+          <header class="banner-info-header">Jl.Rasuna Sahid Jakarta</header>
+          <div class="image-billboard">
+            <img src="http://indobillboard.co.id/wp-content/uploads/2013/02/billboard-led-senayan.jpg">
+          </div>
+        </section>
+      </div>
     </div>
   </div>
