@@ -1,5 +1,5 @@
 <!-- Fixed navbar -->
-<body class="map-body">
+<body class="map">
   <div class="navbar navbar-default navbar-fixed-top" role="navigation">
 
     <div class="container">
