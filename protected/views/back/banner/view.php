@@ -31,4 +31,37 @@ $this->menu=array(
             'type'=>'raw',
         ),
 	),
+)); 
+
+
+$this->widget('zii.widgets.CListView', array(
+    'dataProvider'=>new CActiveDataProvider('BannerImage',array(
+    	'criteria'=>array(
+    		'condition'=>'idBanner = :idBanner',
+    		'params'=>array(
+		    	':idBanner'=>$model->id
+		    )
+    	),
+    	'pagination'=>false,
+    )),
+    'itemView'=>'_image',  
+));
+
+$form=$this->beginWidget('CActiveForm', array(
+	'id'=>'banner-image-form',
+	// Please note: When you enable ajax validation, make sure the corresponding
+	// controller action is handling ajax validation correctly.
+	// There is a call to performAjaxValidation() commented in generated controller code.
+	// See class documentation of CActiveForm for details on this.
+	'enableAjaxValidation'=>false,
+  'htmlOptions'=>array('enctype'=>'multipart/form-data'),
 )); ?>
+
+<div class="form-group">
+    <?php echo $form->fileField($modelBannerImage, 'image'); ?>
+    <?php echo $form->error($modelBannerImage,'image'); ?>
+</div>
+<div class="form-group">
+	<?php echo CHtml::submitButton( 'upload',array('class' => 'btn btn-danger')); ?>
+</div>
+<?php $this->endWidget(); ?>

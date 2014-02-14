@@ -41,11 +41,41 @@ class BannerController extends BackEndController
 	 */
 	public function actionView($id)
 	{
+		$modelBannerImage = new BannerImage('create');
+		$model = $this->loadModel($id);
+		if(isset($_POST['BannerImage']))
+		{
+			$modelBannerImage->attributes=$_POST['BannerImage'];
+			$modelBannerImage->idBanner = $model->id;
+			$modelBannerImage->status   = 0;
+			$modelBannerImage->image=CUploadedFile::getInstance($modelBannerImage,'image');
+			if($modelBannerImage->save()){
+				if($modelBannerImage->image){
+					$file = $modelBannerImage->getImagePath();
+					if(file_exists($file)){
+						unlink($file);
+					}
+					$modelBannerImage->image->saveAs($file);
+				}
+				$this->redirect(array('view','id'=>$model->id));
+			}
+		}
+
 		$this->render('view',array(
-			'model'=>$this->loadModel($id),
+			'model'=>$model,
+			'modelBannerImage'=>$modelBannerImage
 		));
 	}
 
+	public function actionSetCover($id){
+		$model=BannerImage::model()->findByPk($id);
+		if($model===null)
+			throw new CHttpException(404,'The requested page does not exist.');
+		BannerImage::model()->updateAll(array('status'=>0),'idBanner = :idBanner',array('idBanner'=>$model->idBanner));
+		$model->status = 1;
+		$model->save();
+		$this->redirect(array('view','id'=>$model->idBanner));
+	}
 	/**
 	 * Creates a new model.
 	 * If creation is successful, the browser will be redirected to the 'view' page.
