@@ -25,5 +25,10 @@ $this->menu=array(
 		'nama',
 		'lat',
 		'long',
+		array(
+            'value'=>'<img src="'.$model->getImageUrl().'" />',
+            'visible'=>$model->isImageExist(),
+            'type'=>'raw',
+        ),
 	),
 )); ?>

@@ -52,7 +52,7 @@ class BannerController extends BackEndController
 	 */
 	public function actionCreate()
 	{
-		$model=new Banner;
+		$model=new Banner('create');
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
@@ -60,8 +60,16 @@ class BannerController extends BackEndController
 		if(isset($_POST['Banner']))
 		{
 			$model->attributes=$_POST['Banner'];
+			$model->image=CUploadedFile::getInstance($model,'image');
 			if($model->save()){
 				$model->updateKategori();
+				if($model->image){
+					$file = $model->getImagePath();
+					if(file_exists($file)){
+						unlink($file);
+					}
+					$model->image->saveAs($file);
+				}
 				$this->redirect(array('view','id'=>$model->id));
 			}
 		}
@@ -79,15 +87,23 @@ class BannerController extends BackEndController
 	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);
+		$model->scenario = 'update';
 		$model->fetchKategori();
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
-
+		$model->image=CUploadedFile::getInstance($model,'image');
 		if(isset($_POST['Banner']))
 		{
 			$model->attributes=$_POST['Banner'];
 			if($model->save()){
 				$model->updateKategori();
+				$file = $model->getImagePath();
+				if($model->image){
+					if(file_exists($file)){
+						unlink($file);
+					}
+					$model->image->saveAs($file);
+				}
 				$this->redirect(array('view','id'=>$model->id));
 			}
 		}

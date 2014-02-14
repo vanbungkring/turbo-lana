@@ -38,13 +38,6 @@
 		<?php echo $form->error($model,'tinggi'); ?>
 	</div>
 
-
-	<div class="form-group">
-        <label>Image</label>
-		<?php echo $form->fileField($model, 'image'); ?>
-		<?php echo $form->error($model,'image'); ?>
-	</div>
-
 	<div class="form-group">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save',array('class' => 'btn btn-danger')); ?>
 	</div>

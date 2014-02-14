@@ -52,6 +52,10 @@ $('.search-form form').submit(function(){
                                 'lat',
                                 'long',
                                 array(
+                                    'value'=>'$data->isImageExist() ? \'<a href="\'.$data->getImageUrl().\'" target="_blank">link</a>\' : \'\' ',
+                                    'type'=>'raw',
+                                ),
+                                array(
                                         'class'=>'CButtonColumn',
                                 ),
                         ),

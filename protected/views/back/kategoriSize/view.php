@@ -25,9 +25,5 @@ $this->menu=array(
 		'nama',
 		'lebar',
 		'tinggi',
-		array(
-			'value'=>'<img src="'.$model->getUrl().'" />',
-			'type'=>'raw',
-		),
 	),
 )); ?>

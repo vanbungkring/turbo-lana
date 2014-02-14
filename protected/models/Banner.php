@@ -12,6 +12,7 @@
 class Banner extends CActiveRecord
 {
 	public $inputKategori;
+	public $image;
 	/**
 	 * @return string the associated database table name
 	 */
@@ -31,6 +32,8 @@ class Banner extends CActiveRecord
 			array('nama, lat, long, idSize, idPerusahaan', 'required'),
 			array('nama', 'length', 'max'=>100),
 			array('inputKategori,keterangan','safe'),
+			array('image', 'file', 'types'=>'jpg, gif, png','on'=>'create'),
+			array('image', 'file', 'types'=>'jpg, gif, png','on'=>'update','allowEmpty'=>true),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, nama, lat, long', 'safe', 'on'=>'search'),
@@ -123,5 +126,16 @@ class Banner extends CActiveRecord
 		foreach ($this->kategoris as $key => $value) {
 			$this->inputKategori[] = $value->id;
 		}
+	}
+	public function isImageExist(){
+		return file_exists($this->getImagePath());
+	}
+	public function getImagePath(){
+		$path = Yii::app()->params['uploadPath'];
+		return $path.'/banner/'.$this->id.'.jpg';
+	}
+
+	public function getImageUrl(){
+		return Yii::app()->request->baseUrl.'/files/banner/'.$this->id.'.jpg';
 	}
 }

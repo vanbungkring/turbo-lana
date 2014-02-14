@@ -52,10 +52,6 @@ $('.search-form form').submit(function(){
 						'lebar',
 						'tinggi',
 						array(
-							'value'=>'\'<a href="\'.$data->getUrl().\'" target="_blank">link</a>\'',
-							'type'=>'raw',
-						),
-						array(
 							'class'=>'CButtonColumn',
 						),
 					),

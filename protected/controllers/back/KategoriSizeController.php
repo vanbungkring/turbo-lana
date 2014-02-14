@@ -60,10 +60,7 @@ class KategoriSizeController extends BackEndController
 		if(isset($_POST['KategoriSize']))
 		{
 			$model->attributes=$_POST['KategoriSize'];
-			$model->image=CUploadedFile::getInstance($model,'image');
 			if($model->save()){
-				$path = $this->uploadPath();
-				$model->image->saveAs($path.'/kategori_size/'.$model->id.'.jpg');
 				$this->redirect(array('view','id'=>$model->id));
 			}
 		}
