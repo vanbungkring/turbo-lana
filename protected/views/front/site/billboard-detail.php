@@ -65,40 +65,42 @@
             <p class="content-description">
               Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
             </p>
-            <table class="table table-bordered">
-              <tbody>
+            <div class="table-responsive">
+              <table class="table table-bordered ">
+                <tbody>
 
-                <tr>
-                  <td class="front">Type</td>
-                  <td>Billboard</td>
-                </tr>
-                <tr>
-                  <td class="front">Location</td>
-                  <td>Jakarta Indonesia</td>
-                </tr>
-                <tr>
-                  <td class="front">Lebar</td>
-                  <td>20 Meter</td>
-                </tr>
                   <tr>
-                  <td class="front">Digital</td>
-                  <td>NA</td>
-                </tr>
-                <tr>
-                  <td class="front">Tinggi</td>
-                  <td>5 Meter</td>
-                </tr>
-                 <tr >
-                  <td class="front">Status</td>
-                  <td>Available</td>
-                </tr>
-              </tbody>
-            </table>
+                    <td class="front">Type</td>
+                    <td>Billboard</td>
+                  </tr>
+                  <tr>
+                    <td class="front">Location</td>
+                    <td>Jakarta Indonesia</td>
+                  </tr>
+                  <tr>
+                    <td class="front">Lebar</td>
+                    <td>20 Meter</td>
+                  </tr>
+                  <tr>
+                    <td class="front">Digital</td>
+                    <td>NA</td>
+                  </tr>
+                  <tr>
+                    <td class="front">Tinggi</td>
+                    <td>5 Meter</td>
+                  </tr>
+                  <tr >
+                    <td class="front">Status</td>
+                    <td>Available</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </section>
 
           <section id="banner-image-list" class="banner-info-body">
             <header class="banner-info-header">Maps</header>
-           
+            
           </section>
         </div>
       </div>
