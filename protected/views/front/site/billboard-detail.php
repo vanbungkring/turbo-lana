@@ -105,17 +105,19 @@
         </div>
         <div class="col-md-4">
 
-        <section class="banner-info-body">
-          <div class="price">
-           <h1> 185.000.000</h1>
+          <section class="banner-info-body">
+            <div class="price">
+             <h1> 185.000.000</h1>
+           </div>
+           <button type="button" class="btn btn-primary btn-block book-it-button">Fast Book</button>
+           <div class="fast-contact">
+            <i class="fa fa-phone-square fa-3x"></i>
           </div>
-          <button type="button" class="btn btn-primary btn-block book-it-button">Fast Book</button>
-          <div class="fast-contact"></div>
         </section>
         
 
         <section class="banner-info-body svw">
-            <button type="button" class="btn btn-default btn-block whislist">Save To Whislist</button>
+          <button type="button" class="btn btn-default btn-block whislist">Save To Whislist</button>
         </section>
 
       </div>
