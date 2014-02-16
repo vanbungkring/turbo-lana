@@ -3,6 +3,7 @@
 protected/config/db.php
 protected/yiic.php
 assets/*
+files/*
 !assets/.gitignore
 protected/runtime/*
 protected/yiic.php
