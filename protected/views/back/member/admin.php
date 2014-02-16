@@ -38,11 +38,9 @@ $('.search-form form').submit(function(){
         <div class="panel panel-default">
             <div class="panel-heading">
                 Basic Form Elements
-                	<div class="floating-bar">
-					<a class="btn btn-primary" href="<?php echo Yii::app()->createUrl('kategoriBanner/create'); ?>">Tambah</a>
-				</div>
             </div>
             <div class="panel-body">
+                <a href="<?php echo Yii::app()->createUrl('member/create'); ?>">Tombol</a>
 
 				<?php $this->widget('zii.widgets.grid.CGridView', array(
 					'id'=>'member-grid',

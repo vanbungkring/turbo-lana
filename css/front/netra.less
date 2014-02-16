@@ -223,12 +223,12 @@ hr {
 			z-index: 100;
 			top: 300px;
 		}
-	
+
 		.slidesjs-previous{
 			left: 10px;
 			position: absolute;
 		}
-	
+
 		.slidesjs-next{
 			position: absolute;
 			right: 10px;
@@ -242,7 +242,7 @@ hr {
 		table{
 			width: 99%;
 			margin: 5px;
-		
+
 			.front{
 				background: #efefef;
 				font-weight: 400;
@@ -262,12 +262,41 @@ hr {
 			width: 100%;
 		}
 		.price{
-			h1{
+			ul{
+				margin-left: -20px;
+				display: block;
+				width: 100%;
+
+				li{
+
+					list-style: none;
+					padding: 10px;
+					border-top:1px solid #ccc;
+
+				}
+			}
+			.price-detail{
+
 				text-align: center;
-				font-family:'Arial';
-				font-weight:bold;
+				font-family: "Arial";
+				font-size:32px;
+				font-weight: bold;
+				margin-top: 30px;
+
+				sup{
+					font-size: 18px;
+					vertical-align: middle;
+					font-weight: normal;	
+				}
+
+				em.currency{
+					font-size: 14px;
+					vertical-align: top;
+					font-weight: normal;
+				}
 			}
 		}
+
 		.book-it-now{
 
 		}
@@ -276,13 +305,36 @@ hr {
 			width: 100%;
 			min-height: 80px;
 			border-top: 1px solid #ccc;
+			i{
+				position: relative;
+				left: 90px;
+				margin-top: 14px;
+			}
+			.detail-contact{
+				float: right;
+				width: 70%;
+				font-family: arial;
+				ul{
+					li{
+						list-style: none;
+							font-weight: bold;
+							font-size: 14px;
+						h4{
+							font-weight: normal;
+							font-size: 13px;
+							line-height: 15px;
+							margin-bottom: 4px;
+						}
+					}
+				}
+			}
 		}
 		.svw{
 			background: #efefef;
 		}
 		.image-billboard{
 			padding: 5px;
-		
+
 			img{
 				width: 769px
 			}

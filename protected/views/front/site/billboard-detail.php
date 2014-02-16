@@ -105,13 +105,35 @@
         </div>
         <div class="col-md-4">
 
+        <section class="banner-info-body svw">
+          <button type="button" class="btn btn-default btn-block whislist btn-lg">Custom This Banner</button>
+        </section>
+
           <section class="banner-info-body">
             <div class="price">
-             <h1> 185.000.000</h1>
-           </div>
-           <button type="button" class="btn btn-primary btn-block book-it-button">Fast Book</button>
-           <div class="fast-contact">
+              <div class="price-detail">
+               <sup>Dari</sup>
+               <em class="currency"> Rp</em>
+               185.000<sup>.000</sup>
+             </div>
+             <ul>
+              <li> <i class="fa fa-tags fa-2x"></i> Discount for 4 month Rent</li>
+              <li> 100.000 Day Traffic</li>
+              <li> 100.000 Day Traffic</li>
+              <li> 100.000 Day Traffic</li>
+
+            </ul>
+          </div>
+          <button type="button" class="btn btn-primary btn-block book-it-button btn-lg">Create Quote</button>
+          <div class="fast-contact">
             <i class="fa fa-phone-square fa-3x"></i>
+            <div class="detail-contact">
+              <ul>
+                <li><h4>Booking Hotline</h4><li>
+                <li>021-71292973</li>
+                <li>Mon – Fri, 9am – 5pm GMT+1</li>
+              </ul>
+            </div>
           </div>
         </section>
         
