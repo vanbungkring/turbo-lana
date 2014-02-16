@@ -42,7 +42,7 @@ $('.search-form form').submit(function(){
             	<a href="<?php echo Yii::app()->createUrl('KategoriSize/create'); ?>">Tambah</a>
 				<?php $this->widget('zii.widgets.grid.CGridView', array(
 					'id'=>'kategori-size-grid',
-					"itemsCssClass" => 'table table-bordered',
+					"itemsCssClass" => 'table',
                     'dataProvider'=>$model->search(),
 //                        'filter'=>$model,
                     'cssFile'=>false,

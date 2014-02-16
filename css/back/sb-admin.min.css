@@ -6,7 +6,7 @@ body{background-color:#f8f8f8;padding-top:70px}#wrapper{width:100%;margin:0 auto
 .navbar-top-links .dropdown-messages{margin-left:5px}.navbar-top-links .dropdown-tasks{margin-left:-59px}.navbar-top-links .dropdown-alerts{margin-left:-123px}
 .navbar-top-links .dropdown-user{right:0;left:auto}.sidebar-search{padding:15px}.arrow{float:right}.fa.arrow:before{content:"\f104"}
 .active>a>.fa.arrow:before{content:"\f107"}.nav-second-level li,.nav-third-level li{border-bottom:none!important}.nav-second-level li a{padding-left:37px}
-.nav-third-level li a{padding-left:52px}@media(min-width:768px){.navbar-static-side{z-index:1;position:absolute;width:250px}.navbar-top-links .dropdown-messages,.navbar-top-links .dropdown-tasks,.navbar-top-links .dropdown-alerts{margin-left:auto}
+.nav-third-level li a{padding-left:52px}@media(min-width:768px){.navbar-static-side{z-index:1;position:fixed;width:250px}.navbar-top-links .dropdown-messages,.navbar-top-links .dropdown-tasks,.navbar-top-links .dropdown-alerts{margin-left:auto}
 }.btn-outline{color:inherit;background-color:transparent;transition:all .5s}.btn-primary.btn-outline{color:#428bca}.btn-success.btn-outline{color:#5cb85c}
 .btn-info.btn-outline{color:#5bc0de}.btn-warning.btn-outline{color:#f0ad4e}.btn-danger.btn-outline{color:#d9534f}.btn-primary.btn-outline:hover,.btn-success.btn-outline:hover,.btn-info.btn-outline:hover,.btn-warning.btn-outline:hover,.btn-danger.btn-outline:hover{color:#fff}
 .chat{margin:0;padding:0;list-style:none}.chat li{margin-bottom:10px;padding-bottom:5px;border-bottom:1px dotted #b3a9a9}.chat li.left .chat-body{margin-left:60px}

@@ -16,7 +16,7 @@
     <link href="<?php echo Yii::app()->request->baseUrl; ?>/css/back/plugins/timeline/timeline.css" rel="stylesheet">
 
     <!-- SB Admin CSS - Include with every page -->
-    <link href="<?php echo Yii::app()->request->baseUrl; ?>/css/back/sb-admin.min.css" rel="stylesheet">
+    <link href="<?php echo Yii::app()->request->baseUrl; ?>/css/back/sb-admin.css" rel="stylesheet">
     <?php Yii::app()->getClientScript()->registerCoreScript('jquery'); ?>
 </head>
 
