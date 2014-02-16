@@ -21,39 +21,57 @@ $this->breadcrumbs=array(
 				</div>
 				</div>
 				<!-- /.panel-heading -->
+<!-- 				<span class="label label-default">Default</span>
+<span class="label label-primary">Primary</span>
+<span class="label label-success">Success</span>
+<span class="label label-info">Info</span>
+<span class="label label-warning">Warning</span>
+<span class="label label-danger">Danger</span> -->
 				<div class="panel-body">
 					<div class="table-responsive">
 						<table class="table table-striped table-bordered table-hover">
 							<thead>
 								<tr>
 									<th>NO</th>
-									<th>From</th>
-									<th>Tanggal</th>
 									<th>Status</th>
+									<th>Sender</th>
+									<th>Title</th>
+									<th>Created At</th>
+									<th>Due Date</th>
+									<th>Banner Id</th>
 									<th>Action</th>
 								</tr>
 							</thead>
 							<tbody>
 								<tr>
 									<td>1</td>
+									<td> <span class="label label-danger">Has not responded</span> </td>
 									<td>Mark</td>
-									<td>Otto</td>
-									<td>@mdo</td>
+									<td>Banner Quotation Price</td>
+									<td>02/16/2014</td>
+									<td>@02/16/2014</td>
+									<td><a href="#">Some banner Id</a></td>
 									<td>@mdo</td>
 								</tr>
 								<tr>
 									<td>2</td>
+									<td><span class="label label-success">Success Replied</span></td>
 									<td>Jacob</td>
-									<td>Thornton</td>
-									<td>@fat</td>
-									<td>@fat</td>
+									<td>Banner Quotation Price</td>
+									<td>02/16/2014</td>
+									<td>@02/16/2014</td>
+									<td><a href="#">Some banner Id</a></td>
+									<td>@mdo</td>
 								</tr>
 								<tr>
 									<td>3</td>
+									<td><span class="label label-info">Draft</span></td>
 									<td>Larry</td>
-									<td>the Bird</td>
-									<td>@twitter</td>
-									<td>Reply</td>
+									<td>Banner Quotation Price</td>
+									<td>02/16/2014</td>
+									<td>@02/16/2014</td>
+									<td><a href="#">Some banner Id</a></td>
+									<td>@mdo</td>
 								</tr>
 							</tbody>
 						</table>
