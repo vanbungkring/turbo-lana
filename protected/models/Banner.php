@@ -8,6 +8,10 @@
  * @property string $nama
  * @property string $lat
  * @property string $long
+ * @property double $panjang
+ * @property double $tinggi
+ * @property double $tinggiDariTanah
+ * @property integer $zoom
  */
 class Banner extends CActiveRecord
 {
@@ -31,7 +35,7 @@ class Banner extends CActiveRecord
 		return array(
 			array('nama, lat, long, zoom, idSize, idPerusahaan', 'required'),
 			array('nama', 'length', 'max'=>100),
-			array('harga,zoom','numerical'),
+			array('harga,zoom,panjang,tinggi,tinggiDariTanah','numerical'),
 			array('inputKategori,keterangan','safe'),
 			array('image', 'file', 'types'=>'jpg, gif, png','on'=>'create','allowEmpty'=>true),
 			array('image', 'file', 'types'=>'jpg, gif, png','on'=>'update','allowEmpty'=>true),

@@ -81,6 +81,25 @@
     <?php echo $form->error($model,'harga'); ?>
   </div>
   
+  <div class="form-group">
+    <label>Panjang</label>
+    <?php echo $form->textField($model,'panjang',array('class'=>'form-control')); ?>
+    <?php echo $form->error($model,'panjang'); ?>
+  </div>
+
+  <div class="form-group">
+    <label>Tinggi</label>
+    <?php echo $form->textField($model,'tinggi',array('class'=>'form-control')); ?>
+    <?php echo $form->error($model,'tinggi'); ?>
+  </div>
+
+  <div class="form-group">
+    <label>Tinggi Dari Tanah</label>
+    <?php echo $form->textField($model,'tinggiDariTanah',array('class'=>'form-control')); ?>
+    <?php echo $form->error($model,'tinggiDariTanah'); ?>
+  </div>
+
+
 	<div class="form-group">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save',array('class' => 'btn btn-danger')); ?>
 	</div>
@@ -189,6 +208,21 @@ function initialize() {
      map.fitBounds(bounds);
      setLocationaa();
   });
+  
+  google.maps.event.addDomListener(input, \'keydown\', function(e) {
+    if (e.keyCode == 13)
+    {
+      if (e.preventDefault)
+      {
+        e.preventDefault();
+      }
+      else
+      {
+        e.cancelBubble = true;
+        e.returnValue = false;
+      }
+    }
+  }); 
   // [END region_getplaces]
 
   // Bias the SearchBox results towards places that are within the bounds of the
