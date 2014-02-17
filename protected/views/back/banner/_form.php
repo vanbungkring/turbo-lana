@@ -64,12 +64,6 @@
   </div>
 
   <div class="form-group">
-    <label>Kategori Size</label>
-    <?php echo $form->dropDownList($model,'idSize',CHtml::listData(KategoriSize::model()->findAll(),'id','nama'),array('class'=>'form-control')); ?>
-    <?php echo $form->error($model,'idSize'); ?>
-  </div>
-
-  <div class="form-group">
     <label>Pemilik</label>
     <?php echo $form->dropDownList($model,'idPerusahaan',CHtml::listData(Perusahaan::model()->findAll(),'id','nama'),array('class'=>'form-control')); ?>
     <?php echo $form->error($model,'idPerusahaan'); ?>
