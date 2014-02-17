@@ -9,7 +9,7 @@ return CMap::mergeArray(
 				'urlFormat'=>'path',
 				'rules'=>array(
 					'registrasi'=>'site/registrasi',
-					'search-result'=>'site/result',
+					'search'=>'site/result',
 					'user'=>'site/user',
 					'detail'=>'site/detail',
 					'<controller:\w+>/<id:\d+>'=>'<controller>/view',

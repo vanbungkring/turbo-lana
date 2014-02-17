@@ -28,7 +28,7 @@
         
         <div class="form-group">
             <input id="pac-input" class="controls" type="text" placeholder="Search Box">
-            <div id="map-canvas" style="height:400px">
+            <div id="map-canvas" style="height:600px">
                 
             </div>
         </div>
