@@ -83,7 +83,9 @@ class BannerController extends BackEndController
 	public function actionCreate()
 	{
 		$model=new Banner('create');
-
+		$model->lat = -6.2087634;
+		$model->long = 106.8455989;
+		$model->zoom = 10;
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 

@@ -45,6 +45,12 @@
 		<?php echo $form->error($model,'long'); ?>
 	</div>
 
+  <div class="form-group" style="display:none">
+    <label>Zoom</label>
+    <?php echo $form->textField($model,'zoom',array('id'=>'zoom','class'=>'form-control')); ?>
+    <?php echo $form->error($model,'zoom'); ?>
+  </div>
+
   <div class="form-group">
     <label>Keterangan</label>
     <?php echo $form->textArea($model,'keterangan',array('class'=>'form-control')); ?>
@@ -67,6 +73,12 @@
     <label>Pemilik</label>
     <?php echo $form->dropDownList($model,'idPerusahaan',CHtml::listData(Perusahaan::model()->findAll(),'id','nama'),array('class'=>'form-control')); ?>
     <?php echo $form->error($model,'idPerusahaan'); ?>
+  </div>
+
+  <div class="form-group">
+    <label>Harga</label>
+    <?php echo $form->textField($model,'harga',array('class'=>'form-control')); ?>
+    <?php echo $form->error($model,'harga'); ?>
   </div>
   
 	<div class="form-group">
@@ -130,10 +142,12 @@
 $js =    '
     
 function initialize() {
-var myLatlng = new google.maps.LatLng(-25.363882,131.044922);
+  var defLat = '.(double)$model->lat.';
+  var defLng = '.(double)$model->long.';
+  var myLatlng = new google.maps.LatLng(defLat,defLng);
   var map = new google.maps.Map(document.getElementById("map-canvas"), {
     mapTypeId: google.maps.MapTypeId.ROADMAP,
-    zoom: 4,
+    zoom: '.(int)$model->zoom.',
     center: myLatlng
   });
   
@@ -146,6 +160,7 @@ var myLatlng = new google.maps.LatLng(-25.363882,131.044922);
     function setLocationaa(){
         document.getElementById("lat").value = marker.position.lat();
         document.getElementById("lng").value = marker.position.lng();
+        document.getElementById("zoom").value = map.getZoom();
     }
     setLocationaa();
     google.maps.event.addListener(
@@ -179,6 +194,7 @@ var myLatlng = new google.maps.LatLng(-25.363882,131.044922);
   // Bias the SearchBox results towards places that are within the bounds of the
  
   google.maps.event.addListener(map, "bounds_changed", function() {
+    document.getElementById("zoom").value = map.getZoom();
     var bounds = map.getBounds();
     searchBox.setBounds(bounds);
   });
