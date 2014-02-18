@@ -20,11 +20,16 @@ class SiteController extends FrontEndController
 		$this->render('result');
 	}
     
-	public function actionDetail()
+	public function actionDetail($id)
 	{
+		$banner = Banner::model()->with('kategoris')->findByPk($id);
+		if($banner===null)
+			throw new CHttpException(404,'Banner Tidak Ditemukan.');
 		// renders the view file 'protected/views/site/index.php'
 		// using the default layout 'protected/views/layouts/main.php'
-		$this->render('billboard-detail');
+		$this->render('billboard-detail',array(
+			'banner'=>$banner,
+		));
 	}
 
     public function actionGetMarker(){

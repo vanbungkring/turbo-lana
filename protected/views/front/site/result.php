@@ -109,7 +109,8 @@ function showMarkers(){
           position: latLng
         });
         google.maps.event.addListener(marker, "click", function() {
-          $("#billboard-popup").modal("show");
+          // $("#billboard-popup").modal("show");
+          window.location = "'.Yii::app()->createUrl('/site/detail').'/"+row.id
         });
         google.maps.event.addListener(marker, "mouseover", function() {
           if (infowindow != null){
@@ -130,7 +131,6 @@ function showMarkers(){
 }
 google.maps.event.addListener(map, "idle", showMarkers);
 $("#btnSearch").click(function(){
-  alert("cuk");
   var lat = $("#lat").val();
   var long = $("#long").val();
   console.log(lat); console.log(long);

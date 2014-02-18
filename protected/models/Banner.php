@@ -54,6 +54,7 @@ class Banner extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
 			'kategoris'=>array(self::MANY_MANY,'KategoriBanner','banner_kategori(idBanner,idKategori)'),
+			'images'=>array(self::HAS_MANY,'BannerImage','idBanner'),
 		);
 	}
 

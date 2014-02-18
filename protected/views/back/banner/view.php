@@ -57,15 +57,13 @@ $form=$this->beginWidget('CActiveForm', array(
   'htmlOptions'=>array('enctype'=>'multipart/form-data'),
 )); ?>
 
-<?php
-	$this->widget('xupload.XUpload', array(
-	    'url' => Yii::app()->createUrl("site/upload"),
-	    'model' => $model,
-	    'attribute' => 'image',
-	    'multiple' => true,
-	    'htmlOptions' => array('id'=>'banner-image-formd'),
-	));
-?>
+<div class="form-group">
+    <?php echo $form->fileField($modelBannerImage, 'image'); ?>
+    <?php echo $form->error($modelBannerImage,'image'); ?>
+</div>
+<div class="form-group">
+	<?php echo CHtml::submitButton( 'upload',array('class' => 'btn btn-danger')); ?>
+</div>
 
 <?php $this->endWidget(); ?>
 

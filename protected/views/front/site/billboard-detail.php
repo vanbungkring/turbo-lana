@@ -43,27 +43,21 @@
 
       <div class="row banner-detail">
         <div class="col-md-8 no-padding">
+          <?php if(!empty($banner->images)): ?>
           <section id="banner-image-list" class="banner-info-body">
             <header class="banner-info-header">Banner Photo</header>
             <div class="image-billboard">
-              <img src="http://indobillboard.co.id/wp-content/uploads/2013/02/billboard-led-senayan.jpg">
-              <img src="http://indobillboard.co.id/wp-content/uploads/2013/02/billboard-led-senayan.jpg">
-              <img src="http://indobillboard.co.id/wp-content/uploads/2013/02/billboard-led-senayan.jpg">
-              <img src="http://indobillboard.co.id/wp-content/uploads/2013/02/billboard-led-senayan.jpg">
-              <img src="http://indobillboard.co.id/wp-content/uploads/2013/02/billboard-led-senayan.jpg">
-              <img src="http://indobillboard.co.id/wp-content/uploads/2013/02/billboard-led-senayan.jpg">
-              <img src="http://indobillboard.co.id/wp-content/uploads/2013/02/billboard-led-senayan.jpg">
-              <img src="http://indobillboard.co.id/wp-content/uploads/2013/02/billboard-led-senayan.jpg">
+              <?php foreach($banner->images as $image):?>
+              <img src="<?php echo $image->getImageUrl(); ?>" />
+              <?php endforeach; ?>
             </div>
           </section>
+        <?php endif; ?>
 
           <section id="banner-detail-info-list" class="banner-info-body">
             <header class="banner-info-header">Deskripsi & Spesifikasi Banner</header>
             <p class="content-description">
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-            </p>
-            <p class="content-description">
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+              <?php echo CHtml::encode($banner->keterangan); ?>
             </p>
             <div class="table-responsive">
               <table class="table table-bordered ">
@@ -71,25 +65,30 @@
 
                   <tr>
                     <td class="front">Type</td>
-                    <td>Billboard</td>
+                    <td><?php 
+                      $kNamas = CHtml::listData($banner->kategoris,'id','nama');
+                      $valNamas = array_values($kNamas);
+                      $str = implode(", ", $valNamas);
+                      echo CHtml::encode($str); ?>
+                    ?></td>
                   </tr>
                   <tr>
                     <td class="front">Location</td>
                     <td>Jakarta Indonesia</td>
                   </tr>
                   <tr>
-                    <td class="front">Lebar</td>
-                    <td>20 Meter</td>
+                    <td class="front">Panjang</td>
+                    <td><?php echo CHtml::encode($banner->panjang); ?> Meter</td>
+                  </tr>
+                  <tr>
+                    <td class="front">Tinggi</td>
+                    <td><?php echo CHtml::encode($banner->tinggi); ?> Meter</td>
                   </tr>
                   <tr>
                     <td class="front">Digital</td>
                     <td>NA</td>
                   </tr>
                   <tr>
-                    <td class="front">Tinggi</td>
-                    <td>5 Meter</td>
-                  </tr>
-                  <tr >
                     <td class="front">Status</td>
                     <td>Available</td>
                   </tr>
@@ -100,7 +99,8 @@
 
           <section id="banner-image-list" class="banner-info-body">
             <header class="banner-info-header">Maps</header>
-
+            <div id="map-canvas" style="height:400px">
+            </div>
           </section>
         </div>
         <div class="col-md-4">
@@ -145,3 +145,26 @@
       </div>
     </div>
   </div>
+
+<?php
+//google maps render
+$js =    '
+    
+function initialize() {
+  var defLat = '.(double)$banner->lat.';
+  var defLng = '.(double)$banner->long.';
+  var myLatlng = new google.maps.LatLng(defLat,defLng);
+  var map = new google.maps.Map(document.getElementById("map-canvas"), {
+    mapTypeId: google.maps.MapTypeId.ROADMAP,
+    zoom: '.(int)$banner->zoom.',
+    center: myLatlng
+  });
+  var marker = new google.maps.Marker({
+    position: myLatlng, 
+    map: map, // handle of the map 
+  });
+}
+
+google.maps.event.addDomListener(window, "load", initialize);
+';
+Yii::app()->clientScript->registerScript('script-map',$js,  CClientScript::POS_END);

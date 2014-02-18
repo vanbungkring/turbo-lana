@@ -93,6 +93,7 @@ class BannerController extends BackEndController
 		{
 			$model->attributes=$_POST['Banner'];
 			$model->image=CUploadedFile::getInstance($model,'image');
+			$model->lokasi = Geo::getKota($model->lat,$model->long);
 			if($model->save()){
 				$model->updateKategori();
 				if($model->image){
@@ -127,6 +128,7 @@ class BannerController extends BackEndController
 		if(isset($_POST['Banner']))
 		{
 			$model->attributes=$_POST['Banner'];
+			$model->lokasi = Geo::getKota($model->lat,$model->long);
 			if($model->save()){
 				$model->updateKategori();
 				$file = $model->getImagePath();
