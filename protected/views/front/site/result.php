@@ -22,6 +22,8 @@
   <div class="container">
     <div class="col-xs-4 free-transform">
       <input type="text" class="form-control" placeholder="Search Location" id="boxcari">
+      <input type="hidden" id="lat" value="-6.17511" />
+      <input type="hidden" id="long" value="106.86503949999997" />
     </div>
 
     <div class="col-xs-2 free-transform">
@@ -39,7 +41,7 @@
    </div>
 
    <div class="col-xs-1 free-transform">
-     <button type="button" class="btn btn-success">Search</button>
+     <button type="button" class="btn btn-success" id="btnSearch">Search</button>
    </div>
 
 
@@ -81,7 +83,7 @@
 $js = '
 var mapOptions = {
   zoom: 13,
-  center: new google.maps.LatLng(48.8620722, 2.352047),
+  center: new google.maps.LatLng(-6.17511, 106.86503949999997),
 };
 var map = new google.maps.Map(document.getElementById("map-wrapper"),
   mapOptions);
@@ -106,35 +108,42 @@ function showMarkers(){
         var marker = new google.maps.Marker({
           position: latLng
         });
-google.maps.event.addListener(marker, "click", function() {
-  $("#billboard-popup").modal("show");
-});
-google.maps.event.addListener(marker, "mouseover", function() {
-  if (infowindow != null){
-    infowindow.open(map, marker);
-    infowindow.setContent(row.nama);
-  } else {
-    infowindow = new google.maps.InfoWindow({
-      anchor:marker, 
-      options:{content: row.nama}
+        google.maps.event.addListener(marker, "click", function() {
+          $("#billboard-popup").modal("show");
+        });
+        google.maps.event.addListener(marker, "mouseover", function() {
+          if (infowindow != null){
+            infowindow.open(map, marker);
+            infowindow.setContent(row.nama);
+          } else {
+            infowindow = new google.maps.InfoWindow({
+              anchor:marker, 
+              options:{content: row.nama}
+            });
+          }
+        });
+        newMarker.push(marker);
+      }
     });
-}
-});
-newMarker.push(marker);
-}
-});
-markerCluster.addMarkers(newMarker);
-},"json");
-
+    markerCluster.addMarkers(newMarker);
+  },"json");
 }
 google.maps.event.addListener(map, "idle", showMarkers);
+$("#btnSearch").click(function(){
+  alert("cuk");
+  var lat = $("#lat").val();
+  var long = $("#long").val();
+  console.log(lat); console.log(long);
+  map.setCenter(new google.maps.LatLng(lat, long));
+});
 ';
 Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl.'/js/markerclusterer.js',  CClientScript::POS_END);
 Yii::app()->clientScript->registerScript('script-map',$js,  CClientScript::POS_END);
 Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl.'/js/jquery.geocomplete.js',  CClientScript::POS_END);
 Yii::app()->clientScript->registerScript('script-box','$("#boxcari").geocomplete().bind("geocode:result", function(event, result){
- console.log(map);
- map.setCenter(new google.maps.LatLng(result.geometry.location.lat(), result.geometry.location.lng()))
+ $("#lat").val(result.geometry.location.lat());
+ $("#long").val(result.geometry.location.lng());
+ // map.setCenter(new google.maps.LatLng(result.geometry.location.lat(), result.geometry.location.lng()))
 });;',  CClientScript::POS_END);
 
 ?>
