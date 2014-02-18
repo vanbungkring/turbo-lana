@@ -69,7 +69,7 @@
                       $kNamas = CHtml::listData($banner->kategoris,'id','nama');
                       $valNamas = array_values($kNamas);
                       $str = implode(", ", $valNamas);
-                      echo CHtml::encode($str); ?>
+                      echo CHtml::encode($str);
                     ?></td>
                   </tr>
                   <tr>
