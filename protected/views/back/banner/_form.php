@@ -74,6 +74,24 @@
     <?php echo $form->textField($model,'harga',array('class'=>'form-control')); ?>
     <?php echo $form->error($model,'harga'); ?>
   </div>
+
+  <div class="form-group">
+    <label>Harga Per Bulan</label>
+    <?php echo $form->textField($model,'hargaPerBulan',array('class'=>'form-control')); ?>
+    <?php echo $form->error($model,'hargaPerBulan'); ?>
+  </div>
+
+  <div class="form-group">
+    <label>Harga Per 3 Bulan</label>
+    <?php echo $form->textField($model,'hargaPer3Bulan',array('class'=>'form-control')); ?>
+    <?php echo $form->error($model,'hargaPer3Bulan'); ?>
+  </div>
+
+  <div class="form-group">
+    <label>Harga Per 6 Bulan</label>
+    <?php echo $form->textField($model,'hargaPer6Bulan',array('class'=>'form-control')); ?>
+    <?php echo $form->error($model,'hargaPer6Bulan'); ?>
+  </div>
   
   <div class="form-group">
     <label>Panjang</label>
@@ -89,10 +107,21 @@
 
   <div class="form-group">
     <label>Tinggi Dari Tanah</label>
-    <?php echo $form->textField($model,'tinggiDariTanah',array('class'=>'form-control')); ?>
+    <?php echo $form->dropDownList($model,'tinggiDariTanah',array(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20),array('class'=>'form-control')); ?>
     <?php echo $form->error($model,'tinggiDariTanah'); ?>
   </div>
 
+  <div class="form-group">
+    <label>Banner SIDE (Jumlah sisi banner)</label>
+    <?php echo $form->textField($model,'jumlahSisi',array('class'=>'form-control')); ?>
+    <?php echo $form->error($model,'jumlahSisi'); ?>
+  </div>
+
+  <div class="form-group">
+    <label>SKU (Kode Unik banner)</label>
+    <?php echo $form->textField($model,'sku',array('class'=>'form-control')); ?>
+    <?php echo $form->error($model,'sku'); ?>
+  </div>
 
 	<div class="form-group">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save',array('class' => 'btn btn-danger')); ?>

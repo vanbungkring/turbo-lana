@@ -35,7 +35,9 @@ class Banner extends CActiveRecord
 		return array(
 			array('nama, lat, long, zoom, idPerusahaan', 'required'),
 			array('nama', 'length', 'max'=>100),
-			array('harga,zoom,panjang,tinggi,tinggiDariTanah,idSize','numerical'),
+			array('sku', 'length', 'max'=>200),
+			array('harga,hargaPerBulan,hargaPer3Bulan,hargaPer6Bulan,hargaPerTahun
+				,zoom,panjang,tinggi,tinggiDariTanah,idSize,jumlahSisi','numerical'),
 			array('inputKategori,keterangan','safe'),
 			array('image', 'file', 'types'=>'jpg, gif, png','on'=>'create','allowEmpty'=>true),
 			array('image', 'file', 'types'=>'jpg, gif, png','on'=>'update','allowEmpty'=>true),

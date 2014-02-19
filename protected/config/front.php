@@ -11,7 +11,7 @@ return CMap::mergeArray(
 					'registrasi'=>'site/registrasi',
 					'search'=>'site/result',
 					'user'=>'site/user',
-					'detail/<id:\d+>'=>'site/detail',
+					'detail/<id:\w+>'=>'site/detail',
 					'<controller:\w+>/<id:\d+>'=>'<controller>/view',
 					'<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',
 					'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
