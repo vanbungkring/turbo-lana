@@ -70,12 +70,6 @@
   </div>
 
   <div class="form-group">
-    <label>Harga</label>
-    <?php echo $form->textField($model,'harga',array('class'=>'form-control')); ?>
-    <?php echo $form->error($model,'harga'); ?>
-  </div>
-
-  <div class="form-group">
     <label>Harga Per Bulan</label>
     <?php echo $form->textField($model,'hargaPerBulan',array('class'=>'form-control')); ?>
     <?php echo $form->error($model,'hargaPerBulan'); ?>
