@@ -107,13 +107,13 @@
 
   <div class="form-group">
     <label>Tinggi Dari Tanah</label>
-    <?php echo $form->dropDownList($model,'tinggiDariTanah',array(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20),array('class'=>'form-control')); ?>
+    <?php echo $form->textField($model,'tinggiDariTanah',array('class'=>'form-control')); ?>
     <?php echo $form->error($model,'tinggiDariTanah'); ?>
   </div>
 
   <div class="form-group">
     <label>Banner SIDE (Jumlah sisi banner)</label>
-    <?php echo $form->textField($model,'jumlahSisi',array('class'=>'form-control')); ?>
+    <?php echo $form->dropDownList($model,'jumlahSisi',array(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20),array('class'=>'form-control')); ?>
     <?php echo $form->error($model,'jumlahSisi'); ?>
   </div>
 
