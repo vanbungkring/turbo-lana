@@ -74,7 +74,7 @@
                   </tr>
                   <tr>
                     <td class="front">Location</td>
-                    <td>Jakarta Indonesia</td>
+                    <td><?php echo CHtml::encode($banner->lokasi); ?></td>
                   </tr>
                   <tr>
                     <td class="front">Panjang</td>
@@ -112,9 +112,16 @@
           <section class="banner-info-body">
             <div class="price">
               <div class="price-detail">
+                <select id="harga">
+                  <option value="<?php echo $banner->hargaPerBulan;?>">Per Bulan</option>
+                  <option value="<?php echo $banner->hargaPer3Bulan;?>">Per 3 Bulan</option>
+                  <option value="<?php echo $banner->hargaPer6Bulan;?>">Per 6 Bulan</option>
+                  <option value="<?php echo $banner->hargaPerTahun;?>">Per Tahun</option>
+                </select>
                <sup>Dari</sup>
                <em class="currency"> Rp</em>
-               185.000<sup>.000</sup>
+               <span id="spanharga">185.000</span>
+               <sup>.000</sup>
              </div>
              <ul>
               <li> <i class="fa fa-tags fa-2x"></i> Discount for 4 month Rent</li>
@@ -166,5 +173,13 @@ function initialize() {
 }
 
 google.maps.event.addDomListener(window, "load", initialize);
+
+function checkharga(){
+  $("#spanharga").text($("#harga").val());
+}
+$("#harga").change(function(){
+  checkharga();
+});
+checkharga();
 ';
 Yii::app()->clientScript->registerScript('script-map',$js,  CClientScript::POS_END);
