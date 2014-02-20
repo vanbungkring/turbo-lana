@@ -16,6 +16,7 @@ class Member extends CActiveRecord
 {
 	public $passwordRegister1;
 	public $passwordRegister2;
+	public $newPassword;
 	/**
 	 * @return string the associated database table name
 	 */
@@ -37,6 +38,7 @@ class Member extends CActiveRecord
 			array('email','unique'),
 			array('nomerTelpon', 'length', 'max'=>40),
 			array('password', 'length', 'max'=>32),
+			array('newPassword','safe'),
 
 			array('namaDepan, namaBelakang, namaPerusahaan, email','required'),
 			array('passwordRegister1, passwordRegister2','required','on'=>'register'),
@@ -121,6 +123,9 @@ class Member extends CActiveRecord
 	public function beforeSave(){
 	   if($this->passwordRegister1 and $this->passwordRegister2 and $this->passwordRegister1==$this->passwordRegister2){
 	   		$this->password = md5($this->passwordRegister1);
+	   }
+	   if(!empty($this->newPassword)){
+	   		$this->password = md5($this->newPassword);
 	   }
 	   return parent::beforeSave();
 	}

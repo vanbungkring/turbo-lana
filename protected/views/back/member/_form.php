@@ -50,6 +50,12 @@
 	</div>
 
 	<div class="form-group">
+		<label>Password</label>
+		<?php echo $form->textField($model,'newPassword',array('size'=>60,'maxlength'=>100,'class'=>'form-control')); ?>
+		<?php echo $form->error($model,'newPassword'); ?>
+	</div>
+
+	<div class="form-group">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save',array('class' => 'btn btn-danger')); ?>
 	</div>
 
