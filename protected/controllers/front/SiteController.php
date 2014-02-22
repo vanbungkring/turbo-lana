@@ -38,7 +38,9 @@ class SiteController extends FrontEndController
         $lat_min = (double)@$_GET['bounds']['ta_d'];
         $lat_max = (double)@$_GET['bounds']['ta_b'];
         if($long_min > $long_max){
-            $res = Yii::app()->db->createCommand("select * from banner where 
+            $res = Yii::app()->db->createCommand("select banner.*,banner_image.id as `cover` from banner left join 
+            		banner_image on banner_image.idBanner = banner.id and status=1 
+            	 where 
                 `lat` >= :lat_min and `lat` <= :lat_max 
                 and
                 (
@@ -52,7 +54,9 @@ class SiteController extends FrontEndController
             ));
         }
         else{
-            $res = Yii::app()->db->createCommand("select * from banner  where
+            $res = Yii::app()->db->createCommand("select banner.*,banner_image.id as `cover` from banner left join 
+            		banner_image on banner_image.idBanner = banner.id and status=1 
+            	where
                 `lat` >= :lat_min and `lat` <= :lat_max 
                 and
                 `long` >= :long_min and `long` <= :long_max

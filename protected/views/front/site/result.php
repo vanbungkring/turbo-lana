@@ -112,14 +112,20 @@ function showMarkers(){
           // $("#billboard-popup").modal("show");
           window.location = "'.Yii::app()->createUrl('/site/detail').'/"+row.id
         });
+        var contentInfo = "";
+        if(row.cover != null){
+          contentInfo += "<img style=\"max-height:150px;max-width:150px\" src=\"'.Yii::app()->request->baseUrl.'/files/bannerimage/"+row.cover+".jpg\" />";
+        }
+        contentInfo += row.nama;
         google.maps.event.addListener(marker, "mouseover", function() {
+          console.log(contentInfo);
           if (infowindow != null){
             infowindow.open(map, marker);
-            infowindow.setContent(row.nama);
+            infowindow.setContent(contentInfo);
           } else {
             infowindow = new google.maps.InfoWindow({
               anchor:marker, 
-              options:{content: row.nama}
+              options:{content: contentInfo}
             });
           }
         });
