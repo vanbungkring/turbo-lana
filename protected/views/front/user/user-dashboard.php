@@ -9,10 +9,12 @@
 				</div>
 
 				<div class="navbar-collapse collapse">
+					<ul class="nav navbar-nav">
+					<li><a href="#desc" class="smothscroll">Dashboard</a></li>
+					<li><a href="#desc" class="smothscroll">My Bookmark</a></li>
+					<li><a href="#showcase" class="smothScroll">RFP</a></li>
+				</ul>
 					<ul class="nav navbar-nav navbar-right">
-						<li><a href="#">Home</a></li>
-						<li><a href="#">About Us</a></li>
-						<li><a href="./">Maps</a></li>
 						<?php 
 						if(!Yii::app()->user->isGuest) {
 							echo  '<li><a href="'.Yii::app()->createUrl('site/logout').'">Logout</a></li>';
