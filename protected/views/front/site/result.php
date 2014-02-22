@@ -55,24 +55,31 @@
   <div id="map-wrapper"></div>
 </div> 
 
-<div class="modal fade bs-modal-lg" id="billboard-popup" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade login-popup" id="billboard-popup" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog billboard-preview">
     <div class="modal-content modal-container">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title" id="myModalLabel">Jl.Rasuna Said Jakarta Selatan</h4>
+        <h4 class="modal-title" id="login-modal">Login To KiviAds</h4>
       </div>
       <div class="modal-body">
-        <img src="http://www.kiviads.net/img/billboard-img.jpg">
-        <hr>
-        <h4>Overflowing text to show scroll behavior</h4>
-        <p>Overflowing text to show scroll behavior s lacus vel augue laoreet rutrum faucibus dolor auctor. Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla. Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
-        <div class="billboard-spec">
+        <div class="signin-with-sc">
+          <span>You need to sign in for those awesome feature</span>
+          <button type="button" class="btn btn-default btn-lg btn-block linkedin-button"></button>
+        </div>
+        
+        <div class="normal-signin">
+          <div class="text-kivi">Or use Kiviads Account</div>
+          <div class="form-group">
+            <input type="email" class="form-control input-form" id="useremail" placeholder="Your email Address">
+          </div>
+          <div class="form-group">
+            <input type="password" class="form-control input-form" id="userpasswor" placeholder="Password">
+          </div>
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Sign In</button>
       </div>
     </div>
   </div>
@@ -82,7 +89,7 @@
 //google maps render
 $js = '
 var mapOptions = {
-  zoom: 13,
+  zoom: 14,
   center: new google.maps.LatLng(-6.17511, 106.86503949999997),
 };
 var map = new google.maps.Map(document.getElementById("map-wrapper"),

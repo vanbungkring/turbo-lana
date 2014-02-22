@@ -19,7 +19,10 @@ class SiteController extends FrontEndController
 		// using the default layout 'protected/views/layouts/main.php'
 		$this->render('result');
 	}
-    
+    public function actionCustom()
+	{
+		$this->render('custom-banner');
+	}
 	public function actionDetail($id)
 	{
 		$banner = Banner::model()->with('kategoris')->findByPk($id);
