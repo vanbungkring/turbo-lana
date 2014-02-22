@@ -13,6 +13,11 @@
         <li><a href="#">Home</a></li>
         <li><a href="#">About Us</a></li>
         <li><a href="./">Maps</a></li>
+        <?php 
+          if(!Yii::app()->user->isGuest) {
+            echo  '<li><a href="'.Yii::app()->createUrl('site/logout').'">Logout</a></li>';
+          }
+        ?>
       </ul>
     </div><!--/.nav-collapse -->
   </div>
@@ -67,19 +72,19 @@
           <span>You need to sign in for those awesome feature</span>
           <button type="button" class="btn btn-default btn-lg btn-block linkedin-button"></button>
         </div>
-        
+        <p class="bg-danger" id="loginError" style="display:none">User Password Tidak Cocok</p>
         <div class="normal-signin">
           <div class="text-kivi">Or use Kiviads Account</div>
           <div class="form-group">
             <input type="email" class="form-control input-form" id="useremail" placeholder="Your email Address">
           </div>
           <div class="form-group">
-            <input type="password" class="form-control input-form" id="userpasswor" placeholder="Password">
+            <input type="password" class="form-control input-form" id="userpassword" placeholder="Password">
           </div>
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Sign In</button>
+        <button id="btnLogin" type="button" class="btn btn-default">Sign In</button>
       </div>
     </div>
   </div>
@@ -88,6 +93,8 @@
 <?php
 //google maps render
 $js = '
+var afterloginurl = "";
+var isGuest = '.(int)Yii::app()->user->isGuest.'
 var mapOptions = {
   zoom: 14,
   center: new google.maps.LatLng(-6.17511, 106.86503949999997),
@@ -116,8 +123,13 @@ function showMarkers(){
           position: latLng
         });
         google.maps.event.addListener(marker, "click", function() {
-          // $("#billboard-popup").modal("show");
-          window.location = "'.Yii::app()->createUrl('/site/detail').'/"+row.id
+          if(isGuest==1){
+            afterloginurl = "'.Yii::app()->createUrl('/site/detail').'/"+row.id;
+            $("#billboard-popup").modal("show");
+          }
+          else{
+            window.location = "'.Yii::app()->createUrl('/site/detail').'/"+row.id;
+          }
         });
         var contentInfo = "";
         if(row.cover != null){
@@ -150,8 +162,32 @@ $("#btnSearch").click(function(){
   map.setCenter(new google.maps.LatLng(lat, long));
 });
 ';
+$jssigin = '
+  function login(){
+     $("#loginError").hide();
+    var url = "'.Yii::app()->createUrl('/site/ajaxLogin').'";
+    var data = {
+      "email" : $("#useremail").val(),
+      "password" : $("#userpassword").val()
+    }
+    $.post(url,data,function(ret){
+      if(ret.status == 1){
+        if(afterloginurl != ""){
+          window.location = afterloginurl;
+        }
+      }
+      else{
+        $("#loginError").show();
+      }
+    },"json");
+  }
+  $("#btnLogin").click(function(){
+    login();
+  });
+';
 Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl.'/js/markerclusterer.js',  CClientScript::POS_END);
 Yii::app()->clientScript->registerScript('script-map',$js,  CClientScript::POS_END);
+Yii::app()->clientScript->registerScript('login',$jssigin,  CClientScript::POS_END);
 Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl.'/js/jquery.geocomplete.js',  CClientScript::POS_END);
 Yii::app()->clientScript->registerScript('script-box','$("#boxcari").geocomplete().bind("geocode:result", function(event, result){
  $("#lat").val(result.geometry.location.lat());

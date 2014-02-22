@@ -130,6 +130,31 @@ class SiteController extends FrontEndController
 		$this->render('login',array('model'=>$model));
 	}
 
+	public function actionAjaxLogin(){
+		$model=new LoginForm('Front');
+		header('Content-type: application/json');
+		if(isset($_POST))
+		{
+			$model->username = @$_POST['email'];
+			$model->password = @$_POST['password'];
+			// validate user input and redirect to the previous page if valid
+			if($model->validate()){
+				if($model->loginFront()){
+					echo json_encode(array('status'=>1));
+				}
+				else{
+					echo json_encode(array('status'=>0));
+				}
+			}
+			else{
+				echo json_encode(array('status'=>0));
+			}
+		}
+		else{
+			echo json_encode(array('status'=>0));
+		}
+	}
+
 	/**
 	 * Logs out the current user and redirect to homepage.
 	 */

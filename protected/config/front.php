@@ -5,14 +5,19 @@ return CMap::mergeArray(
         // Put front-end settings there
         // (for example, url rules).
 		'components'=>array(
+			'user'=>array(
+                'class'=>'CWebUser',
+                'stateKeyPrefix'=>'front',
+            ),
 			'urlManager'=>array(
 				'urlFormat'=>'path',
 				'rules'=>array(
-					'user-dashboard'=>'site/userDashboard',
+					'dashboard'=>'site/userDashboard',
 					'registrasi'=>'site/registrasi',
 					'search'=>'site/result',
 					'user'=>'site/user',
 					'custom'=>'site/custom',
+					'login'=>'site/login',
 					'detail/<id:\w+>'=>'site/detail',
 					'<controller:\w+>/<id:\d+>'=>'<controller>/view',
 					'<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',
