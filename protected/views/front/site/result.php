@@ -113,13 +113,21 @@ function showMarkers(){
         markers[row.id] = row;
         var latLng = new google.maps.LatLng(row.lat,row.long);
         var marker = new google.maps.Marker({
-          position: latLng,
+          position: latLng
         });
-  
         google.maps.event.addListener(marker, "click", function() {
-          // $("#billboard-popup").modal("show");
+          $("#billboard-popup").modal("show");
           //window.location = "'.Yii::app()->createUrl('/site/detail').'/"+row.id
-
+        });
+        var contentInfo = "<div class=tooltip-maps>";
+        if(row.cover != null){
+          contentInfo += "<img class=\"tooltip-image\" src=\"'.Yii::app()->request->baseUrl.'/files/bannerimage/"+row.cover+".jpg\" />";
+        }
+        
+        contentInfo += "<div class=tooltip-name> <h1>"+row.nama+" </h1></div>";
+        contentInfo += "</div>"
+        google.maps.event.addListener(marker, "mouseover", function() {
+          console.log(row);
           if (infowindow != null){
             infowindow.open(map, marker);
             infowindow.setContent(contentInfo);
@@ -129,31 +137,7 @@ function showMarkers(){
               options:{content: contentInfo}
             });
           }
-          // newMarker.push(marker);
         });
-        var contentInfo = "<div class=tooltip-maps>";
-        if(row.cover != null){
-          contentInfo += "<img class=\"tooltip-image\" src=\"'.Yii::app()->request->baseUrl.'/files/bannerimage/"+row.cover+".jpg\" />";
-        }
-
-        contentInfo += "<button type=\"button\" class=\"btn btn-primary booking-billboard\">Book Now!</button>"
-        
-        contentInfo += "<div class=tooltip-name> <h1>"+row.nama+" </h1></div>";
-        
-        contentInfo += "</div>"
-        
-        // google.maps.event.addListener(marker, "mouseover", function() {
-        //   console.log(row);
-        //   if (infowindow != null){
-        //     infowindow.open(map, marker);
-        //     infowindow.setContent(contentInfo);
-        //   } else {
-        //     infowindow = new google.maps.InfoWindow({
-        //       anchor:marker, 
-        //       options:{content: contentInfo}
-        //     });
-        //   }
-        // });
         newMarker.push(marker);
       }
     });
