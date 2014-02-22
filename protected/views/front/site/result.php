@@ -131,13 +131,15 @@ function showMarkers(){
             window.location = "'.Yii::app()->createUrl('/site/detail').'/"+row.id;
           }
         });
-        var contentInfo = "";
+        var contentInfo = "<div class=tooltip-maps>";
         if(row.cover != null){
-          contentInfo += "<img style=\"max-height:150px;max-width:150px\" src=\"'.Yii::app()->request->baseUrl.'/files/bannerimage/"+row.cover+".jpg\" />";
+          contentInfo += "<img class=\"tooltip-image\" src=\"'.Yii::app()->request->baseUrl.'/files/bannerimage/"+row.cover+".jpg\" />";
         }
-        contentInfo += row.nama;
+        
+        contentInfo += "<div class=tooltip-name> <h1>"+row.nama+" </h1></div>";
+        contentInfo += "</div>"
         google.maps.event.addListener(marker, "mouseover", function() {
-          console.log(contentInfo);
+          console.log(row);
           if (infowindow != null){
             infowindow.open(map, marker);
             infowindow.setContent(contentInfo);
