@@ -57,6 +57,7 @@ class Member extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			'bookmarks'=>array(self::HAS_MANY,'MemberBookmark','idMember'),
 		);
 	}
 
@@ -128,5 +129,33 @@ class Member extends CActiveRecord
 	   		$this->password = md5($this->newPassword);
 	   }
 	   return parent::beforeSave();
+	}
+
+	public function isBookmarked($idBanner){
+		foreach($this->bookmarks as $bookmark){
+			if($bookmark->idBanner == $idBanner){
+				return true;
+			}
+		}
+		return false;
+	}
+
+	public function addBookmark($idBanner){
+		$model = new MemberBookmark();
+		$model->idMember = $this->id;
+		$model->idBanner = $idBanner;
+		$model->time = date("Y-m-d H:i:s");
+		return $model->save(false);
+	}
+
+	public function removeBookmark($idBanner){
+		$model = MemberBookmark::model()->find('idBanner = :idBanner and idMember= :idMember',array(
+			':idBanner'=>$idBanner,
+			':idMember'=>$this->id,
+		));
+		if($model === null){
+			return false;
+		}
+		return $model->delete();
 	}
 }

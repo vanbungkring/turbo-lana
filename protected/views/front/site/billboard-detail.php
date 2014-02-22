@@ -146,7 +146,8 @@
         
 
         <section class="banner-info-body svw">
-          <button type="button" class="btn btn-default btn-block whislist">Save To Whislist</button>
+          <button type="button" class="btn btn-default btn-block whislist" id="addBookmark">Save To Whislist</button>
+          <button type="button" class="btn btn-default btn-block whislist" id="removeBookmark">Remove From Whislist</button>
         </section>
 
       </div>
@@ -156,7 +157,6 @@
 <?php
 //google maps render
 $js =    '
-    
 function initialize() {
   var defLat = '.(double)$banner->lat.';
   var defLng = '.(double)$banner->long.';
@@ -183,3 +183,52 @@ $("#harga").change(function(){
 checkharga();
 ';
 Yii::app()->clientScript->registerScript('script-map',$js,  CClientScript::POS_END);
+
+$jsbookmark = '
+  var bookmark =  '.(int)$member->isBookmarked($banner->id).';
+  function addbookmark(){
+    var url = "'.Yii::app()->createUrl('/site/addBookmark/',array('id'=>$banner->id)).'";
+    var data = {};
+    $.post(url,data,function(ret){
+      if(ret.status == 1){
+        bookmark = 1;
+        checkButtonBookmark();
+      }
+      else{
+        alert(ret.message);
+      }
+    },"json");
+  }
+  function removeBookmark(){
+    var url = "'.Yii::app()->createUrl('/site/removeBookmark/',array('id'=>$banner->id)).'";
+    var data = {};
+    $.post(url,data,function(ret){
+      if(ret.status == 1){
+        bookmark = 0;
+        checkButtonBookmark();
+      }
+      else{
+        alert(ret.message);
+      }
+    },"json");
+  }
+
+  function checkButtonBookmark(){
+    if(bookmark == 1){
+      $("#addBookmark").hide();
+      $("#removeBookmark").show();
+    }
+    else{
+      $("#addBookmark").show();
+      $("#removeBookmark").hide();
+    }
+  }
+  checkButtonBookmark();
+  $("#addBookmark").click(function(){
+    addbookmark();
+  });
+  $("#removeBookmark").click(function(){
+    removeBookmark();
+  });
+';
+Yii::app()->clientScript->registerScript('bookmark',$jsbookmark,  CClientScript::POS_END);
