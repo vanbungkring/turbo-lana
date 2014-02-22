@@ -8,6 +8,7 @@ return CMap::mergeArray(
 			'urlManager'=>array(
 				'urlFormat'=>'path',
 				'rules'=>array(
+					'user-dashboard'=>'site/userDashboard',
 					'registrasi'=>'site/registrasi',
 					'search'=>'site/result',
 					'user'=>'site/user',

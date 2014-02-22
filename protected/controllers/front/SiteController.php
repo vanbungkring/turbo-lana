@@ -35,6 +35,10 @@ class SiteController extends FrontEndController
 		));
 	}
 
+	public function actionUserDashboard(){
+		$this->render('user-dashboard');
+	}
+
     public function actionGetMarker(){
         $long_min = (double)@$_GET['bounds']['ia_b'];
         $long_max = (double)@$_GET['bounds']['ia_d'];
