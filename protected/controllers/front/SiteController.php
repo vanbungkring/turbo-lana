@@ -2,6 +2,34 @@
 
 class SiteController extends FrontEndController
 {
+	public function filters()
+	{
+		return array(
+			'accessControl', // perform access control for CRUD operations
+		);
+	}
+
+	/**
+	 * Specifies the access control rules.
+	 * This method is used by the 'accessControl' filter.
+	 * @return array access control rules
+	 */
+	public function accessRules()
+	{
+		return array(
+			array('allow', // allow authenticated user to perform 'create' and 'update' actions
+				'actions'=>array('detail','Logout','AddBookmark','removeBookmark'),
+				'users'=>array('@'),
+			),
+			array('allow', // allow authenticated user to perform 'create' and 'update' actions
+				'actions'=>array('index','result','custom','userDashboard','GetMarker','Registrasi','User','AjaxLogin','login','error'),
+				'users'=>array('*'),
+			),
+			array('deny',  // deny all users
+				'users'=>array('*'),
+			),
+		);
+	}
 	/**
 	 * This is the default 'index' action that is invoked
 	 * when an action is not explicitly requested by users.
@@ -26,13 +54,55 @@ class SiteController extends FrontEndController
 	public function actionDetail($id)
 	{
 		$banner = Banner::model()->with('kategoris')->findByPk($id);
+		$uid = Yii::app()->user->id;
+		$member = Member::model()->with(array('bookmarks'))->findByPk($uid);
 		if($banner===null)
 			throw new CHttpException(404,'Banner Tidak Ditemukan.');
 		// renders the view file 'protected/views/site/index.php'
 		// using the default layout 'protected/views/layouts/main.php'
 		$this->render('billboard-detail',array(
 			'banner'=>$banner,
+			'member'=>$member,
 		));
+	}
+	public function actionAddBookmark($id){
+		try{
+			$banner = Banner::model()->findByPk($id);
+			$uid = Yii::app()->user->id;
+			$member = Member::model()->with(array('bookmarks'))->findByPk($uid);
+			if($banner===null)
+				throw new CHttpException(404,'Banner Tidak Ditemukan.');
+			if($member->isBookmarked($id)){
+				throw new CHttpException(404,'Banner sudah terbookmark.');
+			}
+			if(!$member->addBookmark($id)){
+				throw new CHttpException(404,'Banner Gagal Dibookmark.');
+			}
+			echo json_encode(array('status'=>1));
+		}
+		catch(Exception $e){
+			echo json_encode(array('status'=>0,'message'=>$e->getMessage()));
+		}
+	}
+
+	public function actionRemoveBookmark($id){
+		try{
+			$banner = Banner::model()->findByPk($id);
+			$uid = Yii::app()->user->id;
+			$member = Member::model()->with(array('bookmarks'))->findByPk($uid);
+			if($banner===null)
+				throw new CHttpException(404,'Banner Tidak Ditemukan.');
+			if(!$member->isBookmarked($id)){
+				throw new CHttpException(404,'Banner belum dibookmark.');
+			}
+			if(!$member->removeBookmark($id)){
+				throw new CHttpException(404,'Gagal Hapus bookmark.');
+			}
+			echo json_encode(array('status'=>1));
+		}
+		catch(Exception $e){
+			echo json_encode(array('status'=>0,'message'=>$e->getMessage()));
+		}
 	}
 
 	public function actionUserDashboard(){
