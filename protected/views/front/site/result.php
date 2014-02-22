@@ -113,11 +113,23 @@ function showMarkers(){
         markers[row.id] = row;
         var latLng = new google.maps.LatLng(row.lat,row.long);
         var marker = new google.maps.Marker({
-          position: latLng
+          position: latLng,
         });
+  
         google.maps.event.addListener(marker, "click", function() {
           // $("#billboard-popup").modal("show");
-          window.location = "'.Yii::app()->createUrl('/site/detail').'/"+row.id
+          //window.location = "'.Yii::app()->createUrl('/site/detail').'/"+row.id
+
+          if (infowindow != null){
+            infowindow.open(map, marker);
+            infowindow.setContent(contentInfo);
+          } else {
+            infowindow = new google.maps.InfoWindow({
+              anchor:marker, 
+              options:{content: contentInfo}
+            });
+          }
+          // newMarker.push(marker);
         });
         var contentInfo = "<div class=tooltip-maps>";
         if(row.cover != null){
@@ -128,22 +140,20 @@ function showMarkers(){
         
         contentInfo += "<div class=tooltip-name> <h1>"+row.nama+" </h1></div>";
         
-        contentInfo += row.harga;
-        
         contentInfo += "</div>"
         
-        google.maps.event.addListener(marker, "mouseover", function() {
-          console.log(row);
-          if (infowindow != null){
-            infowindow.open(map, marker);
-            infowindow.setContent(contentInfo);
-          } else {
-            infowindow = new google.maps.InfoWindow({
-              anchor:marker, 
-              options:{content: contentInfo}
-            });
-          }
-        });
+        // google.maps.event.addListener(marker, "mouseover", function() {
+        //   console.log(row);
+        //   if (infowindow != null){
+        //     infowindow.open(map, marker);
+        //     infowindow.setContent(contentInfo);
+        //   } else {
+        //     infowindow = new google.maps.InfoWindow({
+        //       anchor:marker, 
+        //       options:{content: contentInfo}
+        //     });
+        //   }
+        // });
         newMarker.push(marker);
       }
     });

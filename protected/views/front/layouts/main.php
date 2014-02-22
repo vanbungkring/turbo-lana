@@ -42,7 +42,7 @@
     <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
      <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/bxslider.js"></script>
     <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/sscroll.js"></script>
-     <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/js.free.transfrom.js"></script>
+     <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/js.free.transform.js"></script>
       <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/matrix.js"></script>
     <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/netra.min.js"></script>
    
