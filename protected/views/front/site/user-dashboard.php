@@ -11,8 +11,8 @@
 				<div class="navbar-collapse collapse">
 					<ul class="nav navbar-nav navbar-right">
 						<li><a href="#">Home</a></li>
-						<li><a href="#">About Us</a></li>
-						<li><a href="./">Maps</a></li>
+						<li><a href="#">My Bookmark</a></li>
+						<li><a href="./">Create RFP</a></li>
 						<?php 
 						if(!Yii::app()->user->isGuest) {
 							echo  '<li><a href="'.Yii::app()->createUrl('site/logout').'">Logout</a></li>';
