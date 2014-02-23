@@ -96,7 +96,7 @@
 
             </ul>
           </div>
-          <button type="button" class="btn btn-primary btn-block book-it-button btn-lg">Create Quote</button>
+          <a href="<?php echo Yii::app()->createUrl('/rfp/index',array('idBanner'=>array($banner->id))); ?>" type="button" class="btn btn-primary btn-block book-it-button btn-lg">Create Quote</a>
           <div class="fast-contact">
             <i class="fa fa-phone-square fa-3x"></i>
             <div class="detail-contact">

@@ -45,8 +45,14 @@ class UserController extends FrontEndController
 			'criteria'=>$criteria
 		));
 
+		$listData = array();
+		$_models = MemberBookmark::model()->findAll('idMember = :p1',array(':p1'=>Yii::app()->user->id));
+		foreach ($_models as $key => $value) {
+			$listData[] = $value->idBanner;
+		}
 		$this->render('list-bookmark',array(
 			'dataProvider'=>$dataProvider,
+			'listData'=>$listData,
 		));
 	}
 	public function actionDelete($id){

@@ -31,7 +31,9 @@ class RfpController extends FrontEndController
 		$model = new Quote('create');
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
-
+		if(isset($_GET["idBanner"])){
+			$model->bannerIds = (array)$_GET["idBanner"];
+		}
 		if(isset($_POST['Quote']))
 		{
 			$model->attributes = @$_POST['Quote'];
