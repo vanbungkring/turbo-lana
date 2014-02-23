@@ -65,7 +65,7 @@
 			      <table class="table table-bordered ">
 			        <tbody id="bodySelectedBanner">
 			        	<?php foreach ($model->getBannerObj() as $key => $value) : ?>
-			        		<tr>
+			        		<tr id="rowbanner-<?php echo $value->id; ?>">
 					            <td class="front"><?php echo $value->nama; ?><input type="hidden" value="<?php echo $value->id; ?>" name="bannerIds[]" /></td>
 					            <td><?php echo $value->lokasi; ?></td>
 					        </tr>
@@ -91,7 +91,7 @@
     <div class="modal-content modal-container">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title" id="login-modal">Quote Banner Add</h4>
+        <h4 class="modal-title" id="title-banner">Quote Banner Add</h4>
       </div>
       <div class="modal-body">
         <p class="bg-danger" id="loginError" style="display:none">User Password Tidak Cocok</p>
@@ -113,16 +113,33 @@
 <?php
 //google maps render
 $js = '
+function diArray(arr,v){	
+    for(var i = 0; i < arr.length; i++) {
+        if(arr[i] == v) {
+            return true;
+        }
+    }
+    return false;
+}
+function removeFromArray(arr,v){	
+    for(var i = 0; i < arr.length; i++) {
+        if(arr[i] == v) {
+            arr.splice(i, 1);
+        }
+    }
+    return false;
+}
 var mapOptions = {
   zoom: 8,
   center: new google.maps.LatLng(-6.17511, 106.86503949999997),
 };
 var blueIcon = "'.Yii::app()->request->baseUrl.'/images/blue-marker.png";
+var redIcon = "'.Yii::app()->request->baseUrl.'/images/red-marker.png";
 var map = new google.maps.Map(document.getElementById("map-wrapper"),
   mapOptions);
 var markerCluster = new MarkerClusterer(map, []);
 var markers = [];
-var addedId = [];
+var addedId = '.json_encode((array)$model->bannerIds).';
 function showMarkers(){
   var bounds = map.getBounds();
   var url = "'.Yii::app()->createUrl('site/getMarker').'";
@@ -141,18 +158,41 @@ function showMarkers(){
         var marker = new google.maps.Marker({
           position: latLng
         });
+		if(diArray(addedId,row.id)){
+			marker.setIcon(blueIcon);
+			console.log(row.id);
+		}
         google.maps.event.addListener(marker, "click", function() {
-        	console.log(row);
-        	$("#abdNama").html(row.nama);
-        	$("#abdLokasi").html(row.lokasi);
-        	$("#btnAddBannerId").unbind("click").click(function(){
-        		marker.setIcon(blueIcon);
-        		if(row.lokasi == null){
-        			row.lokasi = "";
-        		}
-        		$("#bodySelectedBanner").append("<tr><td class=\"front\">"+row.nama+"<input type=\"hidden\" name=\"bannerIds[]\" value=\""+row.id+"\" /></td><td>"+row.lokasi+"</td></tr>");
-        	});
-        	$("#billboard-popup").modal("show");
+        	if(diArray(addedId,row.id)){
+        		$("#abdNama").html(row.nama);
+	        	$("#abdLokasi").html(row.lokasi);
+	        	$("#btnAddBannerId").unbind("click").click(function(){
+	        		removeFromArray(addedId,row.id)
+	        		marker.setIcon(redIcon);
+	        		if(row.lokasi == null){
+	        			row.lokasi = "";
+	        		}
+	        		$("#bodySelectedBanner #rowbanner-"+row.id).remove();
+	        	});
+				$("#btnAddBannerId").html("Remove Banner From Quote");
+				$("#title-banner").html("Remove Banner");
+	        	$("#billboard-popup").modal("show");
+        	}
+        	else{
+	        	$("#abdNama").html(row.nama);
+	        	$("#abdLokasi").html(row.lokasi);
+	        	$("#btnAddBannerId").unbind("click").click(function(){
+	        		addedId.push(row.id);
+	        		marker.setIcon(blueIcon);
+	        		if(row.lokasi == null){
+	        			row.lokasi = "";
+	        		}	
+	        		$("#bodySelectedBanner").append("<tr id=\"rowbanner-"+row.id+"\"><td class=\"front\">"+row.nama+"<input type=\"hidden\" name=\"bannerIds[]\" value=\""+row.id+"\" /></td><td>"+row.lokasi+"</td></tr>");
+	        	});
+				$("#btnAddBannerId").html("Add Banner To Quote");
+				$("#title-banner").html("Quote Banner Add");
+	        	$("#billboard-popup").modal("show");
+        	}
         });
 		newMarker.push(marker);
       }
