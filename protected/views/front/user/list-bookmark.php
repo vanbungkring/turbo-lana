@@ -1,3 +1,6 @@
+  <?php $this->renderPartial('/shared/partial/navbar'); ?>
+      <div class="container kivi">
+
 <div class="row">
     <div class="col-lg-12">
         <h1 class="page-header">Daftar Banner</h1>
@@ -30,4 +33,5 @@
             </div>
         </div>
     </div>
+</div>
 </div>
