@@ -80,7 +80,7 @@
 										<tbody id="bodySelectedBanner">
 											<?php foreach ($model->getBannerObj() as $key => $value) : ?>
 											<tr id="rowbanner-<?php echo $value->id; ?>">
-												<td><input type="checkbox" name="" value=""></td>
+												<td><a href="">Go to Map</a></td>
 												<td class="front"><?php echo $value->nama; ?><input type="hidden" value="<?php echo $value->id; ?>" name="bannerIds[]" /></td>
 												<td><?php echo $value->lokasi; ?></td>
 											</tr>
@@ -91,7 +91,7 @@
 						</section>
 					</div>
 					<div class="tab-pane" id="mybookmark">
-						<section id="banner-detail-info-list" class="banner-info-body">
+						<section id="saaasd" class="banner-info-body">
 								<div class="table-responsive">
 									<table class="table table-bordered ">
 										<thead>
@@ -101,14 +101,14 @@
 												<th>Location</th>
 											</tr>
 										</thead>
-										<tbody id="bodySelectedBanner">
-											<?php foreach ($model->getBannerObj() as $key => $value) : ?>
-											<tr id="rowbanner-<?php echo $value->id; ?>">
-												<td><input type="checkbox" name="" value=""></td>
-												<td class="front"><?php echo $value->nama; ?><input type="hidden" value="<?php echo $value->id; ?>" name="bannerIds[]" /></td>
-												<td><?php echo $value->lokasi; ?></td>
-											</tr>
-										<?php endforeach; ?>
+										<tbody>
+											<?php foreach ($member->bannerBookmarks as $key => $value) : ?>
+												<tr id="rowbanner-<?php echo $value->id; ?>">
+													<td><a href="#banner-map" class="gotomap" data-lat="<?php echo $value->lat; ?>" data-long="<?php echo $value->long; ?>" data-zoom="<?php echo $value->zoom; ?>">Go to Map</a></td>
+													<td class="front"><?php echo $value->nama; ?><input type="hidden" value="<?php echo $value->id; ?>" name="bannerIds[]" /></td>
+													<td><?php echo $value->lokasi; ?></td>
+												</tr>
+											<?php endforeach; ?>
 									</tbody>
 								</table>
 							</div>
@@ -117,7 +117,7 @@
 			</div>
 
 		</div>
-		<div class="col-md-6">
+		<div class="col-md-6" id="banner-map">
 			<section id="banner-detail-info-list" class="banner-info-body">
 				<header class="banner-info-header">Map Banner</header>
 				<div id="map-wrapper" style="height:400px">
@@ -200,48 +200,52 @@ function showMarkers(){
 				var marker = new google.maps.Marker({
 					position: latLng
 				});
-if(diArray(addedId,row.id)){
-	marker.setIcon(blueIcon);
-	console.log(row.id);
-}
-google.maps.event.addListener(marker, "click", function() {
-	if(diArray(addedId,row.id)){
-		$("#abdNama").html(row.nama);
-		$("#abdLokasi").html(row.lokasi);
-		$("#btnAddBannerId").unbind("click").click(function(){
-			removeFromArray(addedId,row.id)
-			marker.setIcon(redIcon);
-			if(row.lokasi == null){
-				row.lokasi = "";
+				if(diArray(addedId,row.id)){
+					marker.setIcon(blueIcon);
+					console.log(row.id);
+				}
+				google.maps.event.addListener(marker, "click", function() {
+					if(diArray(addedId,row.id)){
+						$("#abdNama").html(row.nama);
+						$("#abdLokasi").html(row.lokasi);
+						$("#btnAddBannerId").unbind("click").click(function(){
+							removeFromArray(addedId,row.id)
+							marker.setIcon(redIcon);
+							if(row.lokasi == null){
+								row.lokasi = "";
+							}
+							$("#bodySelectedBanner #rowbanner-"+row.id).remove();
+						});
+						$("#btnAddBannerId").html("Remove Banner From Quote");
+						$("#title-banner").html("Remove Banner");
+						$("#billboard-popup").modal("show");
+					}
+					else{
+						$("#abdNama").html(row.nama);
+						$("#abdLokasi").html(row.lokasi);
+						$("#btnAddBannerId").unbind("click").click(function(){
+							addedId.push(row.id);
+							marker.setIcon(blueIcon);
+							if(row.lokasi == null){
+								row.lokasi = "";
+							}	
+							$("#bodySelectedBanner").append("<tr id=\"rowbanner-"+row.id+"\"><td><a href=\"#banner-map\" class=\"gotomap\" data-lat=\""+row.lat+"\" data-long=\""+row.long+"\" data-zoom=\""+row.zoom+"\">Go to Map</a></td><td class=\"front\">"+row.nama+"<input type=\"hidden\" name=\"bannerIds[]\" value=\""+row.id+"\" /></td><td>"+row.lokasi+"</td></tr>");
+						});
+						$("#btnAddBannerId").html("Add Banner To Quote");
+						$("#title-banner").html("Quote Banner Add");
+						$("#billboard-popup").modal("show");
+					}
+				});
+				newMarker.push(marker);
 			}
-			$("#bodySelectedBanner #rowbanner-"+row.id).remove();
 		});
-$("#btnAddBannerId").html("Remove Banner From Quote");
-$("#title-banner").html("Remove Banner");
-$("#billboard-popup").modal("show");
+		markerCluster.addMarkers(newMarker);
+	},"json");
 }
-else{
-	$("#abdNama").html(row.nama);
-	$("#abdLokasi").html(row.lokasi);
-	$("#btnAddBannerId").unbind("click").click(function(){
-		addedId.push(row.id);
-		marker.setIcon(blueIcon);
-		if(row.lokasi == null){
-			row.lokasi = "";
-		}	
-		$("#bodySelectedBanner").append("<tr id=\"rowbanner-"+row.id+"\"><td class=\"front\">"+row.nama+"<input type=\"hidden\" name=\"bannerIds[]\" value=\""+row.id+"\" /></td><td>"+row.lokasi+"</td></tr>");
-	});
-$("#btnAddBannerId").html("Add Banner To Quote");
-$("#title-banner").html("Quote Banner Add");
-$("#billboard-popup").modal("show");
-}
+$(document).on("click",".gotomap",function(){
+	map.setCenter(new google.maps.LatLng($(this).attr("data-lat"), $(this).attr("data-long")));
+	map.setZoom(parseInt($(this).attr("data-zoom")));
 });
-newMarker.push(marker);
-}
-});
-markerCluster.addMarkers(newMarker);
-},"json");
-}
 google.maps.event.addListener(map, "idle", showMarkers);
 ';
 Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl.'/js/markerclusterer.js',  CClientScript::POS_END);

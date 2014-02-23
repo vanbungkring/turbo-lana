@@ -31,6 +31,10 @@ class RfpController extends FrontEndController
 		$model = new Quote('create');
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
+		$member = Member::model()->findByPk(Yii::app()->user->id);
+		if($member === null){
+			throw new CHttpException(404,'Member Tidak Ditemukan.');
+		}
 		if(isset($_GET["idBanner"])){
 			$model->bannerIds = (array)$_GET["idBanner"];
 		}
@@ -38,7 +42,7 @@ class RfpController extends FrontEndController
 		{
 			$model->attributes = @$_POST['Quote'];
 			$model->bannerIds  = @$_POST['bannerIds'];
-			$model->idMember   = Yii::app()->user->id;
+			$model->idMember   = $member->id;
 			if($model->save()){
 				$this->redirect(array('view','id'=>$model->id));
 			}
@@ -48,6 +52,7 @@ class RfpController extends FrontEndController
 		}
 		$this->render('index',array(
 			'model'=>$model,
+			'member'=>$member,
 			'defLat'=>-6.17511, 
 			'defLong'=>106.86503949999997,
 			'defZoom'=>8,

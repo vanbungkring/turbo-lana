@@ -58,6 +58,7 @@ class Member extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
 			'bookmarks'=>array(self::HAS_MANY,'MemberBookmark','idMember'),
+			'bannerBookmarks'=>array(self::MANY_MANY,'Banner','member_bookmark(idMember,idBanner)'),
 		);
 	}
 
