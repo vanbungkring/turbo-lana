@@ -99,13 +99,14 @@ function showMarkers(){
           position: latLng
         });
         google.maps.event.addListener(marker, "click", function() {
-          if(isGuest==1){
-            afterloginurl = "'.Yii::app()->createUrl('/site/detail').'/"+row.id;
-            $("#billboard-popup").modal("show");
-          }
-          else{
-            window.location = "'.Yii::app()->createUrl('/site/detail').'/"+row.id;
-          }
+          window.location = "'.Yii::app()->createUrl('/site/detail').'/"+row.id;
+          // if(isGuest==1){
+          //   afterloginurl = "'.Yii::app()->createUrl('/site/detail').'/"+row.id;
+          //   $("#billboard-popup").modal("show");
+          // }
+          // else{
+          //   window.location = "'.Yii::app()->createUrl('/site/detail').'/"+row.id;
+          // }
         });
         var contentInfo = "<div class=tooltip-maps>";
         if(row.cover != null){

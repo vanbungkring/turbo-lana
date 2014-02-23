@@ -173,7 +173,7 @@ class SiteController extends FrontEndController
 	 */
 	public function actionLogin()
 	{
-		$model=new LoginForm;
+		$model=new LoginForm('Front');
 
 		// if it is ajax validation request
 		if(isset($_POST['ajax']) && $_POST['ajax']==='login-form')
@@ -187,7 +187,7 @@ class SiteController extends FrontEndController
 		{
 			$model->attributes=$_POST['LoginForm'];
 			// validate user input and redirect to the previous page if valid
-			if($model->validate() && $model->login())
+			if($model->validate() && $model->loginFront())
 				$this->redirect(Yii::app()->user->returnUrl);
 		}
 		// display the login form
