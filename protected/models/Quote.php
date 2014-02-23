@@ -16,6 +16,7 @@
  */
 class Quote extends CActiveRecord
 {
+	public $bannerIds;
 	/**
 	 * @return string the associated database table name
 	 */
@@ -32,8 +33,11 @@ class Quote extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('name, duration, durationType, budget', 'numerical', 'integerOnly'=>true),
+			array('name, initialDate, duration, durationType, idMember','required'),
+			array('duration, durationType, budget', 'numerical', 'integerOnly'=>true),
 			array('initialDate, replyUntil, description, otherObservations', 'safe'),
+			array('bannerIds','type','type'=>'array','allowEmpty'=>false),
+			array('name', 'length', 'max'=>200),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, name, initialDate, replyUntil, duration, durationType, budget, description, otherObservations', 'safe', 'on'=>'search'),
@@ -120,5 +124,30 @@ class Quote extends CActiveRecord
 			'month(s)',
 			'year(s)',
 		);
+	}
+
+	public function getBannerObj(){
+		if(is_array($this->bannerIds)){
+			$criteria = new CDbCriteria();
+			$criteria->addInCondition("id", $this->bannerIds);
+			return Banner::model()->findAll($criteria);
+		}
+		else{
+			return array();
+		}
+	}
+
+	public function afterSave(){
+		if($this->scenario == 'create'){
+			if(is_array($this->bannerIds)){
+				foreach ($this->bannerIds as $key => $value) {
+					$model = new QuoteBanner();
+					$model->idQuote = $this->id;
+					$model->idBanner = $value;
+					$model->save();
+				}
+			}
+		}
+		return parent::afterSave();
 	}
 }

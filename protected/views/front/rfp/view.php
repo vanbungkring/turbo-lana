@@ -55,6 +55,7 @@
 			      </table>
 			    </div>
 			  </section>
+			
     	<div>
     </div>
     <?php $this->endWidget(); ?>

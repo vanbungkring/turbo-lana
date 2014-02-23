@@ -2,6 +2,30 @@
 
 class RfpController extends FrontEndController
 {
+	public function filters()
+	{
+		return array(
+			'accessControl', // perform access control for CRUD operations
+		);
+	}
+
+	/**
+	 * Specifies the access control rules.
+	 * This method is used by the 'accessControl' filter.
+	 * @return array access control rules
+	 */
+	public function accessRules()
+	{
+		return array(
+			array('allow', // allow authenticated user to perform 'create' and 'update' actions
+				'users'=>array('@'),
+			),
+			array('deny',  // deny all users
+				'users'=>array('*'),
+			),
+		);
+	}
+
 	public function actionIndex()
 	{
 		$model = new Quote('create');
@@ -10,12 +34,21 @@ class RfpController extends FrontEndController
 
 		if(isset($_POST['Quote']))
 		{
-			$model->attributes=$_POST['Quote'];
-			if($model->save())
+			$model->attributes = @$_POST['Quote'];
+			$model->bannerIds  = @$_POST['bannerIds'];
+			$model->idMember   = Yii::app()->user->id;
+			if($model->save()){
 				$this->redirect(array('view','id'=>$model->id));
+			}
+			else{
+				print_r($model->getErrors());
+			}
 		}
 		$this->render('index',array(
 			'model'=>$model,
+			'defLat'=>-6.17511, 
+			'defLong'=>106.86503949999997,
+			'defZoom'=>8,
 		));
 	}
 
