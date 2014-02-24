@@ -120,6 +120,7 @@
 		<div class="col-md-6" id="banner-map">
 			<section id="banner-detail-info-list" class="banner-info-body">
 				<header class="banner-info-header">Map Banner</header>
+				<input id="pac-input" class="controls" type="text" placeholder="Search Box">
 				<div id="map-wrapper" style="height:400px">
 				</div>
 			</section>
@@ -152,6 +153,52 @@
 		</div>
 	</div>
 </div>
+<style>
+	.controls {
+		margin-top: 16px;
+		border: 1px solid transparent;
+		border-radius: 2px 0 0 2px;
+		box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		height: 32px;
+		outline: none;
+		box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+	}
+
+	#pac-input {
+		background-color: #fff;
+		padding: 0 11px 0 13px;
+		width: 400px;
+		font-family: Roboto;
+		font-size: 15px;
+		font-weight: 300;
+		text-overflow: ellipsis;
+	}
+
+	#pac-input:focus {
+		border-color: #4d90fe;
+		margin-left: -1px;
+		padding-left: 14px;  /* Regular padding-left + 1. */
+		width: 401px;
+	}
+
+	.pac-container {
+	font-family: Roboto;
+	}
+
+	#type-selector {
+		color: #fff;
+		background-color: #4d90fe;
+		padding: 5px 11px 0px 11px;
+	}
+
+	#type-selector label {
+		font-family: Roboto;
+		font-size: 13px;
+		font-weight: 300;
+	}
+
+</style>
 <?php
 //google maps render
 $js = '
@@ -179,6 +226,35 @@ var blueIcon = "'.Yii::app()->request->baseUrl.'/images/blue-marker.png";
 var redIcon = "'.Yii::app()->request->baseUrl.'/images/red-marker.png";
 var map = new google.maps.Map(document.getElementById("map-wrapper"),
 	mapOptions);
+var input = /** @type {HTMLInputElement} */(
+      document.getElementById("pac-input"));
+map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+var searchBox = new google.maps.places.SearchBox(
+    /** @type {HTMLInputElement} */(input));
+google.maps.event.addListener(searchBox, "places_changed", function() {
+    var places = searchBox.getPlaces();
+    var bounds = new google.maps.LatLngBounds();
+    for (var i = 0, place; place = places[i]; i++) {
+      bounds.extend(place.geometry.location);
+    }
+	map.fitBounds(bounds);
+});
+
+google.maps.event.addDomListener(input, \'keydown\', function(e) {
+	if (e.keyCode == 13)
+	{
+		if (e.preventDefault)
+		{
+			e.preventDefault();
+		}
+		else
+		{
+			e.cancelBubble = true;
+			e.returnValue = false;
+		}
+	}
+}); 
+
 var markerCluster = new MarkerClusterer(map, []);
 var markers = [];
 var addedId = '.json_encode((array)$model->bannerIds).';
