@@ -263,7 +263,7 @@
                         <a href="<?php echo Yii::app()->createUrl('/kategoriBanner')?>"><i class="fa fa-table fa-fw"></i> Kategori Banner</a>
                     </li>
                     <li>
-                        <a href="<?php echo Yii::app()->createUrl('/quotation')?>"><i class="fa fa-table fa-fw"></i> Quotation</a>
+                        <a href="<?php echo Yii::app()->createUrl('/quote')?>"><i class="fa fa-table fa-fw"></i> Quotation</a>
                     </li>
                     <li>
                         <a href="<?php echo Yii::app()->createUrl('/kategoriSize')?>"><i class="fa fa-table fa-fw"></i> Kategori Size</a>
