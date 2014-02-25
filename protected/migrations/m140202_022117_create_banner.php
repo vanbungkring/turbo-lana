@@ -11,12 +11,6 @@ class m140202_022117_create_banner extends CDbMigration
                'long'=>'DECIMAL(12, 8) not null',
                'harga'=>'numeric(15,2)'
             ));
-            $this->insertMultiple('banner', 
-                array(
-                    array('nama'=>'Test 1','lat'=>'48.8620722','long'=>'2.352047','1000000'),
-                    array('nama'=>'Test 2','lat'=>'48.8620722','long'=>'2.392047','1100000'),
-                )
-            );
 	}
 
 	public function down()
