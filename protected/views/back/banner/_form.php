@@ -86,6 +86,12 @@
     <?php echo $form->textField($model,'hargaPer6Bulan',array('class'=>'form-control')); ?>
     <?php echo $form->error($model,'hargaPer6Bulan'); ?>
   </div>
+
+  <div class="form-group">
+    <label>Harga Per Tahun</label>
+    <?php echo $form->textField($model,'hargaPerTahun',array('class'=>'form-control')); ?>
+    <?php echo $form->error($model,'hargaPerTahun'); ?>
+  </div>
   
   <div class="form-group">
     <label>Panjang</label>
