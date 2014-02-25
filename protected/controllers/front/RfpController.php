@@ -60,17 +60,78 @@ class RfpController extends FrontEndController
 	}
 
 	public function actionView($id){
+		$model = $this->loadModel($id);
+		$criteria = new CDbCriteria();
+		$criteria->compare('t.idQuote',$model->id);
+		$criteria->order = '`time` DESC';
+		$criteria->with = array('member');
+
+		$dataProviderReply=new CActiveDataProvider('QuoteReply',array(
+			'criteria'=>$criteria,
+			// 'pagination'=>false,
+		));
+		// header('Content-type: application/json');
+		// echo json_encode(array('status'=>2)); exit;
+		// echo "{ a : 1}";exit;
+		$modelReply = new QuoteReply('create');
+		if(isset($_POST['QuoteReply'])){
+			$modelReply->attributes = $_POST['QuoteReply'];
+			$modelReply->idQuote = $id;
+			$modelReply->idMember = Yii::app()->user->id;
+			$modelReply->type = 2;
+			$modelReply->time = date('Y-m-d H:i:s');
+			if($modelReply->save()){
+				if(isset($_POST['ajaxret']) and $_POST['ajaxret']=="quote-form"){
+					echo json_encode(array('status'=>1));
+					Yii::app()->end();
+				}
+				else{
+					echo json_encode(array('status'=>2));
+					Yii::app()->end();
+				}
+			}
+			else{
+				if(isset($_POST['ajaxret'])){
+					echo json_encode(array('status'=>0,'message'=>'Gagal Simpan'));
+					Yii::app()->end();
+				}
+				else{
+					echo json_encode(array('status'=>2));
+					Yii::app()->end();
+				}
+			}
+		}
+
 		$this->render('view',array(
 			'model'=>$this->loadModel($id),
+			'dataProviderReply'=>$dataProviderReply,
+			'modelReply'=>$modelReply,
 		));
 	}
-
+	public function actionTest(){
+		header('Content-type: application/json');
+		echo json_encode(array('status'=>2)); exit;
+	}
 	public function loadModel($id)
 	{
 		$model=Quote::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
+	}
+
+	public function actionList()
+	{
+		$criteria = new CDbCriteria();
+		$criteria->compare('idMember',Yii::app()->user->id);
+
+		$dataProvider=new CActiveDataProvider('Quote',array(
+			'criteria'=>$criteria
+		));
+
+		$this->render('list',array(
+			'dataProvider'=>$dataProvider,
+		));
 	}
 
 	// Uncomment the following methods and override them if needed

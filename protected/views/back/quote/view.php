@@ -218,7 +218,7 @@ function send()
 {
  
     var data=$("#quote-reply").serialize(); 
-    data += "&" + $.param({ ajax : "quote-form" });
+    data += "&" + $.param({ ajaxret : "quote-form" });
     $.post("",data,function(ret){
     	if(ret.status == 0){
     		alert(ret.message);

@@ -60,13 +60,13 @@ class QuoteController extends Controller
 			$modelReply->type = 1;
 			$modelReply->time = date('Y-m-d H:i:s');
 			if($modelReply->save()){
-				if(isset($_POST['ajax']) and $_POST['ajax']=="quote-form"){
+				if(isset($_POST['ajaxret']) and $_POST['ajaxret']=="quote-form"){
 					echo json_encode(array('status'=>1));
 					Yii::app()->end();
 				}
 			}
 			else{
-				if(isset($_POST['ajax'])){
+				if(isset($_POST['ajaxret'])){
 					echo json_encode(array('status'=>0,'message'=>'Gagal Simpan'));
 					Yii::app()->end();
 				}
