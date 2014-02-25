@@ -17,7 +17,6 @@
 
     <!-- SB Admin CSS - Include with every page -->
     <link href="<?php echo Yii::app()->request->baseUrl; ?>/css/back/sb-admin.css" rel="stylesheet">
-    <?php Yii::app()->getClientScript()->registerCoreScript('jquery'); ?>
 </head>
 
 <body>
@@ -299,13 +298,11 @@
 
     <!-- Page-Level Plugin Scripts - Dashboard -->
     <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/back/plugins/morris/raphael-2.1.0.min.js"></script>
-    <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/back/plugins/morris/morris.js"></script>
 
     <!-- SB Admin Scripts - Include with every page -->
     <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/back/sb-admin.js"></script>
 
     <!-- Page-Level Demo Scripts - Dashboard - Use for reference -->
-    <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/back/demo/dashboard-demo.js"></script>
 
 </body>
 

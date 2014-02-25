@@ -41,8 +41,41 @@ class QuoteController extends Controller
 	 */
 	public function actionView($id)
 	{
+		$model = $this->loadModel($id);
+		$criteria = new CDbCriteria();
+		$criteria->compare('t.idQuote',$model->id);
+		$criteria->order = '`time` DESC';
+		$criteria->with = array('member');
+
+		$dataProviderReply=new CActiveDataProvider('QuoteReply',array(
+			'criteria'=>$criteria,
+			// 'pagination'=>false,
+		));
+
+		$modelReply = new QuoteReply('create');
+		if(isset($_POST['QuoteReply'])){
+			$modelReply->attributes = $_POST['QuoteReply'];
+			$modelReply->idQuote = $id;
+			$modelReply->idAdmin = 1;
+			$modelReply->type = 1;
+			$modelReply->time = date('Y-m-d H:i:s');
+			if($modelReply->save()){
+				if(isset($_POST['ajax']) and $_POST['ajax']=="quote-form"){
+					echo json_encode(array('status'=>1));
+					Yii::app()->end();
+				}
+			}
+			else{
+				if(isset($_POST['ajax'])){
+					echo json_encode(array('status'=>0,'message'=>'Gagal Simpan'));
+					Yii::app()->end();
+				}
+			}
+		}
 		$this->render('view',array(
-			'model'=>$this->loadModel($id),
+			'model'=>$model,
+			'dataProviderReply'=>$dataProviderReply,
+			'modelReply'=>$modelReply,
 		));
 	}
 

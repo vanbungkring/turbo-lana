@@ -260,5 +260,4 @@ function initialize() {
 google.maps.event.addDomListener(window, "load", initialize);
 ';
 Yii::app()->clientScript->registerScriptFile("https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places");
-Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl."/js/gmap.js");
 Yii::app()->clientScript->registerScript('script-map',$js,  CClientScript::POS_END);

@@ -80,7 +80,7 @@
 										<tbody id="bodySelectedBanner">
 											<?php foreach ($model->getBannerObj() as $key => $value) : ?>
 											<tr id="rowbanner-<?php echo $value->id; ?>">
-												<td><a href="">Go to Map</a></td>
+												<td><a href="#banner-map" class="gotomap" data-lat="<?php echo $value->lat; ?>" data-long="<?php echo $value->long; ?>" data-zoom="<?php echo $value->zoom; ?>">Go to Map</a></td>
 												<td class="front"><?php echo $value->nama; ?><input type="hidden" value="<?php echo $value->id; ?>" name="bannerIds[]" /></td>
 												<td><?php echo $value->lokasi; ?></td>
 											</tr>
