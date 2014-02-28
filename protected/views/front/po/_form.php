@@ -30,7 +30,7 @@
 	</tr>
 
 	<tr>
-		<button id="btnLogin" type="submit" class="btn btn-default">Create</button>
+		<button id="btnLogin" type="submit" class="btn btn-default">save</button>
 	</tr>
 
 <?php $this->endWidget(); ?>

@@ -89,19 +89,37 @@ class PoController extends FrontEndController
 	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);
-
+		$model->scenario = 'update';
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
 		if(isset($_POST['PO']))
 		{
 			$model->attributes=$_POST['PO'];
-			if($model->save())
+			$model->file=CUploadedFile::getInstance($model,'file');
+			if($model->file){
+				$model->namaFile = $model->file->getName();
+			}
+			if($model->save()){
+				if($model->file){
+					$file = $model->getImagePath();
+					if(file_exists($file)){
+						unlink($file);
+					}
+					$model->file->saveAs($model->getImagePath());
+				}
 				$this->redirect(array('view','id'=>$model->id));
+			}
 		}
 
+		$quotes = Quote::model()->findAll('idMember = :p1',array(':p1'=>Yii::app()->user->id));
+		$idQuotes = array();
+		foreach ($quotes as $key => $value) {
+			$idQuotes[$value->id] = $value->name;
+		}
 		$this->render('update',array(
 			'model'=>$model,
+			'idQuotes'=>$idQuotes,
 		));
 	}
 

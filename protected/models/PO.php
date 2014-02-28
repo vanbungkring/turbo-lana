@@ -33,6 +33,7 @@ class PO extends CActiveRecord
 			array('namaFile', 'length', 'max'=>255),
 			array('time', 'safe'),
 			array('file', 'file','on'=>'create','allowEmpty'=>false),
+			array('file', 'file','on'=>'update','allowEmpty'=>true),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, idMember, time, namaFile', 'safe', 'on'=>'search'),
