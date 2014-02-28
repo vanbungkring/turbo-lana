@@ -11,7 +11,7 @@
     <div class="col-lg-12">
         <div class="panel panel-default">
             <div class="panel-body">
-                <a href="<?php echo Yii::app()->createUrl('/rfp/list'); ?>" >Create Quote</a>
+                <a href="<?php echo Yii::app()->createUrl('/rfp/'); ?>" >Create Quote</a>
                 <?php $this->widget('zii.widgets.grid.CGridView', array(
                         'id'=>'banner-grid',
                         "itemsCssClass" => 'table',
