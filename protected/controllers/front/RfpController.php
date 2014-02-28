@@ -2,6 +2,7 @@
 
 class RfpController extends FrontEndController
 {
+	public $layout = 'navbarglobal';
 	public function filters()
 	{
 		return array(

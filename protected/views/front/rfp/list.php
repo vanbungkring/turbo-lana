@@ -1,5 +1,5 @@
   <?php $this->renderPartial('/shared/partial/navbar'); ?>
-      <div class="container kivi">
+<div class="container kivi">
 
 <div class="row">
     <div class="col-lg-12">
