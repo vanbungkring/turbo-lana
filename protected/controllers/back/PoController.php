@@ -1,13 +1,16 @@
 <?php
 
-class PoController extends FrontEndController
+class PoController extends BackEndController
 {
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
 	 */
-	public $layout = 'navbarglobal';
+	public $layout='//layouts/none';
 
+	/**
+	 * @return array action filters
+	 */
 	public function filters()
 	{
 		return array(
@@ -31,6 +34,7 @@ class PoController extends FrontEndController
 			),
 		);
 	}
+
 
 	/**
 	 * Displays a particular model.
@@ -58,7 +62,10 @@ class PoController extends FrontEndController
 		{
 			$model->attributes=$_POST['PO'];
 			$model->file=CUploadedFile::getInstance($model,'file');
-			$model->idMember = Yii::app()->user->id;
+			$quote = Quote::model()->findByPk($model->idQuote);
+			if($quote){
+				$model->idMember = $quote->id;
+			}
 			$model->time = date('Y-m-d H:i:s');
 			if($model->file){
 				$model->namaFile = $model->file->getName();
@@ -70,14 +77,15 @@ class PoController extends FrontEndController
 			}
 		}
 
-		$quotes = Quote::model()->findAll('idMember = :p1',array(':p1'=>Yii::app()->user->id));
+		$quotes = Quote::model()->findAll();
 		$idQuotes = array();
 		foreach ($quotes as $key => $value) {
 			$idQuotes[$value->id] = $value->name;
 		}
+
 		$this->render('create',array(
 			'model'=>$model,
-			'idQuotes'=>$idQuotes,
+			'idQuotes'=>$idQuotes
 		));
 	}
 
@@ -90,6 +98,7 @@ class PoController extends FrontEndController
 	{
 		$model=$this->loadModel($id);
 		$model->scenario = 'update';
+
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
@@ -112,14 +121,8 @@ class PoController extends FrontEndController
 			}
 		}
 
-		$quotes = Quote::model()->findAll('idMember = :p1',array(':p1'=>Yii::app()->user->id));
-		$idQuotes = array();
-		foreach ($quotes as $key => $value) {
-			$idQuotes[$value->id] = $value->name;
-		}
 		$this->render('update',array(
 			'model'=>$model,
-			'idQuotes'=>$idQuotes,
 		));
 	}
 
@@ -144,7 +147,6 @@ class PoController extends FrontEndController
 	{
 		$model=new PO('search');
 		$model->unsetAttributes();  // clear any default values
-		$model->idMember = Yii::app()->user->id;
 		if(isset($_GET['PO']))
 			$model->attributes=$_GET['PO'];
 

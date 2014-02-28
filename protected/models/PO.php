@@ -48,6 +48,7 @@ class PO extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			'member'=>array(self::BELONGS_TO,'Member','idMember'),
 		);
 	}
 
@@ -81,7 +82,8 @@ class PO extends CActiveRecord
 		// @todo Please modify the following code to remove attributes that should not be searched.
 
 		$criteria=new CDbCriteria;
-
+		$criteria->with = array('member');
+		
 		$criteria->compare('id',$this->id);
 		$criteria->compare('idMember',$this->idMember);
 		$criteria->compare('time',$this->time,true);
