@@ -23,7 +23,11 @@
 							'id',
 						//	'idMember',
 						//	'time',
-							'namaFile',
+							 array(
+					            'name'=>'namaFile',
+					            'value'=>'CHtml::link("namaFile",$data->getImageUrl())',
+					            'type'=>'raw',
+					        ),
 							array(
 								'class'=>'CButtonColumn',
 							),

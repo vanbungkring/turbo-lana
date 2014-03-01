@@ -27,6 +27,11 @@
 	//	'idQuote',
 		'member.namaDepan',
 		'time',
+        array(
+            'name'=>'namaFile',
+            'value'=>'CHtml::link("namaFile",$data->getImageUrl())',
+            'type'=>'raw',
+        ),
 		'namaFile',
 		array(
 			'class'=>'CButtonColumn',

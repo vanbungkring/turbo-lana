@@ -109,4 +109,8 @@ class PO extends CActiveRecord
 		$path = Yii::app()->params['uploadPath'];
 		return $path.'/po/'.$this->id.'_'.$this->namaFile;
 	}
+
+	public function getImageUrl(){
+		return Yii::app()->request->baseUrl.'/files/po/'.$this->id.'_'.$this->namaFile;
+	}
 }
