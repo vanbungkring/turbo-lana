@@ -268,6 +268,9 @@
                         <a href="<?php echo Yii::app()->createUrl('/po')?>"><i class="fa fa-table fa-fw"></i> PO</a>
                     </li>
                     <li>
+                        <a href="<?php echo Yii::app()->createUrl('/PurchaseBillboard')?>"><i class="fa fa-table fa-fw"></i> Purchase Billboard</a>
+                    </li>
+                    <li>
                         <a href="<?php echo Yii::app()->createUrl('/kategoriSize')?>"><i class="fa fa-table fa-fw"></i> Kategori Size</a>
                     </li>
                     <li>

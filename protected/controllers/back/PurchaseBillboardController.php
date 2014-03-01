@@ -1,11 +1,7 @@
 <?php
 
-class PoController extends BackEndController
+class PurchaseBillboardController extends BackEndController
 {
-	/**
-	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
-	 * using two-column layout. See 'protected/views/layouts/column2.php'.
-	 */
 	public $layout='//layouts/none';
 
 	/**
@@ -35,7 +31,6 @@ class PoController extends BackEndController
 		);
 	}
 
-
 	/**
 	 * Displays a particular model.
 	 * @param integer $id the ID of the model to be displayed
@@ -53,39 +48,37 @@ class PoController extends BackEndController
 	 */
 	public function actionCreate()
 	{
-		$model=new PO('create');
+		$model=new PurchaseBillboard;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['PO']))
+		if(isset($_POST['PurchaseBillboard']))
 		{
-			$model->attributes=$_POST['PO'];
-			$model->file=CUploadedFile::getInstance($model,'file');
-			$quote = Quote::model()->findByPk($model->idQuote);
-			if($quote){
-				$model->idMember = $quote->id;
-			}
-			$model->time = date('Y-m-d H:i:s');
-			if($model->file){
-				$model->namaFile = $model->file->getName();
-			}
-			if($model->save()){
-				// $model->namaFile = $model->file->getName();
-				$model->file->saveAs($model->getImagePath());
-				$this->redirect(array('view','id'=>$model->id));		
-			}
+			$model->attributes=$_POST['PurchaseBillboard'];
+			$model->time = date("Y-m-d H:i:s");
+			if($model->save())
+				$this->redirect(array('view','id'=>$model->id));
 		}
 
-		$quotes = Quote::model()->findAll();
-		$idQuotes = array();
-		foreach ($quotes as $key => $value) {
-			$idQuotes[$value->id] = $value->name;
+		$pos = PO::model()->findAll();
+		$idPOs = array();
+		foreach ($pos as $key => $value) {
+			$idPOs[$value->id] = $value->id;
 		}
+
+
+		$perusahaans = Perusahaan::model()->findAll();
+		$idOwners = array();
+		foreach ($perusahaans as $key => $value) {
+			$idOwners[$value->id] = $value->nama;
+		}
+
 
 		$this->render('create',array(
 			'model'=>$model,
-			'idQuotes'=>$idQuotes
+			'idPOs'=>$idPOs,
+			'idOwners'=>$idOwners
 		));
 	}
 
@@ -97,32 +90,34 @@ class PoController extends BackEndController
 	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);
-		$model->scenario = 'update';
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['PO']))
+		if(isset($_POST['PurchaseBillboard']))
 		{
-			$model->attributes=$_POST['PO'];
-			$model->file=CUploadedFile::getInstance($model,'file');
-			if($model->file){
-				$model->namaFile = $model->file->getName();
-			}
-			if($model->save()){
-				if($model->file){
-					$file = $model->getImagePath();
-					if(file_exists($file)){
-						unlink($file);
-					}
-					$model->file->saveAs($model->getImagePath());
-				}
+			$model->attributes=$_POST['PurchaseBillboard'];
+			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
-			}
+		}
+
+		$pos = PO::model()->findAll();
+		$idPOs = array();
+		foreach ($pos as $key => $value) {
+			$idPOs[$value->id] = $value->id;
+		}
+
+
+		$perusahaans = Perusahaan::model()->findAll();
+		$idOwners = array();
+		foreach ($perusahaans as $key => $value) {
+			$idOwners[$value->id] = $value->nama;
 		}
 
 		$this->render('update',array(
 			'model'=>$model,
+			'idPOs'=>$idPOs,
+			'idOwners'=>$idOwners
 		));
 	}
 
@@ -145,10 +140,10 @@ class PoController extends BackEndController
 	 */
 	public function actionIndex()
 	{
-		$model=new PO('search');
+		$model=new PurchaseBillboard('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['PO']))
-			$model->attributes=$_GET['PO'];
+		if(isset($_GET['PurchaseBillboard']))
+			$model->attributes=$_GET['PurchaseBillboard'];
 
 		$this->render('admin',array(
 			'model'=>$model,
@@ -159,12 +154,12 @@ class PoController extends BackEndController
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.
 	 * @param integer $id the ID of the model to be loaded
-	 * @return PO the loaded model
+	 * @return PurchaseBillboard the loaded model
 	 * @throws CHttpException
 	 */
 	public function loadModel($id)
 	{
-		$model=PO::model()->findByPk($id);
+		$model=PurchaseBillboard::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
@@ -172,18 +167,14 @@ class PoController extends BackEndController
 
 	/**
 	 * Performs the AJAX validation.
-	 * @param PO $model the model to be validated
+	 * @param PurchaseBillboard $model the model to be validated
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='po-form')
+		if(isset($_POST['ajax']) && $_POST['ajax']==='purchase-billboard-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
 		}
-	}
-
-	public function actionAddBilboard(){
-		$this->render('addBilboard');
 	}
 }
