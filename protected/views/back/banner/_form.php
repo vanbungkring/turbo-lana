@@ -20,11 +20,17 @@
 
 	<?php echo $form->errorSummary($model); ?>
 
-	<div class="form-group">
-                <label>Nama</label>
-		<?php echo $form->textField($model,'nama',array('size'=>60,'maxlength'=>100,'class'=>'form-control')); ?>
-		<?php echo $form->error($model,'nama'); ?>
-	</div>
+  <div class="form-group">
+    <label>Nama</label>
+    <?php echo $form->textField($model,'nama',array('size'=>60,'maxlength'=>100,'class'=>'form-control')); ?>
+    <?php echo $form->error($model,'nama'); ?>
+  </div>
+
+  <div class="form-group">
+    <label>Banner Uniq</label>
+    <?php echo $form->textField($model,'uniqId',array('size'=>60,'maxlength'=>100,'class'=>'form-control')); ?>
+    <?php echo $form->error($model,'uniqId'); ?>
+  </div>
         
         <div class="form-group">
             <input id="pac-input" class="controls" type="text" placeholder="Search Box">

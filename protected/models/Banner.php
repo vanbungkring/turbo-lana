@@ -33,7 +33,8 @@ class Banner extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('nama, lat, long, zoom, idPerusahaan', 'required'),
+			array('nama, lat, long, zoom, idPerusahaan, uniqId', 'required'),
+			array('uniqId','unique'),
 			array('nama', 'length', 'max'=>100),
 			array('sku', 'length', 'max'=>200),
 			array('harga,hargaPerBulan,hargaPer3Bulan,hargaPer6Bulan,hargaPerTahun
