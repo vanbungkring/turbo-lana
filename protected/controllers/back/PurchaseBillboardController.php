@@ -82,6 +82,39 @@ class PurchaseBillboardController extends BackEndController
 		));
 	}
 
+	public function actionDetailPerusahaan(){
+		try{
+			if(!isset($_POST['id'])){
+				throw new Excetion('ID Tidak Ditemukan');
+			}
+			$model = Perusahaan::model()->findByPk($_POST['id']);
+			if($model===null){
+				throw new Excetion('Perusahaan Tidak Ditemukan');
+			}
+			echo CJSON::encode(array('status'=>1,'data'=>$model));
+		}
+		catch(Excetion $e){
+			echo CJSON::encode(array('status'=>0,'message'=>$e->getMessage()));
+		}
+	}
+
+	public function actionDetailPO(){
+		try{
+			if(!isset($_POST['id'])){
+				throw new Excetion('ID Tidak Ditemukan');
+			}
+			$model = PO::model()->findByPk($_POST['id']);
+			$quote = $model->quote;
+			$banners  = $quote->banners;
+			if($model===null){
+				throw new Excetion('PO Tidak Ditemukan');
+			}
+			echo CJSON::encode(array('status'=>1,'data'=>$model,'banners'=>$banners));
+		}
+		catch(Excetion $e){
+			echo CJSON::encode(array('status'=>0,'message'=>$e->getMessage()));
+		}
+	}
 	/**
 	 * Updates a particular model.
 	 * If update is successful, the browser will be redirected to the 'view' page.

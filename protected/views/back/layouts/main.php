@@ -297,7 +297,7 @@
 
     </div>
     <!-- /#wrapper -->
-
+    <?php Yii::app()->getClientScript()->registerCoreScript('jquery'); ?>
     <!-- Core Scripts - Include with every page -->
     <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/back/bootstrap.min.js"></script>
     <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/back/plugins/metisMenu/jquery.metisMenu.js"></script>

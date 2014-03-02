@@ -20,27 +20,110 @@
 	<?php echo $form->errorSummary($model); ?>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'idPO'); ?>
-		<?php echo $form->dropDownList($model,'idPO',$idPOs); ?>
-		<?php echo $form->error($model,'idPO'); ?>
+		<div class="col-md-8">
+			<div class="row">
+				No.
+			</div>
+			<div class="row">
+				<?php echo $form->dropDownList($model,'idOwner',$idOwners); ?>
+			</div>
+			<div class="row">
+				<span id="nama_perusahaan"></span>
+			</div>
+			<div class="row">
+				<span id="alamat_perusahaan"></span>
+			</div><!-- 
+			<div class="row">
+				<span id="kota_perusahaan"></span>
+			</div> -->
+			<div class="row">
+				<span id="no_telp_perusahaan"></span>
+			</div>
+		</div>
+		<div class="col-md-4">
+			<?php echo $form->dropDownList($model,'idPO',$idPOs); ?>
+		</div>
 	</div>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'idOwner'); ?>
-		<?php echo $form->dropDownList($model,'idOwner',$idOwners); ?>
-		<?php echo $form->error($model,'idOwner'); ?>
-	</div>
-
-	<div class="row">
+	<div class="row" style="display:hidden">
 		<?php echo $form->labelEx($model,'tanggal'); ?>
 		<?php echo $form->textField($model,'tanggal'); ?>
 		<?php echo $form->error($model,'tanggal'); ?>
 	</div>
 
-	<div class="row buttons">
+	
+
+<table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th>
+            Unit Banner
+          </th>
+          <th>
+            Diskripsi
+          </th>
+          <th>
+            Harga
+          </th>
+        </tr>
+      </thead>
+      <tbody id='listItembody'>
+      </tbody>
+    </table>
+
+    <div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
 	</div>
 
 <?php $this->endWidget(); ?>
 
 </div><!-- form -->
+
+<?php
+$js = '
+	function getPerusahaan(){
+		var url  = "'.Yii::app()->controller->createUrl('detailPerusahaan').'";
+		var data = { id : $("#PurchaseBillboard_idOwner").val() }; 
+		$.post(url,data,function(ret){
+			if(ret.status == 1){
+				$("#nama_perusahaan").text(ret.data.nama);
+				$("#alamat_perusahaan").text(ret.data.alamat);
+				$("#kota_perusahaan").text(ret.data.kota);
+				$("#no_telp_perusahaan").text(ret.data.noTelpon);
+			}
+			else{
+				alert(ret.message);
+			}
+			
+		},"json");
+	}
+	function getPO(){
+		var url  = "'.Yii::app()->controller->createUrl('detailPO').'";
+		var data = { id : $("#PurchaseBillboard_idPO").val() }; 
+		$.post(url,data,function(ret){
+			if(ret.status == 1){
+				var newtr = "<tr>";
+				for(var i=0;i<ret.banners.length;i++) {
+					newtr += "<td>"+ret.banners[i].nama+"</td>";
+					newtr += "<td>"+ret.banners[i].keterangan+"</td>";
+					newtr += "<td>"+ret.banners[i].hargaPerBulan+"</td>";
+				}
+				newtr += "</tr>";
+				$("#listItembody").append(newtr);
+			}
+			else{
+				alert(ret.message);
+			}
+			
+		},"json");
+	}
+	$("#PurchaseBillboard_idOwner").change(function(){
+		getPerusahaan();
+	});
+	$("#PurchaseBillboard_idPO").change(function(){
+		getPO();
+	});
+	getPerusahaan();
+	getPO();
+';
+Yii::app()->clientScript->registerScript('script-ajax',$js,  CClientScript::POS_END);

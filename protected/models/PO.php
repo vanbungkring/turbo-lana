@@ -49,6 +49,7 @@ class PO extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
 			'member'=>array(self::BELONGS_TO,'Member','idMember'),
+			'quote'=>array(self::BELONGS_TO,'Quote','idQuote'),
 		);
 	}
 
