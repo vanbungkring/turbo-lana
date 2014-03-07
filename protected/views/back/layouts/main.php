@@ -282,7 +282,9 @@
                     <li>
                         <a href="<?php echo Yii::app()->createUrl('/member')?>"><i class="fa fa-table fa-fw"></i> Payment</a>
                     </li>
-
+                    <li>
+                        <a href="<?php echo Yii::app()->createUrl('/setting')?>"><i class="fa fa-table fa-fw"></i> Setting</a>
+                    </li>
                 </ul>
                 <!-- /#side-menu -->
             </div>
