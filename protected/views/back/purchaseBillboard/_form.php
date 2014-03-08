@@ -87,7 +87,8 @@
 				<td>$180</td>
 			</tr>
 			<tr>
-				<td colspan=4>Discount</td>
+				<td colspan=3>Discount</td>
+				<td><input type="text">(presentasi %)</td>
 				<td>$180</td>
 			</tr>
 		</tfoot>
