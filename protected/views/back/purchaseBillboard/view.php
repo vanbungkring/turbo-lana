@@ -28,3 +28,19 @@ $this->menu=array(
 		'time',
 	),
 )); ?>
+
+perusahaan
+<?php $this->widget('zii.widgets.CDetailView', array(
+	'data'=>$model->perusahaan,
+	'attributes'=>array(
+		'id',
+		'nama',
+		'alamat',
+		'noTelpon',
+		'fax',
+		'kontakPerson',
+		'website',
+		'email',
+	),
+)); ?>
+

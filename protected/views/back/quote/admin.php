@@ -16,7 +16,7 @@ $this->breadcrumbs=array(
 				<div class="panel-heading">
 					Banner Quotation
 						<div class="floating-bar">
-					<!-- <a class="btn btn-primary" href="<?php echo Yii::app()->createUrl('kategoriBanner/create'); ?>">Tambah</a> -->
+					 <a class="btn btn-primary" href="<?php echo Yii::app()->controller->createUrl('create'); ?>">Tambah</a> 
 				</div>
 				</div>
 				<!-- /.panel-heading -->

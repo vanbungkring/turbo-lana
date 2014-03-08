@@ -84,23 +84,31 @@ class QuoteController extends Controller
 	 * If creation is successful, the browser will be redirected to the 'view' page.
 	 */
 	public function actionCreate()
-	{
-		$model=new Quote;
-
-		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
-
-		if(isset($_POST['Quote']))
-		{
-			$model->attributes=$_POST['Quote'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
-		}
-
-		$this->render('create',array(
-			'model'=>$model,
-		));
-	}
+    {
+        $model = new Quote('create');
+        // Uncomment the following line if AJAX validation is needed
+        // $this->performAjaxValidation($model);
+        if(isset($_GET["idBanner"])){
+            $model->bannerIds = (array)$_GET["idBanner"];
+        }
+        if(isset($_POST['Quote']))
+        {
+            $model->attributes = @$_POST['Quote'];
+            $model->bannerIds  = @$_POST['bannerIds'];
+            if($model->save()){
+                $this->redirect(array('view','id'=>$model->id));
+            }
+            else{
+                print_r($model->getErrors());
+            }
+        }
+        $this->render('_form',array(
+            'model'=>$model,
+            'defLat'=>-6.17511, 
+            'defLong'=>106.86503949999997,
+            'defZoom'=>8,
+        ));
+    }
 
 	/**
 	 * Updates a particular model.

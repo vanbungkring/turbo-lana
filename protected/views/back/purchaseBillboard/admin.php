@@ -25,6 +25,7 @@
 						'idOwner',
 						array(
 							'class'=>'CButtonColumn',
+                            'template'=>'{view}',
 						),
 					),
 				)); ?>
