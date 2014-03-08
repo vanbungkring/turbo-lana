@@ -85,10 +85,10 @@ function showMarkers(){
   var url = "'.Yii::app()->createUrl('site/getMarker').'";
   var x = bounds.id || bounds.ga;
   $.get(url,{ "bounds" : {
-    ia_b : x.b,
-    ia_d : x.d,
-    ta_d : bounds.ta.d,
-    ta_b : bounds.ta.b,
+    ia_b : map.getBounds().getSouthWest().lng(),
+    ia_d : map.getBounds().getNorthEast().lng(),
+    ta_d : map.getBounds().getSouthWest().lat(),
+    ta_b : map.getBounds().getNorthEast().lat(),
   }},function(retJson){
     var newMarker = [];
     retJson.forEach(function(row) {                           
