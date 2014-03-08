@@ -22,13 +22,13 @@
 
 
 	<div class="form-group">
-		<label>Lat</label>
+		<label>Quote</label>
 		<?php echo $form->dropDownList($model,'idQuote',$idQuotes,array('id'=>'lat','class'=>'form-control')); ?>
 		<?php echo $form->error($model,'idQuote'); ?>
 	</div>
 
 	<div class="form-group">
-		<label>Lat</label>
+		<label>File</label>
 		<?php echo $form->fileField($model,'file',$idQuotes,array('size'=>12,'maxlength'=>12,'id'=>'lat','class'=>'form-control')); ?>
 		<?php echo $form->error($model,'file'); ?>
 	</div>
