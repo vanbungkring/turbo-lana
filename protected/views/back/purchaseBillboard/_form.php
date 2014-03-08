@@ -80,16 +80,16 @@
 		<tfoot>
 			<tr>
 				<td colspan=4>Subtotal</td>
-				<td>$180</td>
+				<td><span id="idSubTotal">0</span></td>
 			</tr>
 			<tr>
 				<td colspan=4>Pajak</td>
-				<td>$180</td>
+				<td><span id="">0</span></td>
 			</tr>
 			<tr>
 				<td colspan=3>Discount</td>
 				<td><input type="text">(presentasi %)</td>
-				<td>$180</td>
+				<td><span id="">0</span></td>
 			</tr>
 		</tfoot>
 	</table>
@@ -103,18 +103,21 @@
 </div><!-- form -->
 <script type = "text/template" id="trnew">
 	<tr>
-		<td>1<input type="hidden" value="1"/></td>
+		<td>
+			1<input type="hidden" value="1" name="PurchaseBillboard[detail][{idBanner}][qty]"/>
+			<input type="hidden" value="{idBanner}" name="PurchaseBillboard[detail][{idBanner}][idBanner]"/>
+		</td>
 		<td><input type="hidden" value="{namaBanner}" >{namaBanner}</td>
 		<td><input type="hidden" value="{keteranganBanner}" >{keteranganBanner}</td>
 		<td>
-			<select class="form-control selectDurasi" data-id="{idBanner}" >
+			<select class="form-control selectDurasi" data-id="{idBanner}"  name="PurchaseBillboard[detail][{idBanner}][durasi]">
 				<option value="hargaPerBulan" data-harga="{hargaPerBulan}">1 Bulan</option>
 				<option value="hargaPer3Bulan" data-harga="{hargaPer3Bulan}">3 Bulan</option>
 				<option value="hargaPer6Bulan" data-harga="{hargaPer6Bulan}">6 Bulan</option>
 				<option value="hargaPerTahun" data-harga="{hargaPerTahun}">1 Tahun</option>
 			</select>
 		</td>
-		<td><input type="text" value="{harga}" id="harga_{idBanner}" ></td>
+		<td><input type="text" class="harga_input form-control" value="{harga}" id="harga_{idBanner}" name="PurchaseBillboard[detail][{idBanner}][harga]"></td>
 	</tr>
 </script>
 <?php
@@ -174,7 +177,24 @@ $("#PurchaseBillboard_idOwner").change(function(){
 $("#PurchaseBillboard_idPO").change(function(){
 	getPO();
 });
-
+function hitung(){
+	var tot = 0;
+	var hitung  = true;
+	$(".harga_input").each(function(){
+		var val = $(this).val();
+		if(!$.isNumeric( val )){
+			hitung = false;
+		}
+		else{
+			tot = parseFloat(tot) + parseFloat(val);
+		}
+		console.log(tot);
+	});
+	console.log("hitung"+hitung);
+	if(hitung){
+		$("#idSubTotal").text(tot.toFixed(2));
+	}
+}
 $( document ).on( "change", ".selectDurasi", function() {
 	var id = $(this).attr("data-id");
 	var harga = $(this).find("option:selected").attr("data-harga");
@@ -183,6 +203,12 @@ $( document ).on( "change", ".selectDurasi", function() {
 		harga = 0;
 	}
 	$("#harga_"+id).val(harga);
+
+	hitung();
+});
+
+$( document ).on( "keyup", ".harga_input", function() {
+	hitung();
 });
 
 getPerusahaan();

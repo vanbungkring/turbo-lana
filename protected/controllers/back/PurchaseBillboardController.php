@@ -57,8 +57,15 @@ class PurchaseBillboardController extends BackEndController
 		{
 			$model->attributes=$_POST['PurchaseBillboard'];
 			$model->time = date("Y-m-d H:i:s");
-			if($model->save())
+			if($model->save()){
+				foreach($model->detail as $value){
+					$detail = new PurchaseBillboardDetail();
+					$detail->attributes = $value;
+					$detail->idPurchaseBillboard = $model->id;
+					$detail->save();
+				}
 				$this->redirect(array('view','id'=>$model->id));
+			}
 		}
 
 		$pos = PO::model()->findAll();
