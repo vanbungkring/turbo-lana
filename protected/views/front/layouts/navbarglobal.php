@@ -1,7 +1,6 @@
 <?php /* @var $this Controller */ ?>
 <?php $this->beginContent('//layouts/main'); ?>
 <!-- Fixed navbar -->
-<body>
 	<div class="navbar navbar-default navbar-fixed-top" role="navigation">
 
 		<div class="container">
@@ -28,5 +27,4 @@
 		</div>
 	</div>
 	<?php echo $content; ?>
-</body>
 <?php $this->endContent(); ?>
