@@ -101,7 +101,22 @@
 	<?php $this->endWidget(); ?>
 
 </div><!-- form -->
-
+<script type = "text/template" id="trnew">
+	<tr>
+		<td>1<input type="hidden" value="1"/></td>
+		<td><input type="hidden" value="{namaBanner}" >{namaBanner}</td>
+		<td><input type="hidden" value="{keteranganBanner}" >{keteranganBanner}</td>
+		<td>
+			<select class="form-control selectDurasi" data-id="{idBanner}" >
+				<option value="hargaPerBulan" data-harga="{hargaPerBulan}">1 Bulan</option>
+				<option value="hargaPer3Bulan" data-harga="{hargaPer3Bulan}">3 Bulan</option>
+				<option value="hargaPer6Bulan" data-harga="{hargaPer6Bulan}">6 Bulan</option>
+				<option value="hargaPerTahun" data-harga="{hargaPerTahun}">1 Tahun</option>
+			</select>
+		</td>
+		<td><input type="text" value="{harga}" id="harga_{idBanner}" ></td>
+	</tr>
+</script>
 <?php
 $js = '
 function getPerusahaan(){
@@ -125,16 +140,27 @@ function getPO(){
 	var data = { id : $("#PurchaseBillboard_idPO").val() }; 
 	$.post(url,data,function(ret){
 		if(ret.status == 1){
-			var newtr = "<tr>";
 			for(var i=0;i<ret.banners.length;i++) {
-				newtr += "<td>"+ret.banners[i].nama+"</td>";
-				newtr += "<td>"+ret.banners[i].keterangan+"</td>";
-				newtr += "<td>"+ret.banners[i].hargaPerBulan+"</td>";
-				newtr += "<td>"+ret.banners[i].hargaPerBulan+"</td>";
-				newtr += "<td>"+ret.banners[i].hargaPerBulan+"</td>";
+				var newtr = $("#trnew").text();
+				var newtr = newtr.replace(/{namaBanner}/g,ret.banners[i].nama); 
+				var newtr = newtr.replace(/{keteranganBanner}/g,ret.banners[i].keterangan); 
+
+				var newtr = newtr.replace(/{hargaPerBulan}/g,ret.banners[i].hargaPerBulan); 
+				var newtr = newtr.replace(/{hargaPer3Bulan}/g,ret.banners[i].hargaPer3Bulan); 
+				var newtr = newtr.replace(/{hargaPer6Bulan}/g,ret.banners[i].hargaPer6Bulan); 
+				var newtr = newtr.replace(/{hargaPerTahun}/g,ret.banners[i].hargaPerTahun); 
+
+				var newtr = newtr.replace(/{idBanner}/g,ret.banners[i].id); 
+				var newtr = newtr.replace(/{harga}/g,"");
+
+			//	newtr += "<td>1<input type=\"hidden\" value=\"1\"/></td>";
+			//	newtr += "<td><input type=\"hidden\" value=\""+ret.banners[i].nama+"\" >"+ret.banners[i].nama+"</td>";
+			//	newtr += "<td><input type=\"hidden\" value=\""+ret.banners[i].keterangan+"\" >"+ret.banners[i].keterangan+"</td>";
+			//	newtr += "<td><select option"+ret.banners[i].hargaPerBulan+"</td>";
+			//	newtr += "<td>"+ret.banners[i].hargaPerBulan+"</td>";
+				$("#listItembody").append(newtr);
 			}
-			newtr += "</tr>";
-			$("#listItembody").append(newtr);
+			
 		}
 		else{
 			alert(ret.message);
@@ -148,6 +174,17 @@ $("#PurchaseBillboard_idOwner").change(function(){
 $("#PurchaseBillboard_idPO").change(function(){
 	getPO();
 });
+
+$( document ).on( "change", ".selectDurasi", function() {
+	var id = $(this).attr("data-id");
+	var harga = $(this).find("option:selected").attr("data-harga");
+	console.log(harga);
+	if(harga == "null"){
+		harga = 0;
+	}
+	$("#harga_"+id).val(harga);
+});
+
 getPerusahaan();
 getPO();
 ';
