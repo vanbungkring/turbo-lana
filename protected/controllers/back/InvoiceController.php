@@ -56,7 +56,7 @@ class InvoiceController extends Controller
 		if(isset($_POST['Invoice']))
 		{
 			$model->attributes=$_POST['Invoice'];
-			$model->time = date("Y-m-d H:i:s")
+			$model->time = date("Y-m-d H:i:s");
 			if($model->save()){
 				foreach($model->formDetail as $value){
 					$detail = new InvoiceDetail();
