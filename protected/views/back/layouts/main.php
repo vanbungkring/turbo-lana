@@ -277,10 +277,10 @@
                         <a href="<?php echo Yii::app()->createUrl('/member')?>"><i class="fa fa-table fa-fw"></i> Member</a>
                     </li>
                     <li>
-                        <a href="<?php echo Yii::app()->createUrl('/member')?>"><i class="fa fa-table fa-fw"></i> Invoice</a>
+                        <a href="<?php echo Yii::app()->createUrl('/invoice')?>"><i class="fa fa-table fa-fw"></i> Invoice</a>
                     </li>
                     <li>
-                        <a href="<?php echo Yii::app()->createUrl('/member')?>"><i class="fa fa-table fa-fw"></i> Payment</a>
+                        <a href="<?php echo Yii::app()->createUrl('/payment')?>"><i class="fa fa-table fa-fw"></i> Payment</a>
                     </li>
                     <li>
                         <a href="<?php echo Yii::app()->createUrl('/setting')?>"><i class="fa fa-table fa-fw"></i> Setting</a>

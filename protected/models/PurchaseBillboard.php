@@ -45,7 +45,9 @@ class PurchaseBillboard extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'perusahaan'=>array(self::BELONGS_TO,'Perusahaan','idOwner')
+			'perusahaan'=>array(self::BELONGS_TO,'Perusahaan','idOwner'),
+			'detailPB'=>array(self::HAS_MANY,'PurchaseBillboardDetail','idPurchaseBillboard'),
+			'PO'=>array(self::BELONGS_TO,'PO','idPO')
 		);
 	}
 
