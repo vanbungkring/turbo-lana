@@ -1,6 +1,6 @@
 <?php
 
-class PurchaseBillboardController extends BackEndController
+class DeliveriOrderController extends BackEndController
 {
 	public $layout='//layouts/none';
 
@@ -48,61 +48,82 @@ class PurchaseBillboardController extends BackEndController
 	 */
 	public function actionCreate()
 	{
-		$model=new PurchaseBillboard;
+		$model=new DeliveriOrder;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['PurchaseBillboard']))
+		if(isset($_POST['DeliveriOrder']))
 		{
-			$model->attributes=$_POST['PurchaseBillboard'];
-			$model->time = date("Y-m-d H:i:s");
+			$model->attributes=$_POST['DeliveriOrder'];
 			if($model->save()){
-				foreach($model->detail as $value){
-					$detail = new PurchaseBillboardDetail();
+				foreach($model->formDetail as $value){
+					$detail = new DeliveriOrderDetail();
 					$detail->attributes = $value;
-					$detail->idPurchaseBillboard = $model->id;
+					$detail->idDo = $model->id;
 					$detail->save();
 				}
 				$this->redirect(array('view','id'=>$model->id));
 			}
 		}
 
-		$pos = PO::model()->findAll();
-		$idPOs = array();
-		foreach ($pos as $key => $value) {
-			$idPOs[$value->id] = $value->id;
-		}
-
-
-		$perusahaans = Perusahaan::model()->findAll();
-		$idOwners = array();
-		foreach ($perusahaans as $key => $value) {
-			$idOwners[$value->id] = $value->nama;
-		}
-
-
 		$this->render('create',array(
 			'model'=>$model,
-			'idPOs'=>$idPOs,
-			'idOwners'=>$idOwners
 		));
 	}
 
-	public function actionDetailPerusahaan(){
-		try{
-			if(!isset($_POST['id'])){
-				throw new Exception('ID Tidak Ditemukan');
-			}
-			$model = Perusahaan::model()->findByPk($_POST['id']);
-			if($model===null){
-				throw new Exception('Perusahaan Tidak Ditemukan');
-			}
-			echo CJSON::encode(array('status'=>1,'data'=>$model));
+	/**
+	 * Updates a particular model.
+	 * If update is successful, the browser will be redirected to the 'view' page.
+	 * @param integer $id the ID of the model to be updated
+	 */
+	public function actionUpdate($id)
+	{
+		$model=$this->loadModel($id);
+
+		// Uncomment the following line if AJAX validation is needed
+		// $this->performAjaxValidation($model);
+
+		if(isset($_POST['DeliveriOrder']))
+		{
+			$model->attributes=$_POST['DeliveriOrder'];
+			if($model->save())
+				$this->redirect(array('view','id'=>$model->id));
 		}
-		catch(Exception $e){
-			echo CJSON::encode(array('status'=>0,'message'=>$e->getMessage()));
-		}
+
+		$this->render('update',array(
+			'model'=>$model,
+		));
+	}
+
+	/**
+	 * Deletes a particular model.
+	 * If deletion is successful, the browser will be redirected to the 'admin' page.
+	 * @param integer $id the ID of the model to be deleted
+	 */
+	public function actionDelete($id)
+	{
+		$this->loadModel($id)->delete();
+
+		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
+		if(!isset($_GET['ajax']))
+			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
+	}
+
+
+	/**
+	 * Manages all models.
+	 */
+	public function actionIndex()
+	{
+		$model=new DeliveriOrder('search');
+		$model->unsetAttributes();  // clear any default values
+		if(isset($_GET['DeliveriOrder']))
+			$model->attributes=$_GET['DeliveriOrder'];
+
+		$this->render('admin',array(
+			'model'=>$model,
+		));
 	}
 
 	public function actionDetailPO(){
@@ -122,84 +143,33 @@ class PurchaseBillboardController extends BackEndController
 			echo CJSON::encode(array('status'=>0,'message'=>$e->getMessage()));
 		}
 	}
-	/**
-	 * Updates a particular model.
-	 * If update is successful, the browser will be redirected to the 'view' page.
-	 * @param integer $id the ID of the model to be updated
-	 */
-	public function actionUpdate($id)
-	{
-		$model=$this->loadModel($id);
 
-		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
-
-		if(isset($_POST['PurchaseBillboard']))
-		{
-			$model->attributes=$_POST['PurchaseBillboard'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+	public function actionDetailMember(){
+		try{
+			if(!isset($_POST['id'])){
+				throw new Exception('ID Tidak Ditemukan');
+			}
+			$model = Member::model()->findByPk($_POST['id']);
+			if($model===null){
+				throw new Exception('Perusahaan Tidak Ditemukan');
+			}
+			echo CJSON::encode(array('status'=>1,'data'=>$model));
 		}
-
-		$pos = PO::model()->findAll();
-		$idPOs = array();
-		foreach ($pos as $key => $value) {
-			$idPOs[$value->id] = $value->id;
+		catch(Exception $e){
+			echo CJSON::encode(array('status'=>0,'message'=>$e->getMessage()));
 		}
-
-
-		$perusahaans = Perusahaan::model()->findAll();
-		$idOwners = array();
-		foreach ($perusahaans as $key => $value) {
-			$idOwners[$value->id] = $value->nama;
-		}
-
-		$this->render('update',array(
-			'model'=>$model,
-			'idPOs'=>$idPOs,
-			'idOwners'=>$idOwners
-		));
-	}
-
-	/**
-	 * Deletes a particular model.
-	 * If deletion is successful, the browser will be redirected to the 'admin' page.
-	 * @param integer $id the ID of the model to be deleted
-	 */
-	public function actionDelete($id)
-	{
-		$this->loadModel($id)->delete();
-
-		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
-		if(!isset($_GET['ajax']))
-			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
-	}
-
-	/**
-	 * Manages all models.
-	 */
-	public function actionIndex()
-	{
-		$model=new PurchaseBillboard('search');
-		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['PurchaseBillboard']))
-			$model->attributes=$_GET['PurchaseBillboard'];
-
-		$this->render('admin',array(
-			'model'=>$model,
-		));
 	}
 
 	/**
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.
 	 * @param integer $id the ID of the model to be loaded
-	 * @return PurchaseBillboard the loaded model
+	 * @return DeliveriOrder the loaded model
 	 * @throws CHttpException
 	 */
 	public function loadModel($id)
 	{
-		$model=PurchaseBillboard::model()->findByPk($id);
+		$model=DeliveriOrder::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
@@ -207,11 +177,11 @@ class PurchaseBillboardController extends BackEndController
 
 	/**
 	 * Performs the AJAX validation.
-	 * @param PurchaseBillboard $model the model to be validated
+	 * @param DeliveriOrder $model the model to be validated
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='purchase-billboard-form')
+		if(isset($_POST['ajax']) && $_POST['ajax']==='deliveri-order-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
