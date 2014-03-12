@@ -27,6 +27,7 @@
 		<div class="row">
 			Nama Advetiser : <span id="nama_member"></span>
 			<?php echo $form->hiddenField($model,'idMember'); ?>
+			<?php echo $form->hiddenField($model,'total'); ?>
 		</div>
 		<div class="row">
 			Nama Perusahaan : <span id="company_name_member"></span>
@@ -131,6 +132,7 @@ function getPB(){
 	var data = { id : $("#Invoice_idPurchaseBillboard").val() }; 
 	$.post(url,data,function(ret){
 		if(ret.status == 1){
+			$("#listItembody").empty();
 			for(var i=0;i<ret.detail.length;i++) {
 				var newtr = $("#trnew").text();
 				var newtr = newtr.replace(/{namaBanner}/g,ret.detail[i].banner.nama); 
@@ -187,6 +189,7 @@ function hitung(){
 	console.log("hitung"+hitung);
 	if(hitung){
 		$("#idSubTotal").text(tot.toFixed(2));
+		$("#Invoice_total").val(tot.toFixed(2));
 	}
 }
 $( document ).on( "change", ".selectDurasi", function() {
