@@ -13,7 +13,7 @@
             <header class="banner-info-header">Banner Photo</header>
             <div class="image-billboard">
               <?php foreach($banner->images as $image):?>
-              <img src="<?php echo $image->getImageUrl(); ?>" />
+              <img class="place-drop" src="<?php echo $image->getImageUrl(); ?>" />
               <?php endforeach; ?>
             </div>
           </section>
@@ -79,6 +79,16 @@ $customBanner = '
     }
   });
 
+  	$("#list_item img").resizable({
+    	handles : "se",
+    	// stop    : resizestop
+	}).parent(".ui-wrapper").draggable({
+	    revert  : "invalid"
+	});
+
+    $(".place-drop").droppable({
+
+    });
 ';
 Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl.'/js/ajaxupload.js',  CClientScript::POS_END);
 Yii::app()->clientScript->registerScript('customBanner',$customBanner,  CClientScript::POS_END);
