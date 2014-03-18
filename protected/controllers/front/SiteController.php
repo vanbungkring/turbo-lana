@@ -18,7 +18,7 @@ class SiteController extends FrontEndController
 	{
 		return array(
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('detail','Logout','AddBookmark','removeBookmark'),
+				'actions'=>array('detail','customBanner','saveTempImage','Logout','AddBookmark','removeBookmark'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -64,6 +64,39 @@ class SiteController extends FrontEndController
 			'banner'=>$banner,
 			'member'=>$member,
 		));
+	}
+	public function actionCustomBanner($id)
+	{
+		$banner = Banner::model()->with('kategoris')->findByPk($id);
+		$uid = Yii::app()->user->id;
+		$member = Member::model()->with(array('bookmarks'))->findByPk($uid);
+		if($banner===null)
+			throw new CHttpException(404,'Banner Tidak Ditemukan.');
+		// renders the view file 'protected/views/site/index.php'
+		// using the default layout 'protected/views/layouts/main.php'
+		$this->render('custom-banner',array(
+			'banner'=>$banner,
+			'member'=>$member,
+		));
+	}
+	public function actionSaveTempImage(){
+		// header('Content-Type: application/json');
+		$model = new TempImage();
+		$model->file = CUploadedFile::getInstanceByName('image');
+		if($model->save()){
+			echo CJSON::encode(array('status'=>1));
+		}
+		else{
+			echo CJSON::encode(array('status'=>0,'error'=>$model->getErrors()));
+		}
+		foreach (Yii::app()->log->routes as $route)
+        {
+            if ($route instanceof CWebLogRoute)
+            {
+                $route->enabled = false;
+            }
+        }
+		exit;
 	}
 	public function actionAddBookmark($id){
 		try{

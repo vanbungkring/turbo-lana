@@ -71,7 +71,8 @@
         <div class="col-md-4">
 
         <section class="banner-info-body svw">
-          <button type="button" class="btn btn-default btn-block whislist btn-lg">Custom This Banner</button>
+          <a href="<?php echo Yii::app()->createUrl("site/customBanner",array('id'=>$banner->id)); ?>"
+           type="button" class="btn btn-default btn-block whislist btn-lg" id="custombanner">Custom This Banner</a>
         </section>
 
           <section class="banner-info-body">
@@ -114,7 +115,6 @@
           <button type="button" class="btn btn-default btn-block whislist" id="addBookmark">Save To Whislist</button>
           <button type="button" class="btn btn-default btn-block whislist" id="removeBookmark">Remove From Whislist</button>
         </section>
-
       </div>
     </div>
   </div>
