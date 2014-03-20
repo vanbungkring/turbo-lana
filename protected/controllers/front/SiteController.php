@@ -18,7 +18,7 @@ class SiteController extends FrontEndController
 	{
 		return array(
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('detail','customBanner','saveTempImage','Logout','AddBookmark','removeBookmark'),
+				'actions'=>array('detail','customBanner','saveTempImage','downloadCustomImage','saveCustomImage','Logout','AddBookmark','removeBookmark'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -97,6 +97,96 @@ class SiteController extends FrontEndController
             }
         }
 		exit;
+	}
+
+	public function actionSaveCustomImage(){
+		$back = BannerImage::model()->findByPk($_POST['backGroundId']);
+		$imageBack = $back->getImagePath();
+
+		
+		$background     = $imageBack;
+		$photo1         = imagecreatefromjpeg($background);
+		$foto1W         = imagesx($photo1);
+		$foto1H         = imagesy($photo1);
+		$photoFrameW    = $foto1W; // $_POST['bW'];
+		$photoFrameH    = $foto1H; // $_POST['bH'];
+		$photoFrame     = imagecreatetruecolor($photoFrameW,$photoFrameH);
+		imagecopyresampled($photoFrame, $photo1, 0, 0, 0, 0, $photoFrameW, $photoFrameH, $foto1W, $foto1H);
+
+		foreach ($_POST['images'] as $key => $value) {
+			$tempImage = TempImage::model()->findByPk($value['id']);
+			if($tempImage->mime == 'image/jpeg'){
+				$insert         = $tempImage->getImagePath();
+			    $photoFrame2Rotation = (180-0) + 180;
+
+			    $photo2         = imagecreatefromjpeg($insert);
+			 
+			    $foto2W         = imagesx($photo2);
+			    $foto2H         = imagesy($photo2);
+			    $photoFrame2W   = $value['width'];
+			    $photoFrame2H   = $value['height'];
+			 
+			    $photoFrame2TOP = $value['top'];
+			    $photoFrame2LEFT= $value['left'];
+			 
+			    $photoFrame2    = imagecreatetruecolor($photoFrame2W,$photoFrame2H);
+			    
+			    imagecopyresampled($photoFrame2, $photo2, 0, 0, 0, 0, $photoFrame2W, $photoFrame2H, $foto2W, $foto2H);
+
+			    $extraTop       =(imagesy($photoFrame2)-$photoFrame2H)/2;
+   				 $extraLeft      =(imagesx($photoFrame2)-$photoFrame2W)/2;
+
+			 	 imagecopy($photoFrame, $photoFrame2,$photoFrame2LEFT-$extraLeft, $photoFrame2TOP-$extraTop, 0, 0, imagesx($photoFrame2), imagesy($photoFrame2));
+			}
+			else if($tempImage->mime == 'image/png'){
+				$insert         = $tempImage->getImagePath();
+			    $photoFrame2Rotation = (180-0) + 180;
+
+			    $photo2         = imagecreatefrompng($insert);
+			 
+			    $foto2W         = imagesx($photo2);
+			    $foto2H         = imagesy($photo2);
+			    $photoFrame2W   = $value['width'];
+			    $photoFrame2H   = $value['height'];
+			 
+			    $photoFrame2TOP = $value['top'];
+			    $photoFrame2LEFT= $value['left'];
+
+			    $photoFrame2    = imagecreatetruecolor($photoFrame2W,$photoFrame2H);
+			    $trans_colour   = imagecolorallocatealpha($photoFrame2, 0, 0, 0, 127);
+			    imagefill($photoFrame2, 0, 0, $trans_colour);
+			    
+			    imagecopyresampled($photoFrame2, $photo2, 0, 0, 0, 0, $photoFrame2W, $photoFrame2H, $foto2W, $foto2H);
+
+			    $extraTop       = (imagesy($photoFrame2)-$photoFrame2H)/2;
+   				$extraLeft      = (imagesx($photoFrame2)-$photoFrame2W)/2;
+
+			 	imagecopy($photoFrame, $photoFrame2,$photoFrame2LEFT-$extraLeft, $photoFrame2TOP-$extraTop, 0, 0, imagesx($photoFrame2), imagesy($photoFrame2));
+			}
+		}	
+
+		if($photoFrame){
+			$model = new customBanner();
+			$model->idBanner = $_POST['idBanner'];
+			$model->idMember = $_POST['idMember'];
+			$model->time = date('Y-m-d H:i:s');
+			$model->imagejpeg = $photoFrame;
+			$model->save(); 
+			echo CJSON::encode(array('status'=>1,'id'=>$model->id));
+		}
+		else{
+			echo CJSON::encode(array('status'=>0));
+		}
+	
+	}
+
+	public function actionDownloadCustomImage($id){
+		$model = CustomBanner::model()->findByPk($id);
+		$file = $model->getImagePath();
+		header('Content-Type: application/octet-stream');
+		header('Content-Disposition: attachment; filename="'.basename($file).'"');
+		header('Content-Length: ' . filesize($file));
+		readfile($file);
 	}
 	public function actionAddBookmark($id){
 		try{

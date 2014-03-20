@@ -11,9 +11,11 @@
           <?php if(!empty($banner->images)): ?>
           <section id="banner-image-list" class="banner-info-body">
             <header class="banner-info-header">Banner Photo</header>
-            <div class="image-billboard">
+            <div class="image-billboard-custom">
               <?php foreach($banner->images as $image):?>
+              <div class="canvas-hasil" id="canvas<?php echo $image->id; ?>">
               <img class="place-drop" src="<?php echo $image->getImageUrl(); ?>" />
+              </div>
               <?php endforeach; ?>
             </div>
           </section>
@@ -23,7 +25,7 @@
         <div class="col-md-4">
 
         <section class="banner-info-body svw">
-          <button type="button" class="btn btn-default btn-block whislist btn-lg">Custom This Banner</button>
+          <button id="btnDownload" type="button" class="btn btn-default btn-block whislist btn-lg">Download</button>
         </section>
 
         <section class="banner-info-body">
@@ -58,7 +60,36 @@
 <?php
 
 $customBanner = '
-
+	var backgroundImages = '.CJSON::encode($banner->images).';
+	var currentBakcgroundImages = 0;
+	$(".image-billboard-custom").bxSlider({
+		onSliderLoad : function(currentIndex){
+			currentBakcgroundImages = currentIndex;
+			$(".bx-clone").removeAttr("id");
+		},
+		onSlideAfter : function($slideElement, oldIndex, newIndex){
+			currentBakcgroundImages = newIndex;
+		}
+	});
+   var data = {
+   		"images" : []
+   };
+   var idImages = 0;
+   var loadDrag = function(){
+   		$("#list_item img").draggable({
+	  		revert:  "invalid",
+	  		helper: "clone",
+	  		stop: function(event, ui) {
+	  			var id = "#canvas"+backgroundImages[currentBakcgroundImages].id;
+	         	var _new = $(ui.helper).clone(true);
+	         	_new.removeClass("box ui-draggable ui-draggable-dragging").addClass("img-item-clone").css("left","+=774").css("top","-=45").appendTo(id);
+				_new._params = {};
+        _new._params.id = _new.attr("img-id");
+				data.images.push(_new);
+				console.log(_new);         	
+	      	}
+		});
+   }
   new AjaxUpload("image", {
     action: \''.Yii::app()->controller->createUrl("saveTempImage").'\',
     name: "image",
@@ -70,8 +101,11 @@ $customBanner = '
     	console.log(response);	
     	var ret = jQuery.parseJSON( response );
     	if(ret.status == 1){
-    		 $.fn.yiiListView.update("list_item")
-    		alert("berhasil");
+    		 $.fn.yiiListView.update("list_item",{
+    		 	complete : function(){
+    		 		loadDrag();
+    		 	}
+    		 });
     	}
     	else{
     		alert("gagal");
@@ -79,15 +113,37 @@ $customBanner = '
     }
   });
 
-  	$("#list_item img").resizable({
-    	handles : "se",
-    	// stop    : resizestop
-	}).parent(".ui-wrapper").draggable({
-	    revert  : "invalid"
+  	loadDrag();
+    $(".canvas-hasil").droppable({
+
+    });
+    $(document).on("mouseover",".img-item-clone", function() {
+	    $(this).resizable().parent(".ui-wrapper").draggable({ 
+
+	    });
 	});
-
-    $(".place-drop").droppable({
-
+	$("#btnDownload").click(function(){
+		var params = {
+			images : [],
+      backGroundId : backgroundImages[currentBakcgroundImages].id,
+      idMember : '.$banner->id.',
+      idBanner : '.$member->id.',
+		};	
+		$.each(data.images,function(index,row){
+			params.images.push({
+				id : row._params.id,
+				top : row.parent(".ui-wrapper").css("top").replace(/[^-\d\.]/g, \'\'),
+				left : row.parent(".ui-wrapper").css("left").replace(/[^-\d\.]/g, \'\'),
+				width : row.parent(".ui-wrapper").css("width").replace(/[^-\d\.]/g, \'\'),
+				height : row.parent(".ui-wrapper").css("height").replace(/[^-\d\.]/g, \'\')
+			});
+		});
+    	console.log(params);
+      $.post("'.Yii::app()->controller->createUrl('SaveCustomImage').'",params,function(ret){
+          if(ret.status == 1){
+            window.location = "'.Yii::app()->controller->createUrl('downloadCustomImage').'/"+ret.id;
+          }
+      },"json");
     });
 ';
 Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl.'/js/ajaxupload.js',  CClientScript::POS_END);
