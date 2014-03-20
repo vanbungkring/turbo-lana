@@ -28,7 +28,7 @@ class BannerImage extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('idBanner, status', 'numerical', 'integerOnly'=>true),
-			array('image', 'file', 'types'=>'jpg, gif, png','on'=>'create'),
+			array('image', 'file', 'types'=>'jpg','on'=>'create'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, idBanner, status', 'safe', 'on'=>'search'),

@@ -40,8 +40,8 @@ class Banner extends CActiveRecord
 			array('harga,hargaPerBulan,hargaPer3Bulan,hargaPer6Bulan,hargaPerTahun
 				,zoom,panjang,tinggi,tinggiDariTanah,idSize,jumlahSisi','numerical'),
 			array('inputKategori,keterangan','safe'),
-			array('image', 'file', 'types'=>'jpg, gif, png','on'=>'create','allowEmpty'=>true),
-			array('image', 'file', 'types'=>'jpg, gif, png','on'=>'update','allowEmpty'=>true),
+			array('image', 'file', 'types'=>'jpg','on'=>'create','allowEmpty'=>true),
+			array('image', 'file', 'types'=>'jpg','on'=>'update','allowEmpty'=>true),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, nama, lat, long', 'safe', 'on'=>'search'),

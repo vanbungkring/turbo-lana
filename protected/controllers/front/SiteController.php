@@ -166,7 +166,7 @@ class SiteController extends FrontEndController
 		}	
 
 		if($photoFrame){
-			$model = new customBanner();
+			$model = new CustomBanner();
 			$model->idBanner = $_POST['idBanner'];
 			$model->idMember = $_POST['idMember'];
 			$model->time = date('Y-m-d H:i:s');
