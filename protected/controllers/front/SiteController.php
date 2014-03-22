@@ -117,7 +117,7 @@ class SiteController extends FrontEndController
 			$tempImage = TempImage::model()->findByPk($value['id']);
 			if($tempImage->mime == 'image/jpeg'){
 				$insert         = $tempImage->getImagePath();
-			    $photoFrame2Rotation = (180-0) + 180;
+			    $photoFrame2Rotation = (180-$value['rotation']) + 180;
 
 			    $photo2         = imagecreatefromjpeg($insert);
 			 
@@ -133,6 +133,8 @@ class SiteController extends FrontEndController
 			    
 			    imagecopyresampled($photoFrame2, $photo2, 0, 0, 0, 0, $photoFrame2W, $photoFrame2H, $foto2W, $foto2H);
 
+			    $photoFrame2    = imagerotate($photoFrame2,$photoFrame2Rotation, -1,0);
+
 			    $extraTop       =(imagesy($photoFrame2)-$photoFrame2H)/2;
    				 $extraLeft      =(imagesx($photoFrame2)-$photoFrame2W)/2;
 
@@ -140,7 +142,7 @@ class SiteController extends FrontEndController
 			}
 			else if($tempImage->mime == 'image/png'){
 				$insert         = $tempImage->getImagePath();
-			    $photoFrame2Rotation = (180-0) + 180;
+			    $photoFrame2Rotation = (180-$value['rotation']) + 180;
 
 			    $photo2         = imagecreatefrompng($insert);
 			 
@@ -157,6 +159,8 @@ class SiteController extends FrontEndController
 			    imagefill($photoFrame2, 0, 0, $trans_colour);
 			    
 			    imagecopyresampled($photoFrame2, $photo2, 0, 0, 0, 0, $photoFrame2W, $photoFrame2H, $foto2W, $foto2H);
+			    
+			    $photoFrame2    = imagerotate($photoFrame2,$photoFrame2Rotation, -1,0);
 
 			    $extraTop       = (imagesy($photoFrame2)-$photoFrame2H)/2;
    				$extraLeft      = (imagesx($photoFrame2)-$photoFrame2W)/2;
