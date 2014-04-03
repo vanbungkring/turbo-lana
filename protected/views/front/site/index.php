@@ -34,20 +34,6 @@
 		      <input type="hidden" id="long" value="106.86503949999997" name="long">
 		    </div>
 
-		    <div class="col-xs-2 free-transform">
-		      <input type="text" class="form-control hasDatepicker" placeholder="Calendar" id="startPicker">
-		    </div>
-
-		    <div class="col-xs-2 free-transform">
-		      <input type="text" class="form-control hasDatepicker" placeholder="Calendar" id="endPicker">
-		    </div>
-
-		    <div class="col-xs-2 free-transform">
-		      <button type="button" id="more-filter" class="btn btn-default btn-block" data-container="body" data-toggle="popover" data-placement="bottom" data-original-title="" title="">
-		       More Filter
-		     </button>
-		   </div>
-
 		   <div class="col-xs-1 free-transform">
 		     <button type="submit" class="btn btn-success" id="btnSearch">Search</button>
 		   </div>
