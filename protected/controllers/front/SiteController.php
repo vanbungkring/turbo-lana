@@ -45,7 +45,12 @@ class SiteController extends FrontEndController
 	{
 		// renders the view file 'protected/views/site/index.php'
 		// using the default layout 'protected/views/layouts/main.php'
-		$this->render('result');
+		$defLat = isset($_GET['lat']) ? $_GET['lat'] : -6.17511;
+		$defLong = isset($_GET['long']) ? $_GET['long'] : 106.86503949999997;
+		$this->render('result',array(
+			'defLat' => $defLat,
+			'defLong' => $defLong,
+		));
 	}
     public function actionCustom()
 	{

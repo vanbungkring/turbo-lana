@@ -73,7 +73,7 @@ var afterloginurl = "";
 var isGuest = '.(int)Yii::app()->user->isGuest.'
 var mapOptions = {
   zoom: 14,
-  center: new google.maps.LatLng(-6.17511, 106.86503949999997),
+  center: new google.maps.LatLng('.$defLat.', '.$defLong.'),
 };
 var map = new google.maps.Map(document.getElementById("map-wrapper"),
   mapOptions);
