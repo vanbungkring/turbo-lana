@@ -49,9 +49,10 @@
 
     						<div class="row buttons">
     							<?php echo CHtml::submitButton('Login'); ?>
+                               
     						</div>
 
     						<?php $this->endWidget(); ?>
     					</div><!-- form -->
     				</div>
-    			</div>
+    			</div> <?php $this->widget('ext.hoauth.widgets.HOAuth'); ?>

@@ -2,6 +2,42 @@
 
 class SiteController extends FrontEndController
 {
+	/**
+     * Declares class-based actions.
+     */
+    public function actions()
+    {
+        return array(
+      'oauth' => array(
+        // the list of additional properties of this action is below
+        'class'=>'application.extensions.hoauth.HOAuthAction',
+        // Yii alias for your user's model, or simply class name, when it already on yii's import path
+        // default value of this property is: User
+        'model' => 'Member', 
+        // map model attributes to attributes of user's social profile
+        // model attribute => profile attribute
+        // the list of avaible attributes is below
+        'attributes' => array(
+          'email' => 'email',
+          'namaDepan' => 'firstName',
+          'namaBelakang' => 'lastName',
+          'namaPerusahaan' => 'companyName',
+          // 'gender' => 'genderShort',
+          // 'birthday' => 'birthDate',
+          // // you can also specify additional values, 
+          // that will be applied to your model (eg. account activation status)
+        //  'acc_status' => 1,
+        ),
+      ),
+      // this is an admin action that will help you to configure HybridAuth 
+      // (you must delete this action, when you'll be ready with configuration, or 
+      // specify rules for admin role. User shouldn't have access to this action!)
+      'oauthadmin' => array(
+        'class'=>'application.extensions.hoauth.HOAuthAdminAction',
+      ),
+        );
+    }
+
 	public function filters()
 	{
 		return array(
@@ -22,7 +58,7 @@ class SiteController extends FrontEndController
 				'users'=>array('@'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('index','result','custom','userDashboard','GetMarker','Registrasi','User','AjaxLogin','login','error'),
+				'actions'=>array('index','oauth','result','custom','userDashboard','GetMarker','Registrasi','User','AjaxLogin','login','error'),
 				'users'=>array('*'),
 			),
 			array('deny',  // deny all users

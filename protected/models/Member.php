@@ -40,7 +40,7 @@ class Member extends CActiveRecord
 			array('password', 'length', 'max'=>32),
 			array('newPassword','safe'),
 
-			array('namaDepan, namaBelakang, namaPerusahaan, email','required'),
+			array('namaDepan, namaBelakang, email','required'),
 			array('passwordRegister1, passwordRegister2','required','on'=>'register'),
 			array('passwordRegister2', 'compare', 'compareAttribute'=>'passwordRegister1','on'=>'register'),
 			// The following rule is used by search().
@@ -159,4 +159,8 @@ class Member extends CActiveRecord
 		}
 		return $model->delete();
 	}
+	public function findByEmail($email)
+	  {
+	    return self::model()->findByAttributes(array('email' => $email));
+	  }
 }

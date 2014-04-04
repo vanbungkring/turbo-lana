@@ -2,6 +2,12 @@
 class FrontUserIdentity extends CUserIdentity
 {
     private $_id;
+
+    public function __construct($id,$username)
+    {
+        $this->_id=$id;
+        $this->username=$username;
+    }
  
     public function authenticate()
     {
