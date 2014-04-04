@@ -160,7 +160,11 @@ class Member extends CActiveRecord
 		return $model->delete();
 	}
 	public function findByEmail($email)
-	  {
+	{
 	    return self::model()->findByAttributes(array('email' => $email));
-	  }
+	}
+
+	public function verifyPassword($pass){
+		return md5($pass) ==  $this->password;
+	}
 }

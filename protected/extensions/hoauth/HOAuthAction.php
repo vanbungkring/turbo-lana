@@ -237,7 +237,7 @@ class HOAuthAction extends CAction
 					$identity = $this->useYiiUser
 					? new DummyUserIdentity($user->primaryKey, $user->email)
 					//: new UserIdentity($user->email, null);
-					: new UserIdentity($user->primaryKey, $user->email);
+					: new UserIdentity($user->primaryKey,null);
 
 					if(!Yii::app()->user->login($identity,$this->duration))
 						throw new Exception("Can't sign in, something wrong with UserIdentity class.");

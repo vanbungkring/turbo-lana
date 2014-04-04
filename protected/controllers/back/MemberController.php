@@ -143,8 +143,4 @@ class MemberController extends BackEndController
 			Yii::app()->end();
 		}
 	}
-
-	public function verifyPassword($pass){
-		return md5($pass) ==  $this->password;
-	}
 }

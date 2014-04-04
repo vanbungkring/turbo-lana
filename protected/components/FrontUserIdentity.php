@@ -3,7 +3,7 @@ class FrontUserIdentity extends CUserIdentity
 {
     private $_id;
 
-    public function __construct($id,$username)
+    public function setIdUsername($id,$username)
     {
         $this->_id=$id;
         $this->username=$username;
