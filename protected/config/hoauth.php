@@ -13,8 +13,8 @@
 
 return 
 	array(
-		"base_url" => "http://127.0.0.1/turbo-lana/index.php/site/oauth", 
-
+		//"base_url" => "http://127.0.0.1/turbo-lana/index.php/site/oauth", 
+		'base_url'=>Yii::app()->createAbsoluteUrl('site/oauth'),
 		"providers" => array ( 
 			// openid providers
 			"OpenID" => array (
