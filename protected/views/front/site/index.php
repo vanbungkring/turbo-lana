@@ -1,14 +1,8 @@
 
 <?php $this->renderPartial('/shared/partial/navbar-home'); ?>
 <?php $this->renderPartial('/shared/partial/homepage/header-wrap'); ?>
-<!-- INTRO WRAP -->
-<div class="intro">
-	<div class="container">
-		<div class="col-md-5">
-			<h3>Mencari, membeli dan mengatur Campaign iklan Anda hanya dalam Beberapa klik saja.</h3>
-		</div>
-	</div>
-</div><!--/ #introwrap -->
+<?php $this->renderPartial('/shared/partial/homepage/intro'); ?>
+
 
 <!-- FEATURES WRAP -->
 <div id="features">
