@@ -144,7 +144,7 @@ class MemberController extends BackEndController
 		}
 	}
 
-	protected function verifyPassword($pass){
+	public function verifyPassword($pass){
 		return md5($pass) ==  $this->password;
 	}
 }
