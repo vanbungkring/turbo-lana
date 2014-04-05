@@ -3,78 +3,9 @@
 <?php $this->renderPartial('/shared/partial/homepage/header-wrap'); ?>
 <?php $this->renderPartial('/shared/partial/homepage/intro'); ?>
 <?php $this->renderPartial('/shared/partial/homepage/city'); ?>
+<?php $this->renderPartial('/shared/partial/homepage/who'); ?>
 
 
-
-
-<section id="showcase" name="showcase"></section>
-<div id="showcase">
-	<div class="container">
-		<div class="row">
-			<h1 class="centered">Some Screenshots</h1>
-			<br>
-			<div class="col-lg-8 col-lg-offset-2">
-				<div id="carousel-example-generic" class="carousel slide">
-					<!-- Indicators -->
-					<ol class="carousel-indicators">
-						<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-						<li data-target="#carousel-example-generic" data-slide-to="1"></li>
-					</ol>
-
-					<!-- Wrapper for slides -->
-					<div class="carousel-inner">
-						<div class="item active">
-							<img src="http://www.blacktie.co/demo/pratt/assets/img/item-01.png" alt="">
-						</div>
-						<div class="item">
-							<img src="http://www.blacktie.co/demo/pratt/assets/img/item-02.png" alt="">
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<br>
-		<br>
-		<br>	
-	</div><!-- /container -->
-</div>	
-
-
-<section id="contact" name="contact"></section>
-<div id="footerwrap">
-	<div class="container">
-		<div class="col-lg-5">
-			<h3>Address</h3>
-			<p>
-				Av. Greenville 987,<br/>
-				New York,<br/>
-				90873<br/>
-				United States
-			</p>
-		</div>
-
-		<div class="col-lg-7">
-			<h3>Drop Us A Line</h3>
-			<br>
-			<form role="form" action="#" method="post" enctype="plain"> 
-				<div class="form-group">
-					<label for="name1">Your Name</label>
-					<input type="name" name="Name" class="form-control" id="name1" placeholder="Your Name">
-				</div>
-				<div class="form-group">
-					<label for="email1">Email address</label>
-					<input type="email" name="Mail" class="form-control" id="email1" placeholder="Enter email">
-				</div>
-				<div class="form-group">
-					<label>Your Text</label>
-					<textarea class="form-control" name="Message" rows="3"></textarea>
-				</div>
-				<br>
-				<button type="submit" class="btn btn-large btn-success">SUBMIT</button>
-			</form>
-		</div>
-	</div>
-</div>
 <div id="c">
 	<div class="container">
 		<p>Created by <a href="http://www.blacktie.co">BLACKTIE.CO</a></p>

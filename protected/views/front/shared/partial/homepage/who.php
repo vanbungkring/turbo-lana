@@ -1,4 +1,4 @@
-	<div class="city-billboard">
+	<div class="who">
 		<div class="container">
 			<div class="row">
 				<h4>Featured Cities</h4>

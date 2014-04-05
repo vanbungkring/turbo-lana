@@ -82,9 +82,9 @@ hr {
 	padding-top: 60px;
 	min-height: 500px;
 	-webkit-background-size: cover;
-  	-moz-background-size: cover;
-  	-o-background-size: cover;
-  	background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
 
 	.row-search{
 		margin-top: 20px;
@@ -103,7 +103,7 @@ hr {
 		background: #ff0048;
 		border: none;
 		padding: 10px;
-	
+
 
 	}
 	.search-button:hover{
@@ -146,16 +146,101 @@ hr {
 		color: white;
 	}
 }
-.city-billboard{
+.who{
+	background-color: #f7f8fa;
+	.overlayed{
+		.overlay{  background:rgba(0,0,0,.75);
+               text-align:center;
+               position: absolute;
+               padding:45px 0 66px 0;
+               opacity:0;
+               -webkit-transition: opacity .25s ease;}
+		h2 { 
+			text-align: center;
+			position: absolute; 
+			top: 0px; 
+			left: 0; 
+			width: 100%; 
+			font-size: 29px;
+			color: #fff;
+			padding-top: 70px;
+			line-height: 1.2;
+			margin: 0;
+			text-shadow: 0 1px 8px rgba(0,0,0,0.5);
+			font-family: @font-default3;
+		}
+	}
+	.overlayed:hover{
+		.overlay{
+			opacity: 1;
+		}
+	}
 	.panel-body{
 		padding: 0px;
+	}
+	hr{
+		width: 100px;
+		margin: 0 auto;
+		margin-top: -10px;
+		margin-bottom: 10px;
+
 	}
 	padding-top: 30px;
 	h4{
 		text-align: center;
-		text-decoration: underline;
+		font-family: @font-default2;
+		font-weight: bold;
 		line-height: 40px;
 	}
+}
+
+
+.city-billboard{
+	.overlayed{
+		.overlay{  background:rgba(0,0,0,.75);
+               text-align:center;
+               position: absolute;
+               padding:45px 0 66px 0;
+               opacity:0;
+               -webkit-transition: opacity .25s ease;}
+		h2 { 
+			text-align: center;
+			position: absolute; 
+			top: 0px; 
+			left: 0; 
+			width: 100%; 
+			font-size: 29px;
+			color: #fff;
+			padding-top: 70px;
+			line-height: 1.2;
+			margin: 0;
+			text-shadow: 0 1px 8px rgba(0,0,0,0.5);
+			font-family: @font-default3;
+		}
+	}
+	.overlayed:hover{
+		.overlay{
+			opacity: 1;
+		}
+	}
+	.panel-body{
+		padding: 0px;
+	}
+	hr{
+		width: 100px;
+		margin: 0 auto;
+		margin-top: -10px;
+		margin-bottom: 10px;
+
+	}
+	padding-top: 30px;
+	h4{
+		text-align: center;
+		font-family: @font-default2;
+		font-weight: bold;
+		line-height: 40px;
+	}
+	background: #fff;
 }
 .intro {
 	background: #f7f8fa;
