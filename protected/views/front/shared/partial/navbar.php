@@ -5,7 +5,7 @@
 			<div class="container">
 
 				<div class="navbar-header">
-					<a class="navbar-brand" href="<?= Yii::app()->getBaseUrl() ?>/"><img src="<?= Yii::app()->getBaseUrl(true) ?>/images/logo.png" alt="Jakarta" class="img-responsive"></a>
+					<a class="navbar-brand" href="<?= Yii::app()->getBaseUrl() ?>/"><img src="<?= Yii::app()->getBaseUrl(true) ?>/images/logo.png" alt="Kiviads"></a>
 				</div>
 
 				<div class="navbar-collapse collapse">

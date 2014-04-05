@@ -4,6 +4,7 @@
 <?php $this->renderPartial('/shared/partial/homepage/intro'); ?>
 <?php $this->renderPartial('/shared/partial/homepage/city'); ?>
 <?php $this->renderPartial('/shared/partial/homepage/who'); ?>
+<?php $this->renderPartial('/shared/partial/homepage/adsnow'); ?>
 
 
 <div id="c">
