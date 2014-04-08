@@ -69,6 +69,7 @@
   <?php
 //google maps render
   $js = '
+  $("body").css("height","100%");
   var afterloginurl = "";
   var isGuest = '.(int)Yii::app()->user->isGuest.'
   var mapOptions = {
