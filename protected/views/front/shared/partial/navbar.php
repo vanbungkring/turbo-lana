@@ -10,9 +10,9 @@
 
 				<div class="navbar-collapse collapse">
 					<ul class="nav navbar-nav">
-					<li><a href="#desc">Dashboard</a></li>
-					<li><a href="#desc">My Bookmark</a></li>
-					<li><a href="#showcase" class="smothScroll">RFP</a></li>
+					<li><a href="<?php echo Yii::app()->createUrl('user/UserDashboard'); ?>">Dashboard</a></li>
+					<li><a href="<?php echo Yii::app()->createUrl('user/MyBookmark'); ?>">My Bookmark</a></li>
+					<li><a href="<?php echo Yii::app()->createUrl('rfp/list'); ?>" class="smothScroll">RFP</a></li>
 				</ul>
 					<ul class="nav navbar-nav navbar-right">
 						<?php 
