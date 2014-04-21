@@ -1,21 +1,3 @@
-<?php
-
-  $this->pageTitle=Yii::app()->name . ' - Login';
-  $this->breadcrumbs=array('Login',);
-
-?>
-<div class="container big-login">
-  <div class="row">
-       <div class="col-md-6 col-md-offset-3">
-        
-        <h1 id="signin_logo" class="login-sprite sprout-logo hide-text">
-          <a href="http://sproutsocial.com ">Sprout Social</a> 
-        </h1>
-       
-       </div>
-  </div>
-</div>
-
       <?php
       /* @var $this SiteController */
       /* @var $model LoginForm */
@@ -26,8 +8,9 @@
        'Login',
        );
        ?>
-       <div class="container kivi">
+       <div class="container big-login">
         <div class="row">
+        <div class="col-md-6 col-md-offset-3">
 
          <h1>Login</h1>
 
@@ -71,8 +54,7 @@
          </div>
 
          <?php $this->endWidget(); ?>
+         <?php $this->widget('ext.hoauth.widgets.HOAuth'); ?>
        </div><!-- form -->
      </div>
    </div>
-
-   <?php $this->widget('ext.hoauth.widgets.HOAuth'); ?>
