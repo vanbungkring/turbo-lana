@@ -110,6 +110,21 @@
           </div>
         </section>
         
+        <section id="banner-detail-info-list" class="banner-info-body">
+            <header class="banner-info-header"> Request Quote</header>
+            <?php $form=$this->beginWidget('CActiveForm', array(
+              'id'=>'quote2-form',
+              'action'=>array('rfp2/save'),
+            )); ?>
+            <p class="content-description">
+               <?php echo $form->hiddenField($quote2,'idBanner',array('class'=>'fosrm-control')); ?>
+              Star : <?php echo $form->textField($quote2,'tanggalAwal',array('class'=>'form-control hasDatepicker')); ?> <br>
+              End : <?php echo $form->textField($quote2,'tanggalAkhir',array('maxlength'=>255,'class'=>'form-control hasDatepicker')); ?> <br>
+              <input type="submit" class="btn btn-default btn-block whislist"  value="Get Quotes">
+            </p>
+            <?php $this->endWidget(); ?>
+
+        </section>
 
         <section class="banner-info-body svw">
           <button type="button" class="btn btn-default btn-block whislist" id="addBookmark">Save To Whislist</button>

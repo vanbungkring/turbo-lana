@@ -101,9 +101,13 @@ class SiteController extends FrontEndController
 			throw new CHttpException(404,'Banner Tidak Ditemukan.');
 		// renders the view file 'protected/views/site/index.php'
 		// using the default layout 'protected/views/layouts/main.php'
+
+		$quote2 = new Quote2();
+		$quote2->idBanner = $id;
 		$this->render('billboard-detail',array(
 			'banner'=>$banner,
 			'member'=>$member,
+			'quote2'=>$quote2,
 		));
 	}
 	public function actionCustomBanner($id)
