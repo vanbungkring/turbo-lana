@@ -8,11 +8,11 @@
         </div>
 
         <div class="col-xs-2 free-transform">
-          <input type="text" class="form-control" placeholder="Calendar" id="startPicker">
+          <input type="text" class="form-control hasDatepicker_start" placeholder="Calendar" id="startPicker">
         </div>
 
         <div class="col-xs-2 free-transform">
-          <input type="text" class="form-control" placeholder="Calendar" id="endPicker">
+          <input type="text" class="form-control hasDatepicker_end" placeholder="Calendar" id="endPicker">
         </div>
 
         <div class="col-xs-2 free-transform">

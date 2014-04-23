@@ -23,7 +23,7 @@ $('#more-filter').popover({
  $(".image-billboard").bxSlider({
     
   });
-$( "#startPicker" ).datepicker({
+$( ".hasDatepicker_start" ).datepicker({
   defaultDate: "+1w",
   changeMonth: true,
   numberOfMonths: 1,
@@ -31,7 +31,7 @@ $( "#startPicker" ).datepicker({
     $( "#to" ).datepicker( "option", "minDate", selectedDate );
   }
 });
-$( "#endPicker" ).datepicker({
+$( ".hasDatepicker_end" ).datepicker({
   defaultDate: "+1w",
   changeMonth: true,
   numberOfMonths: 1,

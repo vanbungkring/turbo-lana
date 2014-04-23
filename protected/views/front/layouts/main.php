@@ -17,7 +17,7 @@
 
 
   <!-- Custom styles for this template -->
-  <link href="<?php echo Yii::app()->request->baseUrl; ?>/css/front/netra.css" rel="stylesheet">
+  <link href="<?php echo Yii::app()->request->baseUrl; ?>/css/css/netra.css" rel="stylesheet">
 
   <!-- Just for debugging purposes. Don't actually copy this line! -->
   <!--[if lt IE 9]><script src="../../docs-assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -44,7 +44,7 @@
     <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/sscroll.js"></script>
      <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/js.free.transform.js"></script>
       <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/matrix.js"></script>
-    <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/netra.min.js"></script>
+    <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/netra-ck.js"></script>
    
   </body>
 </html>
