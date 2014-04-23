@@ -21,6 +21,10 @@ body {
 	-webkit-font-smoothing: antialiased;
 	-webkit-overflow-scrolling: touch;
 }
+.container .row .col-md-12 .row {
+    display: flex;
+    justify-content: center;
+}
 .map-body{
 	height: 100%;
 }
@@ -637,9 +641,40 @@ hr {
 	}
 }
 .big-login{
+
 	margin-top: 0px;
-	.login{
-		text-align:center;
+	height: 100%;
+	width: 100%;
+
+	.login-form{
+		.border-radius(10px);
+		background: #dedede;
+		padding: 10px;
+		margin:0 auto;
+		width: 300px;
+		.login-top{
+			text-align: center;
+		}
+		label{
+			font-weight: 400;
+			font-size: 12px;
+			margin-top: -4px;
+		}
+		input[type="text"],input[type="password"]{
+			width: 100%;
+		}
+		input[type="checkbox"] {
+			float: left;
+			margin-right: 5px;
+			margin-top: 7px;
+		}
+		input[type="submit"]{
+			width: 100%;
+		} 
+		.zocial{
+			margin-top: 30px;
+		}
+		text-align:left;
 	}
 }
 .custom-image{

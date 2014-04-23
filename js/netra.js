@@ -1,3 +1,10 @@
+var allListElements = $( ".big-login" );
+if($("body").hasClass($( ".big-login" ))){
+
+  alert(123);
+}
+
+
 //slide
 $('.carousel').carousel({
   interval: 3500

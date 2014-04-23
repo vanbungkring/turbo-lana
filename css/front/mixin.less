@@ -11,6 +11,35 @@
 @font-default3 :"Radley";
 @font-default4 :"Roboto";
 
+
+textarea:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="time"]:focus,
+input[type="week"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="color"]:focus,
+.uneditable-input:focus {
+  border-color: rgba(82, 168, 236, 0.8);
+  outline: none;
+  border:none !important;
+  box-shadow:none !important;
+  outline: thin dotted \9;
+  /* IE6-9 */
+  .border-radius(3px);
+}
+.errorMessage{
+	font-size: 12px;
+	color: red;
+}
 .swipe {
   overflow: hidden;
   visibility: hidden;
