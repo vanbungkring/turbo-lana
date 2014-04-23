@@ -32,6 +32,7 @@ class Rfp2Controller extends FrontEndController
 		if(isset($_POST['Quote2']))
 		{
 			$model->attributes = @$_POST['Quote2'];
+			$model->idMember = Yii::app()->user->id;
 			if($model->save()){
 				$this->redirect(array('view','id'=>$model->id));
 			}
@@ -139,6 +140,7 @@ class Rfp2Controller extends FrontEndController
 	{
 		$criteria = new CDbCriteria();
 		$criteria->compare('idMember',Yii::app()->user->id);
+		$criteria->with = array('banner');
 
 		$dataProvider=new CActiveDataProvider('Quote2',array(
 			'criteria'=>$criteria
