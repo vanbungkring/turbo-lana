@@ -14,7 +14,7 @@ return CMap::mergeArray(
 				'rules'=>array(
 					'dashboard'=>'user/userDashboard',
 
-					'registrasi'=>'site/registrasi',
+					'register'=>'site/registrasi',
 					'search'=>'site/result',
 					'custom'=>'site/custom',
 					'login'=>'site/login',

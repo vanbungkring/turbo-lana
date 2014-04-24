@@ -33,16 +33,27 @@
       								<?php echo $form->passwordField($model,'password',array('class'=>'form-control')); ?>
       								<?php echo $form->error($model,'password'); ?>
       							</div>
-
-      							<div class="form-group">
-      								<?php echo $form->checkBox($model,'rememberMe'); ?>
-      								<?php echo $form->label($model,'rememberMe'); ?>
-      								<?php echo $form->error($model,'rememberMe'); ?>
+      							<div class="col-md-6">
+	      							<div class="form-group">
+	      								<?php echo $form->checkBox($model,'rememberMe'); ?>
+	      								<?php echo $form->label($model,'rememberMe'); ?>
+	      								<?php echo $form->error($model,'rememberMe'); ?>
+	      							</div>
       							</div>
 
+      							<div class="col-md-6">
+	      								<a href="#" class="forgot_pw">Forgot your password?</a>
+      							</div>
+      							<div class="col-md-12">
+      								<?php echo CHtml::submitButton('Login',array('class'=>'btn btn-default login-button')); ?>
+      								
+      								<div class="signup_link">New to  kiviads? 
+      									<a href="http://sproutsocial.com/pricing">Sign Up »</a>
+      								</div>
+      							
+      							</div>
 
-      							<?php echo CHtml::submitButton('Login',array('class'=>'btn btn-default')); ?>
-
+      							
 
       							<?php $this->endWidget(); ?>
       							<?php $this->widget('ext.hoauth.widgets.HOAuth'); ?>
