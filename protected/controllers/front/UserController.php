@@ -31,7 +31,7 @@ class UserController extends FrontEndController
 		$this->render('user');
 	}
 
-	public function actionUserDashboard(){
+	public function actionDashboard(){
 		$this->render('user-dashboard');
 	}
 

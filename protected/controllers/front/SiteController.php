@@ -58,7 +58,7 @@ class SiteController extends FrontEndController
 				'users'=>array('@'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('index','oauth','result','custom','userDashboard','GetMarker','Registrasi','User','AjaxLogin','login','error'),
+				'actions'=>array('index','oauth','result','custom','Dashboard','GetMarker','Registrasi','User','AjaxLogin','login','error'),
 				'users'=>array('*'),
 			),
 			array('deny',  // deny all users
