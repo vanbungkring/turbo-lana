@@ -1,8 +1,10 @@
 
-<?php $this->renderPartial('/shared/partial/navbar-home'); ?>
+<?php $this->renderPartial('/shared/partial/navbar'); ?>
 <?php $this->renderPartial('/shared/partial/homepage/header-wrap'); ?>
 
-<?php
+
+
+	<?php
 
 
 	Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl.'/js/jquery.geocomplete.js',  CClientScript::POS_END);

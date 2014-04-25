@@ -14,19 +14,32 @@
 					<li><a href="<?php echo Yii::app()->createUrl('user/MyBookmark'); ?>">My Bookmark</a></li>
 					<li><a href="<?php echo Yii::app()->createUrl('rfp/list'); ?>" class="smothScroll">RFP</a></li> -->
 				</ul>
-					<ul class="nav navbar-nav navbar-right">
-						<?php 
-						if(!Yii::app()->user->isGuest) {
-							echo  '<li><a href="'.Yii::app()->createUrl('user/Dashboard').'">Dashboard</a></li>';
-							echo  '<li><a href="'.Yii::app()->createUrl('site/logout').'">Logout</a></li>';
-						
-						}
-						else{
-								echo  '<li><a href="'.Yii::app()->createUrl('site/login').'">Login / Register</a></li>';
-						}
-						?>
-					</ul>
-				</div><!--/.nav-collapse -->
-			</div>
-		</div>
+				<ul class="nav navbar-nav navbar-right">
+
+					<?php 
+					if(!Yii::app()->user->isGuest) {
+					echo  '<li class="dropdown">'
+						echo  '<a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>'
+						echo  '<ul class="dropdown-menu">'
+						echo  '<li><a href="#">Action</a></li>'
+						echo  '<li><a href="#">Another action</a></li>'
+						echo  '<li><a href="#">Something else here</a></li>'
+						echo  '<li class="divider"></li>'
+						echo  '<li class="nav-header">Nav header</li>'
+						echo  '<li><a href="#">Separated link</a></li>'
+						echo  '<li><a href="#">One more separated link</a></li>'
+						echo  '</ul>'
+						echo  '</li>'
+
+					}
+				else{
+					echo  '<li><a href="'.Yii::app()->createUrl('site/login').'">Login / Register</a></li>';
+					echo  '<li><a href="'.Yii::app()->createUrl('site/login').'">Login / Register</a></li>';
+					echo  '<li><a href="'.Yii::app()->createUrl('site/login').'">Login / Register</a></li>';
+				}
+			?>
+		</ul>
+	</div><!--/.nav-collapse -->
+</div>
+</div>
 
