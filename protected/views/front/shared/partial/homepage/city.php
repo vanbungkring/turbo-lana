@@ -1,9 +1,10 @@
 	<div class="city-billboard">
 		<div class="container">
 			<div class="row">
-				<h4>Featured Cities</h4>
-				<hr>
+
 				<div class="col-sm-10 col-md-offset-1">
+					<h3>Featured Cities</h3>
+					<hr>
 					<div class="col-sm-4">
 						<div class="panel panel-default overlayed">
 							<h2>Jakarta</h2>
