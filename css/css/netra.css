@@ -2,6 +2,17 @@
 @import url(http://fonts.googleapis.com/css?family=Raleway:400,200,300,600,500,700);
 @import url(http://fonts.googleapis.com/css?family=Radley);
 @import url(http://fonts.googleapis.com/css?family=Roboto+Condensed:400italic,400,700,300);
+.navbar .nav > li > a {
+  font-size: 12px;
+  font-family: "Arial";
+  font-weight: bold;
+}
+.navbar-brand {
+  float: left;
+  padding: 11px 15px;
+  font-size: 18px;
+  line-height: 20px;
+}
 input[type="text"] {
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
@@ -302,8 +313,8 @@ html,
 body {
   height: 100%;
   width: 100%;
-  background: #fff;
-  font-family: "Lato";
+  background: #efefef;
+  font-family: "Arial";
 }
 #map_canvas {
   height: 100%;
@@ -311,8 +322,8 @@ body {
 }
 body {
   height: 100%;
-  background-color: #f2f2f2;
-  font-family: "Lato";
+  background-color: #000;
+  font-family: "Arial";
   font-weight: 300;
   font-size: 16px;
   color: #555;
@@ -321,6 +332,7 @@ body {
   -webkit-overflow-scrolling: touch;
 }
 .top-section {
+  background: #fff;
   padding-top: 50px;
   padding-bottom: 50px;
   height: 500px;

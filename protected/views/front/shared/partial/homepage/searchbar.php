@@ -1,5 +1,5 @@
 <div class="search-box">
-<h1>Flight search. Reinvented for humans.</h1>
+<h1>The easiest way to buy, sell and manage Outdoor Advertising!</h1>
 
 <form action="<?php echo Yii::app()->createUrl('site/result'); ?>" method="GET">
 	<div class="row row-search">
