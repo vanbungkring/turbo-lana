@@ -14,7 +14,6 @@
 						<li><a href="#">Who are You</a></li>
 						<li><a href="#">FAQ</a></li>
 					</ul>
-					    <?php $this->renderPartial('/shared/partial/search-bar-custom'); ?>
 					<ul class="nav navbar-nav navbar-right">
 						<?php 
 						if(!Yii::app()->user->isGuest) {?>
