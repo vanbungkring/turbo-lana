@@ -83,6 +83,17 @@ class SiteController extends FrontEndController
 		// using the default layout 'protected/views/layouts/main.php'
 		$defLat = isset($_GET['lat']) ? $_GET['lat'] : -6.17511;
 		$defLong = isset($_GET['long']) ? $_GET['long'] : 106.86503949999997;
+		if(isset($_GET['lokasi'])){
+			$url = 'http://maps.googleapis.com/maps/api/geocode/json?address='.urlencode($_GET['lokasi']).'&sensor=false';
+			$jdata = @file_get_contents($url);
+			$data = @json_decode($jdata);
+			$newLat = @$data->results[0]->geometry->location->lat;
+			$newLong = @$data->results[0]->geometry->location->lng;
+			if($newLat and $newLong){
+				$defLat = $newLat;
+				$defLong = $newLong;
+			}
+		}
 		$this->render('result',array(
 			'defLat' => $defLat,
 			'defLong' => $defLong,

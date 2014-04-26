@@ -1,4 +1,9 @@
     <?php $this->renderPartial('/shared/partial/navbar-fluid'); ?>
+    <div class="search-header">
+      <div class="container">
+        <div class="col-xs-4 free-transform">
+          <input name="lokasi" type="text" class="form-control" placeholder="Search Location" id="boxcari">
+        </div>
 
   </div>
   <div class="container container-full fill">
