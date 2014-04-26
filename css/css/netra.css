@@ -640,11 +640,16 @@ hr {
 #c p {
   color: white;
 }
-#map-wrapper,
 .container-full {
   width: 100%;
   height: 100%;
   padding: 0px;
+}
+.container-full #map-wrapper {
+  width: 73.3%;
+  height: 100%;
+  right: 0px;
+  float: right;
 }
 .search-header {
   width: 100%;
