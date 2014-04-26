@@ -33,7 +33,11 @@ class Rfp2Controller extends FrontEndController
 		{
 			$model->attributes = @$_POST['Quote2'];
 			$model->idMember = Yii::app()->user->id;
+			$member = Member::model()->findByPk($model->idMember);
 			if($model->save()){
+				$member->addLog(MemberLog::TYPE_QUOTE_2,array(
+					'idBanner'=>$model->idBanner
+				));
 				$this->redirect(array('view','id'=>$model->id));
 			}
 			else{

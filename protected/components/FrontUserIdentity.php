@@ -22,6 +22,8 @@ class FrontUserIdentity extends CUserIdentity
             $this->_id=$user->id;
             $this->username=$user->namaDepan;
             $this->errorCode=self::ERROR_NONE;
+
+            $user->addLog(MemberLog::TYPE_LOGIN,array());
         }
         return $this->errorCode==self::ERROR_NONE;
     }

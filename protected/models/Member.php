@@ -167,4 +167,13 @@ class Member extends CActiveRecord
 	public function verifyPassword($pass){
 		return md5($pass) ==  $this->password;
 	}
+
+	public function addLog($type,$data){
+		$log = new MemberLog();
+		$log->idMember = $this->id;
+		$log->type = $type;
+		$log->time = date('Y-m-d H:i:s');
+		$log->data = $data;
+		$log->save();
+	}
 }

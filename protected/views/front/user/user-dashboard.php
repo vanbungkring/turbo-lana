@@ -6,64 +6,27 @@
 				<div class="row">
 
 					<div class="col-lg-4">
+						<?php foreach($logByDate as $date=>$logs): ?>
+
 						<div class="panel panel-default">
 							<div class="panel-heading">
-								<i class="fa fa-bell fa-fw"></i> Notifications Panel
+								<i class="fa fa-bell fa-fw"></i> <?php echo $date ?>
 							</div>
 							<!-- /.panel-heading -->
 							<div class="panel-body">
 								<div class="list-group">
-									<a href="#" class="list-group-item">
-										<i class="fa fa-comment fa-fw"></i> New Comment
-										<span class="pull-right text-muted small"><em>4 minutes ago</em>
+									<?php foreach ($logs as $log): ?>
+										<span href="#" class="list-group-item">
+											<i class="fa fa-comment fa-fw"></i> <?php echo $log->getText(); ?> 
 										</span>
-									</a>
-									<a href="#" class="list-group-item">
-										<i class="fa fa-twitter fa-fw"></i> 3 New Followers
-										<span class="pull-right text-muted small"><em>12 minutes ago</em>
-										</span>
-									</a>
-									<a href="#" class="list-group-item">
-										<i class="fa fa-envelope fa-fw"></i> Message Sent
-										<span class="pull-right text-muted small"><em>27 minutes ago</em>
-										</span>
-									</a>
-									<a href="#" class="list-group-item">
-										<i class="fa fa-tasks fa-fw"></i> New Task
-										<span class="pull-right text-muted small"><em>43 minutes ago</em>
-										</span>
-									</a>
-									<a href="#" class="list-group-item">
-										<i class="fa fa-upload fa-fw"></i> Server Rebooted
-										<span class="pull-right text-muted small"><em>11:32 AM</em>
-										</span>
-									</a>
-									<a href="#" class="list-group-item">
-										<i class="fa fa-bolt fa-fw"></i> Server Crashed!
-										<span class="pull-right text-muted small"><em>11:13 AM</em>
-										</span>
-									</a>
-									<a href="#" class="list-group-item">
-										<i class="fa fa-warning fa-fw"></i> Server Not Responding
-										<span class="pull-right text-muted small"><em>10:57 AM</em>
-										</span>
-									</a>
-									<a href="#" class="list-group-item">
-										<i class="fa fa-shopping-cart fa-fw"></i> New Order Placed
-										<span class="pull-right text-muted small"><em>9:49 AM</em>
-										</span>
-									</a>
-									<a href="#" class="list-group-item">
-										<i class="fa fa-money fa-fw"></i> Payment Received
-										<span class="pull-right text-muted small"><em>Yesterday</em>
-										</span>
-									</a>
+									<?php endforeach ?>
 								</div>
 								<!-- /.list-group -->
-								<a href="#" class="btn btn-default btn-block">View All Alerts</a>
 							</div>
 							<!-- /.panel-body -->
 						</div>
+
+						<?php endforeach; ?>
 						<!-- /.panel -->
 					</div>
 

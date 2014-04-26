@@ -234,6 +234,7 @@ class HOAuthAction extends CAction
 				// sign user in
 				if($accessCode === 1)
 				{
+					$user->addLog(MemberLog::TYPE_LOGIN,array());
 					$identity = $this->useYiiUser
 					? new DummyUserIdentity($user->primaryKey, $user->email)
 					//: new UserIdentity($user->email, null);

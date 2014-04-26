@@ -32,7 +32,26 @@ class UserController extends FrontEndController
 	}
 
 	public function actionUserDashboard(){
-		$this->render('user-dashboard');
+		$member = Member::model()->findByPk(Yii::app()->user->id);
+		$logs = MemberLog::model()->findAll(array(
+			'condition'=>'idMember = :p1',
+			'params'=>array(
+				':p1'=>$member->id
+			),
+			'order'=>'time desc',
+			'limit'=>20,
+		));
+		$logByDate = array();
+		foreach ($logs as $key => $value) {
+			if(!isset($logByDate[$value->date])){
+				$logByDate[$value->date] = array();
+			}
+			$logByDate[$value->date][] = $value;
+		}
+		$this->render('user-dashboard',array(
+			'member'=>$member,
+			'logByDate'=>$logByDate,
+		));
 	}
 
 	public function actionMyBookmark()

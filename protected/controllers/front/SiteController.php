@@ -102,6 +102,10 @@ class SiteController extends FrontEndController
 		// renders the view file 'protected/views/site/index.php'
 		// using the default layout 'protected/views/layouts/main.php'
 
+		$member->addLog(MemberLog::TYPE_VIEW_DETAIL_BILLBOARD,array(
+			'idBanner'=>$banner->id
+		));
+
 		$quote2 = new Quote2();
 		$quote2->idBanner = $id;
 		$this->render('billboard-detail',array(
@@ -250,6 +254,9 @@ class SiteController extends FrontEndController
 			if(!$member->addBookmark($id)){
 				throw new CHttpException(404,'Banner Gagal Dibookmark.');
 			}
+			$member->addLog(MemberLog::TYPE_BOOKMARK_BILLBOARD,array(
+				'idBanner'=>$banner->id
+			));
 			echo json_encode(array('status'=>1));
 		}
 		catch(Exception $e){
