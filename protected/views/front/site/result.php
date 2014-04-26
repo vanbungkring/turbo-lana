@@ -1,4 +1,4 @@
-    <?php $this->renderPartial('/shared/partial/navbar'); ?>
+    <?php $this->renderPartial('/shared/partial/navbar-fluid'); ?>
     <div class="search-header">
       <div class="container">
         <div class="col-xs-4 free-transform">
@@ -7,64 +7,10 @@
           <input type="hidden" id="long" value="106.86503949999997" />
         </div>
 
-        <div class="col-xs-2 free-transform">
-          <input type="text" class="form-control hasDatepicker_start" placeholder="Calendar" id="startPicker">
-        </div>
-
-        <div class="col-xs-2 free-transform">
-          <input type="text" class="form-control hasDatepicker_end" placeholder="Calendar" id="endPicker">
-        </div>
-
-        <div class="col-xs-2 free-transform">
-          <button type="button" id="more-filter" class="btn btn-default btn-block" data-container="body" data-toggle="popover" data-placement="bottom">
-           More Filter
-         </button>
-       </div>
-
-       <div class="col-xs-1 free-transform">
-         <button type="button" class="btn btn-success" id="btnSearch">Search</button>
-       </div>
-
-
-       <div class="btn-group right">
-        <button type="button" class="btn btn-default"><i class="fa fa-th-list"></i></button>
-        <button type="button" class="btn btn-default active"><i class="fa fa-map-marker"></i></button>
-      </div>
-    </div>
   </div>
   <div class="container container-full fill">
     <div id="map-wrapper"></div>
   </div> 
-
-  <div class="modal fade login-popup" id="billboard-popup" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog billboard-preview">
-      <div class="modal-content modal-container">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-          <h4 class="modal-title" id="login-modal">Login To KiviAds</h4>
-        </div>
-        <div class="modal-body">
-          <div class="signin-with-sc">
-            <span>You need to sign in for those awesome feature</span>
-            <button type="button" class="btn btn-default btn-lg btn-block linkedin-button"></button>
-          </div>
-          <p class="bg-danger" id="loginError" style="display:none">User Password Tidak Cocok</p>
-          <div class="normal-signin">
-            <div class="text-kivi">Or use Kiviads Account</div>
-            <div class="form-group">
-              <input type="email" class="form-control input-form" id="useremail" placeholder="Your email Address">
-            </div>
-            <div class="form-group">
-              <input type="password" class="form-control input-form" id="userpassword" placeholder="Password">
-            </div>
-          </div>
-        </div>
-        <div class="modal-footer">
-          <button id="btnLogin" type="button" class="btn btn-default">Sign In</button>
-        </div>
-      </div>
-    </div>
-  </div>
 
   <?php
 //google maps render
