@@ -1,3 +1,10 @@
+var allListElements = $( ".big-login" );
+if($("body").hasClass($( ".big-login" ))){
+
+  alert(123);
+}
+
+
 //slide
 $('.carousel').carousel({
   interval: 3500
@@ -16,27 +23,28 @@ $( ".price-slider").slider({
 
 $('#more-filter').popover({
  html : true,
-    content: function() {
-    return $('#popover_content_wrapper').html();
-  }
+ content: function() {
+  return $('#popover_content_wrapper').html();
+}
 })
- $(".image-billboard").bxSlider({
-    
-  });
-$( "#startPicker" ).datepicker({
-  defaultDate: "+1w",
-  changeMonth: true,
+$(".image-billboard").bxSlider({
+  
+});
+$( ".hasDatepicker_start" ).datepicker({
+  minDate: 0,
+  changeMonth: false,
   numberOfMonths: 1,
   onClose: function( selectedDate ) {
-    $( "#to" ).datepicker( "option", "minDate", selectedDate );
+    $( ".hasDatepicker_end" ).datepicker( "option", "minDate", selectedDate);
+    $(".hasDatepicker_end").datepicker("show");
   }
 });
-$( "#endPicker" ).datepicker({
+$( ".hasDatepicker_end" ).datepicker({
   defaultDate: "+1w",
-  changeMonth: true,
+  changeMonth: false,
   numberOfMonths: 1,
   onClose: function( selectedDate ) {
-    $( "#from" ).datepicker( "option", "maxDate", selectedDate );
+    
   }
 });
 

@@ -69,25 +69,18 @@
           </section>
         </div>
         <div class="col-md-4">
-
+<!-- 
         <section class="banner-info-body svw">
           <a href="<?php echo Yii::app()->createUrl("site/customBanner",array('id'=>$banner->id)); ?>"
            type="button" class="btn btn-default btn-block whislist btn-lg" id="custombanner">Custom This Banner</a>
-        </section>
+        </section> -->
 
           <section class="banner-info-body">
             <div class="price">
               <div class="price-detail">
-                <select id="harga">
-                  <option value="<?php echo $banner->hargaPerBulan;?>">Per Bulan</option>
-                  <option value="<?php echo $banner->hargaPer3Bulan;?>">Per 3 Bulan</option>
-                  <option value="<?php echo $banner->hargaPer6Bulan;?>">Per 6 Bulan</option>
-                  <option value="<?php echo $banner->hargaPerTahun;?>">Per Tahun</option>
-                </select>
-               <sup>Dari</sup>
-               <em class="currency"> Rp</em>
-               <span id="spanharga">185.000</span>
-               <sup>.000</sup>
+                <sup>Dari</sup>
+                <em class="currency"> Rp</em>              
+                <span id="spanharga"> <?php echo $banner->hargaPerBulan;?>/ Bulan</span>
              </div>
              <ul>
               <li> <i class="fa fa-tags fa-2x"></i> Discount for 4 month Rent</li>
@@ -97,7 +90,7 @@
 
             </ul>
           </div>
-          <a href="<?php echo Yii::app()->createUrl('/rfp/index',array('idBanner'=>array($banner->id))); ?>" type="button" class="btn btn-primary btn-block book-it-button btn-lg">Create Quote</a>
+          <!-- <a href="<?php echo Yii::app()->createUrl('/rfp/index',array('idBanner'=>array($banner->id))); ?>" type="button" class="btn btn-primary btn-block book-it-button btn-lg">Create Quote</a> -->
           <div class="fast-contact">
             <i class="fa fa-phone-square fa-3x"></i>
             <div class="detail-contact">
@@ -118,8 +111,8 @@
             )); ?>
             <p class="content-description">
                <?php echo $form->hiddenField($quote2,'idBanner',array('class'=>'fosrm-control')); ?>
-              Star : <?php echo $form->textField($quote2,'tanggalAwal',array('class'=>'form-control hasDatepicker')); ?> <br>
-              End : <?php echo $form->textField($quote2,'tanggalAkhir',array('maxlength'=>255,'class'=>'form-control hasDatepicker')); ?> <br>
+              Star : <?php echo $form->textField($quote2,'tanggalAwal',array('class'=>'form-control hasDatepicker_start',)); ?> <br>
+              End : <?php echo $form->textField($quote2,'tanggalAkhir',array('maxlength'=>255,'class'=>'form-control hasDatepicker_end')); ?> <br>
               <input type="submit" class="btn btn-default btn-block whislist"  value="Get Quotes">
             </p>
             <?php $this->endWidget(); ?>

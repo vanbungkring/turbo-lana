@@ -1,4 +1,4 @@
-<div id="headerwrap">
+<!-- <div id="headerwrap">
 	<div class="overlay"></div>
 	<div class="container">
 
@@ -6,4 +6,10 @@
 		<h4>Cara termudah untuk membeli, menjual dan mengatur outdoor advertising!</h4>
 		<?php $this->renderPartial('/shared/partial/homepage/searchbar'); ?>
 	</div>
-</div><!--/ #headerwrap -->
+</div>
+ -->
+<div class="container-fluid top-section">
+	<div class="container">
+		<?php $this->renderPartial('/shared/partial/homepage/searchbar'); ?>
+	</div>
+</div>

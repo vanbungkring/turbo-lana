@@ -6,11 +6,53 @@
 @bgHighlight    : #196bb5;
 @colDefault     : #ecf0f1;
 @colHighlight   : #ffffff;
-@font-default :"Lato";
+@font-default :"Arial";
 @font-default2 :"Raleway";
 @font-default3 :"Radley";
 @font-default4 :"Roboto";
 
+.navbar .nav > li > a {
+	font-size: 12px;
+	font-family: @font-default;
+	font-weight: bold;
+}
+.navbar-brand {
+	float: left;
+	padding: 11px 15px;
+	font-size: 18px;
+	line-height: 20px;
+}
+input[type="text"]{
+	 .border-radius(2px);
+	 padding: 6px 10px;
+}
+textarea:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="time"]:focus,
+input[type="week"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="color"]:focus,
+.uneditable-input:focus {
+  outline: none;
+  border:1px solid rgba(82, 168, 236, 0.8);
+  box-shadow:none !important;
+  outline: thin dotted \9;
+  /* IE6-9 */
+  .border-radius(2px);
+}
+.errorMessage{
+	font-size: 12px;
+	color: red;
+}
 .swipe {
   overflow: hidden;
   visibility: hidden;
