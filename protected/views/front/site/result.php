@@ -2,9 +2,7 @@
     <div class="search-header">
       <div class="container">
         <div class="col-xs-4 free-transform">
-          <input type="text" class="form-control" placeholder="Search Location" id="boxcari">
-          <input type="hidden" id="lat" value="-6.17511" />
-          <input type="hidden" id="long" value="106.86503949999997" />
+          <input name="lokasi" type="text" class="form-control" placeholder="Search Location" id="boxcari">
         </div>
 
         <div class="col-xs-2 free-transform">
