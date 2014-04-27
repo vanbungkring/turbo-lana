@@ -1,15 +1,598 @@
-    <?php $this->renderPartial('/shared/partial/navbar-fluid'); ?>
-    <div class="search-header">
-      <div class="container">
-        <div class="col-xs-4 free-transform">
-          <input name="lokasi" type="text" class="form-control" placeholder="Search Location" id="boxcari">
-        </div>
+<?php $this->renderPartial('/shared/partial/navbar-fluid'); ?>
 
   </div>
   <div class="container container-full fill">
-    <div id="map-wrapper"></div>
-  </div> 
+    <div class="col-md-3 filter">
+      <div class="filter-wrapper">
+        <button type="button" class="btn btn-primary btn-lg btn-block"><i class="fa fa-filter"></i>More Filter</button>
+            
+      </div>
+    </div>
+    <div class="col-md-3 list">
 
+      <ul class="assets-card-holder">
+        <li class="card">
+          
+          <div class="card-body">
+            
+            <div class="card-image">
+              <img alt="Hotel Majapahit - Surabaya Hotels" src="http://res.cloudinary.com/wego/image/upload/w_180,h_180,c_fill/v1395061119/hotels/269481/11420934.jpg">
+            </div>
+            
+            <div class="card-meta">
+              <div class="card-main">
+                <strong class="card-main-title"> Billboard 1 jakabaring Bali</strong>
+                <strong class="card-status">Status : Available</strong>
+              </div>
+              <div class="card-rate">
+                  <span class="currency">Rp</span>
+                  <strong class="price">100.000
+                    <sup>.000</sup>
+                  </strong>
+              </div>
+            </div>
+          
+          </div>
+        </li>
+        <li class="card">
+          
+          <div class="card-body">
+            
+            <div class="card-image">
+              <img alt="Hotel Majapahit - Surabaya Hotels" src="http://res.cloudinary.com/wego/image/upload/w_180,h_180,c_fill/v1395061119/hotels/269481/11420934.jpg">
+            </div>
+            
+            <div class="card-meta">
+              <div class="card-main">
+                <strong class="card-main-title"> Billboard 1 jakabaring Bali</strong>
+                <strong class="card-status">Status : Available</strong>
+              </div>
+              <div class="card-rate">
+                  <span class="currency">Rp</span>
+                  <strong class="price">100.000
+                    <sup>.000</sup>
+                  </strong>
+              </div>
+            </div>
+          
+          </div>
+        </li>
+        <li class="card">
+          
+          <div class="card-body">
+            
+            <div class="card-image">
+              <img alt="Hotel Majapahit - Surabaya Hotels" src="http://res.cloudinary.com/wego/image/upload/w_180,h_180,c_fill/v1395061119/hotels/269481/11420934.jpg">
+            </div>
+            
+            <div class="card-meta">
+              <div class="card-main">
+                <strong class="card-main-title"> Billboard 1 jakabaring Bali</strong>
+                <strong class="card-status">Status : Available</strong>
+              </div>
+              <div class="card-rate">
+                  <span class="currency">Rp</span>
+                  <strong class="price">100.000
+                    <sup>.000</sup>
+                  </strong>
+              </div>
+            </div>
+          
+          </div>
+        </li>
+        <li class="card">
+          
+          <div class="card-body">
+            
+            <div class="card-image">
+              <img alt="Hotel Majapahit - Surabaya Hotels" src="http://res.cloudinary.com/wego/image/upload/w_180,h_180,c_fill/v1395061119/hotels/269481/11420934.jpg">
+            </div>
+            
+            <div class="card-meta">
+              <div class="card-main">
+                <strong class="card-main-title"> Billboard 1 jakabaring Bali</strong>
+                <strong class="card-status">Status : Available</strong>
+              </div>
+              <div class="card-rate">
+                  <span class="currency">Rp</span>
+                  <strong class="price">100.000
+                    <sup>.000</sup>
+                  </strong>
+              </div>
+            </div>
+          
+          </div>
+        </li>
+        <li class="card">
+          
+          <div class="card-body">
+            
+            <div class="card-image">
+              <img alt="Hotel Majapahit - Surabaya Hotels" src="http://res.cloudinary.com/wego/image/upload/w_180,h_180,c_fill/v1395061119/hotels/269481/11420934.jpg">
+            </div>
+            
+            <div class="card-meta">
+              <div class="card-main">
+                <strong class="card-main-title"> Billboard 1 jakabaring Bali</strong>
+                <strong class="card-status">Status : Available</strong>
+              </div>
+              <div class="card-rate">
+                  <span class="currency">Rp</span>
+                  <strong class="price">100.000
+                    <sup>.000</sup>
+                  </strong>
+              </div>
+            </div>
+          
+          </div>
+        </li>
+        <li class="card">
+          
+          <div class="card-body">
+            
+            <div class="card-image">
+              <img alt="Hotel Majapahit - Surabaya Hotels" src="http://res.cloudinary.com/wego/image/upload/w_180,h_180,c_fill/v1395061119/hotels/269481/11420934.jpg">
+            </div>
+            
+            <div class="card-meta">
+              <div class="card-main">
+                <strong class="card-main-title"> Billboard 1 jakabaring Bali</strong>
+                <strong class="card-status">Status : Available</strong>
+              </div>
+              <div class="card-rate">
+                  <span class="currency">Rp</span>
+                  <strong class="price">100.000
+                    <sup>.000</sup>
+                  </strong>
+              </div>
+            </div>
+          
+          </div>
+        </li>
+        <li class="card">
+          
+          <div class="card-body">
+            
+            <div class="card-image">
+              <img alt="Hotel Majapahit - Surabaya Hotels" src="http://res.cloudinary.com/wego/image/upload/w_180,h_180,c_fill/v1395061119/hotels/269481/11420934.jpg">
+            </div>
+            
+            <div class="card-meta">
+              <div class="card-main">
+                <strong class="card-main-title"> Billboard 1 jakabaring Bali</strong>
+                <strong class="card-status">Status : Available</strong>
+              </div>
+              <div class="card-rate">
+                  <span class="currency">Rp</span>
+                  <strong class="price">100.000
+                    <sup>.000</sup>
+                  </strong>
+              </div>
+            </div>
+          
+          </div>
+        </li>
+        <li class="card">
+          
+          <div class="card-body">
+            
+            <div class="card-image">
+              <img alt="Hotel Majapahit - Surabaya Hotels" src="http://res.cloudinary.com/wego/image/upload/w_180,h_180,c_fill/v1395061119/hotels/269481/11420934.jpg">
+            </div>
+            
+            <div class="card-meta">
+              <div class="card-main">
+                <strong class="card-main-title"> Billboard 1 jakabaring Bali</strong>
+                <strong class="card-status">Status : Available</strong>
+              </div>
+              <div class="card-rate">
+                  <span class="currency">Rp</span>
+                  <strong class="price">100.000
+                    <sup>.000</sup>
+                  </strong>
+              </div>
+            </div>
+          
+          </div>
+        </li>
+        <li class="card">
+          
+          <div class="card-body">
+            
+            <div class="card-image">
+              <img alt="Hotel Majapahit - Surabaya Hotels" src="http://res.cloudinary.com/wego/image/upload/w_180,h_180,c_fill/v1395061119/hotels/269481/11420934.jpg">
+            </div>
+            
+            <div class="card-meta">
+              <div class="card-main">
+                <strong class="card-main-title"> Billboard 1 jakabaring Bali</strong>
+                <strong class="card-status">Status : Available</strong>
+              </div>
+              <div class="card-rate">
+                  <span class="currency">Rp</span>
+                  <strong class="price">100.000
+                    <sup>.000</sup>
+                  </strong>
+              </div>
+            </div>
+          
+          </div>
+        </li>
+        <li class="card">
+          
+          <div class="card-body">
+            
+            <div class="card-image">
+              <img alt="Hotel Majapahit - Surabaya Hotels" src="http://res.cloudinary.com/wego/image/upload/w_180,h_180,c_fill/v1395061119/hotels/269481/11420934.jpg">
+            </div>
+            
+            <div class="card-meta">
+              <div class="card-main">
+                <strong class="card-main-title"> Billboard 1 jakabaring Bali</strong>
+                <strong class="card-status">Status : Available</strong>
+              </div>
+              <div class="card-rate">
+                  <span class="currency">Rp</span>
+                  <strong class="price">100.000
+                    <sup>.000</sup>
+                  </strong>
+              </div>
+            </div>
+          
+          </div>
+        </li>
+        <li class="card">
+          
+          <div class="card-body">
+            
+            <div class="card-image">
+              <img alt="Hotel Majapahit - Surabaya Hotels" src="http://res.cloudinary.com/wego/image/upload/w_180,h_180,c_fill/v1395061119/hotels/269481/11420934.jpg">
+            </div>
+            
+            <div class="card-meta">
+              <div class="card-main">
+                <strong class="card-main-title"> Billboard 1 jakabaring Bali</strong>
+                <strong class="card-status">Status : Available</strong>
+              </div>
+              <div class="card-rate">
+                  <span class="currency">Rp</span>
+                  <strong class="price">100.000
+                    <sup>.000</sup>
+                  </strong>
+              </div>
+            </div>
+          
+          </div>
+        </li>
+        <li class="card">
+          
+          <div class="card-body">
+            
+            <div class="card-image">
+              <img alt="Hotel Majapahit - Surabaya Hotels" src="http://res.cloudinary.com/wego/image/upload/w_180,h_180,c_fill/v1395061119/hotels/269481/11420934.jpg">
+            </div>
+            
+            <div class="card-meta">
+              <div class="card-main">
+                <strong class="card-main-title"> Billboard 1 jakabaring Bali</strong>
+                <strong class="card-status">Status : Available</strong>
+              </div>
+              <div class="card-rate">
+                  <span class="currency">Rp</span>
+                  <strong class="price">100.000
+                    <sup>.000</sup>
+                  </strong>
+              </div>
+            </div>
+          
+          </div>
+        </li>
+        <li class="card">
+          
+          <div class="card-body">
+            
+            <div class="card-image">
+              <img alt="Hotel Majapahit - Surabaya Hotels" src="http://res.cloudinary.com/wego/image/upload/w_180,h_180,c_fill/v1395061119/hotels/269481/11420934.jpg">
+            </div>
+            
+            <div class="card-meta">
+              <div class="card-main">
+                <strong class="card-main-title"> Billboard 1 jakabaring Bali</strong>
+                <strong class="card-status">Status : Available</strong>
+              </div>
+              <div class="card-rate">
+                  <span class="currency">Rp</span>
+                  <strong class="price">100.000
+                    <sup>.000</sup>
+                  </strong>
+              </div>
+            </div>
+          
+          </div>
+        </li>
+        <li class="card">
+          
+          <div class="card-body">
+            
+            <div class="card-image">
+              <img alt="Hotel Majapahit - Surabaya Hotels" src="http://res.cloudinary.com/wego/image/upload/w_180,h_180,c_fill/v1395061119/hotels/269481/11420934.jpg">
+            </div>
+            
+            <div class="card-meta">
+              <div class="card-main">
+                <strong class="card-main-title"> Billboard 1 jakabaring Bali</strong>
+                <strong class="card-status">Status : Available</strong>
+              </div>
+              <div class="card-rate">
+                  <span class="currency">Rp</span>
+                  <strong class="price">100.000
+                    <sup>.000</sup>
+                  </strong>
+              </div>
+            </div>
+          
+          </div>
+        </li>
+        <li class="card">
+          
+          <div class="card-body">
+            
+            <div class="card-image">
+              <img alt="Hotel Majapahit - Surabaya Hotels" src="http://res.cloudinary.com/wego/image/upload/w_180,h_180,c_fill/v1395061119/hotels/269481/11420934.jpg">
+            </div>
+            
+            <div class="card-meta">
+              <div class="card-main">
+                <strong class="card-main-title"> Billboard 1 jakabaring Bali</strong>
+                <strong class="card-status">Status : Available</strong>
+              </div>
+              <div class="card-rate">
+                  <span class="currency">Rp</span>
+                  <strong class="price">100.000
+                    <sup>.000</sup>
+                  </strong>
+              </div>
+            </div>
+          
+          </div>
+        </li>
+        <li class="card">
+          
+          <div class="card-body">
+            
+            <div class="card-image">
+              <img alt="Hotel Majapahit - Surabaya Hotels" src="http://res.cloudinary.com/wego/image/upload/w_180,h_180,c_fill/v1395061119/hotels/269481/11420934.jpg">
+            </div>
+            
+            <div class="card-meta">
+              <div class="card-main">
+                <strong class="card-main-title"> Billboard 1 jakabaring Bali</strong>
+                <strong class="card-status">Status : Available</strong>
+              </div>
+              <div class="card-rate">
+                  <span class="currency">Rp</span>
+                  <strong class="price">100.000
+                    <sup>.000</sup>
+                  </strong>
+              </div>
+            </div>
+          
+          </div>
+        </li>
+        <li class="card">
+          
+          <div class="card-body">
+            
+            <div class="card-image">
+              <img alt="Hotel Majapahit - Surabaya Hotels" src="http://res.cloudinary.com/wego/image/upload/w_180,h_180,c_fill/v1395061119/hotels/269481/11420934.jpg">
+            </div>
+            
+            <div class="card-meta">
+              <div class="card-main">
+                <strong class="card-main-title"> Billboard 1 jakabaring Bali</strong>
+                <strong class="card-status">Status : Available</strong>
+              </div>
+              <div class="card-rate">
+                  <span class="currency">Rp</span>
+                  <strong class="price">100.000
+                    <sup>.000</sup>
+                  </strong>
+              </div>
+            </div>
+          
+          </div>
+        </li>
+        <li class="card">
+          
+          <div class="card-body">
+            
+            <div class="card-image">
+              <img alt="Hotel Majapahit - Surabaya Hotels" src="http://res.cloudinary.com/wego/image/upload/w_180,h_180,c_fill/v1395061119/hotels/269481/11420934.jpg">
+            </div>
+            
+            <div class="card-meta">
+              <div class="card-main">
+                <strong class="card-main-title"> Billboard 1 jakabaring Bali</strong>
+                <strong class="card-status">Status : Available</strong>
+              </div>
+              <div class="card-rate">
+                  <span class="currency">Rp</span>
+                  <strong class="price">100.000
+                    <sup>.000</sup>
+                  </strong>
+              </div>
+            </div>
+          
+          </div>
+        </li>
+        <li class="card">
+          
+          <div class="card-body">
+            
+            <div class="card-image">
+              <img alt="Hotel Majapahit - Surabaya Hotels" src="http://res.cloudinary.com/wego/image/upload/w_180,h_180,c_fill/v1395061119/hotels/269481/11420934.jpg">
+            </div>
+            
+            <div class="card-meta">
+              <div class="card-main">
+                <strong class="card-main-title"> Billboard 1 jakabaring Bali</strong>
+                <strong class="card-status">Status : Available</strong>
+              </div>
+              <div class="card-rate">
+                  <span class="currency">Rp</span>
+                  <strong class="price">100.000
+                    <sup>.000</sup>
+                  </strong>
+              </div>
+            </div>
+          
+          </div>
+        </li>
+        <li class="card">
+          
+          <div class="card-body">
+            
+            <div class="card-image">
+              <img alt="Hotel Majapahit - Surabaya Hotels" src="http://res.cloudinary.com/wego/image/upload/w_180,h_180,c_fill/v1395061119/hotels/269481/11420934.jpg">
+            </div>
+            
+            <div class="card-meta">
+              <div class="card-main">
+                <strong class="card-main-title"> Billboard 1 jakabaring Bali</strong>
+                <strong class="card-status">Status : Available</strong>
+              </div>
+              <div class="card-rate">
+                  <span class="currency">Rp</span>
+                  <strong class="price">100.000
+                    <sup>.000</sup>
+                  </strong>
+              </div>
+            </div>
+          
+          </div>
+        </li>
+        <li class="card">
+          
+          <div class="card-body">
+            
+            <div class="card-image">
+              <img alt="Hotel Majapahit - Surabaya Hotels" src="http://res.cloudinary.com/wego/image/upload/w_180,h_180,c_fill/v1395061119/hotels/269481/11420934.jpg">
+            </div>
+            
+            <div class="card-meta">
+              <div class="card-main">
+                <strong class="card-main-title"> Billboard 1 jakabaring Bali</strong>
+                <strong class="card-status">Status : Available</strong>
+              </div>
+              <div class="card-rate">
+                  <span class="currency">Rp</span>
+                  <strong class="price">100.000
+                    <sup>.000</sup>
+                  </strong>
+              </div>
+            </div>
+          
+          </div>
+        </li>
+        <li class="card">
+          
+          <div class="card-body">
+            
+            <div class="card-image">
+              <img alt="Hotel Majapahit - Surabaya Hotels" src="http://res.cloudinary.com/wego/image/upload/w_180,h_180,c_fill/v1395061119/hotels/269481/11420934.jpg">
+            </div>
+            
+            <div class="card-meta">
+              <div class="card-main">
+                <strong class="card-main-title"> Billboard 1 jakabaring Bali</strong>
+                <strong class="card-status">Status : Available</strong>
+              </div>
+              <div class="card-rate">
+                  <span class="currency">Rp</span>
+                  <strong class="price">100.000
+                    <sup>.000</sup>
+                  </strong>
+              </div>
+            </div>
+          
+          </div>
+        </li>
+        <li class="card">
+          
+          <div class="card-body">
+            
+            <div class="card-image">
+              <img alt="Hotel Majapahit - Surabaya Hotels" src="http://res.cloudinary.com/wego/image/upload/w_180,h_180,c_fill/v1395061119/hotels/269481/11420934.jpg">
+            </div>
+            
+            <div class="card-meta">
+              <div class="card-main">
+                <strong class="card-main-title"> Billboard 1 jakabaring Bali</strong>
+                <strong class="card-status">Status : Available</strong>
+              </div>
+              <div class="card-rate">
+                  <span class="currency">Rp</span>
+                  <strong class="price">100.000
+                    <sup>.000</sup>
+                  </strong>
+              </div>
+            </div>
+          
+          </div>
+        </li>
+        <li class="card">
+          
+          <div class="card-body">
+            
+            <div class="card-image">
+              <img alt="Hotel Majapahit - Surabaya Hotels" src="http://res.cloudinary.com/wego/image/upload/w_180,h_180,c_fill/v1395061119/hotels/269481/11420934.jpg">
+            </div>
+            
+            <div class="card-meta">
+              <div class="card-main">
+                <strong class="card-main-title"> Billboard 1 jakabaring Bali</strong>
+                <strong class="card-status">Status : Available</strong>
+              </div>
+              <div class="card-rate">
+                  <span class="currency">Rp</span>
+                  <strong class="price">100.000
+                    <sup>.000</sup>
+                  </strong>
+              </div>
+            </div>
+          
+          </div>
+        </li>
+        <li class="card">
+          
+          <div class="card-body">
+            
+            <div class="card-image">
+              <img alt="Hotel Majapahit - Surabaya Hotels" src="http://res.cloudinary.com/wego/image/upload/w_180,h_180,c_fill/v1395061119/hotels/269481/11420934.jpg">
+            </div>
+            
+            <div class="card-meta">
+              <div class="card-main">
+                <strong class="card-main-title"> Billboard 1 jakabaring Bali</strong>
+                <strong class="card-status">Status : Available</strong>
+              </div>
+              <div class="card-rate">
+                  <span class="currency">Rp</span>
+                  <strong class="price">100.000
+                    <sup>.000</sup>
+                  </strong>
+              </div>
+            </div>
+          
+          </div>
+        </li>
+
+      </ul>
+    </div>
+
+    <div id="map-wrapper"></div>
+
+  </div> 
   <?php
 //google maps render
   $js = '
@@ -45,6 +628,7 @@
             });
     google.maps.event.addListener(marker, "click", function() {
       window.location = "'.Yii::app()->createUrl('/site/detail').'/"+row.id;
+
           // if(isGuest==1){
           //   afterloginurl = "'.Yii::app()->createUrl('/site/detail').'/"+row.id;
           //   $("#billboard-popup").modal("show");
