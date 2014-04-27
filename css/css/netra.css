@@ -2,12 +2,13 @@
 @import url(http://fonts.googleapis.com/css?family=Raleway:400,200,300,600,500,700);
 @import url(http://fonts.googleapis.com/css?family=Radley);
 @import url(http://fonts.googleapis.com/css?family=Roboto+Condensed:400italic,400,700,300);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800);
 .container-fluid {
   padding: 0px 10px;
 }
 .navbar .nav > li > a {
   font-size: 12px;
-  font-family: "Arial";
+  font-family: "Open Sans";
   font-weight: bold;
 }
 .navbar-brand {
@@ -317,7 +318,7 @@ body {
   height: 100%;
   width: 100%;
   background: #efefef;
-  font-family: "Arial";
+  font-family: "Open Sans";
 }
 #map_canvas {
   height: 100%;
@@ -333,7 +334,7 @@ sup {
 body {
   height: 100%;
   background-color: #fff;
-  font-family: "Arial";
+  font-family: "Open Sans";
   font-weight: 300;
   font-size: 16px;
   color: #555;
@@ -836,6 +837,25 @@ hr {
   display: block;
   border: 1px solid #ccc;
   width: 100%;
+}
+.kivi .banner-detail .banner-info-body p {
+  padding: 0px 10px;
+}
+.kivi .banner-detail .banner-info-body .availibility-calendar {
+  width: 99%;
+  padding-right: 5px;
+  float: left;
+}
+.kivi .banner-detail .banner-info-body .availibility-calendar h2 {
+  font-weight: bold;
+  font-family: "Open Sans";
+}
+.kivi .banner-detail .banner-info-body .alert {
+  margin-top: 20px;
+  width: 99%;
+  margin-left: 5px;
+  font-size: 12px;
+  float: left;
 }
 .kivi .banner-detail .price ul {
   margin-left: -20px;

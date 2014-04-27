@@ -14,7 +14,9 @@
   <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
   <link href="<?php echo Yii::app()->request->baseUrl; ?>/css/css/jquery.ui.css" rel="stylesheet">
   <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
-
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/fullcalendar/1.6.4/fullcalendar.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/fullcalendar/1.6.4/fullcalendar.print.css">
+  
 
   <!-- Custom styles for this template -->
   <link href="<?php echo Yii::app()->request->baseUrl; ?>/css/css/netra.css" rel="stylesheet">
@@ -40,10 +42,13 @@
     <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDs1qmbiT6eTk-57wbzQ3Ivk8TRx02lXm4&sensor=true&libraries=places"></script>
     <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
-     <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/bxslider.js"></script>
+    <script src="//cdn.jsdelivr.net/fullcalendar/1.6.4/fullcalendar.js"></script>
+    <script src="//cdn.jsdelivr.net/fullcalendar/1.6.4/fullcalendar.min.js"></script>
+    <script src="//cdn.jsdelivr.net/fullcalendar/1.6.4/gcal.js"></script>
+    <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/bxslider.js"></script>
     <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/sscroll.js"></script>
-     <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/js.free.transform.js"></script>
-      <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/matrix.js"></script>
+    <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/js.free.transform.js"></script>
+    <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/matrix.js"></script>
     <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/netra-ck.js"></script>
    
   </body>
