@@ -425,8 +425,8 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Raleway";
-  font-weight: 300;
+  font-family: "Open Sans";
+  font-weight: 400;
   color: #333;
 }
 p {
@@ -576,6 +576,9 @@ hr {
   padding: 45px 0 66px 0;
   opacity: 0;
   -webkit-transition: opacity .25s ease;
+}
+.city-billboard .overlayed h3 {
+  text-align: center;
 }
 .city-billboard .overlayed h2 {
   text-align: center;
