@@ -10,8 +10,15 @@
   top: 50px;
   border-right: 0.8px solid #e7e7e7;
 }
+.navbar-static-side .fa.flright {
+  float: right;
+}
 .navbar-static-side ul li {
   border-bottom: 1px solid #e7e7e7;
+}
+.navbar-static-side ul li a {
+  color: #5fafe4;
+  font-weight: 100;
 }
 .container-fluid {
   padding: 0px 10px;
@@ -642,6 +649,46 @@ hr {
   color: #fff;
 }
 .wrapper-container .well.well-blue h4 {
+  color: #fff;
+  font-family: "Open Sans";
+  font-weight: 400;
+}
+.wrapper-container .well.well-blue-dark {
+  background-color: #508bb3;
+}
+.wrapper-container .well.well-blue-dark h4 {
+  color: #fff;
+  font-family: "Open Sans";
+  font-weight: 400;
+}
+.wrapper-container .well.well-orange {
+  background-color: #e3b700;
+}
+.wrapper-container .well.well-orange p {
+  color: #fff;
+}
+.wrapper-container .well.well-orange h4 {
+  font-weight: 400;
+  color: #fff;
+  font-family: "Open Sans";
+}
+.wrapper-container .well.well-red {
+  background-color: #e13861;
+}
+.wrapper-container .well.well-red p {
+  color: #fff;
+}
+.wrapper-container .well.well-red h4 {
+  font-weight: 400;
+  color: #fff;
+  font-family: "Open Sans";
+}
+.wrapper-container .panel-main > .panel-heading {
+  color: white;
+  background-color: #8e8a8b;
+}
+.wrapper-container .panel-main > .panel-heading h4 {
+  font-weight: 400;
   color: #fff;
   font-family: "Open Sans";
 }
