@@ -784,6 +784,12 @@ hr {
 .kivi {
   min-height: 100%;
 }
+.kivi .no-padding h1 {
+  font-weight: bold;
+  font-family: "Open Sans";
+  font-size: 22px;
+  font-weight: 600;
+}
 .kivi .skip {
   width: 40px;
   height: 100px;

@@ -3,7 +3,10 @@
     <div class="container kivi">
 
       <div class="row">
-        <h1>Banner Information</h1>
+       <div class="col-md-8 no-padding">
+        <h1>{{Banner Name}}, {{Banner Location}}</h1>
+       </div>
+
       </div>
 
       <div class="row banner-detail">
@@ -29,6 +32,11 @@
             <tbody>
 
               <tr>
+                <td class="front">SKU</td>
+                <td> {{SKU BILLBOARD}}</td>
+              </tr>
+
+              <tr>
                 <td class="front">Type</td>
                 <td><?php 
                 $kNamas = CHtml::listData($banner->kategoris,'id','nama');
@@ -49,13 +57,9 @@
                 <td class="front">Tinggi</td>
                 <td><?php echo CHtml::encode($banner->tinggi); ?> Meter</td>
               </tr>
-              <tr>
-                <td class="front">Digital</td>
-                <td>NA</td>
-              </tr>
-              <tr>
+                <tr>
                 <td class="front">Status</td>
-                <td>Available</td>
+                <td>{{Status Here}}</td>
               </tr>
             </tbody>
           </table>
@@ -63,7 +67,7 @@
       </section>
       
       <section id="banner-detail-info-list" class="banner-info-body">
-        <header class="banner-info-header">Ulasan Banner</header>
+        <header class="banner-info-header">Deskripsi Inventory</header>
         <div class="table-responsive">
         <p>The Space
           A Studio Apartment in Surabaya to rent out, close to the heart of Surabaya with maximum occupancy of 2 person. The apartment comes with a Queen bed, a 32" LCD TV, mini electric stove, free wi fi connection, fully air-conditioned, and a small cabinet.
