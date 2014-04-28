@@ -95,7 +95,7 @@
         We suggest that you contact the host to confirm availability and rates before submitting a reservation request.</div>
       </section>
       <section id="banner-image-list" class="banner-info-body">
-        <header class="banner-info-header">Maps</header>
+        <header class="banner-info-header">Alamat Billboard & Peta Lokasi</header>
         <div id="map-canvas" style="height:400px">
         </div>
       </section>
@@ -115,8 +115,7 @@
               <div id="spanharga" class="price-currency"> Rp <?php echo $banner->hargaPerBulan;?></div>
             </div>
             <ul>
-              <li> <i class="fa fa-tags fa-2x"></i> Discount for 4 month Rent</li>
-              <li> 100.000 Day Traffic</li>
+              <li>Included Tax</li>
               <li> 100.000 Day Traffic</li>
               <li> 100.000 Day Traffic</li>
 
