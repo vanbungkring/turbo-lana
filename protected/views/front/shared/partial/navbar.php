@@ -10,10 +10,9 @@
 
 				<div class="navbar-collapse collapse">
 					<ul class="nav navbar-nav">
-						<li><a href="#">Dashboard</a></li>
-						<li><a href="#">Who are You</a></li>
-						<li><a href="#">FAQ</a></li>
-						<li><a href="#">Dashboard</a></li>
+						<li><a href="#">About</a></li>
+						<li><a href="#">Advertiser</a></li>
+						<li><a href="#">Billboard Owner</a></li>
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
 						<?php 
