@@ -5,9 +5,13 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800);
 .navbar-static-side {
   z-index: 1;
-  position: absolute;
-  width: 250px;
-  margin-top: 51px;
+  position: fixed;
+  width: 240px;
+  top: 50px;
+  border-right: 0.8px solid #e7e7e7;
+}
+.navbar-static-side ul li {
+  border-bottom: 1px solid #e7e7e7;
 }
 .container-fluid {
   padding: 0px 10px;
@@ -623,12 +627,23 @@ hr {
   font-weight: bold;
 }
 .wrapper-container {
-  padding-top: 10px;
   position: inherit;
   margin: 0 0 0 250px;
   min-height: 1300px;
   padding: 0 30px;
   border-left: 1px solid #e7e7e7;
+  padding-top: 40px;
+}
+.wrapper-container .fa {
+  color: #fff;
+}
+.wrapper-container .well.well-blue {
+  background-color: #5fafe4;
+  color: #fff;
+}
+.wrapper-container .well.well-blue h4 {
+  color: #fff;
+  font-family: "Open Sans";
 }
 #features {
   padding-top: 50px;
