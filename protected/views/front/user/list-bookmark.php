@@ -1,4 +1,3 @@
-  <?php $this->renderPartial('/shared/partial/navbar-fluid-dashboard'); ?>
   <div class="container kivi">
 
     <div class="row">

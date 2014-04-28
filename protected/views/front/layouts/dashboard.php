@@ -103,22 +103,22 @@
                 <div class="sidebar-collapse">
                     <ul class="nav" id="side-menu">
                         <li>
-                            <a href="dashboard.html"><i class="fa fa-home fa-fw"></i> Dashboard<span class="fa fa-circle flright"></span></a>
+                            <a href="<?php echo Yii::app()->createUrl('/user/dashboard'); ?>"><i class="fa fa-home fa-fw"></i> Dashboard<span class="fa fa-circle flright"></span></a>
                         </li>
                         <li>
-                            <a href="profile.html"><i class="fa fa-user fa-fw"></i> Profile<span class="fa fa-circle-o flright"></span></a>
+                            <a href="<?php echo Yii::app()->createUrl('/user/profile'); ?>"><i class="fa fa-user fa-fw"></i> Profile<span class="fa fa-circle-o flright"></span></a>
                         </li>
                         <li>
-                            <a href="bookmarks.html"><i class="fa fa-flag fa-fw"></i> Bookmarks<span class="fa fa-circle-o flright"></span></a>
+                            <a href="<?php echo Yii::app()->createUrl('/user/myBookmark'); ?>"><i class="fa fa-flag fa-fw"></i> Bookmarks<span class="fa fa-circle-o flright"></span></a>
                         </li>
                         <li>
-                            <a href="history.html"><i class="fa fa-clock-o fa-fw"></i> History<span class="fa fa-circle-o flright"></span></a>
+                            <a href="<?php echo Yii::app()->createUrl('/user/history'); ?>"><i class="fa fa-clock-o fa-fw"></i> History<span class="fa fa-circle-o flright"></span></a>
                         </li>
                         <li>
-                            <a href="quotes.html"><i class="fa fa-book fa-fw"></i> Quotes<span class="fa fa-circle-o flright"></span></a>
+                            <a href="<?php echo Yii::app()->createUrl('/user/quotes'); ?>"><i class="fa fa-book fa-fw"></i> Quotes<span class="fa fa-circle-o flright"></span></a>
                         </li>
                         <li>
-                            <a href="campaign.html"><i class="fa fa-calendar fa-fw"></i> Campaign<span class="fa fa-circle-o flright"></span></a>
+                            <a href="<?php echo Yii::app()->createUrl('/user/campaign'); ?>"><i class="fa fa-calendar fa-fw"></i> Campaign<span class="fa fa-circle-o flright"></span></a>
                         </li>
                     </ul>
                     <!-- /#side-menu -->

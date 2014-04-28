@@ -56,6 +56,23 @@ class UserController extends FrontEndController
 		));
 	}
 
+	public function actionProfile(){
+		$this->render('profile');
+	}
+
+	public function actionCampaign(){
+		$this->render('campaign');
+	}
+
+	public function actionQuotes(){
+		$this->render('quotes');
+	}
+
+	public function actionHistory(){
+		$this->render('history');
+	}
+
+
 	public function actionMyBookmark()
 	{
 		$criteria = new CDbCriteria();
@@ -76,6 +93,8 @@ class UserController extends FrontEndController
 			'listData'=>$listData,
 		));
 	}
+
+
 	public function actionDelete($id){
 		$model = MemberBookmark::model()->findByPk($id);
 		$model->delete();
