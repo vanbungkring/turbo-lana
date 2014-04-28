@@ -80,7 +80,7 @@
                     <div class="list-group">
                        <?php foreach($logByDate as $date=>$logs): ?>
 	                      <div class="list-group-item">
-	                        <h5>09/09/14</h5>
+	                        <h5><?php echo $date; ?></h5>
 	                      </div>
                       	<?php foreach ($logs as $log): ?>
 	                      <div class="list-group-item">
