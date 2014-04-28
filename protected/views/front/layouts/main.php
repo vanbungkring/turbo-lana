@@ -19,7 +19,6 @@
   
 
   <!-- Custom styles for this template -->
-    <link href="<?php echo Yii::app()->request->baseUrl; ?>/css/css/dahboard.user.css" rel="stylesheet">
   <link href="<?php echo Yii::app()->request->baseUrl; ?>/css/css/netra.css" rel="stylesheet">
 
   <!-- Just for debugging purposes. Don't actually copy this line! -->
