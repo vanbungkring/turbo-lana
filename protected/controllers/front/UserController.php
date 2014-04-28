@@ -69,7 +69,26 @@ class UserController extends FrontEndController
 	}
 
 	public function actionHistory(){
-		$this->render('history');
+				$member = Member::model()->findByPk(Yii::app()->user->id);
+		$logs = MemberLog::model()->findAll(array(
+			'condition'=>'idMember = :p1',
+			'params'=>array(
+				':p1'=>$member->id
+			),
+			'order'=>'time desc',
+			'limit'=>5,
+		));
+		$logByDate = array();
+		foreach ($logs as $key => $value) {
+			if(!isset($logByDate[$value->date])){
+				$logByDate[$value->date] = array();
+			}
+			$logByDate[$value->date][] = $value;
+		}
+		$this->render('history',array(
+			'member'=>$member,
+			'logByDate'=>$logByDate,
+		));
 	}
 
 

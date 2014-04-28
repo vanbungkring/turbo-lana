@@ -1,3 +1,39 @@
+ <div class="row">
+  <div class="padded-top">
+    <div class="panel panel-main">
+      <div class="panel-heading">
+        <h5>BOOKMARKS ANDA</h5>
+    </div>
+    <div class="panel-body">
+        <div class="list-group">
+          <div class="list-group-item">
+            <span class="pull-right text-muted small"><em>2 hari yang lalu</em></span>
+            <h5>Billboard 1</h5>
+            <p>Jakarta, Jl. Jendral Gatot Subroto</p>
+            <a href="#" class="btn btn-success">Lihat Detail</a>
+             <a href="#" class="btn btn-danger">Delete</a>
+        </div>
+        <div class="list-group-item">
+            <span class="pull-right text-muted small"><em>3 hari yang lalu</em></span>
+            <h5>Billboard 4</h5>
+            <p>Jakarta, Jl. Jendral Gatot Subroto</p>
+            <a href="#" class="btn btn-success">Lihat Detail</a>
+            <a href="#" class="btn btn-danger">Delete</a>
+        </div>
+        <div class="list-group-item">
+            <span class="pull-right text-muted small"><em>12 hari yang lalu</em></span>
+            <h5>Billboard 20</h5>
+            <p>Jakarta, Jl. Jendral Gatot Subroto Coba Panjangin Lagi</p>
+            <a href="#" class="btn btn-success">Lihat Detail</a>
+            <a href="#" class="btn btn-danger">Delete</a>
+        </div>
+    </div>
+</div>
+</div>
+<!-- end panel -->
+</div>
+</div>
+
   <div class="container kivi">
 
     <div class="row">
@@ -35,3 +71,4 @@
                 </div>
             </div>
         </div>
+            <!-- end row -->
