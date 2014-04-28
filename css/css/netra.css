@@ -3,6 +3,12 @@
 @import url(http://fonts.googleapis.com/css?family=Radley);
 @import url(http://fonts.googleapis.com/css?family=Roboto+Condensed:400italic,400,700,300);
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800);
+.navbar-static-side {
+  z-index: 1;
+  position: absolute;
+  width: 250px;
+  margin-top: 51px;
+}
 .container-fluid {
   padding: 0px 10px;
 }
@@ -617,7 +623,12 @@ hr {
   font-weight: bold;
 }
 .wrapper-container {
-  padding-top: 50px;
+  padding-top: 10px;
+  position: inherit;
+  margin: 0 0 0 250px;
+  min-height: 1300px;
+  padding: 0 30px;
+  border-left: 1px solid #e7e7e7;
 }
 #features {
   padding-top: 50px;
