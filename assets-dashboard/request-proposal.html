@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Kiviads Dashboard | Request Proposal</title>
+
+    <!-- Core CSS - Include with every page -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
+
+    <!-- Page-Level Plugin CSS - Blank -->
+
+    <!-- SB Admin CSS - Include with every page -->
+    <link href="css/sb-admin.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">KIVIADS</a>
+            </div>
+            <!-- /.navbar-header -->
+            <ul class="nav navbar-top-links navbar-right">
+                <li>
+                  <p> Hi, Dimas!</p>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-envelope fa-fw"></i>  <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-messages">
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <strong>John Smith</strong>
+                                    <span class="pull-right text-muted">
+                                        <em>Yesterday</em>
+                                    </span>
+                                </div>
+                                <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <strong>John Smith</strong>
+                                    <span class="pull-right text-muted">
+                                        <em>Yesterday</em>
+                                    </span>
+                                </div>
+                                <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <strong>John Smith</strong>
+                                    <span class="pull-right text-muted">
+                                        <em>Yesterday</em>
+                                    </span>
+                                </div>
+                                <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a class="text-center" href="#">
+                                <strong>Read All Messages</strong>
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-messages -->
+                </li>
+                <li>
+                  <div>
+                    <a href="#">
+                      <div class="btn btn-outline btn-danger btn-sm"><i class="fa fa-sign-out fa-fw"></i> LOG OUT</div>
+                    </a>
+                  </div>
+                </li>
+
+            </ul>
+            <!-- /.navbar-top-links -->
+
+            <div class="navbar-default navbar-static-side" role="navigation">
+                <div class="sidebar-collapse">
+                    <ul class="nav" id="side-menu">
+                        <li>
+                            <a href="dashboard.html"><i class="fa fa-home fa-fw"></i> Dashboard<span class="fa fa-circle-o flright"></span></a>
+                        </li>
+                        <li>
+                            <a href="profile.html"><i class="fa fa-user fa-fw"></i> Profile<span class="fa fa-circle-o flright"></span></a>
+                        </li>
+                        <li>
+                            <a href="bookmarks.html"><i class="fa fa-flag fa-fw"></i> Bookmarks<span class="fa fa-circle-o flright"></span></a>
+                        </li>
+                        <li>
+                            <a href="history.html"><i class="fa fa-clock-o fa-fw"></i> History<span class="fa fa-circle-o flright"></span></a>
+                        </li>
+                        <li>
+                            <a href="quotes.html"><i class="fa fa-book fa-fw"></i> Quotes<span class="fa fa-circle flright"></span></a>
+                        </li>
+                        <li>
+                            <a href="campaign.html"><i class="fa fa-calendar fa-fw"></i> Campaign<span class="fa fa-circle-o flright"></span></a>
+                        </li>
+                    </ul>
+                    <!-- /#side-menu -->
+                </div>
+                <!-- /.sidebar-collapse -->
+            </div>
+            <!-- /.navbar-static-side -->
+        </nav>
+
+        <div id="page-wrapper">
+            <div class="row">
+              <div class="padded-top">
+                <div class="panel panel-main">
+                  <div class="panel-heading">
+                    <h5>PROFIL PERUSAHAAN</h5>
+                  </div>
+                  <div class="panel-body">
+                    <div class="col-md-12 col-lg-12">
+                      <form role="form">
+                        <div class="row">
+                          <div class="col-lg-6">
+                            <label for="companylogo">Logo perusahaan</label>
+                            <input type="file" id="companylogo">
+                            <p class="help-block">Pilih file untuk diunggah. Pastikan ukuran lebar file anda tidak lebih dari 200 px</p>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-lg-12">
+                            <h4 class="form-heading">Informasi Dasar Perusahaan</h4>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-md-4 col-lg-4">
+                            <label for="namadepan">Nama Badan Usaha</label>
+                            <input type="text" class="form-control" id="namadepan">
+                          </div>
+                          <div class="col-md-4 col-lg-4">
+                            <label for="bidangusaha">Bidang Usaha</label>
+                            <select class="form-control" id="bidangusaha">
+                              <option>Advertising</option>
+                              <option>Automotive</option>
+                              <option>Banking</option>
+                              <option>Consumer Good</option>
+                              <option>Fashion</option>
+                              <option>Food and Beverage</option>
+                              <option>Government</option>
+                              <option>Health</option>
+                              <option>Lifestyle</option>
+                              <option>Non-profit Organization</option>
+                              <option>Telecomunication</option>
+                              <option>Tobacco</option>
+                              <option>Travel and Leisure</option>
+                              <option>Other</option>
+                            </select>
+                          </div>
+                        </div>
+                        <!-- end row form -->
+                        <div class="row">
+                          <div class="col-lg-12">
+                            <h4 class="form-heading">Alamat Perusahaan</h4>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-md-4 col-lg-4">
+                            <label for="alamatper">Alamat</label>
+                            <input type="text" class="form-control" id="alamatper">
+                          </div>
+                          <div class="col-md-4 col-lg-4">
+                            <label for="koteper">Kota</label>
+                            <input type="text" class="form-control" id="koteper">
+                          </div>
+                          <div class="col-md-4 col-lg-4">
+                            <label for="negaraper">Negara</label>
+                            <input type="text" class="form-control" id="negaraper">
+                          </div>
+                          <div class="col-md-4 col-lg-4">
+                            <label for="kodeposper">Kode Pos</label>
+                            <input type="text" class="form-control" id="kodeposper">
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-lg-12">
+                            <h4 class="form-heading">Kontak Perusahaan</h4>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-md-4 col-lg-4">
+                            <label for="website">Website</label>
+                            <input type="url" class="form-control" id="website">
+                          </div>
+                          <div class="col-md-4 col-lg-4">
+                            <label for="emailper">Email</label>
+                            <input type="email" class="form-control" id="emailper">
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-md-4 col-lg-4">
+                            <label for="notelper">Nomor Telepon</label>
+                            <input type="tel" class="form-control" id="notelper">
+                          </div>
+                          <div class="col-md-4 col-lg-4">
+                            <label for="fax">Fax</label>
+                            <input type="text" class="form-control" id="fax">
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-lg-12">
+                            <button type="submit" class="btn btn-success btn-form">Perbaharui Profil Perusahaan</button>
+                          </div>
+                        </div>
+                        <!-- end of row -->
+                      </form>
+                      <!-- end form -->
+                    </div>
+                  </div>
+                </div>
+                <!-- end panel -->
+              </div>
+            </div>
+            <!-- end row -->
+        </div>
+        <!-- /#page-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- Core Scripts - Include with every page -->
+    <script src="js/jquery-1.10.2.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+
+    <!-- Page-Level Plugin Scripts - Blank -->
+
+    <!-- SB Admin Scripts - Include with every page -->
+    <script src="js/sb-admin.js"></script>
+
+    <!-- Page-Level Demo Scripts - Blank - Use for reference -->
+
+</body>
+
+</html>

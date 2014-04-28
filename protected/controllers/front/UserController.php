@@ -2,6 +2,8 @@
 
 class UserController extends FrontEndController
 {
+	public $layout = 'dashboard';
+
 	public function filters()
 	{
 		return array(
@@ -39,7 +41,7 @@ class UserController extends FrontEndController
 				':p1'=>$member->id
 			),
 			'order'=>'time desc',
-			'limit'=>20,
+			'limit'=>5,
 		));
 		$logByDate = array();
 		foreach ($logs as $key => $value) {
