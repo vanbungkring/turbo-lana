@@ -1,6 +1,4 @@
 <?php $this->renderPartial('/shared/partial/navbar-fluid'); ?>
-
-  </div>
   <div class="container container-full fill">
     <div class="col-md-3 filter">
       <div class="filter-wrapper">
