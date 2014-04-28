@@ -111,9 +111,8 @@
          <section class="banner-info-body">
           <div class="price">
             <div class="price-detail">
-              <sup>Dari</sup>
-              <em class="currency"> Rp</em>              
-              <span id="spanharga"> <?php echo $banner->hargaPerBulan;?>/ Bulan</span>
+              <div class="from">Dari</div>          
+              <div id="spanharga" class="price-currency"> Rp <?php echo $banner->hargaPerBulan;?></div>
             </div>
             <ul>
               <li> <i class="fa fa-tags fa-2x"></i> Discount for 4 month Rent</li>

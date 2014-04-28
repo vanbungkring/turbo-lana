@@ -875,10 +875,21 @@ hr {
 }
 .kivi .banner-detail .price .price-detail {
   text-align: center;
-  font-family: "Arial";
+  font-family: "Open Sans";
   font-size: 32px;
   font-weight: bold;
-  margin-top: 30px;
+  margin-top: 10px;
+}
+.kivi .banner-detail .price .price-detail .price-currency {
+  font-size: 24px;
+  font-weight: bold;
+}
+.kivi .banner-detail .price .price-detail .from {
+  font-size: 14px;
+  text-align: left;
+  color: #959595;
+  margin-left: 10px;
+  display: block;
 }
 .kivi .banner-detail .price .price-detail sup {
   font-size: 18px;
