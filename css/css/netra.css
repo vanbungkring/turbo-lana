@@ -835,6 +835,7 @@ hr {
 }
 .kivi .banner-detail .content-description {
   padding: 10px;
+  float: left;
 }
 .kivi .banner-detail .banner-info-body {
   background: #fff;

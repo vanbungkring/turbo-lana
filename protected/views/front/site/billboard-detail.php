@@ -5,84 +5,82 @@
       <div class="row">
        <div class="col-md-8 no-padding">
         <h1>{{Banner Name}}, {{Banner Location}}</h1>
-       </div>
-
       </div>
 
-      <div class="row banner-detail">
-        <div class="col-md-8 no-padding">
-          <?php if(!empty($banner->images)): ?>
-          <section id="banner-image-list" class="banner-info-body">
-            <header class="banner-info-header">Banner Photo</header>
-            <div class="image-billboard">
-              <?php foreach($banner->images as $image):?>
-              <img src="<?php echo $image->getImageUrl(); ?>" />
-            <?php endforeach; ?>
-          </div>
-        </section>
-      <?php endif; ?>
+    </div>
 
-      <section id="banner-detail-info-list" class="banner-info-body">
-        <header class="banner-info-header">Deskripsi & Spesifikasi Banner</header>
-        <p class="content-description">
-          <?php echo CHtml::encode($banner->keterangan); ?>
-        </p>
-        <div class="table-responsive">
-          <table class="table table-bordered ">
-            <tbody>
-
-              <tr>
-                <td class="front">SKU</td>
-                <td> {{SKU BILLBOARD}}</td>
-              </tr>
-
-              <tr>
-                <td class="front">Type</td>
-                <td><?php 
-                $kNamas = CHtml::listData($banner->kategoris,'id','nama');
-                $valNamas = array_values($kNamas);
-                $str = implode(", ", $valNamas);
-                echo CHtml::encode($str);
-                ?></td>
-              </tr>
-              <tr>
-                <td class="front">Location</td>
-                <td><?php echo CHtml::encode($banner->lokasi); ?></td>
-              </tr>
-              <tr>
-                <td class="front">Panjang</td>
-                <td><?php echo CHtml::encode($banner->panjang); ?> Meter</td>
-              </tr>
-              <tr>
-                <td class="front">Tinggi</td>
-                <td><?php echo CHtml::encode($banner->tinggi); ?> Meter</td>
-              </tr>
-                <tr>
-                <td class="front">Status</td>
-                <td>{{Status Here}}</td>
-              </tr>
-            </tbody>
-          </table>
+    <div class="row banner-detail">
+      <div class="col-md-8 no-padding">
+        <?php if(!empty($banner->images)): ?>
+        <section id="banner-image-list" class="banner-info-body">
+          <header class="banner-info-header">Banner Photo</header>
+          <div class="image-billboard">
+            <?php foreach($banner->images as $image):?>
+            <img src="<?php echo $image->getImageUrl(); ?>" />
+          <?php endforeach; ?>
         </div>
       </section>
-      
-      <section id="banner-detail-info-list" class="banner-info-body">
-        <header class="banner-info-header">Deskripsi Inventory</header>
-        <div class="table-responsive">
+    <?php endif; ?>
+
+    <section id="banner-detail-info-list" class="banner-info-body">
+      <header class="banner-info-header">Deskripsi & Spesifikasi Banner</header>
+
+      <div class="table-responsive">
+        <table class="table table-bordered ">
+          <tbody>
+
+            <tr>
+              <td class="front">SKU</td>
+              <td> {{SKU BILLBOARD}}</td>
+            </tr>
+
+            <tr>
+              <td class="front">Type</td>
+              <td><?php 
+              $kNamas = CHtml::listData($banner->kategoris,'id','nama');
+              $valNamas = array_values($kNamas);
+              $str = implode(", ", $valNamas);
+              echo CHtml::encode($str);
+              ?></td>
+            </tr>
+            <tr>
+              <td class="front">Location</td>
+              <td><?php echo CHtml::encode($banner->lokasi); ?></td>
+            </tr>
+            <tr>
+              <td class="front">Panjang</td>
+              <td><?php echo CHtml::encode($banner->panjang); ?> Meter</td>
+            </tr>
+            <tr>
+              <td class="front">Tinggi</td>
+              <td><?php echo CHtml::encode($banner->tinggi); ?> Meter</td>
+            </tr>
+            <tr>
+              <td class="front">Status</td>
+              <td>{{Status Here}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+    
+    <section id="banner-detail-info-list" class="banner-info-body">
+      <header class="banner-info-header">Deskripsi Inventory</header>
+      <div class="table-responsive">
         <p>The Space
           A Studio Apartment in Surabaya to rent out, close to the heart of Surabaya with maximum occupancy of 2 person. The apartment comes with a Queen bed, a 32" LCD TV, mini electric stove, free wi fi connection, fully air-conditioned, and a small cabinet.
           There is a swimming pool for you to chill and relax, a gym (small fee applicable) and free parking in the building.
         </p>
         <p>
           Cleaning service is available upon request for Rp30.000  There is also laundry service available upon request (fee applicable)
-      </p>
-      <p>
-        The location of the apartment is very close by (30 minutes drive) from Juanda International Airport 
-        It is also nearby to Mall Royal and City of Tomorrow, where you can find daily necessities, cafes and restaurants.
-      </p>
-      <p>
-        There is a few point of interest in Surabaya that includes Grand Mosque of Surabaya or Al-Akbar Mosque, the largest mosque in East Java, Cheng Ho Mosque, a recently built mosque, the first in Indonesia with Chinese-style architecture and House of Sampoerna is a cigarette museum, and also one of the factory of Sampoerna brand cigarette.
-      </p>
+        </p>
+        <p>
+          The location of the apartment is very close by (30 minutes drive) from Juanda International Airport 
+          It is also nearby to Mall Royal and City of Tomorrow, where you can find daily necessities, cafes and restaurants.
+        </p>
+        <p>
+          There is a few point of interest in Surabaya that includes Grand Mosque of Surabaya or Al-Akbar Mosque, the largest mosque in East Java, Cheng Ho Mosque, a recently built mosque, the first in Indonesia with Chinese-style architecture and House of Sampoerna is a cigarette museum, and also one of the factory of Sampoerna brand cigarette.
+        </p>
       </div>
     </section>
 
@@ -96,7 +94,10 @@
       </section>
       <section id="banner-image-list" class="banner-info-body">
         <header class="banner-info-header">Alamat Billboard & Peta Lokasi</header>
-        <div id="map-canvas" style="height:400px">
+        <p class="content-description">
+          <?php echo CHtml::encode($banner->keterangan); ?>
+        </p>
+        <div id="map-canvas" style="height:400px; margin-top:30px;">
         </div>
       </section>
 
