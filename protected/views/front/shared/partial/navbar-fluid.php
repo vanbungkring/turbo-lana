@@ -20,7 +20,7 @@
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ photo }} {{username}} <b class="caret"></b></a>
 							<ul class="dropdown-menu">
-								<li><a href="<?php echo Yii::app()->createUrl('user/Dashboard'); ?>">Dashboard</a></li>
+								<li><a href="<?php echo Yii::app()->createUrl('user/dashboard'); ?>">Dashboard</a></li>
 								<li><a href="<?php echo Yii::app()->createUrl('user/MyBookmark'); ?>">My Bookmark</a></li>
 								<li><a href="<?php echo Yii::app()->createUrl('rfp2/list'); ?>">Campaign</a></li>
 								<li><a href="<?php echo Yii::app()->createUrl('rfp2/list'); ?>">Quote</a></li>

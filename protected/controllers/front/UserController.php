@@ -31,7 +31,7 @@ class UserController extends FrontEndController
 		$this->render('user');
 	}
 
-	public function actionUserDashboard(){
+	public function actionDashboard(){
 		$member = Member::model()->findByPk(Yii::app()->user->id);
 		$logs = MemberLog::model()->findAll(array(
 			'condition'=>'idMember = :p1',
