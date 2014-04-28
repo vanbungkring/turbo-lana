@@ -70,8 +70,7 @@
                   </div>
                 </div>
                 <!-- end of well -->
-              </div>
-						
+              </div>		
               <div class="col-lg-5">
                 <div class="panel panel-main">
                   <div class="panel-heading">

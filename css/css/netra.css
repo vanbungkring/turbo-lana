@@ -3,6 +3,23 @@
 @import url(http://fonts.googleapis.com/css?family=Radley);
 @import url(http://fonts.googleapis.com/css?family=Roboto+Condensed:400italic,400,700,300);
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800);
+.navbar-static-side {
+  z-index: 1;
+  position: fixed;
+  width: 240px;
+  top: 50px;
+  border-right: 0.8px solid #e7e7e7;
+}
+.navbar-static-side .fa.flright {
+  float: right;
+}
+.navbar-static-side ul li {
+  border-bottom: 1px solid #e7e7e7;
+}
+.navbar-static-side ul li a {
+  color: #5fafe4;
+  font-weight: 100;
+}
 .container-fluid {
   padding: 0px 10px;
 }
@@ -408,8 +425,8 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Raleway";
-  font-weight: 300;
+  font-family: "Open Sans";
+  font-weight: 400;
   color: #333;
 }
 p {
@@ -560,6 +577,9 @@ hr {
   opacity: 0;
   -webkit-transition: opacity .25s ease;
 }
+.city-billboard .overlayed h3 {
+  text-align: center;
+}
 .city-billboard .overlayed h2 {
   text-align: center;
   position: absolute;
@@ -617,7 +637,63 @@ hr {
   font-weight: bold;
 }
 .wrapper-container {
-  padding-top: 50px;
+  position: inherit;
+  margin: 0 0 0 250px;
+  min-height: 1300px;
+  padding: 0 30px;
+  border-left: 1px solid #e7e7e7;
+  padding-top: 40px;
+}
+.wrapper-container .fa {
+  color: #fff;
+}
+.wrapper-container .well.well-blue {
+  background-color: #5fafe4;
+  color: #fff;
+}
+.wrapper-container .well.well-blue h4 {
+  color: #fff;
+  font-family: "Open Sans";
+  font-weight: 400;
+}
+.wrapper-container .well.well-blue-dark {
+  background-color: #508bb3;
+}
+.wrapper-container .well.well-blue-dark h4 {
+  color: #fff;
+  font-family: "Open Sans";
+  font-weight: 400;
+}
+.wrapper-container .well.well-orange {
+  background-color: #e3b700;
+}
+.wrapper-container .well.well-orange p {
+  color: #fff;
+}
+.wrapper-container .well.well-orange h4 {
+  font-weight: 400;
+  color: #fff;
+  font-family: "Open Sans";
+}
+.wrapper-container .well.well-red {
+  background-color: #e13861;
+}
+.wrapper-container .well.well-red p {
+  color: #fff;
+}
+.wrapper-container .well.well-red h4 {
+  font-weight: 400;
+  color: #fff;
+  font-family: "Open Sans";
+}
+.wrapper-container .panel-main > .panel-heading {
+  color: white;
+  background-color: #8e8a8b;
+}
+.wrapper-container .panel-main > .panel-heading h4 {
+  font-weight: 400;
+  color: #fff;
+  font-family: "Open Sans";
 }
 #features {
   padding-top: 50px;

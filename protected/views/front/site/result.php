@@ -1,22 +1,22 @@
-    <?php $this->renderPartial('/shared/partial/navbar'); ?>
+    <?php $this->renderPartial('/shared/partial/navbar-fluid'); ?>
     <div class="container container-full fill">
       <div class="col-md-3 filter">
         <div class="filter-wrapper">
           <button type="button" class="btn btn-primary btn-lg btn-block"><i class="fa fa-filter"></i>More Filter</button>
-          
+
         </div>
       </div>
       <div class="col-md-3 list">
 
         <ul class="assets-card-holder">
           <li class="card">
-            
+
             <div class="card-body">
-              
+
               <div class="card-image">
                 <img alt="Hotel Majapahit - Surabaya Hotels" src="http://res.cloudinary.com/wego/image/upload/w_180,h_180,c_fill/v1395061119/hotels/269481/11420934.jpg">
               </div>
-              
+
               <div class="card-meta">
                 <div class="card-main">
                   <strong class="card-main-title"> Billboard 1 jakabaring Bali</strong>
@@ -29,17 +29,17 @@
                   </strong>
                 </div>
               </div>
-              
+
             </div>
           </li>
           <li class="card">
-            
+
             <div class="card-body">
-              
+
               <div class="card-image">
                 <img alt="Hotel Majapahit - Surabaya Hotels" src="http://res.cloudinary.com/wego/image/upload/w_180,h_180,c_fill/v1395061119/hotels/269481/11420934.jpg">
               </div>
-              
+
               <div class="card-meta">
                 <div class="card-main">
                   <strong class="card-main-title"> Billboard 1 jakabaring Bali</strong>
@@ -52,17 +52,17 @@
                   </strong>
                 </div>
               </div>
-              
+
             </div>
           </li>
           <li class="card">
-            
+
             <div class="card-body">
-              
+
               <div class="card-image">
                 <img alt="Hotel Majapahit - Surabaya Hotels" src="http://res.cloudinary.com/wego/image/upload/w_180,h_180,c_fill/v1395061119/hotels/269481/11420934.jpg">
               </div>
-              
+
               <div class="card-meta">
                 <div class="card-main">
                   <strong class="card-main-title"> Billboard 1 jakabaring Bali</strong>
@@ -75,17 +75,17 @@
                   </strong>
                 </div>
               </div>
-              
+
             </div>
           </li>
           <li class="card">
-            
+
             <div class="card-body">
-              
+
               <div class="card-image">
                 <img alt="Hotel Majapahit - Surabaya Hotels" src="http://res.cloudinary.com/wego/image/upload/w_180,h_180,c_fill/v1395061119/hotels/269481/11420934.jpg">
               </div>
-              
+
               <div class="card-meta">
                 <div class="card-main">
                   <strong class="card-main-title"> Billboard 1 jakabaring Bali</strong>
@@ -98,17 +98,17 @@
                   </strong>
                 </div>
               </div>
-              
+
             </div>
           </li>
           <li class="card">
-            
+
             <div class="card-body">
-              
+
               <div class="card-image">
                 <img alt="Hotel Majapahit - Surabaya Hotels" src="http://res.cloudinary.com/wego/image/upload/w_180,h_180,c_fill/v1395061119/hotels/269481/11420934.jpg">
               </div>
-              
+
               <div class="card-meta">
                 <div class="card-main">
                   <strong class="card-main-title"> Billboard 1 jakabaring Bali</strong>
@@ -121,17 +121,17 @@
                   </strong>
                 </div>
               </div>
-              
+
             </div>
           </li>
           <li class="card">
-            
+
             <div class="card-body">
-              
+
               <div class="card-image">
                 <img alt="Hotel Majapahit - Surabaya Hotels" src="http://res.cloudinary.com/wego/image/upload/w_180,h_180,c_fill/v1395061119/hotels/269481/11420934.jpg">
               </div>
-              
+
               <div class="card-meta">
                 <div class="card-main">
                   <strong class="card-main-title"> Billboard 1 jakabaring Bali</strong>
@@ -144,17 +144,17 @@
                   </strong>
                 </div>
               </div>
-              
+
             </div>
           </li>
           <li class="card">
-            
+
             <div class="card-body">
-              
+
               <div class="card-image">
                 <img alt="Hotel Majapahit - Surabaya Hotels" src="http://res.cloudinary.com/wego/image/upload/w_180,h_180,c_fill/v1395061119/hotels/269481/11420934.jpg">
               </div>
-              
+
               <div class="card-meta">
                 <div class="card-main">
                   <strong class="card-main-title"> Billboard 1 jakabaring Bali</strong>
@@ -167,17 +167,17 @@
                   </strong>
                 </div>
               </div>
-              
+
             </div>
           </li>
           <li class="card">
-            
+
             <div class="card-body">
-              
+
               <div class="card-image">
                 <img alt="Hotel Majapahit - Surabaya Hotels" src="http://res.cloudinary.com/wego/image/upload/w_180,h_180,c_fill/v1395061119/hotels/269481/11420934.jpg">
               </div>
-              
+
               <div class="card-meta">
                 <div class="card-main">
                   <strong class="card-main-title"> Billboard 1 jakabaring Bali</strong>
@@ -190,17 +190,17 @@
                   </strong>
                 </div>
               </div>
-              
+
             </div>
           </li>
           <li class="card">
-            
+
             <div class="card-body">
-              
+
               <div class="card-image">
                 <img alt="Hotel Majapahit - Surabaya Hotels" src="http://res.cloudinary.com/wego/image/upload/w_180,h_180,c_fill/v1395061119/hotels/269481/11420934.jpg">
               </div>
-              
+
               <div class="card-meta">
                 <div class="card-main">
                   <strong class="card-main-title"> Billboard 1 jakabaring Bali</strong>
@@ -213,17 +213,17 @@
                   </strong>
                 </div>
               </div>
-              
+
             </div>
           </li>
           <li class="card">
-            
+
             <div class="card-body">
-              
+
               <div class="card-image">
                 <img alt="Hotel Majapahit - Surabaya Hotels" src="http://res.cloudinary.com/wego/image/upload/w_180,h_180,c_fill/v1395061119/hotels/269481/11420934.jpg">
               </div>
-              
+
               <div class="card-meta">
                 <div class="card-main">
                   <strong class="card-main-title"> Billboard 1 jakabaring Bali</strong>
@@ -236,17 +236,17 @@
                   </strong>
                 </div>
               </div>
-              
+
             </div>
           </li>
           <li class="card">
-            
+
             <div class="card-body">
-              
+
               <div class="card-image">
                 <img alt="Hotel Majapahit - Surabaya Hotels" src="http://res.cloudinary.com/wego/image/upload/w_180,h_180,c_fill/v1395061119/hotels/269481/11420934.jpg">
               </div>
-              
+
               <div class="card-meta">
                 <div class="card-main">
                   <strong class="card-main-title"> Billboard 1 jakabaring Bali</strong>
@@ -259,17 +259,17 @@
                   </strong>
                 </div>
               </div>
-              
+
             </div>
           </li>
           <li class="card">
-            
+
             <div class="card-body">
-              
+
               <div class="card-image">
                 <img alt="Hotel Majapahit - Surabaya Hotels" src="http://res.cloudinary.com/wego/image/upload/w_180,h_180,c_fill/v1395061119/hotels/269481/11420934.jpg">
               </div>
-              
+
               <div class="card-meta">
                 <div class="card-main">
                   <strong class="card-main-title"> Billboard 1 jakabaring Bali</strong>
@@ -282,17 +282,17 @@
                   </strong>
                 </div>
               </div>
-              
+
             </div>
           </li>
           <li class="card">
-            
+
             <div class="card-body">
-              
+
               <div class="card-image">
                 <img alt="Hotel Majapahit - Surabaya Hotels" src="http://res.cloudinary.com/wego/image/upload/w_180,h_180,c_fill/v1395061119/hotels/269481/11420934.jpg">
               </div>
-              
+
               <div class="card-meta">
                 <div class="card-main">
                   <strong class="card-main-title"> Billboard 1 jakabaring Bali</strong>
@@ -305,17 +305,17 @@
                   </strong>
                 </div>
               </div>
-              
+
             </div>
           </li>
           <li class="card">
-            
+
             <div class="card-body">
-              
+
               <div class="card-image">
                 <img alt="Hotel Majapahit - Surabaya Hotels" src="http://res.cloudinary.com/wego/image/upload/w_180,h_180,c_fill/v1395061119/hotels/269481/11420934.jpg">
               </div>
-              
+
               <div class="card-meta">
                 <div class="card-main">
                   <strong class="card-main-title"> Billboard 1 jakabaring Bali</strong>
@@ -328,17 +328,17 @@
                   </strong>
                 </div>
               </div>
-              
+
             </div>
           </li>
           <li class="card">
-            
+
             <div class="card-body">
-              
+
               <div class="card-image">
                 <img alt="Hotel Majapahit - Surabaya Hotels" src="http://res.cloudinary.com/wego/image/upload/w_180,h_180,c_fill/v1395061119/hotels/269481/11420934.jpg">
               </div>
-              
+
               <div class="card-meta">
                 <div class="card-main">
                   <strong class="card-main-title"> Billboard 1 jakabaring Bali</strong>
@@ -351,17 +351,17 @@
                   </strong>
                 </div>
               </div>
-              
+
             </div>
           </li>
           <li class="card">
-            
+
             <div class="card-body">
-              
+
               <div class="card-image">
                 <img alt="Hotel Majapahit - Surabaya Hotels" src="http://res.cloudinary.com/wego/image/upload/w_180,h_180,c_fill/v1395061119/hotels/269481/11420934.jpg">
               </div>
-              
+
               <div class="card-meta">
                 <div class="card-main">
                   <strong class="card-main-title"> Billboard 1 jakabaring Bali</strong>
@@ -374,17 +374,17 @@
                   </strong>
                 </div>
               </div>
-              
+
             </div>
           </li>
           <li class="card">
-            
+
             <div class="card-body">
-              
+
               <div class="card-image">
                 <img alt="Hotel Majapahit - Surabaya Hotels" src="http://res.cloudinary.com/wego/image/upload/w_180,h_180,c_fill/v1395061119/hotels/269481/11420934.jpg">
               </div>
-              
+
               <div class="card-meta">
                 <div class="card-main">
                   <strong class="card-main-title"> Billboard 1 jakabaring Bali</strong>
@@ -397,17 +397,17 @@
                   </strong>
                 </div>
               </div>
-              
+
             </div>
           </li>
           <li class="card">
-            
+
             <div class="card-body">
-              
+
               <div class="card-image">
                 <img alt="Hotel Majapahit - Surabaya Hotels" src="http://res.cloudinary.com/wego/image/upload/w_180,h_180,c_fill/v1395061119/hotels/269481/11420934.jpg">
               </div>
-              
+
               <div class="card-meta">
                 <div class="card-main">
                   <strong class="card-main-title"> Billboard 1 jakabaring Bali</strong>
@@ -420,17 +420,17 @@
                   </strong>
                 </div>
               </div>
-              
+
             </div>
           </li>
           <li class="card">
-            
+
             <div class="card-body">
-              
+
               <div class="card-image">
                 <img alt="Hotel Majapahit - Surabaya Hotels" src="http://res.cloudinary.com/wego/image/upload/w_180,h_180,c_fill/v1395061119/hotels/269481/11420934.jpg">
               </div>
-              
+
               <div class="card-meta">
                 <div class="card-main">
                   <strong class="card-main-title"> Billboard 1 jakabaring Bali</strong>
@@ -443,17 +443,17 @@
                   </strong>
                 </div>
               </div>
-              
+
             </div>
           </li>
           <li class="card">
-            
+
             <div class="card-body">
-              
+
               <div class="card-image">
                 <img alt="Hotel Majapahit - Surabaya Hotels" src="http://res.cloudinary.com/wego/image/upload/w_180,h_180,c_fill/v1395061119/hotels/269481/11420934.jpg">
               </div>
-              
+
               <div class="card-meta">
                 <div class="card-main">
                   <strong class="card-main-title"> Billboard 1 jakabaring Bali</strong>
@@ -466,17 +466,17 @@
                   </strong>
                 </div>
               </div>
-              
+
             </div>
           </li>
           <li class="card">
-            
+
             <div class="card-body">
-              
+
               <div class="card-image">
                 <img alt="Hotel Majapahit - Surabaya Hotels" src="http://res.cloudinary.com/wego/image/upload/w_180,h_180,c_fill/v1395061119/hotels/269481/11420934.jpg">
               </div>
-              
+
               <div class="card-meta">
                 <div class="card-main">
                   <strong class="card-main-title"> Billboard 1 jakabaring Bali</strong>
@@ -489,17 +489,17 @@
                   </strong>
                 </div>
               </div>
-              
+
             </div>
           </li>
           <li class="card">
-            
+
             <div class="card-body">
-              
+
               <div class="card-image">
                 <img alt="Hotel Majapahit - Surabaya Hotels" src="http://res.cloudinary.com/wego/image/upload/w_180,h_180,c_fill/v1395061119/hotels/269481/11420934.jpg">
               </div>
-              
+
               <div class="card-meta">
                 <div class="card-main">
                   <strong class="card-main-title"> Billboard 1 jakabaring Bali</strong>
@@ -512,17 +512,17 @@
                   </strong>
                 </div>
               </div>
-              
+
             </div>
           </li>
           <li class="card">
-            
+
             <div class="card-body">
-              
+
               <div class="card-image">
                 <img alt="Hotel Majapahit - Surabaya Hotels" src="http://res.cloudinary.com/wego/image/upload/w_180,h_180,c_fill/v1395061119/hotels/269481/11420934.jpg">
               </div>
-              
+
               <div class="card-meta">
                 <div class="card-main">
                   <strong class="card-main-title"> Billboard 1 jakabaring Bali</strong>
@@ -535,17 +535,17 @@
                   </strong>
                 </div>
               </div>
-              
+
             </div>
           </li>
           <li class="card">
-            
+
             <div class="card-body">
-              
+
               <div class="card-image">
                 <img alt="Hotel Majapahit - Surabaya Hotels" src="http://res.cloudinary.com/wego/image/upload/w_180,h_180,c_fill/v1395061119/hotels/269481/11420934.jpg">
               </div>
-              
+
               <div class="card-meta">
                 <div class="card-main">
                   <strong class="card-main-title"> Billboard 1 jakabaring Bali</strong>
@@ -558,17 +558,17 @@
                   </strong>
                 </div>
               </div>
-              
+
             </div>
           </li>
           <li class="card">
-            
+
             <div class="card-body">
-              
+
               <div class="card-image">
                 <img alt="Hotel Majapahit - Surabaya Hotels" src="http://res.cloudinary.com/wego/image/upload/w_180,h_180,c_fill/v1395061119/hotels/269481/11420934.jpg">
               </div>
-              
+
               <div class="card-meta">
                 <div class="card-main">
                   <strong class="card-main-title"> Billboard 1 jakabaring Bali</strong>
@@ -581,7 +581,7 @@
                   </strong>
                 </div>
               </div>
-              
+
             </div>
           </li>
 
