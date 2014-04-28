@@ -24,9 +24,13 @@
 								<li><a href="<?php echo Yii::app()->createUrl('user/MyBookmark'); ?>">My Bookmark</a></li>
 								<li><a href="<?php echo Yii::app()->createUrl('rfp2/list'); ?>">Campaign</a></li>
 								<li><a href="<?php echo Yii::app()->createUrl('rfp2/list'); ?>">Quote</a></li>
-								<li><a href="<?php echo Yii::app()->createUrl('site/Logout'); ?>">Logout</a></li>
 							</ul>
 							<li><a href="#">Notification</a></li>
+							<li>
+								<a href="<?php echo Yii::app()->createUrl('site/Logout'); ?>">
+									<div class="btn btn-outline btn-danger btn-sm"><i class="fa fa-sign-out fa-fw"></i> LOG OUT</div>
+								</a>
+							</li>
 						</li>
 
 						<?php 

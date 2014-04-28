@@ -6,6 +6,13 @@
 .container-fluid {
   padding: 0px 10px;
 }
+.navbar-default {
+  height: 50px;
+}
+.navbar .btn {
+  margin-top: -5px;
+  margin-bottom: 0px;
+}
 .navbar .nav > li > a {
   font-size: 12px;
   font-family: "Open Sans";
