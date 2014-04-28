@@ -22,7 +22,7 @@ class SiteController extends FrontEndController
           'namaDepan' => 'firstName',
           'namaBelakang' => 'lastName',
           'namaPerusahaan' => 'companyName',
-          // 'gender' => 'genderShort',
+          // 'gender'=> 'genderShort',
           // 'birthday' => 'birthDate',
           // // you can also specify additional values, 
           // that will be applied to your model (eg. account activation status)
@@ -58,7 +58,7 @@ class SiteController extends FrontEndController
 				'users'=>array('@'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('index','oauth','result','custom','Dashboard','GetMarker','Registrasi','User','AjaxLogin','login','error'),
+				'actions'=>array('index','oauth','result','custom','dashboard','GetMarker','Registrasi','User','AjaxLogin','login','error'),
 				'users'=>array('*'),
 			),
 			array('deny',  // deny all users

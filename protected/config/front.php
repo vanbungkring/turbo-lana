@@ -13,7 +13,6 @@ return CMap::mergeArray(
 				'urlFormat'=>'path',
 				'rules'=>array(
 					'dashboard'=>'user/dashboard',
-
 					'register'=>'site/registrasi',
 					'search'=>'site/result',
 					'custom'=>'site/custom',

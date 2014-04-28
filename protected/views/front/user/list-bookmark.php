@@ -1,4 +1,4 @@
-  <?php $this->renderPartial('/shared/partial/navbar'); ?>
+  <?php $this->renderPartial('/shared/partial/navbar-fluid'); ?>
       <div class="container kivi">
 
 <div class="row">

@@ -1,4 +1,4 @@
-    <?php $this->renderPartial('/shared/partial/navbar'); ?>
+  <?php $this->renderPartial('/shared/partial/navbar-fluid'); ?>
 
 		<!-- FEATURES WRAP -->
 		<div class="wrapper-container">
