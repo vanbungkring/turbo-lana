@@ -10,10 +10,9 @@
 
 				<div class="navbar-collapse collapse">
 					<ul class="nav navbar-nav">
-						<li><a href="#">Dashboard</a></li>
-						<li><a href="#">Who are You</a></li>
-						<li><a href="#">FAQ</a></li>
-						<li><a href="#">Dashboard</a></li>
+						<li><a href="#">About</a></li>
+						<li><a href="#">Advertiser</a></li>
+						<li><a href="#">Billboard Owner</a></li>
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
 						<?php 
@@ -25,9 +24,13 @@
 								<li><a href="<?php echo Yii::app()->createUrl('user/MyBookmark'); ?>">My Bookmark</a></li>
 								<li><a href="<?php echo Yii::app()->createUrl('rfp2/list'); ?>">Campaign</a></li>
 								<li><a href="<?php echo Yii::app()->createUrl('rfp2/list'); ?>">Quote</a></li>
-								<li><a href="<?php echo Yii::app()->createUrl('site/Logout'); ?>">Logout</a></li>
 							</ul>
 							<li><a href="#">Notification</a></li>
+							<li>
+								<a href="<?php echo Yii::app()->createUrl('site/Logout'); ?>">
+									<div class="btn btn-outline btn-danger btn-sm"><i class="fa fa-sign-out fa-fw"></i> LOG OUT</div>
+								</a>
+							</li>
 						</li>
 
 						<?php 

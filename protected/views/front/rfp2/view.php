@@ -1,3 +1,4 @@
+  <?php $this->renderPartial('/shared/partial/navbar-fluid'); ?>
 <div class="container kivi">
 	<div class="row">
 		<h1>Create Quote</h1>
