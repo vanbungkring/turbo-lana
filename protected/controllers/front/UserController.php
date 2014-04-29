@@ -67,6 +67,9 @@ class UserController extends FrontEndController
 	public function actionQuotes(){
 		$this->render('quotes');
 	}
+	public function actionQuotesDetail(){
+		$this->render('quotes-detail');
+	}
 
 	public function actionHistory(){
 				$member = Member::model()->findByPk(Yii::app()->user->id);

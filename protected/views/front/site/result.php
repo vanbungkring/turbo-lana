@@ -7,7 +7,12 @@
         </div>
       </div>
       <div class="col-md-3 list">
-
+        <div class="searchbar">
+          <form class="form-horizontal" role="form">
+             <button type="button" class="btn btn-default">Filter</button>
+      <input type="text" class="form-control"  placeholder="Refine Search">
+          </form>
+        </div>
         <ul class="assets-card-holder">
           <li class="card">
 
