@@ -778,6 +778,24 @@ hr {
   background: #fff;
   border-right: 1px solid #ccc;
 }
+.container-full .list .searchbar {
+  display: block;
+  height: 55px;
+  position: fixed;
+  background: #fff;
+  border-bottom: 1px solid #ccc;
+  z-index: 100;
+  width: 20%;
+  padding: 10px;
+}
+.container-full .list .searchbar .btn {
+  float: left;
+  margin-right: 10px;
+}
+.container-full .list .searchbar input[type="text"] {
+  width: 80%;
+  float: left;
+}
 .container-full .list ul.assets-card-holder {
   margin-top: 40px;
   width: 100%;
