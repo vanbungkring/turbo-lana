@@ -9,8 +9,10 @@
       <div class="col-md-3 list">
         <div class="searchbar">
           <form class="form-horizontal" role="form">
-             <button type="button" class="btn btn-default">Filter</button>
-      <input type="text" class="form-control"  placeholder="Refine Search">
+             <button type="button" class="btn btn-default" id="btnSearch">Filter</button>
+             <input name="lokasi" type="text" class="form-control"  placeholder="Refine Search" id="boxcari">
+             <input type="hidden" id="lat" value="-6.17511" />
+             <input type="hidden" id="long" value="106.86503949999997" />
           </form>
         </div>
         <ul class="assets-card-holder" id="card-place">
@@ -119,6 +121,7 @@
     var long = $("#long").val();
     console.log(lat); console.log(long);
     map.setCenter(new google.maps.LatLng(lat, long));
+    showList($("#boxcari").val());
   });
     ';
     $jssigin = '
