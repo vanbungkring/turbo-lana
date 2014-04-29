@@ -54,7 +54,7 @@ class SiteController extends FrontEndController
 	{
 		return array(
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('detail','customBanner','saveTempImage','downloadCustomImage','saveCustomImage','Logout','AddBookmark','removeBookmark'),
+				'actions'=>array('getListBanner','detail','customBanner','saveTempImage','downloadCustomImage','saveCustomImage','Logout','AddBookmark','removeBookmark'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -83,6 +83,7 @@ class SiteController extends FrontEndController
 		// using the default layout 'protected/views/layouts/main.php'
 		$defLat = isset($_GET['lat']) ? $_GET['lat'] : -6.17511;
 		$defLong = isset($_GET['long']) ? $_GET['long'] : 106.86503949999997;
+		$defLokasi = 'jakarta';
 		if(isset($_GET['lokasi'])){
 			$url = 'http://maps.googleapis.com/maps/api/geocode/json?address='.urlencode($_GET['lokasi']).'&sensor=false';
 			$jdata = @file_get_contents($url);
@@ -92,12 +93,58 @@ class SiteController extends FrontEndController
 			if($newLat and $newLong){
 				$defLat = $newLat;
 				$defLong = $newLong;
+				$defLokasi = $_GET['lokasi'];
 			}
 		}
 		$this->render('result',array(
 			'defLat' => $defLat,
 			'defLong' => $defLong,
+			'defLokasi' => $defLokasi,
 		));
+	}
+	public function actionGetListBanner(){
+		$url = 'http://maps.googleapis.com/maps/api/geocode/json?address='.urlencode(@$_POST['lokasi']).'&sensor=false';
+		$jdata = @file_get_contents($url);
+		$data = @json_decode($jdata);
+
+		$long_min = @$data->results[0]->geometry->bounds->southwest->lng;
+        $long_max = @$data->results[0]->geometry->bounds->northeast->lng;
+        $lat_min = @$data->results[0]->geometry->bounds->southwest->lat;
+        $lat_max = @$data->results[0]->geometry->bounds->northeast->lat;
+        if($long_min > $long_max){
+            $res = Yii::app()->db->createCommand("select banner.*,banner_image.id as `cover` from banner left join 
+            		banner_image on banner_image.idBanner = banner.id and status=1 
+            	 where 
+                `lat` >= :lat_min and `lat` <= :lat_max 
+                and
+                (
+                    `long` >= :long_min or `long` <= :long_max
+                )
+            ")->queryAll(true,array(
+                ':lat_min'=>$lat_min,
+                ':lat_max'=>$lat_max,
+                ':long_min'=>$long_min,
+                ':long_max'=>$long_max,
+            ));
+        }
+        else{
+            $res = Yii::app()->db->createCommand("select banner.*,banner_image.id as `cover` from banner left join 
+            		banner_image on banner_image.idBanner = banner.id and status=1 
+            	where
+                `lat` >= :lat_min and `lat` <= :lat_max 
+                and
+                `long` >= :long_min and `long` <= :long_max
+            ")->queryAll(true,array(
+                ':lat_min'=>$lat_min,
+                ':lat_max'=>$lat_max,
+                ':long_min'=>$long_min,
+                ':long_max'=>$long_max,
+            ));
+        }
+        header('Content-type: application/json');
+        echo json_encode($res);
+
+		
 	}
     public function actionCustom()
 	{
@@ -294,9 +341,6 @@ class SiteController extends FrontEndController
 			echo json_encode(array('status'=>0,'message'=>$e->getMessage()));
 		}
 	}
-
-	
-
     public function actionGetMarker(){
         $long_min = (double)@$_GET['bounds']['ia_b'];
         $long_max = (double)@$_GET['bounds']['ia_d'];
