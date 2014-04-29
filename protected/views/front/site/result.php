@@ -30,13 +30,12 @@
               </div>
               <div class="card-meta">
                 <div class="card-main">
-                  <strong class="card-main-title"> {nama} </strong>
-                  <strong class="card-status">Status : Available</strong>
+                  <div class="card-main-title">{nama}</div>
+                  <div class="card-status">Status : Available</div>
                 </div>
                 <div class="card-rate">
                   <span class="currency">Rp</span>
                   <strong class="price"> {harga}
-                    <sup>.000</sup>
                   </strong>
                 </div>
               </div>
