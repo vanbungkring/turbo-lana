@@ -105,6 +105,8 @@ class UserController extends FrontEndController
 			'criteria'=>$criteria
 		));
 
+		$bookmarks = MemberBookmark::model()->findAll($criteria);
+
 		$listData = array();
 		$_models = MemberBookmark::model()->findAll('idMember = :p1',array(':p1'=>Yii::app()->user->id));
 		foreach ($_models as $key => $value) {
@@ -113,6 +115,7 @@ class UserController extends FrontEndController
 		$this->render('list-bookmark',array(
 			'dataProvider'=>$dataProvider,
 			'listData'=>$listData,
+			'bookmarks'=>$bookmarks,
 		));
 	}
 
