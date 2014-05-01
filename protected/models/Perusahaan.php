@@ -31,9 +31,9 @@ class Perusahaan extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('nama', 'required'),
+			array('nama,brand', 'required'),
 			array('nama', 'length', 'max'=>100),
-			array('alamat, website', 'length', 'max'=>255),
+			array('alamat, website, brand', 'length', 'max'=>255),
 			array('noTelpon, fax, email', 'length', 'max'=>30),
 			array('kontakPerson', 'length', 'max'=>50),
 			// The following rule is used by search().

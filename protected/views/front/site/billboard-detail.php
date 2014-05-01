@@ -67,20 +67,7 @@
     <section id="banner-detail-info-list" class="banner-info-body">
       <header class="banner-info-header">Deskripsi Inventory</header>
       <div class="table-responsive">
-        <p>The Space
-          A Studio Apartment in Surabaya to rent out, close to the heart of Surabaya with maximum occupancy of 2 person. The apartment comes with a Queen bed, a 32" LCD TV, mini electric stove, free wi fi connection, fully air-conditioned, and a small cabinet.
-          There is a swimming pool for you to chill and relax, a gym (small fee applicable) and free parking in the building.
-        </p>
-        <p>
-          Cleaning service is available upon request for Rp30.000  There is also laundry service available upon request (fee applicable)
-        </p>
-        <p>
-          The location of the apartment is very close by (30 minutes drive) from Juanda International Airport 
-          It is also nearby to Mall Royal and City of Tomorrow, where you can find daily necessities, cafes and restaurants.
-        </p>
-        <p>
-          There is a few point of interest in Surabaya that includes Grand Mosque of Surabaya or Al-Akbar Mosque, the largest mosque in East Java, Cheng Ho Mosque, a recently built mosque, the first in Indonesia with Chinese-style architecture and House of Sampoerna is a cigarette museum, and also one of the factory of Sampoerna brand cigarette.
-        </p>
+      <?php echo $banner->keterangan; ?>
       </div>
     </section>
 

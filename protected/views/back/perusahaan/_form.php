@@ -25,8 +25,8 @@
 			<?php echo $form->error($model,'nama'); ?>
 		</div>
 		<div class="form-group">
-			<label>Brand</label>
-
+			<?php echo $form->labelEx($model,'brand'); ?>
+			<?php echo $form->textArea($model,'brand',array('size'=>100,'height'=>10,'maxlength'=>255,'class'=>'form-control')); ?>
 		</div>
 		<div class="form-group">
 			<?php echo $form->labelEx($model,'alamat'); ?>
