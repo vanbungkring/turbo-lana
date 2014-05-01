@@ -59,7 +59,7 @@
 
   <div class="form-group">
     <label>Keterangan</label>
-    <?php echo $form->textArea($model,'keterangan',array('class'=>'form-control')); ?>
+    <?php echo $form->textArea($model,'keterangan',array('class'=>'form-control ckeditor')); ?>
     <?php echo $form->error($model,'keterangan'); ?>
   </div>
 

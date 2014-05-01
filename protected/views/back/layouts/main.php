@@ -315,6 +315,7 @@
 
     <!-- SB Admin Scripts - Include with every page -->
     <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/back/sb-admin.js"></script>
+    <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/back/plugins/ckeditor/ckeditor.js"></script>
 
     <!-- Page-Level Demo Scripts - Dashboard - Use for reference -->
 
