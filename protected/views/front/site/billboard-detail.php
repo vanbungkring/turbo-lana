@@ -143,8 +143,6 @@
               )); ?>
               <p class="content-description">
                <?php echo $form->hiddenField($quote2,'idBanner',array('class'=>'fosrm-control')); ?>
-               Star : <?php echo $form->textField($quote2,'tanggalAwal',array('class'=>'form-control hasDatepicker_start',)); ?> <br>
-               End : <?php echo $form->textField($quote2,'tanggalAkhir',array('maxlength'=>255,'class'=>'form-control hasDatepicker_end')); ?> <br>
                <input type="submit" class="btn btn-default btn-block whislist"  value="Get Quotes">
              </p>
              <?php $this->endWidget(); ?>
