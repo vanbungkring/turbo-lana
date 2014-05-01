@@ -6,21 +6,21 @@
 
 <div class="form">
 
-<?php $form=$this->beginWidget('CActiveForm', array(
-	'id'=>'banner-form',
+  <?php $form=$this->beginWidget('CActiveForm', array(
+   'id'=>'banner-form',
 	// Please note: When you enable ajax validation, make sure the corresponding
 	// controller action is handling ajax validation correctly.
 	// There is a call to performAjaxValidation() commented in generated controller code.
 	// See class documentation of CActiveForm for details on this.
-	'enableAjaxValidation'=>false,
-  'htmlOptions'=>array('enctype'=>'multipart/form-data'),
-)); ?>
+   'enableAjaxValidation'=>false,
+   'htmlOptions'=>array('enctype'=>'multipart/form-data'),
+   )); ?>
 
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
+   <p class="note">Fields with <span class="required">*</span> are required.</p>
 
-	<?php echo $form->errorSummary($model); ?>
+   <?php echo $form->errorSummary($model); ?>
 
-  <div class="form-group">
+   <div class="form-group">
     <label>Nama</label>
     <?php echo $form->textField($model,'nama',array('size'=>60,'maxlength'=>100,'class'=>'form-control')); ?>
     <?php echo $form->error($model,'nama'); ?>
@@ -31,25 +31,37 @@
     <?php echo $form->textField($model,'uniqId',array('size'=>60,'maxlength'=>100,'class'=>'form-control')); ?>
     <?php echo $form->error($model,'uniqId'); ?>
   </div>
-        
-        <div class="form-group">
-            <input id="pac-input" class="controls" type="text" placeholder="Search Box">
-            <div id="map-canvas" style="height:600px">
-                
-            </div>
-        </div>
 
-	<div class="form-group">
-		<label>Lat</label>
-		<?php echo $form->textField($model,'lat',array('size'=>12,'maxlength'=>12,'id'=>'lat','class'=>'form-control')); ?>
-		<?php echo $form->error($model,'lat'); ?>
-	</div>
+  <div class="form-group">
+    <label>Keyword (Separate By Comma)</label>
+    <?php echo $form->textField($model,'uniqId',array('size'=>60,'maxlength'=>100,'class'=>'form-control')); ?>
+    <?php echo $form->error($model,'uniqId'); ?>
+  </div>
 
-	<div class="form-group">
-		<label>Long</label>
-		<?php echo $form->textField($model,'long',array('size'=>12,'maxlength'=>12,'id'=>'lng','class'=>'form-control')); ?>
-		<?php echo $form->error($model,'long'); ?>
-	</div>
+  <div class="form-group">
+    <label>Description</label>
+    <?php echo $form->textField($model,'uniqId',array('size'=>60,'maxlength'=>100,'class'=>'form-control')); ?>
+    <?php echo $form->error($model,'uniqId'); ?>
+  </div>
+
+  <div class="form-group">
+    <input id="pac-input" class="controls" type="text" placeholder="Search Box">
+    <div id="map-canvas" style="height:600px">
+
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label>Lat</label>
+    <?php echo $form->textField($model,'lat',array('size'=>12,'maxlength'=>12,'id'=>'lat','class'=>'form-control')); ?>
+    <?php echo $form->error($model,'lat'); ?>
+  </div>
+
+  <div class="form-group">
+    <label>Long</label>
+    <?php echo $form->textField($model,'long',array('size'=>12,'maxlength'=>12,'id'=>'lng','class'=>'form-control')); ?>
+    <?php echo $form->error($model,'long'); ?>
+  </div>
 
   <div class="form-group" style="display:none">
     <label>Zoom</label>
@@ -129,66 +141,66 @@
     <?php echo $form->error($model,'sku'); ?>
   </div>
 
-	<div class="form-group">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save',array('class' => 'btn btn-danger')); ?>
-	</div>
+  <div class="form-group">
+    <?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save',array('class' => 'btn btn-danger')); ?>
+  </div>
 
-<?php $this->endWidget(); ?>
+  <?php $this->endWidget(); ?>
 
 </div><!-- form -->
 
 <style>
-      .controls {
-        margin-top: 16px;
-        border: 1px solid transparent;
-        border-radius: 2px 0 0 2px;
-        box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        height: 32px;
-        outline: none;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-      }
+.controls {
+  margin-top: 16px;
+  border: 1px solid transparent;
+  border-radius: 2px 0 0 2px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  height: 32px;
+  outline: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
 
-      #pac-input {
-        background-color: #fff;
-        padding: 0 11px 0 13px;
-        width: 400px;
-        font-family: Roboto;
-        font-size: 15px;
-        font-weight: 300;
-        text-overflow: ellipsis;
-      }
+#pac-input {
+  background-color: #fff;
+  padding: 0 11px 0 13px;
+  width: 400px;
+  font-family: Roboto;
+  font-size: 15px;
+  font-weight: 300;
+  text-overflow: ellipsis;
+}
 
-      #pac-input:focus {
-        border-color: #4d90fe;
-        margin-left: -1px;
-        padding-left: 14px;  /* Regular padding-left + 1. */
-        width: 401px;
-      }
+#pac-input:focus {
+  border-color: #4d90fe;
+  margin-left: -1px;
+  padding-left: 14px;  /* Regular padding-left + 1. */
+  width: 401px;
+}
 
-      .pac-container {
-        font-family: Roboto;
-      }
+.pac-container {
+  font-family: Roboto;
+}
 
-      #type-selector {
-        color: #fff;
-        background-color: #4d90fe;
-        padding: 5px 11px 0px 11px;
-      }
+#type-selector {
+  color: #fff;
+  background-color: #4d90fe;
+  padding: 5px 11px 0px 11px;
+}
 
-      #type-selector label {
-        font-family: Roboto;
-        font-size: 13px;
-        font-weight: 300;
-      }
+#type-selector label {
+  font-family: Roboto;
+  font-size: 13px;
+  font-weight: 300;
+}
 
 </style>
 
-    
+
 <?php
 //google maps render
 $js =    '
-    
+
 function initialize() {
   var defLat = '.(double)$model->lat.';
   var defLng = '.(double)$model->long.';
@@ -198,69 +210,69 @@ function initialize() {
     zoom: '.(int)$model->zoom.',
     center: myLatlng
   });
-  
-    
-    var marker = new google.maps.Marker({
-        position: myLatlng, 
-        map: map, // handle of the map 
-        draggable:true
-    });
-    function setLocationaa(){
-        document.getElementById("lat").value = marker.position.lat();
-        document.getElementById("lng").value = marker.position.lng();
-        document.getElementById("zoom").value = map.getZoom();
-    }
-    setLocationaa();
-    google.maps.event.addListener(
-            marker,
-            "drag",
-            setLocationaa
-        );
-  // Create the search box and link it to the UI element.
-  var input = /** @type {HTMLInputElement} */(
-      document.getElementById("pac-input"));
-  map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
 
-  var searchBox = new google.maps.places.SearchBox(
-    /** @type {HTMLInputElement} */(input));
+
+var marker = new google.maps.Marker({
+  position: myLatlng, 
+  map: map, // handle of the map 
+  draggable:true
+});
+function setLocationaa(){
+  document.getElementById("lat").value = marker.position.lat();
+  document.getElementById("lng").value = marker.position.lng();
+  document.getElementById("zoom").value = map.getZoom();
+}
+setLocationaa();
+google.maps.event.addListener(
+  marker,
+  "drag",
+  setLocationaa
+  );
+  // Create the search box and link it to the UI element.
+var input = /** @type {HTMLInputElement} */(
+  document.getElementById("pac-input"));
+map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+
+var searchBox = new google.maps.places.SearchBox(
+  /** @type {HTMLInputElement} */(input));
 
   // [START region_getplaces]
   // Listen for the event fired when the user selects an item from the
   // pick list. Retrieve the matching places for that item.
-  google.maps.event.addListener(searchBox, "places_changed", function() {
-    var places = searchBox.getPlaces();
-    var bounds = new google.maps.LatLngBounds();
-    for (var i = 0, place; place = places[i]; i++) {
-      marker.setPosition(place.geometry.location);
-      bounds.extend(place.geometry.location);
-    }
-     map.fitBounds(bounds);
-     setLocationaa();
-  });
-  
-  google.maps.event.addDomListener(input, \'keydown\', function(e) {
-    if (e.keyCode == 13)
+google.maps.event.addListener(searchBox, "places_changed", function() {
+  var places = searchBox.getPlaces();
+  var bounds = new google.maps.LatLngBounds();
+  for (var i = 0, place; place = places[i]; i++) {
+    marker.setPosition(place.geometry.location);
+    bounds.extend(place.geometry.location);
+  }
+  map.fitBounds(bounds);
+  setLocationaa();
+});
+
+google.maps.event.addDomListener(input, \'keydown\', function(e) {
+  if (e.keyCode == 13)
+  {
+    if (e.preventDefault)
     {
-      if (e.preventDefault)
-      {
-        e.preventDefault();
-      }
-      else
-      {
-        e.cancelBubble = true;
-        e.returnValue = false;
-      }
+      e.preventDefault();
     }
-  }); 
+    else
+    {
+      e.cancelBubble = true;
+      e.returnValue = false;
+    }
+  }
+}); 
   // [END region_getplaces]
 
   // Bias the SearchBox results towards places that are within the bounds of the
- 
-  google.maps.event.addListener(map, "bounds_changed", function() {
-    document.getElementById("zoom").value = map.getZoom();
-    var bounds = map.getBounds();
-    searchBox.setBounds(bounds);
-  });
+
+google.maps.event.addListener(map, "bounds_changed", function() {
+  document.getElementById("zoom").value = map.getZoom();
+  var bounds = map.getBounds();
+  searchBox.setBounds(bounds);
+});
 }
 
 google.maps.event.addDomListener(window, "load", initialize);

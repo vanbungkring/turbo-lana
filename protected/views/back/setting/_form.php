@@ -25,6 +25,16 @@
 		<?php echo $form->textField($model,'judul',array('rows'=>6, 'cols'=>50,'class'=>'form-control')); ?>
 		<?php echo $form->error($model,'judul'); ?>
 	</div>
+		<div class="form-group">
+    <label>Meta Description</label>
+		<?php echo $form->textField($model,'judul',array('rows'=>6, 'cols'=>50,'class'=>'form-control')); ?>
+		<?php echo $form->error($model,'judul'); ?>
+	</div>
+	<div class="form-group">
+    	<label>Meta Keyword</label>
+		<?php echo $form->textField($model,'judul',array('rows'=>6, 'cols'=>50,'class'=>'form-control')); ?>
+		<?php echo $form->error($model,'judul'); ?>
+	</div>
 
 	<div class="form-group">
     	<label>Logo</label>
