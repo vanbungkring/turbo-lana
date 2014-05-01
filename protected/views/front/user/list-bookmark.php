@@ -11,7 +11,7 @@
             <span class="pull-right text-muted small"><em><?php echo TimeCustom::time_passed(strtotime($bookmark->time)); ?></em></span>
             <h5><?php echo $bookmark->banner->nama; ?></h5>
             <p><?php echo $bookmark->banner->nama; ?></p>
-            <a href="#" class="btn btn-success">Lihat Detail</a>
+            <a href="<?php echo Yii::app()->createUrl('/site/detail/',array('id'=>$bookmark->idBanner));  ?>" class="btn btn-success">Lihat Detail</a>
              <a href="#" class="btn btn-danger">Delete</a>
         </div>   
         <?php endforeach ?>
