@@ -33,12 +33,6 @@
   </div>
 
   <div class="form-group">
-    <label>Title</label>
-    <?php echo $form->textField($model,'uniqId',array('size'=>60,'maxlength'=>100,'class'=>'form-control')); ?>
-    <?php echo $form->error($model,'uniqId'); ?>
-  </div>
-
-  <div class="form-group">
     <label>Keyword (Separate By Comma)</label>
     <?php echo $form->textField($model,'uniqId',array('size'=>60,'maxlength'=>100,'class'=>'form-control')); ?>
     <?php echo $form->error($model,'uniqId'); ?>
@@ -53,7 +47,7 @@
   <div class="form-group">
     <input id="pac-input" class="controls" type="text" placeholder="Search Box">
     <div id="map-canvas" style="height:600px">
-      
+
     </div>
   </div>
 
