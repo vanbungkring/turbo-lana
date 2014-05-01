@@ -1,4 +1,4 @@
-<div id ="header">
+<!-- <div id ="header">
 	<h1>Billboard Solution</h1>
 	<h3>The easiest way to buy, sell and manage Outdoor Advertising!</h3>
 	<div class="container">
@@ -15,4 +15,5 @@
 	</div>
 </div>
 <div class="container supreme-container">
-</div> <!-- /container -->
+</div> 
+ -->
