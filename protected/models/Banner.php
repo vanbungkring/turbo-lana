@@ -39,7 +39,7 @@ class Banner extends CActiveRecord
 			array('sku', 'length', 'max'=>200),
 			array('harga,hargaPerBulan,hargaPer3Bulan,hargaPer6Bulan,hargaPerTahun
 				,zoom,panjang,tinggi,tinggiDariTanah,idSize,jumlahSisi','numerical'),
-			array('inputKategori,keterangan','safe'),
+			array('inputKategori,keterangan,meta_desc, meta_keyword','safe'),
 			array('image', 'file', 'types'=>'jpg','on'=>'create','allowEmpty'=>true),
 			array('image', 'file', 'types'=>'jpg','on'=>'update','allowEmpty'=>true),
 			// The following rule is used by search().
@@ -69,8 +69,10 @@ class Banner extends CActiveRecord
 		return array(
 			'id' => 'ID',
 			'nama' => 'Nama',
-			'lat' => 'Lat',
-			'long' => 'Long',
+			'lat' => 'Latitude',
+			'meta_desc' => 'Meta Description',
+			'meta_keyword' => 'Meta Keywords',
+			'long' => 'Longitude',
 			'idSize' =>'Size',
 			'idPerusahaan' => 'Pemilik'
 		);
@@ -98,7 +100,8 @@ class Banner extends CActiveRecord
 		$criteria->compare('nama',$this->nama,true);
 		$criteria->compare('lat',$this->lat,true);
 		$criteria->compare('long',$this->long,true);
-
+		$criteria->compare('meta_desc',$this->meta_desc,false);
+		$criteria->compare('meta_keyword',$this->meta_keyword,false);
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));

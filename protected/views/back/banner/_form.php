@@ -34,14 +34,14 @@
 
   <div class="form-group">
     <label>Keyword (Separate By Comma)</label>
-    <?php echo $form->textField($model,'uniqId',array('size'=>60,'maxlength'=>100,'class'=>'form-control')); ?>
-    <?php echo $form->error($model,'uniqId'); ?>
+    <?php echo $form->textField($model,'meta_keyword',array('size'=>60,'maxlength'=>100,'class'=>'form-control')); ?>
+    <?php echo $form->error($model,'meta_keyword'); ?>
   </div>
 
   <div class="form-group">
     <label>Description</label>
-    <?php echo $form->textField($model,'uniqId',array('size'=>60,'maxlength'=>100,'class'=>'form-control')); ?>
-    <?php echo $form->error($model,'uniqId'); ?>
+    <?php echo $form->textField($model,'meta_desc',array('size'=>60,'maxlength'=>100,'class'=>'form-control')); ?>
+    <?php echo $form->error($model,'meta_desc'); ?>
   </div>
 
   <div class="form-group">
