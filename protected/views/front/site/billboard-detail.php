@@ -4,7 +4,7 @@
 
       <div class="row">
        <div class="col-md-8 no-padding">
-        <h1>{{Banner Name}}, {{Banner Location}}</h1>
+        <h1><?php echo CHtml::encode($banner->nama); ?>, <?php echo CHtml::encode($banner->lokasi); ?></h1>
       </div>
 
     </div>

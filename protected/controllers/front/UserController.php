@@ -119,6 +119,11 @@ class UserController extends FrontEndController
 		));
 	}
 
+	public function actionDeleteBookmark($id){
+		$model = MemberBookmark::model()->findByPk($id);
+		$model->delete();
+		$this->redirect(array('MyBookmark'));
+	}
 
 	public function actionDelete($id){
 		$model = MemberBookmark::model()->findByPk($id);
