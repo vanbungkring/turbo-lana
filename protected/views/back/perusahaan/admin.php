@@ -31,10 +31,12 @@ return false;
     <div class="col-lg-12">
         <div class="panel panel-default">
             <div class="panel-heading">
-                Basic Form Elements
+               Billboard Owner Management
+                                <div class="floating-bar">
+                    <a class="btn btn-primary" href="<?php echo Yii::app()->createUrl('perusahaan/create'); ?>">Tambah</a>
+                </div>
             </div>
             <div class="panel-body">
-                <a href="<?php echo Yii::app()->createUrl('perusahaan/create'); ?>">Tombol</a>
                 <?php $this->widget('zii.widgets.grid.CGridView', array(
                     'id'=>'perusahaan-grid',
                     "itemsCssClass" => 'table',

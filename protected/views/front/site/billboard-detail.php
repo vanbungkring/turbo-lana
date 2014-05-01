@@ -31,7 +31,7 @@
 
             <tr>
               <td class="front">SKU</td>
-              <td> {{SKU BILLBOARD}}</td>
+              <td> <?php echo CHtml::encode($banner->sku); ?></td>
             </tr>
 
             <tr>
@@ -75,15 +75,12 @@
       <header class="banner-info-header">Ketersediaan Banner</header>
       <div class='availibility-calendar'></div>
       <div class="alert alert-info">
-        The calendar is updated every five minutes and is only an approximation of availability.
-        Some hosts set custom pricing for certain days on their calendar, like weekends or holidays. The rates listed are per day and do not include any cleaning fee or rates for extra people the host may have for this listing. Please refer to the listing's Description tab for more details. 
-        We suggest that you contact the host to confirm availability and rates before submitting a reservation request.</div>
+        Kalender diperbarui setiap lima menit dan hanya merupakan perkiraan ketersediaan. Beberapa host menetapkan harga kustom untuk hari-hari tertentu di kalender mereka, seperti akhir pekan atau liburan. Harga yang terdaftar per hari dan tidak mencakup biaya pembersihan atau tarif untuk orang tambahan tuan rumah mungkin memiliki untuk listing ini. Silakan lihat daftar Uraian tab untuk lebih jelasnya.
+        Kami menyarankan Anda untuk menghubungi host untuk mengkonfirmasi ketersediaan dan harga sebelum mengirimkan permintaan pemesanan.</div>
       </section>
       <section id="banner-image-list" class="banner-info-body">
         <header class="banner-info-header">Alamat Billboard & Peta Lokasi</header>
-        <p class="content-description">
-          <?php echo CHtml::encode($banner->keterangan); ?>
-        </p>
+        <h3> <?php echo $banner->alamat; ?></h3>
         <div id="map-canvas" style="height:400px; margin-top:30px;">
         </div>
       </section>

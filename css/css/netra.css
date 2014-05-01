@@ -939,6 +939,9 @@ hr {
   float: left;
 }
 .kivi .banner-detail .banner-info-body {
+  font-size: 0.975em;
+  color: #000;
+  font-weight: 300;
   background: #fff;
   float: left;
   padding: 0px;
@@ -946,8 +949,14 @@ hr {
   border: 1px solid #ccc;
   width: 100%;
 }
+.kivi .banner-detail .banner-info-body h3 {
+  margin-left: 20px;
+  font-size: 14px;
+  margin-top: 1em;
+}
 .kivi .banner-detail .banner-info-body p {
   padding: 0px 10px;
+  font-size: 0.875em;
 }
 .kivi .banner-detail .banner-info-body .availibility-calendar {
   width: 99%;
@@ -1043,7 +1052,7 @@ hr {
   padding: 10px;
   background: #F9F9F9;
   border-bottom: 1px dotted #ccc;
-  font-weight: 400;
+  font-weight: 600;
 }
 .kivi .banner-detail .active {
   background: #fff;

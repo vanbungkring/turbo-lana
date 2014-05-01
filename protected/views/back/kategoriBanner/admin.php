@@ -27,19 +27,19 @@ $('.search-form form').submit(function(){
 ?>
 
 <div class="row">
-    <div class="col-lg-12">
-        <h1 class="page-header">Daftar Kategori Banner</h1>
-    </div>
     <!-- /.col-lg-12 -->
 </div>
 <div class="row">
     <div class="col-lg-12">
         <div class="panel panel-default">
             <div class="panel-heading">
-                Basic Form Elements
+                Daftar Kategori Banner
+                <div class="floating-bar">
+                	<a class="btn btn-primary" href="<?php echo Yii::app()->createUrl('kategoriBanner/create'); ?>">Tambah</a>
+            	</div>
             </div>
             <div class="panel-body">
-            	<a href="<?php echo Yii::app()->createUrl('kategoriBanner/create'); ?>">Tombol</a>
+            	
 				<?php $this->widget('zii.widgets.grid.CGridView', array(
 					'id'=>'kategori-banner-grid',
 					"itemsCssClass" => 'table table-bordered',

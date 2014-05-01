@@ -25,6 +25,11 @@
     <?php echo $form->textField($model,'nama',array('size'=>60,'maxlength'=>100,'class'=>'form-control')); ?>
     <?php echo $form->error($model,'nama'); ?>
   </div>
+  <div class="form-group">
+    <label>Alamat Banner</label>
+    <?php echo $form->textField($model,'alamat',array('size'=>60,'maxlength'=>100,'class'=>'form-control')); ?>
+    <?php echo $form->error($model,'alamat'); ?>
+  </div>
 
   <div class="form-group">
     <label>Banner Uniq</label>

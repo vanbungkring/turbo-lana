@@ -250,22 +250,22 @@
         <ul class="nav" id="side-menu">
 
           <li>
-            <a href="/dash"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+            <a href="<?php echo Yii::app()->createUrl('/')?>"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
           </li>
           <li>
             <a href="#"><i class="fa fa-flash fa-fw"></i> Billboard Management<span class="fa arrow"></span></a>
             <ul class="nav nav-second-level">
               <li>
-                <a href="<?php echo Yii::app()->createUrl('/perusahaan')?>"><i class="fa fa-table fa-fw"></i> Billboard Owner</a>
+                <a href="<?php echo Yii::app()->createUrl('/perusahaan')?>"><i class="fa fa-user fa-fw"></i> Billboard Owner</a>
               </li>
               <li>
-                <a href="<?php echo Yii::app()->createUrl('/banner')?>"><i class="fa fa-table fa-fw"></i> Billboard Inventory</a>
+                <a href="<?php echo Yii::app()->createUrl('/banner')?>"><i class="fa fa-align-justify fa-fw"></i> Billboard Inventory</a>
               </li>
               <li>
-                <a href="<?php echo Yii::app()->createUrl('/kategoriBanner')?>"><i class="fa fa-table fa-fw"></i> Billboard Category</a>
+                <a href="<?php echo Yii::app()->createUrl('/kategoriBanner')?>"><i class="fa fa-bookmark fa-fw"></i> Billboard Category</a>
               </li>
               <li>
-                <a href="<?php echo Yii::app()->createUrl('/kategoriSize')?>"><i class="fa fa-table fa-fw"></i>Billboard Size Category</a>
+                <a href="<?php echo Yii::app()->createUrl('/kategoriSize')?>"><i class="fa fa-arrows-v fa-fw"></i>Billboard Size Category</a>
               </li>
             </ul>
             <!-- /.nav-second-level -->

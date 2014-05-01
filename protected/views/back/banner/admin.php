@@ -36,10 +36,10 @@ $('.search-form form').submit(function(){
     <div class="col-lg-12">
         <div class="panel panel-default">
             <div class="panel-heading">
-                Basic Form Elements
+                Form
                     <div class="floating-bar">
                     <a class="btn btn-primary" href="<?php echo Yii::app()->createUrl('banner/create'); ?>">Tambah</a>
-                </div>
+                 </div>
             </div>
             <div class="panel-body">
                 <?php $this->widget('zii.widgets.grid.CGridView', array(
