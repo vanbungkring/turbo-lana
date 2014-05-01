@@ -35,6 +35,7 @@ class Setting extends CActiveRecord
 			array('noTelp, website', 'length', 'max'=>200),
 			array('email', 'length', 'max'=>100),
 			array('judul, logo, alamat', 'safe'),
+			array('meta_desc, meta_keyword', 'safe'),
 			array('logo', 'file', 'types'=>'jpg, gif, png','on'=>'update'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
@@ -63,6 +64,8 @@ class Setting extends CActiveRecord
 			'active' => 'Active',
 			'judul' => 'Judul',
 			'logo' => 'Logo',
+			'meta_desc' => 'Meta Description',
+			'meta_keyword' => 'Meta Keywords',
 			'alamat' => 'Alamat',
 			'noTelp' => 'No Telp',
 			'email' => 'Email',
@@ -96,7 +99,8 @@ class Setting extends CActiveRecord
 		$criteria->compare('noTelp',$this->noTelp,true);
 		$criteria->compare('email',$this->email,true);
 		$criteria->compare('website',$this->website,true);
-
+		$criteria->compare('meta_desc',$this->meta_desc,true);
+		$criteria->compare('meta_keyword',$this->meta_keyword,true);
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));
