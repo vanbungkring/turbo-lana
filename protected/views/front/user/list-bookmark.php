@@ -13,6 +13,7 @@
             <p><?php echo $bookmark->banner->nama; ?></p>
             <a href="<?php echo Yii::app()->createUrl('/site/detail/',array('id'=>$bookmark->idBanner));  ?>" class="btn btn-success">Lihat Detail</a>
             <a href="<?php echo Yii::app()->controller->createUrl('deleteBookmark',array('id'=>$bookmark->id));  ?>" class="btn btn-danger">Delete</a>
+            <a href="<?php echo Yii::app()->controller->createUrl('deleteBookmark',array('id'=>$bookmark->id));  ?>" class="btn btn-danger">Tambahkan Ke Campaign</a>
         </div>   
         <?php endforeach ?>
     </div>

@@ -13,7 +13,7 @@
       <div class="col-md-8 no-padding">
         <?php if(!empty($banner->images)): ?>
         <section id="banner-image-list" class="banner-info-body">
-          <header class="banner-info-header">Banner Photo</header>
+          <header class="banner-info-header">Media Photo</header>
           <div class="image-billboard">
             <?php foreach($banner->images as $image):?>
             <img src="<?php echo $image->getImageUrl(); ?>" />
@@ -97,7 +97,7 @@
           <div class="price">
             <div class="price-detail">
               <div class="from">Dari</div>          
-              <div id="spanharga" class="price-currency"> Rp <?php echo $banner->hargaPerBulan;?></div>
+              <div id="spanharga" class="price-currency"> <sup>Rp</sup> <?php echo number_format($banner->hargaPerBulan,0, '.', '.');?></div>
             </div>
             <ul>
               <li>Included Tax</li>
