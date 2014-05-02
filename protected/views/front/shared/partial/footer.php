@@ -1,12 +1,9 @@
 <div class="footerwrap">
   <div class="container">
     <div class="col-md-3">
-      <h3>Address</h3>
+      <h3>Kiviads</h3>
       <p>
-        Av. Greenville 987,<br>
-        New York,<br>
-        90873<br>
-        United States
+        Hundreds of thousands of people come through ZURB University, where they get the training they need to be awesome Product Designers. ZURB's courses, workshops, library of reference materials, and design community get you the Product Design skills you need to design better products faster.
       </p>
     </div>
     <div class="col-md-3">
@@ -27,8 +24,8 @@
         United States
       </p>
     </div>
-    
-    <div class="col-lg-3">
+
+    <div class="col-md-3">
       <h3>Drop Us A Line</h3>
       <br>
       <form role="form" action="#" method="post" enctype="plain"> 
