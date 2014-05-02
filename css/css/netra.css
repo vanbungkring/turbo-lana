@@ -882,6 +882,10 @@ hr {
 .search-header .container .right {
   float: right;
 }
+.city {
+  margin-top: 40px;
+  border: 1px solid #ccc;
+}
 .kivi {
   min-height: 100%;
 }
