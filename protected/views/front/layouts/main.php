@@ -11,8 +11,8 @@
   <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
   <link href="<?php echo Yii::app()->request->baseUrl; ?>/css/css/jquery.ui.css" rel="stylesheet">
   <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/fullcalendar/1.6.4/fullcalendar.css">
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/fullcalendar/1.6.4/fullcalendar.print.css">
+  <link rel="stylesheet" href="http://cdn.jsdelivr.net/fullcalendar/1.6.4/fullcalendar.css">
+  <link rel="stylesheet" href="http://cdn.jsdelivr.net/fullcalendar/1.6.4/fullcalendar.print.css">
   
 
   <!-- Custom styles for this template -->
