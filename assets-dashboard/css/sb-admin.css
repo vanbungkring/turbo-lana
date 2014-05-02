@@ -415,7 +415,12 @@ label {
     color: white;
     background-color: #8e8a8b;
 }
-
+.floating-bar{
+    float: right;
+}
+.panel-main>.panel-heading h5{
+    display: inline-block;
+}
 .panel-main {
     border: 1px solid #8e8a8b;
 }

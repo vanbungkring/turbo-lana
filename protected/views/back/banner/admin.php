@@ -5,23 +5,23 @@
 $this->breadcrumbs=array(
 	'Banners'=>array('index'),
 	'Manage',
-);
+    );
 
 $this->menu=array(
 	array('label'=>'List Banner', 'url'=>array('index')),
 	array('label'=>'Create Banner', 'url'=>array('create')),
-);
+    );
 
 Yii::app()->clientScript->registerScript('search', "
-$('.search-button').click(function(){
-	$('.search-form').toggle();
-	return false;
-});
+    $('.search-button').click(function(){
+       $('.search-form').toggle();
+       return false;
+   });
 $('.search-form form').submit(function(){
 	$('#banner-grid').yiiGridView('update', {
 		data: $(this).serialize()
 	});
-	return false;
+return false;
 });
 ");
 ?>
@@ -37,32 +37,32 @@ $('.search-form form').submit(function(){
         <div class="panel panel-default">
             <div class="panel-heading">
                 Form
-                    <div class="floating-bar">
+                <div class="floating-bar">
                     <a class="btn btn-primary" href="<?php echo Yii::app()->createUrl('banner/create'); ?>">Tambah</a>
-                 </div>
+                </div>
             </div>
             <div class="panel-body">
                 <?php $this->widget('zii.widgets.grid.CGridView', array(
-                        'id'=>'banner-grid',
-                        "itemsCssClass" => 'table',
-                        'dataProvider'=>$model->search(),
+                    'id'=>'banner-grid',
+                    "itemsCssClass" => 'table',
+                    'dataProvider'=>$model->search(),
     //                        'filter'=>$model,
-                        'cssFile'=>false,
-                        'columns'=>array(
-                                'id',
-                                'nama',
-                                'lat',
-                                'long',
-                                array(
-                                    'value'=>'$data->isImageExist() ? \'<a href="\'.$data->getImageUrl().\'" target="_blank">link</a>\' : \'\' ',
-                                    'type'=>'raw',
-                                ),
-                                array(
-                                        'class'=>'CButtonColumn',
-                                ),
+                    'cssFile'=>false,
+                    'columns'=>array(
+                        'id',
+                        'nama',
+                        'lat',
+                        'long',
+                        array(
+                            'value'=>'$data->isImageExist() ? \'<a href="\'.$data->getImageUrl().\'" target="_blank">link</a>\' : \'\' ',
+                            'type'=>'raw',
+                            ),
+                        array(
+                            'class'=>'CButtonColumn',
+                            ),
                         ),
-                )); ?>
+                        )); ?>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-</div>

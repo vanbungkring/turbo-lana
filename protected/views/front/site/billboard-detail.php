@@ -26,7 +26,7 @@
       <header class="banner-info-header">Deskripsi & Spesifikasi Banner</header>
 
       <div class="table-responsive">
-        <table class="table table-bordered ">
+        <table class="table table-striped">
           <tbody>
 
             <tr>
