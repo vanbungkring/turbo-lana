@@ -12,7 +12,7 @@ return CMap::mergeArray(
 			'urlManager'=>array(
 				'urlFormat'=>'path',
 				'rules'=>array(
-					'<view:(bandung|bekasi|bogor|jakarta|tangerang)>' => 'site/page',
+					'<view:(bandung|bekasi|bogor|jakarta|tangerang|about)>' => 'site/page',
 					'dashboard'=>'user/Dashboard',
 					'register'=>'site/registrasi',
 					'search'=>'site/result',
