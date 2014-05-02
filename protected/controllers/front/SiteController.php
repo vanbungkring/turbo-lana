@@ -170,6 +170,10 @@ class SiteController extends FrontEndController
 
 		$quote2 = new Quote2();
 		$quote2->idBanner = $id;
+
+		Yii::app()->clientScript->registerMetaTag($banner->meta_desc, 'description',null,null,'description');
+		Yii::app()->clientScript->registerMetaTag($banner->meta_keyword, 'keywords',null,null,'keywords');
+
 		$this->render('billboard-detail',array(
 			'banner'=>$banner,
 			'member'=>$member,

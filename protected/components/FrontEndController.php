@@ -38,8 +38,8 @@ class FrontEndController extends CController
         if($this->setting == null){
             throw new Exception("Setting Not Found", 1);
         }
-        Yii::app()->clientScript->registerMetaTag($this->setting->meta_desc, 'description');
-        Yii::app()->clientScript->registerMetaTag($this->setting->meta_keyword, 'keywords');
+        Yii::app()->clientScript->registerMetaTag($this->setting->meta_desc, 'description',null,null,'description');
+        Yii::app()->clientScript->registerMetaTag($this->setting->meta_keyword, 'keywords',null,null,'keywords');
         if(isset($_POST['ajax'])) {
           if ($_POST['ajax']=='form-signin') {
             $register = new Member('register');
