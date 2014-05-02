@@ -39,7 +39,7 @@ class Banner extends CActiveRecord
 			array('sku', 'length', 'max'=>200),
 			array('harga,hargaPerBulan,hargaPer3Bulan,hargaPer6Bulan,hargaPerTahun
 				,zoom,panjang,tinggi,tinggiDariTanah,idSize,jumlahSisi','numerical'),
-			array('alamat,inputKategori,keterangan,meta_desc, meta_keyword','safe'),
+			array('alamat,inputKategori,keterangan,meta_desc, meta_keyword, formatedAddress','safe'),
 			array('image', 'file', 'types'=>'jpg','on'=>'create','allowEmpty'=>true),
 			array('image', 'file', 'types'=>'jpg','on'=>'update','allowEmpty'=>true),
 			// The following rule is used by search().

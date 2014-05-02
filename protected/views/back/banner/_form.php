@@ -68,6 +68,12 @@
     <?php echo $form->error($model,'long'); ?>
   </div>
 
+  <div class="form-group">
+    <label>Lokasi</label>
+    <?php echo $form->textField($model,'formatedAddress',array('size'=>12,'maxlength'=>12,'id'=>'formatedAddress','class'=>'form-control')); ?>
+    <?php echo $form->error($model,'formatedAddress'); ?>
+  </div>
+
   <div class="form-group" style="display:none">
     <label>Zoom</label>
     <?php echo $form->textField($model,'zoom',array('id'=>'zoom','class'=>'form-control')); ?>
@@ -205,7 +211,7 @@
 <?php
 //google maps render
 $js =    '
-
+var geocoder;
 function initialize() {
   var defLat = '.(double)$model->lat.';
   var defLng = '.(double)$model->long.';
@@ -215,6 +221,7 @@ function initialize() {
     zoom: '.(int)$model->zoom.',
     center: myLatlng
   });
+  geocoder = new google.maps.Geocoder();
 
 
 var marker = new google.maps.Marker({
@@ -222,10 +229,24 @@ var marker = new google.maps.Marker({
   map: map, // handle of the map 
   draggable:true
 });
+function geocodePosition() {
+  var pos = marker.getPosition();
+  geocoder.geocode({
+    latLng: pos
+  }, function(responses) {
+    if (responses && responses.length > 0) {
+      console.log(responses);
+      document.getElementById("formatedAddress").value = responses[0].formatted_address;
+    } else {
+      console.log("Cannot determine address at this location.");
+    }
+  });
+}
 function setLocationaa(){
   document.getElementById("lat").value = marker.position.lat();
   document.getElementById("lng").value = marker.position.lng();
   document.getElementById("zoom").value = map.getZoom();
+  console.log(marker);
 }
 setLocationaa();
 google.maps.event.addListener(
@@ -233,6 +254,11 @@ google.maps.event.addListener(
   "drag",
   setLocationaa
   );
+google.maps.event.addListener(
+  marker,
+  "dragend",
+  geocodePosition
+);
   // Create the search box and link it to the UI element.
 var input = /** @type {HTMLInputElement} */(
   document.getElementById("pac-input"));
