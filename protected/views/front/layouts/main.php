@@ -4,9 +4,6 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="">
-  <meta name="author" content="">
-
   <title><?php echo CHtml::encode($this->pageTitle); ?></title>
 
   <!-- Bootstrap core CSS -->
@@ -31,8 +28,8 @@
       <![endif]-->
     </head>
 
-      <!-- Fixed navbar -->
-  	<?php echo $content; ?>
+    <!-- Fixed navbar -->
+    <?php echo $content; ?>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
@@ -50,6 +47,6 @@
     <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/js.free.transform.js"></script>
     <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/matrix.js"></script>
     <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/netra-ck.js"></script>
-   
+    
   </body>
-</html>
+  </html>

@@ -1,2 +1,4 @@
 <?php $this->renderPartial('/shared/partial/navbar'); ?>
-<?php $this->renderPartial('/shared/partial/homepage/header-wrap');?>
+ <div class="container kivi city">
+  <img src="">
+</div>
