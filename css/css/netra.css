@@ -713,27 +713,27 @@ hr {
 #showcase h1 {
   color: white;
 }
-#footerwrap {
+.footerwrap {
   background-color: #2f2f2f;
   color: white;
   padding-top: 40px;
   padding-bottom: 60px;
   text-align: left;
 }
-#footerwrap h3 {
+.footerwrap h3 {
   font-size: 28px;
   color: white;
 }
-#footerwrap p {
+.footerwrap p {
   color: white;
   font-size: 18px;
 }
-#c {
+.bottom-line {
   background: #fff;
   padding-top: 15px;
   text-align: right;
 }
-#c p {
+.bottom-line p {
   color: white;
 }
 .container-full {
