@@ -165,6 +165,8 @@ class SiteController extends FrontEndController
 		// renders the view file 'protected/views/site/index.php'
 		// using the default layout 'protected/views/layouts/main.php'
 
+		$this->pageTitle = "Sewa Billboard di {$banner->lokasi} | {$this->setting->title}";
+
 		$member->addLog(MemberLog::TYPE_VIEW_DETAIL_BILLBOARD,array(
 			'idBanner'=>$banner->id
 		));
