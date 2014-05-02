@@ -890,8 +890,13 @@ hr {
   margin-top: 40px;
   border: 1px solid #ccc;
   margin-bottom: 40px;
-  padding-top: 10px;
   min-height: 300px;
+}
+.city .city-information {
+  text-align: center;
+  font-size: 12px;
+  font-weight: normal;
+  margin-bottom: 10px;
 }
 .city h1 {
   font-weight: bold;
