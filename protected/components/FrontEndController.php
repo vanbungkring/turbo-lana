@@ -4,6 +4,7 @@ class FrontEndController extends CController
     public $layout='none';
     public $menu=array();
     public $breadcrumbs=array();
+    public $setting = null;
  
     public function filters()
     {
@@ -33,6 +34,12 @@ class FrontEndController extends CController
 
     protected function beforeAction($action)
     {
+        $this->setting = Setting::model()->find('active=1');
+        if($this->setting == null){
+            throw new Exception("Setting Not Found", 1);
+        }
+        Yii::app()->clientScript->registerMetaTag($this->setting->meta_desc, 'description');
+        Yii::app()->clientScript->registerMetaTag($this->setting->meta_keyword, 'keywords');
         if(isset($_POST['ajax'])) {
           if ($_POST['ajax']=='form-signin') {
             $register = new Member('register');

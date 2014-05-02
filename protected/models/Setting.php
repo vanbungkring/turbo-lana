@@ -36,7 +36,7 @@ class Setting extends CActiveRecord
 			array('email', 'length', 'max'=>100),
 			array('judul, logo, alamat', 'safe'),
 			array('meta_desc, meta_keyword', 'safe'),
-			array('logo', 'file', 'types'=>'jpg, gif, png','on'=>'update'),
+			array('logo', 'file', 'types'=>'jpg, gif, png','on'=>'update','allowEmpty'=>true),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, active, judul, logo, alamat, noTelp, email,meta_desc, meta_keyword, website', 'safe', 'on'=>'search'),
