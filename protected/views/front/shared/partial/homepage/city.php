@@ -2,9 +2,9 @@
 		<div class="container">
 			<div class="row">
 
-				<div class="col-sm-10 col-md-offset-1">
+				<div class="col-sm-12">
 					<h3>Featured Cities</h3>
-					<hr>
+					<p>Not sure where to stay? We've created neighborhood guides for cities all around the world.</p>
 					<div class="col-sm-4">
 						<div class="panel panel-default overlayed">
 							<h2>Jakarta</h2>
@@ -42,6 +42,9 @@
 						</div> 
 					</div>         
 				</div>	            
+			</div>
+			<div class="row start-adv">
+				<h3>Start Advertising now. Get more clients. Increase your sale</h3>
 			</div>
 		</div><!--/ .container -->
 	</div>
