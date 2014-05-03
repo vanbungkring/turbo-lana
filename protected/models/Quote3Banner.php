@@ -1,28 +1,21 @@
 <?php
 
 /**
- * This is the model class for table "quote3".
+ * This is the model class for table "quote3_banner".
  *
- * The followings are the available columns in table 'quote3':
+ * The followings are the available columns in table 'quote3_banner':
  * @property integer $id
- * @property integer $idMember
- * @property string $name
- * @property string $tanggalMulai
- * @property string $tanggalBerakhir
- * @property string $budget
- * @property integer $deskripsi
- * @property string $catatan
- * @property string $description
- * @property string $time
+ * @property integer $idQuote
+ * @property integer $idBanner
  */
-class Quote3 extends CActiveRecord
+class Quote3Banner extends CActiveRecord
 {
 	/**
 	 * @return string the associated database table name
 	 */
 	public function tableName()
 	{
-		return 'quote3';
+		return 'quote3_banner';
 	}
 
 	/**
@@ -33,13 +26,10 @@ class Quote3 extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('idMember', 'numerical', 'integerOnly'=>true),
-			array('name', 'length', 'max'=>200),
-			array('budget', 'length', 'max'=>15),
-			array('tanggalMulai, tanggalBerakhir, catatan, time, deskripsi', 'safe'),
+			array('idQuote, idBanner', 'numerical', 'integerOnly'=>true),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, idMember, name, tanggalMulai, tanggalBerakhir, budget, deskripsi, catatan, description, time', 'safe', 'on'=>'search'),
+			array('id, idQuote, idBanner', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -51,15 +41,7 @@ class Quote3 extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'banners'=>array(self::HAS_MANY,'Quote3Banner','idQuote'),
 		);
-	}
-
-	public function addBanner($idBanner){
-		$model = new Quote3Banner();
-		$model->idQuote = $this->id;
-		$model->idBanner = $idBanner;
-		return $model->save(false);
 	}
 
 	/**
@@ -69,15 +51,8 @@ class Quote3 extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'idMember' => 'Id Member',
-			'name' => 'Name',
-			'tanggalMulai' => 'Tanggal Mulai',
-			'tanggalBerakhir' => 'Tanggal Berakhir',
-			'budget' => 'Budget',
-			'deskripsi' => 'Deskripsi',
-			'catatan' => 'Catatan',
-			'description' => 'Description',
-			'time' => 'Time',
+			'idQuote' => 'Id Quote',
+			'idBanner' => 'Id Banner',
 		);
 	}
 
@@ -100,15 +75,8 @@ class Quote3 extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id);
-		$criteria->compare('idMember',$this->idMember);
-		$criteria->compare('name',$this->name,true);
-		$criteria->compare('tanggalMulai',$this->tanggalMulai,true);
-		$criteria->compare('tanggalBerakhir',$this->tanggalBerakhir,true);
-		$criteria->compare('budget',$this->budget,true);
-		$criteria->compare('deskripsi',$this->deskripsi);
-		$criteria->compare('catatan',$this->catatan,true);
-		$criteria->compare('description',$this->description,true);
-		$criteria->compare('time',$this->time,true);
+		$criteria->compare('idQuote',$this->idQuote);
+		$criteria->compare('idBanner',$this->idBanner);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -119,7 +87,7 @@ class Quote3 extends CActiveRecord
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
 	 * @param string $className active record class name.
-	 * @return Quote3 the static model class
+	 * @return Quote3Banner the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{

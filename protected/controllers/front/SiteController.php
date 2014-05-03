@@ -58,11 +58,11 @@ class SiteController extends FrontEndController
 	{
 		return array(
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('getListBanner','detail','customBanner','saveTempImage','downloadCustomImage','saveCustomImage','Logout','AddBookmark','removeBookmark'),
+				'actions'=>array('addToQuote','detail','customBanner','saveTempImage','downloadCustomImage','saveCustomImage','Logout','AddBookmark','removeBookmark'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('page','index','oauth','result','custom','dashboard','GetMarker','Registrasi','User','AjaxLogin','login','error'),
+				'actions'=>array('getListBanner','page','index','oauth','result','custom','dashboard','GetMarker','Registrasi','User','AjaxLogin','login','error'),
 				'users'=>array('*'),
 			),
 			array('deny',  // deny all users
@@ -159,7 +159,11 @@ class SiteController extends FrontEndController
 	{
 		$banner = Banner::model()->with('kategoris')->findByPk($id);
 		$uid = Yii::app()->user->id;
-		$member = Member::model()->with(array('bookmarks'))->findByPk($uid);
+		$member = Member::model()->with(array('bookmarks','quotes3'=>array(
+			'with'=>array(
+				'banners',
+			),
+		)))->findByPk($uid);
 		if($banner===null)
 			throw new CHttpException(404,'Banner Tidak Ditemukan.');
 		// renders the view file 'protected/views/site/index.php'
@@ -326,6 +330,37 @@ class SiteController extends FrontEndController
 			$member->addLog(MemberLog::TYPE_BOOKMARK_BILLBOARD,array(
 				'idBanner'=>$banner->id
 			));
+			echo json_encode(array('status'=>1));
+		}
+		catch(Exception $e){
+			echo json_encode(array('status'=>0,'message'=>$e->getMessage()));
+		}
+	}
+
+	public function actionAddToQuote($id){
+		try{
+			$quote = Quote3::model()->findByPk(@$_POST['idQuote']);
+			$banner = Banner::model()->findByPk($id);
+
+			$uid = Yii::app()->user->id;
+			$member = Member::model()->findByPk($uid);
+			Quote3Banner::model()->find('idQuote');
+			if($quote===null)
+				throw new CHttpException(404,'Quote Tidak Ditemukan.');
+			
+			if($banner===null)
+				throw new CHttpException(404,'Banner Tidak Ditemukan.');
+			
+			if($member->isQuoted($id)){
+				throw new CHttpException(404,'Banner sudah terbookmark.');
+			}
+			
+			if(!$quote->addBanner($id)){
+				throw new CHttpException(404,'Banner Gagal Dibookmark.');
+			}
+			// $member->addLog(MemberLog::TYPE_BOOKMARK_BILLBOARD,array(
+			// 	'idBanner'=>$banner->id
+			// ));
 			echo json_encode(array('status'=>1));
 		}
 		catch(Exception $e){

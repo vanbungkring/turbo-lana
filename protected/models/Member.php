@@ -59,6 +59,7 @@ class Member extends CActiveRecord
 		return array(
 			'bookmarks'=>array(self::HAS_MANY,'MemberBookmark','idMember'),
 			'bannerBookmarks'=>array(self::MANY_MANY,'Banner','member_bookmark(idMember,idBanner)'),
+			'quotes3'=>array(self::HAS_MANY,'quote3','idMember'),
 		);
 	}
 
@@ -136,6 +137,17 @@ class Member extends CActiveRecord
 		foreach($this->bookmarks as $bookmark){
 			if($bookmark->idBanner == $idBanner){
 				return true;
+			}
+		}
+		return false;
+	}
+
+	public function isQuoted($idBanner){
+		foreach($this->quotes3 as $quote3){
+			foreach ($quote3->banners as $key => $quote3banner) {
+				if($quote3banner->idBanner == $idBanner){
+					return true;
+				}
 			}
 		}
 		return false;

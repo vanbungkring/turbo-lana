@@ -106,7 +106,9 @@
 
             </ul>
           </div>
-           <button type="button" class="btn btn-default btn-block whislist" data-target="#addtoQuote" id="modal_show">Request Quote</button>
+          <?php if (!$member->isQuoted($banner->id)): ?>
+             <button type="button" class="btn btn-default btn-block whislist" data-target="#addtoQuote" id="modal_show">Request Quote</button>  
+          <?php endif ?>
           <!-- <a href="<?php echo Yii::app()->createUrl('/rfp/index',array('idBanner'=>array($banner->id))); ?>" type="button" class="btn btn-primary btn-block book-it-button btn-lg">Create Quote</a> -->
           <div class="fast-contact">
             <i class="fa fa-phone-square fa-3x"></i>
@@ -153,11 +155,12 @@
             <h4 class="modal-title" id="myModalLabel">Add to your Quote</h4>
           </div>
           <div class="modal-body">
-
+            <?php echo CHtml::dropDownList('quote_list', 'M', 
+            CHtml::listData($member->quotes3,'id','name'),array('class'=>'form-control')); ?>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
+            <button type="button" class="btn btn-primary" id="save-quote">Save changes</button>
           </div>
         </div>
       </div>
@@ -187,6 +190,17 @@
        $("#addtoQuote").modal({
        })
    })
+    $("#save-quote").click(function(){
+      var url = "'.Yii::app()->createUrl('/site/addToQuote',array('id'=>$banner->id)).'";
+      $.post(url,{ idQuote : $("#quote_list").val() },function(ret){
+        if(ret.status==1){
+          location.reload();
+        }
+        else{
+          alert(ret.message);
+        }
+      },"json");
+    });
   function checkharga(){
     $("#spanharga").text($("#harga").val());
   }
