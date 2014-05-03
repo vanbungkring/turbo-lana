@@ -163,6 +163,8 @@
       </div>
     </div>
 <!-- popup end -->
+
+<?php $this->renderPartial('/shared/partial/footer');?>
     <?php
 //google maps render
     $js =    '
