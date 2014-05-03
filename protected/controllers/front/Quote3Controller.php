@@ -37,7 +37,6 @@ class Quote3Controller extends Controller
 			'model'=>$this->loadModel($id),
 		));
 	}
-
 	/**
 	 * Creates a new model.
 	 * If creation is successful, the browser will be redirected to the 'view' page.
@@ -54,6 +53,8 @@ class Quote3Controller extends Controller
 			$model->attributes=$_POST['Quote3'];
 			$model->time = date('Y-m-d H:i:s');
 			$model->idMember = Yii::app()->user->id;
+			$model->tanggalMulai = DateHelper::toYmd($model->tanggalMulai);
+			$model->tanggalBerakhir = DateHelper::toYmd($model->tanggalBerakhir);
 			if($model->save()){
 				$this->redirect(array('view','id'=>$model->id));
 			}
