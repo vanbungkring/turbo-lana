@@ -847,7 +847,7 @@ hr {
   cursor: pointer;
 }
 .container-full .list ul.assets-card-holder li.card {
-  max-height: 350px;
+  height: 350px;
   padding: 5px;
   list-style: none;
   float: left;
