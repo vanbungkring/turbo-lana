@@ -62,38 +62,16 @@
                         </tr>
                       </thead>
                       <tbody>
-                        <tr>
-                          <td><a href="#">JKLM0001</a></td>
-                          <td>50.000.000</td>
-                          <td>
-                            <a href="#" class="btn btn-outline btn-info btn-xs">Tanya</a>
-                            <button class="btn btn-outline btn-danger btn-xs">Hapus</button>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td><a href="#">BGRKV0120</a></td>
-                          <td>150.000.000</td>
-                          <td>
-                            <a href="#" class="btn btn-outline btn-info btn-xs">Tanya</a>
-                            <button class="btn btn-outline btn-danger btn-xs">Hapus</button>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td><a href="#">BLKV0813</a></td>
-                          <td>Belum terima</td>
-                          <td>
-                            <a href="#" class="btn btn-outline btn-info btn-xs">Tanya</a>
-                            <button class="btn btn-outline btn-danger btn-xs">Hapus</button>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td><a href="#">BLKV0819</a></td>
-                          <td>Tidak Tersedia</td>
-                          <td>
-                            <a href="#" class="btn btn-outline btn-info btn-xs">Tanya</a>
-                            <button class="btn btn-outline btn-danger btn-xs">Hapus</button>
-                          </td>
-                        </tr>
+                      	<?php foreach ($model->banners as $key => $banner): ?>
+                      		<tr>
+	                          <td><a href="#"><?php echo $banner->sku; ?></a></td>
+	                          <td>50.000.000</td>
+	                          <td>
+	                            <a href="#" class="btn btn-outline btn-info btn-xs">Tanya</a>
+	                            <button class="btn btn-outline btn-danger btn-xs">Hapus</button>
+	                          </td>
+	                        </tr>
+                      	<?php endforeach ?>
                       </tbody>
                     </table>
                     <a href="#" class="btn btn-success btn-outline btn-sm">Tambah</a>

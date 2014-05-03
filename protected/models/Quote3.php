@@ -51,7 +51,8 @@ class Quote3 extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'banners'=>array(self::HAS_MANY,'Quote3Banner','idQuote'),
+			'banners'=>array(self::MANY_MANY,'Banner','quote3_banner(idQuote,idBanner)'),
+			'totalInventori'=>array(self::STAT,'Quote3Banner','idQuote'),
 		);
 	}
 

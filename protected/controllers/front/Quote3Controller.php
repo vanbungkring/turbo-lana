@@ -108,8 +108,10 @@ class Quote3Controller extends Controller
 	 */
 	public function actionIndex()
 	{
+		$quotes = Quote3::model()->findAll('idMember = :p1',array(':p1'=>Yii::app()->user->id));
 		$this->render('index',array(
 		//	'dataProvider'=>$dataProvider,
+			'quotes'=>$quotes,
 		));
 	}
 

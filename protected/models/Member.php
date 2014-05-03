@@ -145,7 +145,7 @@ class Member extends CActiveRecord
 	public function isQuoted($idBanner){
 		foreach($this->quotes3 as $quote3){
 			foreach ($quote3->banners as $key => $quote3banner) {
-				if($quote3banner->idBanner == $idBanner){
+				if($quote3banner->id == $idBanner){
 					return true;
 				}
 			}

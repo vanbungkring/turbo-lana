@@ -50,36 +50,19 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>1</td>
-                <td>Jamu Sidomuncul 2014</td>
-                <td>5</td>
-                <td>24/05/14</td>
-                <td>20/05/14</td>
-                <td><a href="quotes-detail.html" class="btn btn-outline btn-primary btn-xs">Lihat Detil</a>
-                  <a href="#" class="btn btn-outline btn-danger btn-xs">Archieved</a>
-                </td>
-              </tr>
-              <tr>
-                <td>2</td>
-                <td>Jamu Sidomuncul 2013</td>
-                <td>2</td>
-                <td>24/05/13</td>
-                <td>20/05/13</td>
-                <td><a href="#" class="btn btn-outline btn-primary btn-xs">Lihat Detil</a>
-                  <a href="#" class="btn btn-outline btn-danger btn-xs">Archieved</a>
-                </td>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td>Opera Van Java Roadshow 2014</td>
-                <td>120</td>
-                <td>24/05/14</td>
-                <td>20/05/14</td>
-                <td><a href="#" class="btn btn-outline btn-primary btn-xs">Lihat Detil</a>
-                  <a href="#" class="btn btn-outline btn-danger btn-xs">Archieved</a>
-                </td>
-              </tr>
+              <?php $i=1;
+                foreach ($quotes as $key => $value): ?>
+                <tr>
+                  <td><?php echo $i++; ?></td>
+                  <td><?php echo $value->name ?></td>
+                  <td><?php echo $value->totalInventori ?></td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td><a href="<?php echo $this->createUrl('view',array('id'=>$value->id)); ?>" class="btn btn-outline btn-primary btn-xs">Lihat Detil</a>
+                    <a href="#" class="btn btn-outline btn-danger btn-xs">Archieved</a>
+                  </td>
+                </tr>
+              <?php endforeach ?>
             </tbody>
           </table>
         </div>
