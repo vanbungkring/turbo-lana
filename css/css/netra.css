@@ -935,6 +935,9 @@ hr {
   font-weight: normal;
   margin-bottom: 10px;
 }
+.city img {
+  width: 100%;
+}
 .city h1 {
   font-weight: bold;
   text-align: center;
