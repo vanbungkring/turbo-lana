@@ -28,11 +28,11 @@
               </div>
               <div class="col-md-4 col-lg-4">
                 <label for="startdate">Tanggal Mulai</label>
-                <?php echo $form->textField($model,'tanggalMulai',array('class'=>'form-control')); ?>
+                <?php echo $form->textField($model,'tanggalMulai',array('class'=>'form-control hasDatepicker_start')); ?>
               </div>
               <div class="col-md-4 col-lg-4">
                 <label for="enddate">Tanggal Berakhir</label>
-                 <?php echo $form->textField($model,'tanggalBerakhir',array('class'=>'form-control')); ?>
+                 <?php echo $form->textField($model,'tanggalBerakhir',array('class'=>'form-control hasDatepicker_end')); ?>
               </div>
             </div>
             <!-- end row form -->
