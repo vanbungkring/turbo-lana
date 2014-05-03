@@ -825,6 +825,7 @@ hr {
   border-bottom: 1px solid #ccc;
   z-index: 100;
   width: 48%;
+  right: 0px;
   padding: 10px;
 }
 .container-full .list .searchbar .btn {
@@ -846,6 +847,7 @@ hr {
   cursor: pointer;
 }
 .container-full .list ul.assets-card-holder li.card {
+  max-height: 350px;
   padding: 5px;
   list-style: none;
   float: left;
@@ -865,33 +867,47 @@ hr {
 .container-full .list ul.assets-card-holder li.card .card-body .card-image img {
   width: 97%;
 }
+.container-full .list ul.assets-card-holder li.card .card-body .media-caption {
+  padding: 25px 13px 13px;
+  border-radius: 2px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  font-weight: bold;
+  background-color: transparent;
+  background-image: -webkit-linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+  background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.8);
+  color: #fff;
+}
 .container-full .list ul.assets-card-holder li.card .card-body .card-meta {
   float: right;
+  width: 100%;
 }
 .container-full .list ul.assets-card-holder li.card .card-body .card-meta .card-rate {
   float: right;
-  width: 130px;
+  width: 50%;
 }
 .container-full .list ul.assets-card-holder li.card .card-body .card-meta .card-rate .currency {
   font-size: 15px;
   vertical-align: top;
   font-weight: 300;
 }
-.container-full .list ul.assets-card-holder li.card .card-body .card-meta .card-main {
-  margin-left: 10px;
-  width: 160px;
-  float: left;
-}
-.container-full .list ul.assets-card-holder li.card .card-body .card-meta .card-main .card-main-title {
+.container-full .list ul.assets-card-holder li.card .card-body .card-meta .card-main-title {
   width: 100%;
   font-weight: normal;
-  font-family: "Roboto";
-  font-size: 13px;
-  color: #000;
-  line-height: 15px;
-  max-height: 30px;
+  font-family: "Open Sans";
+  font-size: 14px;
+  color: #666;
+  font-weight: 600;
+  line-height: 22px;
   float: left;
   margin-bottom: 5px;
+}
+.container-full .list ul.assets-card-holder li.card .card-body .card-meta .card-main {
+  width: 50%;
+  float: left;
 }
 .container-full .list ul.assets-card-holder li.card .card-body .card-meta .card-main .card-status {
   float: left;

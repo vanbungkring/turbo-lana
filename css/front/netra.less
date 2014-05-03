@@ -520,6 +520,7 @@ hr {
 					border-bottom:1px solid #ccc;
 					z-index: 100;
 					width: 48%;
+					right: 0px;
 					padding: 10px;
 					.btn{
 						float: left;
@@ -540,6 +541,7 @@ hr {
 						cursor: pointer;
 					}
 					li.card{
+						max-height: 350px;
 						padding: 5px;
 						list-style: none;
 						float: left;
@@ -557,33 +559,46 @@ hr {
 									width: 97%;
 								}
 							}
+							.media-caption{
+								padding: 25px 13px 13px;
+								border-radius: 2px;
+								position: absolute;
+								right: 0;
+								bottom: 0;
+								left: 0;
+								font-weight: bold;
+								background-color: transparent;
+								background-image: -webkit-linear-gradient(transparent, rgba(0,0,0,0.8));
+								background-image: linear-gradient(transparent, rgba(0,0,0,0.8));
+								text-shadow: 0 1px 1px rgba(0,0,0,0.8);
+								color: #fff;
+							}
 							.card-meta{
 								float: right;
-
+								width: 100%;
 								.card-rate{
 									float: right;
-									width: 130px;
+									width: 50%;
 									.currency{
 										font-size: 15px;
 										vertical-align: top;
 										font-weight: 300;
 									}
 								}
-								.card-main{
-									margin-left: 10px;
-									width: 160px;
+								.card-main-title{
+									width: 100%;
+									font-weight: normal;
+									font-family: @font-default;
+									font-size: 14px;
+									color: #666;
+									font-weight: 600;
+									line-height: 22px;
 									float: left;
-									.card-main-title{
-										width: 100%;
-										font-weight: normal;
-										font-family: @font-default4;
-										font-size: 13px;
-										color: #000;
-										line-height: 15px;
-										max-height: 30px;
-										float: left;
-										margin-bottom: 5px;
-									}
+									margin-bottom: 5px;
+								}
+								.card-main{
+									width: 50%;
+									float: left;
 									.card-status{
 										float: left;
 										display: block;
@@ -633,9 +648,9 @@ hr {
 			border:1px solid #ccc;
 			margin-bottom: 40px;
 			min-height: 300px;
-					img{
-			width: 100%;
-		}
+			img{
+				width: 100%;
+			}
 			h1{
 				font-weight: bold;
 				text-align: center;
