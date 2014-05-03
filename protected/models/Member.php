@@ -59,7 +59,7 @@ class Member extends CActiveRecord
 		return array(
 			'bookmarks'=>array(self::HAS_MANY,'MemberBookmark','idMember'),
 			'bannerBookmarks'=>array(self::MANY_MANY,'Banner','member_bookmark(idMember,idBanner)'),
-			'quotes3'=>array(self::HAS_MANY,'quote3','idMember'),
+			'quotes3'=>array(self::HAS_MANY,'Quote3','idMember'),
 		);
 	}
 
