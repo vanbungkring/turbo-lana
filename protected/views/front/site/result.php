@@ -32,7 +32,7 @@
          <input type="hidden" value="{zoom}" class="czoom"/>
             <div class="card-body">
               <div class="card-image">
-                <img alt="Hotel Majapahit - Surabaya Hotels" src="{img}">
+                <img alt="{alt}" src="{img}">
               </div>
               <div class="card-meta">
                 <div class="card-main">
@@ -166,6 +166,7 @@
           _card = _card.replace(/{zoom}/g, row.zoom);
              _card = _card.replace(/{id}/g, row.id);
           _card = _card.replace(/{harga}/g, row.hargaPerBulan);
+          _card = _card.replace(/{alt}/g,"Billboard "+row.formatedAddress);
           _card = _card.replace(/{img}/g, "'.Yii::app()->request->baseUrl.'/files/bannerimage/"+row.cover+".jpg");
 
           $("#card-place").append(_card);
