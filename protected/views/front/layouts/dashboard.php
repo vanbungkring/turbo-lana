@@ -92,7 +92,7 @@
         </li>
         <li>
           <div>
-            <a href="#">
+            <a href="<?php echo Yii::app()->createUrl('site/Logout'); ?>">
               <div class="btn btn-outline btn-danger btn-sm"><i class="fa fa-sign-out fa-fw"></i> LOG OUT</div>
             </a>
           </div>
