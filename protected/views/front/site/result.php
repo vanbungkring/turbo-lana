@@ -1,7 +1,7 @@
     <?php $this->renderPartial('/shared/partial/navbar-fluid'); ?>
     <div class="container container-full fill">
       <div class="list">
-        <div class="container">
+        <div class="container-fluid">
           <div class="searchbar">
             <form class="form-horizontal" role="form">
              <button type="button" class="btn btn-default" id="btnSearch">Filter</button>
