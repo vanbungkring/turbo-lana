@@ -4,7 +4,7 @@
                 <li class="previous"><a href="#">&larr; Kembali</a></li>
                 <li class="next"><a href="#">Approve Quotes &rarr;</a></li>
               </ul>
-              <h4 class="text-center">DETIL QUOTES CAMPAIGN #9712</h4>
+              <h4 class="text-center">DETIL QUOTES CAMPAIGN #<?php echo CHtml::encode($model->id); ?></h4>
             </div>
             <div class="row">
               <div class="col-md-6">
@@ -26,10 +26,6 @@
                         <tr>
                           <td>Tanggal</td>
                           <td><?php echo CHtml::encode($model->tanggalMulai); ?> s.d <?php echo CHtml::encode($model->tanggalBerakhir); ?></td>
-                        </tr>
-                        <tr>
-                          <td>Lokasi</td>
-                          <td></td>
                         </tr>
                         <tr>
                           <td>Deskripsi</td>
