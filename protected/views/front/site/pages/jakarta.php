@@ -2,9 +2,9 @@
 <div class="container kivi city">
   <div class="row">
     <img src="<?= Yii::app()->getBaseUrl(true) ?>/images/jakarta_big.jpg" alt="Jakarta" class="img-responsive">
-    <h1>Jakarta Indonesia</h1>
+    <h1>Jakarta, Indonesia</h1>
     <div class="city-information">
-      <strong>Luas Wilayah: 664,01 km2 | Jumlah Penduduk: 9.809.857 jiwa</strong>
+      <strong>Luas Wilayah: 664,01 km<sup>2</sup> | Jumlah Penduduk: 9.809.857 jiwa</strong>
     </div>
     <div class="col-md-6">
       <p>Ibukota negara Indonesia. Sebuah kota yang terletak di sebelah Barat pulau Jawa dan tergabung dalam Asian Network of Major Cities 21, Jakarta merupakan salah satu kota berpenduduk terpadat di dunia. Kota yang berpenduduk hampir 10 juta, dengan metro area yang melingkupi hampir 30 juta manusia ini merupakan kota dengan tingkat kesibukan paling tinggi di Indonesia. </p>
@@ -17,3 +17,5 @@
     </div>
   </div>
 </div>
+
+<?php $this->renderPartial('/shared/partial/footer');?>
