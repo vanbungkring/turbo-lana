@@ -47,6 +47,7 @@ $(".image-billboard").bxSlider({
 });
 $( ".hasDatepicker_start" ).datepicker({
   minDate: 0,
+  dateFormat: 'dd-mm-yy',
   changeMonth: false,
   numberOfMonths: 1,
   onClose: function( selectedDate ) {
@@ -56,6 +57,7 @@ $( ".hasDatepicker_start" ).datepicker({
 });
 $( ".hasDatepicker_end" ).datepicker({
   defaultDate: "+1w",
+  dateFormat: 'dd-mm-yy',
   changeMonth: false,
   numberOfMonths: 1,
   onClose: function( selectedDate ) {

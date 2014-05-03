@@ -17,6 +17,7 @@ $(function() {
   })
   $( ".hasDatepicker_start" ).datepicker({
     minDate: 0,
+    dateFormat: 'dd-mm-yy',
     changeMonth: false,
     numberOfMonths: 1,
     onClose: function( selectedDate ) {
@@ -26,10 +27,11 @@ $(function() {
   });
   $( ".hasDatepicker_end" ).datepicker({
     defaultDate: "+1w",
+    dateFormat: 'dd-mm-yy',
     changeMonth: false,
     numberOfMonths: 1,
     onClose: function( selectedDate ) {
-      
+
     }
   });
 })
