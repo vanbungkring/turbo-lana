@@ -1,35 +1,136 @@
-<?php
-/* @var $this Quote3Controller */
-/* @var $model Quote3 */
 
-$this->breadcrumbs=array(
-	'Quote3s'=>array('index'),
-	$model->name,
-);
-
-$this->menu=array(
-	array('label'=>'List Quote3', 'url'=>array('index')),
-	array('label'=>'Create Quote3', 'url'=>array('create')),
-	array('label'=>'Update Quote3', 'url'=>array('update', 'id'=>$model->id)),
-	array('label'=>'Delete Quote3', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage Quote3', 'url'=>array('admin')),
-);
-?>
-
-<h1>View Quote3 #<?php echo $model->id; ?></h1>
-
-<?php $this->widget('zii.widgets.CDetailView', array(
-	'data'=>$model,
-	'attributes'=>array(
-		'id',
-		'idMember',
-		'name',
-		'tanggalMulai',
-		'tanggalBerakhir',
-		'budget',
-		'deskripsi',
-		'catatan',
-		'description',
-		'time',
-	),
-)); ?>
+            <div class="row">
+              <ul class="pager">
+                <li class="previous"><a href="#">&larr; Kembali</a></li>
+                <li class="next"><a href="#">Approve Quotes &rarr;</a></li>
+              </ul>
+              <h4 class="text-center">DETIL QUOTES CAMPAIGN #9712</h4>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="panel panel-main">
+                  <div class="panel-heading">
+                    Informasi Campaign
+                  </div>
+                  <div class="panel-body">
+                    <table class="table table-responsive table-bordered table-ads">
+                      <tbody>
+                        <tr>
+                          <td>Nama</td>
+                          <td><?php echo CHtml::encode($model->name); ?></td>
+                        </tr>
+                        <tr>
+                          <td>Budget</td>
+                          <td>IDR <?php echo CHtml::encode($model->budget); ?></td>
+                        </tr>
+                        <tr>
+                          <td>Tanggal</td>
+                          <td><?php echo CHtml::encode($model->tanggalMulai); ?> s.d <?php echo CHtml::encode($model->tanggalBerakhir); ?></td>
+                        </tr>
+                        <tr>
+                          <td>Lokasi</td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td>Deskripsi</td>
+                          <td><?php echo CHtml::encode($model->deskripsi); ?></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <!-- end table -->
+                  </div>
+                </div>
+                <!-- end panel -->
+              </div>
+              <div class="col-md-6">
+                <div class="well well-sm">
+                  <h4><i class="fa fa-info-circle"></i> Keterangan</h4>
+                  <p><?php echo CHtml::encode($model->catatan); ?></p>
+                </div>
+              </div>
+            </div>
+            <!-- end row -->
+            <div class="row">
+              <div class="col-md-6 col-lg-5">
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    List Inventory
+                  </div>
+                  <div class="panel-body">
+                    <table class="table table-responsive table-striped table-bordered">
+                      <thead>
+                        <tr>
+                          <td>Unit</td>
+                          <td>Quotes (IDR)</td>
+                          <td>Tindakan</td>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td><a href="#">JKLM0001</a></td>
+                          <td>50.000.000</td>
+                          <td>
+                            <a href="#" class="btn btn-outline btn-info btn-xs">Tanya</a>
+                            <button class="btn btn-outline btn-danger btn-xs">Hapus</button>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td><a href="#">BGRKV0120</a></td>
+                          <td>150.000.000</td>
+                          <td>
+                            <a href="#" class="btn btn-outline btn-info btn-xs">Tanya</a>
+                            <button class="btn btn-outline btn-danger btn-xs">Hapus</button>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td><a href="#">BLKV0813</a></td>
+                          <td>Belum terima</td>
+                          <td>
+                            <a href="#" class="btn btn-outline btn-info btn-xs">Tanya</a>
+                            <button class="btn btn-outline btn-danger btn-xs">Hapus</button>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td><a href="#">BLKV0819</a></td>
+                          <td>Tidak Tersedia</td>
+                          <td>
+                            <a href="#" class="btn btn-outline btn-info btn-xs">Tanya</a>
+                            <button class="btn btn-outline btn-danger btn-xs">Hapus</button>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <a href="#" class="btn btn-success btn-outline btn-sm">Tambah</a>
+                  </div>
+                </div>
+              </div>
+              <!-- end div inventory list -->
+              <div class="col-md-6 col-lg-7">
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    Peta Lokasi
+                  </div>
+                  <div class="panel-body">
+                    <p>MAPS</p>
+                    <p>MAPS</p>
+                    <p>MAPS</p>
+                    <p>MAPS</p>
+                    <p>MAPS</p>
+                    <p>MAPS</p>
+                    <p>MAPS</p>
+                    <p>MAPS</p>
+                    <p>MAPS</p>
+                    <p>MAPS</p>
+                    <p>MAPS</p>
+                  </div>
+                </div>
+              </div>
+              <!-- end of maps -->
+            </div>
+            <!-- end row -->
+            <div class="row">
+              <div class="col-md-6 col-lg-4 col-centered">
+                <a href="#" class="btn btn-success btn-block">APPROVE QUOTES <i class="fa fa-arrow-circle-right"></i></a>
+              </div>
+            </div>
+        
