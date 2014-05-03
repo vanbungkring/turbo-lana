@@ -49,7 +49,13 @@
 </div>
 <div class="bottom-line">
   <div class="container">
-    <p>Created by <a href="http://www.blacktie.co">BLACKTIE.CO</a></p>
+    <?php function auto_copyright($year = 'auto'){ ?>
+    <?php if(intval($year) == 'auto'){ $year = date('Y'); } ?>
+    <?php if(intval($year) == date('Y')){ echo intval($year); } ?>
+    <?php if(intval($year) < date('Y')){ echo intval($year) . ' - ' . date('Y'); } ?>
+    <?php if(intval($year) > date('Y')){ echo date('Y'); } ?>
+    <?php } ?>
+    <?php auto_copyright(); // 2011?>
     
   </div>
 </div>
