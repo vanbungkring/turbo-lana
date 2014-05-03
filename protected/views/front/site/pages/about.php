@@ -40,8 +40,11 @@ renderPartial('/shared/partial/navbar'); ?>
           Gunakan mesin pencarian inventori kami untuk menemukan titik billboard dan media space di lokasi yang Anda inginkan. Jangan khawatir, kami telah menambahkan fitur peta yang akan memudahkan proses pencarian Anda. Apabila Anda, Advertiser / Agency tidak dapat menemukan titik billboard dan media space di lokasi yang diinginkan, silahkan register dan beritahu kami letak lokasi yang diinginkan.
         </p>
       </div>
-      <div class="col-md-6">  <img src="<?= Yii::app()->getBaseUrl(true) ?>/images/dd.png" alt="Bandung" class="img-responsive"></div>
-              <div class="col-md-6"></div>
+      <div class="col-md-6">  <img src="<?= Yii::app()->getBaseUrl(true) ?>/images/dd.png" alt="search engine" class="img-responsive"></div>
+      
+      <div class="col-md-6">
+        <img src="<?= Yii::app()->getBaseUrl(true) ?>/images/d.jpg" alt="Dashboard" class="img-responsive">
+      </div>
       <div class="col-md-6">
         <h3>
           DASHBOARD
