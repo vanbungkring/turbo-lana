@@ -836,24 +836,21 @@ hr {
   float: left;
 }
 .container-full .list ul.assets-card-holder {
-  margin-top: 50px;
+  margin-top: 60px;
   width: 100%;
   float: left;
   padding: 0px;
 }
 .container-full .list ul.assets-card-holder li.card:hover {
   border: 1px solid #ccc;
-  border-width: 0 0 1px 0;
   cursor: pointer;
 }
 .container-full .list ul.assets-card-holder li.card {
   padding: 5px;
   list-style: none;
   float: left;
-  height: 80px;
-  width: 100%;
-  border: 1px solid #efefef;
-  border-width: 0 0 1px 0;
+  margin: 5px;
+  border: 1px solid #ccc;
   border-radius: 0;
 }
 .container-full .list ul.assets-card-holder li.card .card-body {

@@ -25,7 +25,7 @@
 
     </div> 
     <template id="template-card">
-      <li class="card">
+      <li class="card col-md-3">
         <input type="hidden" value="{lat}" class="clat"/>
         <input type="hidden" value="{long}" class="clong"/>
         <input type="hidden" value="{id}" class="cid"/>
