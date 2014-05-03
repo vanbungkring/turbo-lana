@@ -17,3 +17,5 @@
     </div>
   </div>
 </div>
+
+<?php $this->renderPartial('/shared/partial/footer');?>

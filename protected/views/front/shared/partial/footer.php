@@ -9,11 +9,11 @@
     <div class="col-md-2">
       <h3>Help</h3>
       <ul>
-       <li><a href="<?= Yii::app()->getBaseUrl() ?>/index.php/advertiser">Advertiser</a></li>
-       <li><a href="<?= Yii::app()->getBaseUrl() ?>/index.php/media-owner">Media Owner</a></li>
-       <li><a href="<?= Yii::app()->getBaseUrl() ?>/index.php/FAQ">FAQ</a></li>
-       <li><a href="<?= Yii::app()->getBaseUrl() ?>/index.php/help-center">Help Center</a></li>
-       <li><a href="<?= Yii::app()->getBaseUrl() ?>/index.php/advertiser">Contact US</a></li>
+       <li><a href="<?php echo Yii::app()->createUrl('/advertiser');?>">Advertiser</a></li>
+       <li><a href="<?php echo Yii::app()->createUrl('/media-owner');?>">Media Owner</a></li>
+       <li><a href="<?php echo Yii::app()->createUrl('/faq');?>">FAQ</a></li>
+       <li><a href="<?php echo Yii::app()->createUrl('/help-center');?>">Help Center</a></li>
+       <li><a href="<?php echo Yii::app()->createUrl('/contact');?>">Contact US</a></li>
      </ul>
    </div>
    <div class="col-md-2">
