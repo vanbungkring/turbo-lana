@@ -67,7 +67,7 @@
     <section id="banner-detail-info-list" class="banner-info-body">
       <header class="banner-info-header">Deskripsi Inventory</header>
       <div class="table-responsive">
-      <?php echo $banner->keterangan; ?>
+        <?php echo $banner->keterangan; ?>
       </div>
     </section>
 
@@ -106,6 +106,7 @@
 
             </ul>
           </div>
+           <button type="button" class="btn btn-default btn-block whislist" data-target="#addtoQuote" id="modal_show">Request Quote</button>
           <!-- <a href="<?php echo Yii::app()->createUrl('/rfp/index',array('idBanner'=>array($banner->id))); ?>" type="button" class="btn btn-primary btn-block book-it-button btn-lg">Create Quote</a> -->
           <div class="fast-contact">
             <i class="fa fa-phone-square fa-3x"></i>
@@ -119,19 +120,20 @@
             </div>
           </section>
 
-          <section id="banner-detail-info-list" class="banner-info-body">
+         <!--  <section id="banner-detail-info-list" class="banner-info-body">
             <header class="banner-info-header"> Request Quote</header>
-            <?php $form=$this->beginWidget('CActiveForm', array(
+            <button type="button" class="btn btn-default btn-block whislist" id="addBookmark">Save To Whislist</button>
+           <!--  <?php $form=$this->beginWidget('CActiveForm', array(
               'id'=>'quote2-form',
               'action'=>array('rfp2/save'),
               )); ?>
               <p class="content-description">
-               <?php echo $form->hiddenField($quote2,'idBanner',array('class'=>'fosrm-control')); ?>
+                <?php echo $form->hiddenField($quote2,'idBanner',array('class'=>'form-control')); ?>
                <input type="submit" class="btn btn-default btn-block whislist"  value="Get Quotes">
              </p>
              <?php $this->endWidget(); ?>
 
-           </section>
+           </section> -->
 
            <section class="banner-info-body svw">
             <button type="button" class="btn btn-default btn-block whislist" id="addBookmark">Save To Whislist</button>
@@ -141,6 +143,26 @@
       </div>
     </div>
 
+
+<!-- popup -->
+    <div class="modal fade" id="addtoQuote" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title" id="myModalLabel">Add to your Quote</h4>
+          </div>
+          <div class="modal-body">
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+<!-- popup end -->
     <?php
 //google maps render
     $js =    '
@@ -161,6 +183,10 @@
 
   google.maps.event.addDomListener(window, "load", initialize);
 
+   $("#modal_show").click(function(){
+       $("#addtoQuote").modal({
+       })
+   })
   function checkharga(){
     $("#spanharga").text($("#harga").val());
   }
@@ -199,7 +225,6 @@
       }
     },"json");
   }
-
   function checkButtonBookmark(){
     if(bookmark == 1){
       $("#addBookmark").hide();
