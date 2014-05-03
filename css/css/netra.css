@@ -860,10 +860,10 @@ hr {
 }
 .container-full .list ul.assets-card-holder li.card .card-body .card-image {
   float: left;
+  width: 100%;
 }
 .container-full .list ul.assets-card-holder li.card .card-body .card-image img {
-  width: 50px;
-  height: 50px;
+  width: 97%;
 }
 .container-full .list ul.assets-card-holder li.card .card-body .card-meta {
   float: right;
