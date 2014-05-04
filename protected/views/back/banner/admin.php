@@ -50,9 +50,12 @@ return false;
                     'cssFile'=>false,
                     'columns'=>array(
                         'id',
+                        'sku',
                         'nama',
-                        'lat',
-                        'long',
+                        'hargaPerBulan',
+                        'hargaPer3Bulan',
+                        'hargaPer6Bulan',
+                        'hargaPerTahun',
                         array(
                             'value'=>'$data->isImageExist() ? \'<a href="\'.$data->getImageUrl().\'" target="_blank">link</a>\' : \'\' ',
                             'type'=>'raw',
