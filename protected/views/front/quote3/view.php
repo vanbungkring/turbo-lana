@@ -77,6 +77,7 @@
                       </tbody>
                     </table>
                     <a href="<?php echo Yii::app()->createUrl('/search'); ?>" class="btn btn-success btn-outline btn-sm">Tambah</a>
+                     <a href="<?php echo Yii::app()->createUrl('/search'); ?>" class="btn btn-success btn-outline btn-sm">Kirim</a>
                   </div>
                 </div>
               </div>
