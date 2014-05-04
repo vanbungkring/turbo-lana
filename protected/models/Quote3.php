@@ -53,6 +53,7 @@ class Quote3 extends CActiveRecord
 		return array(
 			'banners'=>array(self::MANY_MANY,'Banner','quote3_banner(idQuote,idBanner)'),
 			'totalInventori'=>array(self::STAT,'Quote3Banner','idQuote'),
+			'member'=>array(self::BELONGS_TO,'Member','idMember'),
 		);
 	}
 
@@ -108,7 +109,6 @@ class Quote3 extends CActiveRecord
 		$criteria->compare('budget',$this->budget,true);
 		$criteria->compare('deskripsi',$this->deskripsi);
 		$criteria->compare('catatan',$this->catatan,true);
-		$criteria->compare('description',$this->description,true);
 		$criteria->compare('time',$this->time,true);
 
 		return new CActiveDataProvider($this, array(
