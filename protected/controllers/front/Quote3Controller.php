@@ -63,6 +63,7 @@ class Quote3Controller extends Controller
 			$model->idMember = Yii::app()->user->id;
 			$model->tanggalMulai = DateHelper::toYmd($model->tanggalMulai);
 			$model->tanggalBerakhir = DateHelper::toYmd($model->tanggalBerakhir);
+			$model->status = 0;
 			if($model->save()){
 				$this->redirect(array('view','id'=>$model->id));
 			}
@@ -175,5 +176,12 @@ class Quote3Controller extends Controller
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
 		}
+	}
+
+	public function actionApprove($id){
+		$model = $this->loadModel($id);
+		$model->status = 1;
+		$model->save();
+		$this->redirect(array('view','id'=>$id));
 	}
 }

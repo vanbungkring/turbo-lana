@@ -127,4 +127,12 @@ class Quote3 extends CActiveRecord
 	{
 		return parent::model($className);
 	}
+
+	public function isStatusNotSet(){
+		if($this->status == 1 or $this->status ==2){
+			return false;
+		}
+		else
+			return true;
+	}
 }

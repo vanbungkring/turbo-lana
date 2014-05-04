@@ -59,7 +59,9 @@
                           <td>Unit</td>
                           <td>Unit Status</td>
                           <td>Unit Price (IDR)</td>
-                          <td>Tindakan</td>
+                          <?php if ($model->isStatusNotSet()): ?>
+                            <td>Tindakan</td>
+                          <?php endif ?>
                         </tr>
                       </thead>
                       <tbody>
@@ -68,16 +70,21 @@
 	                          <td><a href="#"><?php echo $quoteBanner->banner->sku; ?></a></td>
 	                          <td><?php echo $quoteBanner->getTextStatus(); ?></td>
                             <td><?php echo $quoteBanner->price; ?></td>
-	                          <td>
-<!-- 	                            <a href="#" class="btn btn-outline btn-info btn-xs">Tanya</a> -->
-	                            <a href="<?php echo $this->createUrl('hapusBanner',array('idBanner'=>$quoteBanner->banner->id,'idQuote'=>$model->id)); ?>" class="btn btn-outline btn-danger btn-xs">Hapus</a>
-	                          </td>
+                            <?php if ($model->isStatusNotSet()): ?>
+                              <td>
+<!--                              <a href="#" class="btn btn-outline btn-info btn-xs">Tanya</a> -->
+                              <a href="<?php echo $this->createUrl('hapusBanner',array('idBanner'=>$quoteBanner->banner->id,'idQuote'=>$model->id)); ?>" class="btn btn-outline btn-danger btn-xs">Hapus</a>
+                            </td>
+                            <?php endif ?>
+	                          
 	                        </tr>
                       	<?php endforeach ?>
                       </tbody>
                     </table>
+                    <?php if ($model->isStatusNotSet()): ?>
                     <a href="<?php echo Yii::app()->createUrl('/search'); ?>" class="btn btn-success btn-outline btn-sm">Tambah</a>
                      <a href="<?php echo Yii::app()->createUrl('/search'); ?>" class="btn btn-success btn-outline btn-sm">Kirim</a>
+                    <?php endif ?>
                   </div>
                 </div>
               </div>
@@ -105,9 +112,12 @@
               <!-- end of maps -->
             </div>
             <!-- end row -->
-            <div class="row">
-              <div class="col-md-6 col-lg-4 col-centered">
-                <a href="#" class="btn btn-success btn-block">APPROVE QUOTES <i class="fa fa-arrow-circle-right"></i></a>
+            <?php if ($model->isStatusNotSet()): ?>
+              <div class="row">
+                <div class="col-md-6 col-lg-4 col-centered">
+                  <a href="<?php echo $this->createUrl('approve',array('id'=>$model->id)); ?>" class="btn btn-success btn-block">APPROVE QUOTES <i class="fa fa-arrow-circle-right"></i></a>
+                </div>
               </div>
-            </div>
+            <?php endif ?>
+            
         
