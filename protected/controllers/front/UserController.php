@@ -72,7 +72,7 @@ class UserController extends FrontEndController
 	}
 
 	public function actionHistory(){
-				$member = Member::model()->findByPk(Yii::app()->user->id);
+		$member = Member::model()->findByPk(Yii::app()->user->id);
 		$logs = MemberLog::model()->findAll(array(
 			'condition'=>'idMember = :p1',
 			'params'=>array(

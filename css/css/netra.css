@@ -368,8 +368,21 @@ p {
   padding: 0px 10px;
   font-size: 0.875em;
 }
+.top-section:before {
+  content: "";
+  display: block;
+  height: 550px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
 .top-section {
-  background: #000;
+  background: url('../../images/bb-big.jpg') no-repeat center;
+  background-position: 0px -214px;
   padding-top: 50px;
   padding-bottom: 50px;
   height: 500px;
@@ -378,6 +391,9 @@ p {
   -o-background-size: cover;
   background-size: cover;
   border-bottom: 1px solid #ccc;
+}
+.top-section .container {
+  position: relative;
 }
 .top-section .search-box {
   margin: 0 auto;

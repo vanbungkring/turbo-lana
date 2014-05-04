@@ -24,7 +24,10 @@
 
     <section id="banner-detail-info-list" class="banner-info-body">
       <header class="banner-info-header">Deskripsi & Spesifikasi Banner</header>
-
+       <div class="col-md-6">
+        <?php echo $banner->keterangan; ?>
+       </div>
+      <div class="col-md-6">
       <div class="table-responsive">
         <table class="table table-striped">
           <tbody>
@@ -62,13 +65,7 @@
           </tbody>
         </table>
       </div>
-    </section>
-    
-    <section id="banner-detail-info-list" class="banner-info-body">
-      <header class="banner-info-header">Deskripsi Inventory</header>
-      <div class="table-responsive">
-        <?php echo $banner->keterangan; ?>
-      </div>
+    </div>
     </section>
 
     <section id="banner-detail-info-list" class="banner-info-body">
@@ -166,6 +163,8 @@
       </div>
     </div>
 <!-- popup end -->
+
+<?php $this->renderPartial('/shared/partial/footer');?>
     <?php
 //google maps render
     $js =    '

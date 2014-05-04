@@ -279,12 +279,6 @@
                 <a href="<?php echo Yii::app()->createUrl('/quote')?>"><i class="fa fa-table fa-fw"></i> Quotation</a>
               </li>
               <li>
-                <a href="<?php echo Yii::app()->createUrl('/banner')?>"><i class="fa fa-table fa-fw"></i> Billboard Inventory</a>
-              </li>
-              <li>
-                <a href="<?php echo Yii::app()->createUrl('/quote2')?>"><i class="fa fa-table fa-fw"></i> Quotation 2</a>
-              </li>
-              <li>
                 <a href="<?php echo Yii::app()->createUrl('/po')?>"><i class="fa fa-table fa-fw"></i>PO</a>
               </li>
               <li>

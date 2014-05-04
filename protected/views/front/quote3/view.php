@@ -57,7 +57,8 @@
                       <thead>
                         <tr>
                           <td>Unit</td>
-                          <td>Quotes (IDR)</td>
+                          <td>Unit Status</td>
+                          <td>Unit Price (IDR)</td>
                           <td>Tindakan</td>
                         </tr>
                       </thead>
@@ -65,7 +66,8 @@
                       	<?php foreach ($model->banners as $key => $banner): ?>
                       		<tr>
 	                          <td><a href="#"><?php echo $banner->sku; ?></a></td>
-	                          <td>50.000.000</td>
+	                          <td>Belum Terima</td>
+                            <td>50.000.000</td>
 	                          <td>
 	                            <a href="#" class="btn btn-outline btn-info btn-xs">Tanya</a>
 	                            <a href="<?php echo $this->createUrl('hapusBanner',array('idBanner'=>$banner->id,'idQuote'=>$model->id)); ?>" class="btn btn-outline btn-danger btn-xs">Hapus</a>
@@ -74,7 +76,7 @@
                       	<?php endforeach ?>
                       </tbody>
                     </table>
-                    <a href="#" class="btn btn-success btn-outline btn-sm">Tambah</a>
+                    <a href="<?php echo Yii::app()->createUrl('/search'); ?>" class="btn btn-success btn-outline btn-sm">Tambah</a>
                   </div>
                 </div>
               </div>
