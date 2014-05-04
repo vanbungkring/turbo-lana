@@ -32,9 +32,14 @@
   </div>
 
   <div class="form-group">
-    <label>Banner Uniq</label>
+    <label>Banner Uniq (adalah SKU banner dari Pemilik Billboard)</label>
     <?php echo $form->textField($model,'uniqId',array('size'=>60,'maxlength'=>100,'class'=>'form-control')); ?>
     <?php echo $form->error($model,'uniqId'); ?>
+  </div>
+    <div class="form-group">
+    <label>SKU (Kode Unik banner)</label>
+    <?php echo $form->textField($model,'sku',array('class'=>'form-control')); ?>
+    <?php echo $form->error($model,'sku'); ?>
   </div>
 
   <div class="form-group">
@@ -144,12 +149,6 @@
     <label>Banner SIDE (Jumlah sisi banner)</label>
     <?php echo $form->dropDownList($model,'jumlahSisi',array(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20),array('class'=>'form-control')); ?>
     <?php echo $form->error($model,'jumlahSisi'); ?>
-  </div>
-
-  <div class="form-group">
-    <label>SKU (Kode Unik banner)</label>
-    <?php echo $form->textField($model,'sku',array('class'=>'form-control')); ?>
-    <?php echo $form->error($model,'sku'); ?>
   </div>
 
   <div class="form-group">

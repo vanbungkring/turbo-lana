@@ -50,8 +50,8 @@ return false;
                     'cssFile'=>false,
                     'columns'=>array(
                         'id',
-                        'nama',
                         'sku',
+                        'nama',
                         'hargaPerBulan',
                         'hargaPer3Bulan',
                         'hargaPer6Bulan',
