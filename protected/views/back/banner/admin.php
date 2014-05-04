@@ -51,8 +51,11 @@ return false;
                     'columns'=>array(
                         'id',
                         'nama',
-                        'lat',
-                        'long',
+                        'sku',
+                        'hargaPerBulan',
+                        'hargaPer3Bulan',
+                        'hargaPer6Bulan',
+                        'hargaPerTahun',
                         array(
                             'value'=>'$data->isImageExist() ? \'<a href="\'.$data->getImageUrl().\'" target="_blank">link</a>\' : \'\' ',
                             'type'=>'raw',
