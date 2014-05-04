@@ -10,7 +10,7 @@
                       <div class="col-xs-6 col-md-3 padded-top">
                         <div id="actcamp">
                           <ul class="campsum">
-                            <li class="campnumber">3</li>
+                            <li class="campnumber"><?php echo count($quotes)?></li>
                             <li class="campdesc">
                               <a href="#">
                                 <i class="fa fa-caret-square-o-down"></i> Active Campaign

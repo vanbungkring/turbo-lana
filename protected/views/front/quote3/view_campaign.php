@@ -4,7 +4,7 @@
               <ul class="pager">
                 <li class="previous"><a href="#">&larr; Kembali</a></li>
               </ul>
-              <h4 class="text-center">CAMPAIGN #9712</h4>
+              <h4 class="text-center">CAMPAIGN #<?php echo CHtml::encode($model->id); ?></h4>
             </div>
             <div class="row">
               <div class="col-md-6 col-lg-6">
