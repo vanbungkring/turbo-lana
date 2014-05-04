@@ -69,7 +69,7 @@
 	                          <td>Belum Terima</td>
                             <td>50.000.000</td>
 	                          <td>
-	                            <a href="#" class="btn btn-outline btn-info btn-xs">Tanya</a>
+<!-- 	                            <a href="#" class="btn btn-outline btn-info btn-xs">Tanya</a> -->
 	                            <a href="<?php echo $this->createUrl('hapusBanner',array('idBanner'=>$banner->id,'idQuote'=>$model->id)); ?>" class="btn btn-outline btn-danger btn-xs">Hapus</a>
 	                          </td>
 	                        </tr>
