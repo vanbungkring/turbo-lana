@@ -103,6 +103,17 @@ class Quote3Controller extends Controller
 			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
 	}
 
+	public function actionHapusBanner(){
+		$model = Quote3Banner::model()->find('idBanner = :p1 and idQuote = :p2',array(':p1'=>$_GET['idBanner'],':p2'=>$_GET['idQuote']));
+		if($model == null){
+			throw new CHttpException(404,'The requested page does not exist.');
+		}
+		$model->delete();
+		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
+		if(!isset($_GET['ajax']))
+			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('view','id'=>$_GET['idQuote']));
+	}
+
 	/**
 	 * Lists all models.
 	 */
