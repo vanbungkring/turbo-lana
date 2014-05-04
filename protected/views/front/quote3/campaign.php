@@ -45,6 +45,7 @@
                               <th>Update Terakhir</th>
                               <th>Dibuat</th>
                               <th>Atur</th>
+                              <th>status</th>
                             </tr>
                           </thead>
                           <tbody>
@@ -58,6 +59,8 @@
                                 <td>-</td>
                               <td><a href="<?php echo $this->createUrl('viewCampaign',array('id'=>$value->id)); ?>" class="btn btn-outline btn-primary btn-xs">Lihat Detil</a>
                                   <a href="#" class="btn btn-outline btn-danger btn-xs">Archieved</a>
+                              </td>
+                              <td> Pending
                               </td>
                             </tr>
                             <?php endforeach ?>
