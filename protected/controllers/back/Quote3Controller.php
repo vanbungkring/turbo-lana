@@ -41,8 +41,28 @@ class Quote3Controller extends Controller
 	 */
 	public function actionView($id)
 	{
+		$model=Quote3::model()->with(array('quoteBanners'=>array(
+			'with'=>array(
+				'banner',
+			)
+		)))->findByPk($id);
+		if($model===null)
+			throw new CHttpException(404,'The requested page does not exist.');
+
+		if(isset($_POST['quote3_banner']))
+		{
+			foreach ($_POST['quote3_banner'] as $key => $value) {
+				$mqp = Quote3Banner::model()->findByPk($key);
+				$mqp->status = $value['status'];
+				$mqp->keterangan = $value['keterangan'];
+				$mqp->price = $value['price'];
+				$mqp->save(false);
+			}
+			$this->redirect(array('view','id'=>$id));
+		}
+
 		$this->render('view',array(
-			'model'=>$this->loadModel($id),
+			'model'=>$model,
 		));
 	}
 

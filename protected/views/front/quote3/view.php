@@ -63,14 +63,14 @@
                         </tr>
                       </thead>
                       <tbody>
-                      	<?php foreach ($model->banners as $key => $banner): ?>
+                      	<?php foreach ($model->quoteBanners as $key => $quoteBanner): ?>
                       		<tr>
-	                          <td><a href="#"><?php echo $banner->sku; ?></a></td>
-	                          <td>Belum Terima</td>
-                            <td>50.000.000</td>
+	                          <td><a href="#"><?php echo $quoteBanner->banner->sku; ?></a></td>
+	                          <td><?php echo $quoteBanner->getTextStatus(); ?></td>
+                            <td><?php echo $quoteBanner->price; ?></td>
 	                          <td>
 <!-- 	                            <a href="#" class="btn btn-outline btn-info btn-xs">Tanya</a> -->
-	                            <a href="<?php echo $this->createUrl('hapusBanner',array('idBanner'=>$banner->id,'idQuote'=>$model->id)); ?>" class="btn btn-outline btn-danger btn-xs">Hapus</a>
+	                            <a href="<?php echo $this->createUrl('hapusBanner',array('idBanner'=>$quoteBanner->banner->id,'idQuote'=>$model->id)); ?>" class="btn btn-outline btn-danger btn-xs">Hapus</a>
 	                          </td>
 	                        </tr>
                       	<?php endforeach ?>

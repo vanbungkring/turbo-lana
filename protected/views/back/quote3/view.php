@@ -1,4 +1,12 @@
 
+<?php $form=$this->beginWidget('CActiveForm', array(
+	'id'=>'quote3-form',
+	// Please note: When you enable ajax validation, make sure the corresponding
+	// controller action is handling ajax validation correctly.
+	// There is a call to performAjaxValidation() commented in generated controller code.
+	// See class documentation of CActiveForm for details on this.
+	'enableAjaxValidation'=>false,
+)); ?>
             <div class="row">
               <ul class="pager">
                 <li class="previous"><a href="#">&larr; Kembali</a></li>
@@ -63,21 +71,23 @@
                         </tr>
                       </thead>
                       <tbody>
-                      	<?php foreach ($model->banners as $key => $banner): ?>
+                      	<?php foreach ($model->quoteBanners as $key => $quoteBanner): ?>
                       		<tr>
-	                          <td><a href="#"><?php echo $banner->sku; ?></a></td>
-	                          <td>Belum Terima</td>
-                            <td>50.000.000</td>
+	                          <td><a href="#"><?php echo $quoteBanner->banner->sku; ?></a></td>
+	                          <td><?php echo CHtml::activeDropDownList($quoteBanner,'status',
+	                          	array(1=>'available',2=>'reject'),array('name'=>"quote3_banner[{$quoteBanner->id}][status]",'empty'=>'- status -')); ?>
+	                          	<?php echo CHtml::activeTextArea($quoteBanner,'keterangan',array('name'=>"quote3_banner[{$quoteBanner->id}][keterangan]")); ?></td>
+                              <td><?php echo CHtml::activeTextField($quoteBanner,'price',array('name'=>"quote3_banner[{$quoteBanner->id}][price]")); ?></td>
 	                          <td>
 	                            <a href="#" class="btn btn-outline btn-info btn-xs">Tanya</a>
-	                            <a href="<?php echo $this->createUrl('hapusBanner',array('idBanner'=>$banner->id,'idQuote'=>$model->id)); ?>" class="btn btn-outline btn-danger btn-xs">Hapus</a>
+	                            <a href="<?php echo $this->createUrl('hapusBanner',array('idBanner'=>$quoteBanner->idBanner,'idQuote'=>$model->id)); ?>" class="btn btn-outline btn-danger btn-xs">Hapus</a>
 	                          </td>
 	                        </tr>
                       	<?php endforeach ?>
                       </tbody>
                     </table>
                     <a href="<?php echo Yii::app()->createUrl('/search'); ?>" class="btn btn-success btn-outline btn-sm">Tambah</a>
-                     <a href="<?php echo Yii::app()->createUrl('/search'); ?>" class="btn btn-success btn-outline btn-sm">Kirim</a>
+                     <button type="submit" href="<?php echo Yii::app()->createUrl('/search'); ?>" class="btn btn-success btn-outline btn-sm">Save</button>
                   </div>
                 </div>
               </div>
@@ -111,3 +121,4 @@
               </div>
             </div>
         
+<?php $this->endWidget(); ?>

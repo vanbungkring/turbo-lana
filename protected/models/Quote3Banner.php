@@ -41,6 +41,7 @@ class Quote3Banner extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			'banner'=>array(self::BELONGS_TO,'Banner','idBanner'),
 		);
 	}
 
@@ -92,5 +93,17 @@ class Quote3Banner extends CActiveRecord
 	public static function model($className=__CLASS__)
 	{
 		return parent::model($className);
+	}
+
+	public function getTextStatus(){
+		if($this->status == 1){
+			return 'Available';
+		}
+		else if($this->status == 2){
+			return 'Reject';
+		}
+		else{
+			return 'Belum Terima';
+		}
 	}
 }

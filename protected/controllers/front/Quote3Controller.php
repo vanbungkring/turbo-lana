@@ -33,8 +33,16 @@ class Quote3Controller extends Controller
 	 */
 	public function actionView($id)
 	{
+		$model=Quote3::model()->with(array('quoteBanners'=>array(
+			'with'=>array(
+				'banner',
+			)
+		)))->findByPk($id);
+		if($model===null)
+			throw new CHttpException(404,'The requested page does not exist.');
+
 		$this->render('view',array(
-			'model'=>$this->loadModel($id),
+			'model'=>$model,
 		));
 	}
 	/**
