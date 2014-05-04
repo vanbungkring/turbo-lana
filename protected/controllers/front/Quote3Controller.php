@@ -45,6 +45,21 @@ class Quote3Controller extends Controller
 			'model'=>$model,
 		));
 	}
+
+	public function actionViewCampaign($id)
+	{
+		$model=Quote3::model()->with(array('quoteBanners'=>array(
+			'with'=>array(
+				'banner',
+			)
+		)))->findByPk($id);
+		if($model===null)
+			throw new CHttpException(404,'The requested page does not exist.');
+
+		$this->render('view_campaign',array(
+			'model'=>$model,
+		));
+	}
 	/**
 	 * Creates a new model.
 	 * If creation is successful, the browser will be redirected to the 'view' page.
@@ -128,8 +143,17 @@ class Quote3Controller extends Controller
 	 */
 	public function actionIndex()
 	{
-		$quotes = Quote3::model()->findAll('idMember = :p1',array(':p1'=>Yii::app()->user->id));
+		$quotes = Quote3::model()->findAll('idMember = :p1 and (status is null or status = 0)',array(':p1'=>Yii::app()->user->id));
 		$this->render('index',array(
+		//	'dataProvider'=>$dataProvider,
+			'quotes'=>$quotes,
+		));
+	}
+
+	public function actionCampaign()
+	{
+		$quotes = Quote3::model()->findAll('idMember = :p1 and status = 1',array(':p1'=>Yii::app()->user->id));
+		$this->render('campaign',array(
 		//	'dataProvider'=>$dataProvider,
 			'quotes'=>$quotes,
 		));

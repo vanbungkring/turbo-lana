@@ -120,7 +120,7 @@
               <a href="<?php echo Yii::app()->createUrl('/quote3'); ?>"><i class="fa fa-book fa-fw"></i> Quotes<span class="fa fa-circle-o flright"></span></a>
             </li>
             <li>
-              <a href="<?php echo Yii::app()->createUrl('/user/campaign'); ?>"><i class="fa fa-calendar fa-fw"></i> Campaign<span class="fa fa-circle-o flright"></span></a>
+              <a href="<?php echo Yii::app()->createUrl('/quote3/campaign'); ?>"><i class="fa fa-calendar fa-fw"></i> Campaign<span class="fa fa-circle-o flright"></span></a>
             </li>
           </ul>
           <!-- /#side-menu -->
