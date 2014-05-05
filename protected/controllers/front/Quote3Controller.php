@@ -206,6 +206,10 @@ class Quote3Controller extends Controller
 		$model = $this->loadModel($id);
 		$model->status = 1;
 		$model->save();
+		foreach ($model->quoteBanners as $key => $quoteBanner) {
+			$quoteBanner->status = Quote3Banner::STATUS_BOOKED;
+			$quoteBanner->save();
+		}
 		$this->redirect(array('view','id'=>$id));
 	}
 }

@@ -95,15 +95,24 @@ class Quote3Banner extends CActiveRecord
 		return parent::model($className);
 	}
 
+	const STATUS_AVALIABLE = 1;
+	const STATUS_REJECT = 2;
+	const STATUS_BOOKED = 3;
+
+	public static function getListTextStatus(){
+		return array(
+			self::STATUS_AVALIABLE=>'Available',
+			self::STATUS_REJECT=>'Reject',
+			self::STATUS_BOOKED=>'Booked',
+		);
+	}
 	public function getTextStatus(){
-		if($this->status == 1){
-			return 'Available';
-		}
-		else if($this->status == 2){
-			return 'Reject';
+		$ar = self::getListTextStatus();
+		if(isset($ar[$this->status])){
+			return $ar[$this->status];
 		}
 		else{
-			return 'Belum Terima';
+			return 'Belum Diterima';
 		}
 	}
 }
