@@ -115,12 +115,12 @@
 <?php if ($model->isStatusNotSet() and $model->isAbleToApprove()): ?>
   <div class="row">
     <div class="col-md-6 col-lg-4 col-centered">
-      <a href="<?php echo $this->createUrl('approve',array('id'=>$model->id)); ?>" class="btn btn-success btn-block">APPROVE QUOTES <i class="fa fa-arrow-circle-right"></i></a>
+      <a href="#" id="open-modal-dialog" class="btn btn-success btn-block">APPROVE QUOTES <i class="fa fa-arrow-circle-right"></i></a>
     </div>
   </div>
 <?php endif ?>
 <!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="myModal" style="display:none">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -128,15 +128,58 @@
         <h4 class="modal-title" id="myModalLabel">Modal title</h4>
       </div>
       <div class="modal-body">
-        ...
+         <table class="table table-responsive table-striped table-bordered">
+          <thead>
+            <tr>
+              <td>Unit</td>
+              <td>Unit Status</td>
+              <td>Unit Price (IDR)</td>
+              <?php if ($model->isStatusNotSet()): ?>
+              <td>Tindakan</td>
+            <?php endif ?>
+          </tr>
+        </thead>
+        <tbody>
+         <?php $total = 0; foreach ($model->quoteBanners as $key => $quoteBanner): ?>
+         <tr>
+           <td><a href="#"><?php echo $quoteBanner->banner->sku; ?></a></td>
+           <td><?php echo $quoteBanner->getTextQuoteStatus(); ?></td>
+           <td><?php echo $quoteBanner->price; $total+=$quoteBanner->price; ?></td>
+           <?php if ($model->isStatusNotSet()): ?>
+           <td>
+            <!--                              <a href="#" class="btn btn-outline btn-info btn-xs">Tanya</a> -->
+            <a href="<?php echo $this->createUrl('hapusBanner',array('idBanner'=>$quoteBanner->banner->id,'idQuote'=>$model->id)); ?>" class="btn btn-outline btn-danger btn-xs">Hapus</a>
+          </td>
+        <?php endif ?>
+
+      </tr>
+      <tr>
+          <td colspan="3">Total</td>
+          <td><?php echo $total; ?></td>
+      </tr>
+    <?php endforeach ?>
+  </tbody>
+</table>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <a href="<?php echo $this->createUrl('approve',array('id'=>$model->id)); ?>" type="button" class="btn btn-primary">Save changes</a>
       </div>
     </div>
   </div>
 </div>
 <script>
-$('#myModal').modal()
+
 </script>
+<?php
+//google maps render
+$js = '
+$("#open-modal-dialog").click(function(){
+  $("#myModal").modal("show");
+});
+// $("#myModal").modal({
+//   autoOpen: false,
+
+// });
+';
+Yii::app()->clientScript->registerScript('script-modal',$js,  CClientScript::POS_END);
