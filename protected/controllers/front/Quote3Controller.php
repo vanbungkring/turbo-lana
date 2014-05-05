@@ -183,7 +183,9 @@ class Quote3Controller extends Controller
 	 */
 	public function loadModel($id)
 	{
-		$model=Quote3::model()->findByPk($id);
+		$model=Quote3::model()->with(array('quoteBanners'=>array(
+            'with'=>array('banner')
+        )))->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
@@ -204,12 +206,7 @@ class Quote3Controller extends Controller
 
 	public function actionApprove($id){
 		$model = $this->loadModel($id);
-		$model->status = 1;
-		$model->save();
-		foreach ($model->quoteBanners as $key => $quoteBanner) {
-			$quoteBanner->status = Quote3Banner::STATUS_BOOKED;
-			$quoteBanner->save();
-		}
+		$model->approveToCampaign();
 		$this->redirect(array('view','id'=>$id));
 	}
 }

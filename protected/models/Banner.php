@@ -12,11 +12,13 @@
  * @property double $tinggi
  * @property double $tinggiDariTanah
  * @property integer $zoom
+ * @property integer $status Description
  */
 class Banner extends CActiveRecord
 {
 	public $inputKategori;
 	public $image;
+    const STATUS_BOOKED = 1;
 	/**
 	 * @return string the associated database table name
 	 */

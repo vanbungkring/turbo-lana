@@ -68,7 +68,7 @@
                       	<?php foreach ($model->quoteBanners as $key => $quoteBanner): ?>
                       		<tr>
 	                          <td><a href="#"><?php echo $quoteBanner->banner->sku; ?></a></td>
-	                          <td><?php echo $quoteBanner->getTextStatus(); ?></td>
+	                          <td><?php echo $quoteBanner->getTextQuoteStatus(); ?></td>
                             <td><?php echo $quoteBanner->price; ?></td>
                             <?php if ($model->isStatusNotSet()): ?>
                               <td>
@@ -112,7 +112,7 @@
               <!-- end of maps -->
             </div>
             <!-- end row -->
-            <?php if ($model->isStatusNotSet()): ?>
+            <?php if ($model->isStatusNotSet() and $model->isAbleToApprove()): ?>
               <div class="row">
                 <div class="col-md-6 col-lg-4 col-centered">
                   <a href="<?php echo $this->createUrl('approve',array('id'=>$model->id)); ?>" class="btn btn-success btn-block">APPROVE QUOTES <i class="fa fa-arrow-circle-right"></i></a>
