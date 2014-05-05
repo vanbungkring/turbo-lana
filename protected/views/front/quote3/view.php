@@ -46,7 +46,6 @@
 
       <div class="alert alert-info">
         <h4><i class="fa fa-info-circle"></i> Perhatian</h4>
-        Pada myQuotes, Anda dapat memantau semua titik billboard yang ingin Anda REQUEST. Beberapa hal yang perlu diperhatikan adalah:
         <ul>
 
          <li> Kolom LIST INVENTORI berisikan titik billboard yang ingin Anda REQUEST dan perlu diketahui bahwa titik billboard yang berada dalam LIST INVENTORI statusnya dapat berubah sewaktu-waktu dan masih dapat dipesan oleh USER LAIN, selama belum ada finalisasi kontrak dan pembayaran.</li>
