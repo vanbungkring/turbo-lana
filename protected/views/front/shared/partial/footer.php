@@ -3,7 +3,7 @@
     <div class="col-md-5">
       <h3>Kiviads</h3>
       <p>
-        Hundreds of thousands of people come through ZURB University, where they get the training they need to be awesome Product Designers. ZURB's courses, workshops, library of reference materials, and design community get you the Product Design skills you need to design better products faster.
+       Saat ini beriklan di billboard dapat dengan cepat meningkatkan kesadaran masyarakan akan brand tersebut. Tidak hanya kesadaran, namun peningkatan angka penjualan pun dapat diraih oleh pemilik brand. Untuk itulah Kiviads ada! Sebuah marketplace dimana pengiklan dapat memilih secara langsung titik-titik papan reklame yang berada di lokasi strategis, serta melakukan kampanye iklan melalui sistem online secara cepat dan mudah.
       </p>
     </div>
     <div class="col-md-2">
