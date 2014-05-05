@@ -39,11 +39,26 @@
     <!-- end panel -->
   </div>
   <div class="col-md-6">
+
     <div class="well well-sm">
       <h4><i class="fa fa-info-circle"></i> Keterangan</h4>
       <p><?php echo CHtml::encode($model->catatan); ?></p>
     </div>
-  </div>
+    <div class="alert alert-info">
+      <h4><i class="fa fa-info-circle"></i> Perhatian</h4>
+      Pada myQuotes, Anda dapat memantau semua titik billboard yang ingin Anda REQUEST. Beberapa hal yang perlu diperhatikan adalah:
+      <ul>
+
+       <li> Kolom LIST INVENTORI berisikan titik billboard yang ingin Anda REQUEST dan perlu diketahui bahwa titik billboard yang berada dalam LIST INVENTORI statusnya dapat berubah sewaktu-waktu dan masih dapat dipesan oleh USER LAIN, selama belum ada finalisasi kontrak dan pembayaran.</li>
+     </br>
+     <li>Status BELUM TERIMA pada harga titik billboard mengindikasikan bahwa kami belum menjawab REQUEST dari Anda terhadap titik billboard tersebut.</li>
+   </br>
+   <li>Status WAITING LIST pada titik billboard di LIST INVENTORI mengindikasikan bahwa titik billboard tersebut telah di book oleh USER LAIN untuk tempo 7 hari. Apabila tidak terjadi transaksi, status akan kembali TERSEDIA.</li>
+ </br>
+ <li>Silahkan APPROVE REQUEST apabila Anda sudah yakin dengan semua titik yang ada pada LIST INVENTORI.</li>
+</ul>
+</div>
+</div>
 </div>
 <!-- end row -->
 <div class="row">
@@ -85,6 +100,9 @@
   <a href="<?php echo Yii::app()->createUrl('/search'); ?>" class="btn btn-success btn-outline btn-sm">Tambah Media</a>
   <a href="<?php echo Yii::app()->createUrl('/search'); ?>" class="btn btn-success btn-outline btn-sm">Update Quote</a>
 <?php endif ?>
+</br>
+</br>
+<div class="alert alert-danger">* Untuk sinkronisasi pada sistem kami, pastikan Anda SELALU KLIK tombol UPDATE baik setelah MENAMBAH atau MENGHAPUS titik billboard yang ada pada LIST INVENTORI *</div>
 </div>
 </div>
 </div>
@@ -128,45 +146,45 @@
         <h4 class="modal-title" id="myModalLabel">Modal title</h4>
       </div>
       <div class="modal-body">
-         <table class="table table-responsive table-striped table-bordered">
-          <thead>
-            <tr>
-              <td>Unit</td>
-              <td>Unit Status</td>
-              <td>Unit Price (IDR)</td>
-              <?php if ($model->isStatusNotSet()): ?>
-              <td>Tindakan</td>
-            <?php endif ?>
-          </tr>
-        </thead>
-        <tbody>
-         <?php $total = 0; foreach ($model->quoteBanners as $key => $quoteBanner): ?>
-         <tr>
-           <td><a href="#"><?php echo $quoteBanner->banner->sku; ?></a></td>
-           <td><?php echo $quoteBanner->getTextQuoteStatus(); ?></td>
-           <td><?php echo $quoteBanner->price; $total+=$quoteBanner->price; ?></td>
-           <?php if ($model->isStatusNotSet()): ?>
-           <td>
-            <!--                              <a href="#" class="btn btn-outline btn-info btn-xs">Tanya</a> -->
-            <a href="<?php echo $this->createUrl('hapusBanner',array('idBanner'=>$quoteBanner->banner->id,'idQuote'=>$model->id)); ?>" class="btn btn-outline btn-danger btn-xs">Hapus</a>
-          </td>
-        <?php endif ?>
+       <table class="table table-responsive table-striped table-bordered">
+        <thead>
+          <tr>
+            <td>Unit</td>
+            <td>Unit Status</td>
+            <td>Unit Price (IDR)</td>
+            <?php if ($model->isStatusNotSet()): ?>
+            <td>Tindakan</td>
+          <?php endif ?>
+        </tr>
+      </thead>
+      <tbody>
+       <?php $total = 0; foreach ($model->quoteBanners as $key => $quoteBanner): ?>
+       <tr>
+         <td><a href="#"><?php echo $quoteBanner->banner->sku; ?></a></td>
+         <td><?php echo $quoteBanner->getTextQuoteStatus(); ?></td>
+         <td><?php echo $quoteBanner->price; $total+=$quoteBanner->price; ?></td>
+         <?php if ($model->isStatusNotSet()): ?>
+         <td>
+          <!--                              <a href="#" class="btn btn-outline btn-info btn-xs">Tanya</a> -->
+          <a href="<?php echo $this->createUrl('hapusBanner',array('idBanner'=>$quoteBanner->banner->id,'idQuote'=>$model->id)); ?>" class="btn btn-outline btn-danger btn-xs">Hapus</a>
+        </td>
+      <?php endif ?>
 
-      </tr>
-      <tr>
-          <td colspan="3">Total</td>
-          <td><?php echo $total; ?></td>
-      </tr>
-    <?php endforeach ?>
-  </tbody>
+    </tr>
+    <tr>
+      <td colspan="3">Total</td>
+      <td><?php echo $total; ?></td>
+    </tr>
+  <?php endforeach ?>
+</tbody>
 </table>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <a href="<?php echo $this->createUrl('approve',array('id'=>$model->id)); ?>" type="button" class="btn btn-primary">Save changes</a>
-      </div>
-    </div>
-  </div>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+  <a href="<?php echo $this->createUrl('approve',array('id'=>$model->id)); ?>" type="button" class="btn btn-primary">Save changes</a>
+</div>
+</div>
+</div>
 </div>
 <script>
 
