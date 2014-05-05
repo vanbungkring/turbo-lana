@@ -14,6 +14,8 @@
  * @property string $catatan
  * @property string $description
  * @property string $time
+ * @property integer $status
+ * @property Quote3Banner[] $quoteBanners Description
  */
 class Quote3 extends CActiveRecord
 {
@@ -142,4 +144,23 @@ class Quote3 extends CActiveRecord
 		else
 			return true;
 	}
+    public function isAbleToApprove(){
+        foreach ($this->quoteBanners as $quoteBanner) {
+            if($quoteBanner->status != Quote3Banner::STATUS_AVALIABLE){
+                return false;
+            }
+            if ($quoteBanner->banner->status == Banner::STATUS_BOOKED) {
+                return false;
+            }
+        }
+        return true;
+    }
+    public function approveToCampaign(){
+        $this->status = self::STATUS_APPROVED;
+        foreach ($this->quoteBanners as $quoteBanner) {
+            $quoteBanner->banner->status = Banner::STATUS_BOOKED;
+            $quoteBanner->banner->save();
+        }
+        $this->save();
+    }
 }

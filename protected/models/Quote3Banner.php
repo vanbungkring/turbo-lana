@@ -7,6 +7,7 @@
  * @property integer $id
  * @property integer $idQuote
  * @property integer $idBanner
+ * @property Banner $banner Description
  */
 class Quote3Banner extends CActiveRecord
 {
@@ -97,13 +98,11 @@ class Quote3Banner extends CActiveRecord
 
 	const STATUS_AVALIABLE = 1;
 	const STATUS_REJECT = 2;
-	const STATUS_BOOKED = 3;
 
 	public static function getListTextStatus(){
 		return array(
 			self::STATUS_AVALIABLE=>'Available',
 			self::STATUS_REJECT=>'Reject',
-			self::STATUS_BOOKED=>'Booked',
 		);
 	}
 	public function getTextStatus(){
@@ -115,4 +114,11 @@ class Quote3Banner extends CActiveRecord
 			return 'Belum Diterima';
 		}
 	}
+    public function getTextQuoteStatus(){
+        $str = $this->getTextStatus();
+        if($this->banner->status == Banner::STATUS_BOOKED){
+            $str .= ' ( Booked ) ';
+        }
+        return $str;
+    }
 }
