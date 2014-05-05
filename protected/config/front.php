@@ -1,19 +1,29 @@
 <?php
 return CMap::mergeArray(
-    require(dirname(__FILE__).'/main.php'),
-    array(
+	require(dirname(__FILE__).'/main.php'),
+	array(
         // Put front-end settings there
         // (for example, url rules).
-        'components'=>array(
+		'components'=>array(
+			'user'=>array(
+                'class'=>'CWebUser',
+                'stateKeyPrefix'=>'front',
+            ),
 			'urlManager'=>array(
 				'urlFormat'=>'path',
 				'rules'=>array(
-					'search-result'=>'site/result',
+					'<view:(bandung|bekasi|bogor|jakarta|tangerang|about|advertiser|media-owner|denpasar|pembatalan)>' => 'site/page',
+					'dashboard'=>'user/Dashboard',
+					'register'=>'site/registrasi',
+					'search'=>'site/result',
+					'custom'=>'site/custom',
+					'login'=>'site/login',
+					'detail/<id:\w+>'=>'site/detail',
 					'<controller:\w+>/<id:\d+>'=>'<controller>/view',
 					'<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',
 					'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
+					),
 				),
 			),
-        ),
-    )
-);
+		)
+	);

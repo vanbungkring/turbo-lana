@@ -1,9 +1,13 @@
-index.php
+/index.php
+/backend.php
 protected/config/db.php
-index.php
+protected/yiic.php
 assets/*
+files/*
 !assets/.gitignore
 protected/runtime/*
+protected/yiic.php
 !protected/runtime/.gitignore
 protected/data/*.db
 themes/classic/views/
+.DS_Store

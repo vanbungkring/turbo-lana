@@ -1,0 +1,1 @@
+<img src="<?php echo $data->getImageUrl(); ?>" img-id="<?php echo $data->id; ?>" />
