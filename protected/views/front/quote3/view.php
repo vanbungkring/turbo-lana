@@ -82,8 +82,8 @@
   </tbody>
 </table>
 <?php if ($model->isStatusNotSet()): ?>
-  <a href="<?php echo Yii::app()->createUrl('/search'); ?>" class="btn btn-success btn-outline btn-sm">Tambah</a>
-  <a href="<?php echo Yii::app()->createUrl('/search'); ?>" class="btn btn-success btn-outline btn-sm">Kirim</a>
+  <a href="<?php echo Yii::app()->createUrl('/search'); ?>" class="btn btn-success btn-outline btn-sm">Tambah Media</a>
+  <a href="<?php echo Yii::app()->createUrl('/search'); ?>" class="btn btn-success btn-outline btn-sm">Update Quote</a>
 <?php endif ?>
 </div>
 </div>
