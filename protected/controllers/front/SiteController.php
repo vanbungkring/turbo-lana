@@ -118,7 +118,7 @@ class SiteController extends FrontEndController
         $lat_max = @$data->results[0]->geometry->bounds->northeast->lat;
         if($long_min > $long_max){
             $res = Yii::app()->db->createCommand("select banner.*,banner_image.id as `cover` from banner left join 
-            		banner_image on banner_image.idBanner = banner.id and status=1 
+            		banner_image on banner_image.idBanner = banner.id and banner_image.status=1 
             	 where 
                 `lat` >= :lat_min and `lat` <= :lat_max 
                 and
@@ -134,7 +134,7 @@ class SiteController extends FrontEndController
         }
         else{
             $res = Yii::app()->db->createCommand("select banner.*,banner_image.id as `cover` from banner left join 
-            		banner_image on banner_image.idBanner = banner.id and status=1 
+            		banner_image on banner_image.idBanner = banner.id and banner_image.status=1 
             	where
                 `lat` >= :lat_min and `lat` <= :lat_max 
                 and
@@ -394,7 +394,7 @@ class SiteController extends FrontEndController
         $lat_max = (double)@$_GET['bounds']['ta_b'];
         if($long_min > $long_max){
             $res = Yii::app()->db->createCommand("select banner.*,banner_image.id as `cover` from banner left join 
-            		banner_image on banner_image.idBanner = banner.id and status=1 
+            		banner_image on banner_image.idBanner = banner.id and banner_image.status=1 
             	 where 
                 `lat` >= :lat_min and `lat` <= :lat_max 
                 and
@@ -410,7 +410,7 @@ class SiteController extends FrontEndController
         }
         else{
             $res = Yii::app()->db->createCommand("select banner.*,banner_image.id as `cover` from banner left join 
-            		banner_image on banner_image.idBanner = banner.id and status=1 
+            		banner_image on banner_image.idBanner = banner.id and banner_image.status=1 
             	where
                 `lat` >= :lat_min and `lat` <= :lat_max 
                 and
