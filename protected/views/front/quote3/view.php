@@ -43,20 +43,21 @@
     <div class="well well-sm">
       <h4><i class="fa fa-info-circle"></i> Keterangan</h4>
       <p><?php echo CHtml::encode($model->catatan); ?></p>
-    </div>
-    <div class="alert alert-info">
-      <h4><i class="fa fa-info-circle"></i> Perhatian</h4>
-      Pada myQuotes, Anda dapat memantau semua titik billboard yang ingin Anda REQUEST. Beberapa hal yang perlu diperhatikan adalah:
-      <ul>
 
-       <li> Kolom LIST INVENTORI berisikan titik billboard yang ingin Anda REQUEST dan perlu diketahui bahwa titik billboard yang berada dalam LIST INVENTORI statusnya dapat berubah sewaktu-waktu dan masih dapat dipesan oleh USER LAIN, selama belum ada finalisasi kontrak dan pembayaran.</li>
+      <div class="alert alert-info">
+        <h4><i class="fa fa-info-circle"></i> Perhatian</h4>
+        Pada myQuotes, Anda dapat memantau semua titik billboard yang ingin Anda REQUEST. Beberapa hal yang perlu diperhatikan adalah:
+        <ul>
+
+         <li> Kolom LIST INVENTORI berisikan titik billboard yang ingin Anda REQUEST dan perlu diketahui bahwa titik billboard yang berada dalam LIST INVENTORI statusnya dapat berubah sewaktu-waktu dan masih dapat dipesan oleh USER LAIN, selama belum ada finalisasi kontrak dan pembayaran.</li>
+       </br>
+       <li>Status BELUM TERIMA pada harga titik billboard mengindikasikan bahwa kami belum menjawab REQUEST dari Anda terhadap titik billboard tersebut.</li>
      </br>
-     <li>Status BELUM TERIMA pada harga titik billboard mengindikasikan bahwa kami belum menjawab REQUEST dari Anda terhadap titik billboard tersebut.</li>
+     <li>Status WAITING LIST pada titik billboard di LIST INVENTORI mengindikasikan bahwa titik billboard tersebut telah di book oleh USER LAIN untuk tempo 7 hari. Apabila tidak terjadi transaksi, status akan kembali TERSEDIA.</li>
    </br>
-   <li>Status WAITING LIST pada titik billboard di LIST INVENTORI mengindikasikan bahwa titik billboard tersebut telah di book oleh USER LAIN untuk tempo 7 hari. Apabila tidak terjadi transaksi, status akan kembali TERSEDIA.</li>
- </br>
- <li>Silahkan APPROVE REQUEST apabila Anda sudah yakin dengan semua titik yang ada pada LIST INVENTORI.</li>
-</ul>
+   <li>Silahkan APPROVE REQUEST apabila Anda sudah yakin dengan semua titik yang ada pada LIST INVENTORI.</li>
+ </ul>
+</div>
 </div>
 </div>
 </div>
