@@ -188,4 +188,8 @@ class Member extends CActiveRecord
 		$log->data = $data;
 		$log->save();
 	}
+    
+    public function getOpenQuote(){
+        return Quote3::model()->findAll('idMember = :p1 and (status is null or status = 0)',array(':p1'=>$this->id));
+    }
 }

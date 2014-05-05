@@ -153,7 +153,7 @@
           </div>
           <div class="modal-body">
             <?php echo CHtml::dropDownList('quote_list', 'M', 
-            CHtml::listData($member->quotes3,'id','name'),array('class'=>'form-control')); ?>
+            CHtml::listData($member->getOpenQuote(),'id','name'),array('class'=>'form-control')); ?>
             <p><a href="<?php echo $this->createUrl('quote3/create')?>">Create new quote now</a></p>
           </div>
           <div class="modal-footer">
