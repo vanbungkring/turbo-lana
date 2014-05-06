@@ -16,7 +16,7 @@ $this->breadcrumbs=array(
 				<div class="panel-heading">
 					Banner Quotation
 						<div class="floating-bar">
-					 <a class="btn btn-primary" href="<?php echo Yii::app()->controller->createUrl('create'); ?>">Tambah</a> 
+				<!--	 <a class="btn btn-primary" href="<?php echo Yii::app()->controller->createUrl('create'); ?>">Tambah</a> -->
 				</div>
 				</div>
 				<!-- /.panel-heading -->
@@ -28,37 +28,39 @@ $this->breadcrumbs=array(
 <span class="label label-danger">Danger</span> -->
 				<div class="panel-body">
 					<div class="table-responsive">
-						<?php $this->widget('zii.widgets.grid.CGridView', array(
-							'id'=>'quote-grid',
-							'cssFile'=>false,
-							'dataProvider'=>$model->searchQuote3(),
-							//'filter'=>$model,
-							'itemsCssClass' => 'table table-striped table-bordered table-hover',
-							'summaryText'=>false,
-							'columns'=>array(
-								'id',
-								array(
-									'name'=>'Status',
-									'value'=>'\'<span class="label label-danger">Has not responded</span>\'',
-									'type'=>'raw',
-								),
-								'name',
-								'initialDate',
-								'replyUntil',
-								'duration',
-								/*
-								'budget',
-								'description',
-								'otherObservations',
-								'idMember',
-								*/
-								array(
-									'class'=>'CButtonColumn',
-									'template'=>'{view}{update}'
+
+					<?php $this->widget('zii.widgets.grid.CGridView', array(
+						'id'=>'quote3-grid',
+						'cssFile'=>false,
+						'dataProvider'=>$model->searchQuote3(),
+						'itemsCssClass' => 'table table-striped table-bordered table-hover',
+						'summaryText'=>false,
+						
+						'columns'=>array(
+							'id',
+							'member.namaDepan',
+							'name',
+							'tanggalMulai',
+							'tanggalBerakhir',
+							'budget',
+							/*
+							'deskripsi',
+							'catatan',
+							'time',
+							*/
+							array(
+								'class'=>'CButtonColumn',
+								'template'=>'{view}',
+								'buttons'=>array(
+									'view'=>array(
+										'url'=>'Yii::app()->createUrl("/quote3/viewCampaign", array("id"=>$data->id))',
+									),
 								),
 							),
-						)); ?>
-					</div>
+						),
+					)); ?>
+
+</div>
 					<!-- /.table-responsive -->
 				</div>
 				<!-- /.panel-body -->

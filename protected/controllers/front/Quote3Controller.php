@@ -56,6 +56,32 @@ class Quote3Controller extends Controller
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 
+		if(isset($_POST)){
+			$file2=CUploadedFile::getInstanceByName('file2');
+			if($file2){
+				$model->uploadFilePendukung('file2',$file2);
+                $this->redirect(array('viewCampaign','id'=>$id));
+			}
+
+			$file4=CUploadedFile::getInstanceByName('file4');
+			if($file4){
+				$model->uploadFilePendukung('file4',$file4);
+                $this->redirect(array('viewCampaign','id'=>$id));
+			}
+
+			$file6=CUploadedFile::getInstanceByName('file6');
+			if($file6){
+				$model->uploadFilePendukung('file6',$file6);
+                $this->redirect(array('viewCampaign','id'=>$id));
+			}
+
+			$file8=CUploadedFile::getInstanceByName('file8');
+			if($file8){
+				$model->uploadFilePendukung('file8',$file8);
+                $this->redirect(array('viewCampaign','id'=>$id));
+			}
+		}
+
 		$this->render('view_campaign',array(
 			'model'=>$model,
 		));
@@ -143,7 +169,7 @@ class Quote3Controller extends Controller
 	 */
 	public function actionIndex()
 	{
-		$quotes = Quote3::model()->findAll('idMember = :p1 and (status is null or status = 0)',array(':p1'=>Yii::app()->user->id));
+		$quotes = Quote3::model()->findAll('idMember = :p1 and status = 0',array(':p1'=>Yii::app()->user->id));
 		$this->render('index',array(
 		//	'dataProvider'=>$dataProvider,
 			'quotes'=>$quotes,

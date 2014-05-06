@@ -119,6 +119,52 @@ class Quote3 extends CActiveRecord
 		));
 	}
 
+	public function searchQuote3()
+	{
+		// @todo Please modify the following code to remove attributes that should not be searched.
+
+		$criteria=new CDbCriteria;
+
+		$criteria->compare('id',$this->id);
+		$criteria->compare('idMember',$this->idMember);
+		$criteria->compare('name',$this->name,true);
+		$criteria->compare('tanggalMulai',$this->tanggalMulai,true);
+		$criteria->compare('tanggalBerakhir',$this->tanggalBerakhir,true);
+		$criteria->compare('budget',$this->budget,true);
+		$criteria->compare('deskripsi',$this->deskripsi);
+		$criteria->compare('catatan',$this->catatan,true);
+		$criteria->compare('time',$this->time,true);
+
+		$criteria->addCondition('status = 0');
+        
+		return new CActiveDataProvider($this, array(
+			'criteria'=>$criteria,
+		));
+	}
+    
+    public function searchCampaign()
+	{
+		// @todo Please modify the following code to remove attributes that should not be searched.
+
+		$criteria=new CDbCriteria;
+
+		$criteria->compare('id',$this->id);
+		$criteria->compare('idMember',$this->idMember);
+		$criteria->compare('name',$this->name,true);
+		$criteria->compare('tanggalMulai',$this->tanggalMulai,true);
+		$criteria->compare('tanggalBerakhir',$this->tanggalBerakhir,true);
+		$criteria->compare('budget',$this->budget,true);
+		$criteria->compare('deskripsi',$this->deskripsi);
+		$criteria->compare('catatan',$this->catatan,true);
+		$criteria->compare('time',$this->time,true);
+
+		$criteria->addCondition('status <> 0');
+        
+		return new CActiveDataProvider($this, array(
+			'criteria'=>$criteria,
+		));
+	}
+
 	/**
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
@@ -163,4 +209,31 @@ class Quote3 extends CActiveRecord
         }
         $this->save();
     }
+    
+    /**
+     * 
+     * @param string $field
+     * @param CUploadedFile $file
+     */
+    public function uploadFilePendukung($field,$file){
+        $path = $this->getFilePath($field);
+        if(file_exists($path)){
+            unlink($path);
+        }
+        $this->$field = $file->getName();
+        $npath = $this->getFilePath($field);
+        if($file->saveAs($npath)){
+            $this->save();
+        }
+        
+    }
+
+    public function getFilePath($field){
+		$path = Yii::app()->params['uploadPath'];
+		return $path.'/quote3/'.$this->id.'-'.$field.'-'.$this->$field;
+	}
+
+	public function getUrlImage($field){
+		return Yii::app()->request->baseUrl.'/files/quote3/'.$this->id.'-'.$field.'-'.$this->$field;
+	}
 }

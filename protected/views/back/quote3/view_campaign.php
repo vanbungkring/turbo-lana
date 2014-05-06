@@ -133,100 +133,100 @@
                         <tr>
                           <td>1</td>
                           <td>Detail Campaign</td>
-                          <td><?php echo $model->file1 ? $model->file1 : 'Belum tersedia' ?></td>
+                          <td><?php echo $model->file1 ? $model->file1 : 'Tidak ada file' ?></td>
                           <td>
                             <?php if ($model->file1): ?>
                               <a href="<?php echo $model->getUrlImage('file1') ?>" class="btn btn-outline btn-info btn-xs">Download</a>
+                              <span class="btn btn-outline btn-warning btn-file btn-xs">Re-upload<input class="auto-submit" type="file" name="file1"></span>
                             <?php else: ?>
-                              <a href="#" class="btn btn-default btn-xs disabled">Download</a>
+                              <span class="btn btn-outline btn-success btn-file btn-xs">Upload<input class="auto-submit"  type="file"  name="file1"></span>
                             <?php endif ?>
                           </td>
                         </tr>
                         <tr>
                           <td>2</td>
                           <td>Purchasing Order</td>
-                          <td><?php echo $model->file2 ? $model->file2 : 'Tidak ada file'  ?></td>
+                          <td><?php echo $model->file2 ? $model->file2 : 'Belum tersedia'; ?></td>
                           <td>
                             <?php if ($model->file2): ?>
                               <a href="<?php echo $model->getUrlImage('file2') ?>" class="btn btn-outline btn-info btn-xs">Download</a>
-                              <span class="btn btn-outline btn-warning btn-file btn-xs">Re-upload<input class="auto-submit" type="file" name="file2"></span>
                             <?php else: ?>
-                              <span class="btn btn-outline btn-success btn-file btn-xs">Upload<input class="auto-submit"  type="file"  name="file2"></span>
+                              <a href="#" class="btn btn-default btn-xs disabled">Download</a>
                             <?php endif ?>
                           </td>
                         </tr>
                         <tr>
                           <td>3</td>
                           <td>Kontrak</td>
-                          <td><?php echo $model->file3 ? $model->file3 : 'Belum tersedia' ?></td>
+                          <td><?php echo $model->file3 ? $model->file3 : 'Tidak ada file' ?></td>
                           <td>
                             <?php if ($model->file3): ?>
                               <a href="<?php echo $model->getUrlImage('file3') ?>" class="btn btn-outline btn-info btn-xs">Download</a>
+                              <span class="btn btn-outline btn-warning btn-file btn-xs">Re-upload<input class="auto-submit" type="file" name="file3"></span>
                             <?php else: ?>
-                              <a href="#" class="btn btn-default btn-xs disabled">Download</a>
+                              <span class="btn btn-outline btn-success btn-file btn-xs">Upload<input class="auto-submit"  type="file"  name="file3"></span>
                             <?php endif ?>
                           </td>
                         </tr>
                         <tr>
                           <td>4</td>
                           <td>Creative Image</td>
-                          <td><?php echo $model->file4 ? $model->file4 : 'Tidak ada file' ?></td>
+                          <td><?php echo $model->file4 ? $model->file4 : 'Belum tersedia' ?></td>
                           <td>
                             <?php if ($model->file4): ?>
                               <a href="<?php echo $model->getUrlImage('file4') ?>" class="btn btn-outline btn-info btn-xs">Download</a>
-                              <span class="btn btn-outline btn-warning btn-file btn-xs">Re-upload<input class="auto-submit" type="file" name="file4"></span>
                             <?php else: ?>
-                              <span class="btn btn-outline btn-success btn-file btn-xs">Upload<input class="auto-submit"  type="file"  name="file4"></span>
+                              <a href="#" class="btn btn-default btn-xs disabled">Download</a>
                             <?php endif ?>
                           </td>
                         </tr>
                         <tr>
                           <td>5</td>
                           <td>Invoice 1</td>
-                           <td><?php echo $model->file5 ? $model->file5 : 'Belum tersedia' ?></td>
+                          <td><?php echo $model->file5 ? $model->file5 : 'Tidak ada file' ?></td>
                           <td>
                             <?php if ($model->file5): ?>
                               <a href="<?php echo $model->getUrlImage('file5') ?>" class="btn btn-outline btn-info btn-xs">Download</a>
+                              <span class="btn btn-outline btn-warning btn-file btn-xs">Re-upload<input class="auto-submit" type="file" name="file5"></span>
                             <?php else: ?>
-                              <a href="#" class="btn btn-default btn-xs disabled">Download</a>
+                              <span class="btn btn-outline btn-success btn-file btn-xs">Upload<input class="auto-submit"  type="file"  name="file5"></span>
                             <?php endif ?>
                           </td>
                         </tr>
                         <tr>
                           <td>6</td>
                           <td>Bukti Bayar 1</td>
-                          <td><?php echo $model->file6 ? $model->file6 : 'Tidak ada file' ?></td>
+                          <td><?php echo $model->file6 ? $model->file6 : 'Belum tersedia' ?></td>
                           <td>
                             <?php if ($model->file6): ?>
                               <a href="<?php echo $model->getUrlImage('file6') ?>" class="btn btn-outline btn-info btn-xs">Download</a>
-                              <span class="btn btn-outline btn-warning btn-file btn-xs">Re-upload<input class="auto-submit" type="file" name="file6"></span>
-                            <?php else: ?>
-                              <span class="btn btn-outline btn-success btn-file btn-xs">Upload<input class="auto-submit"  type="file"  name="file6"></span>
-                            <?php endif ?>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>7</td>
-                          <td>Invoice 2</td>
-                           <td><?php echo $model->file7 ? $model->file7 : 'Belum tersedia' ?></td>
-                          <td>
-                            <?php if ($model->file7): ?>
-                              <a href="<?php echo $model->getUrlImage('file7') ?>" class="btn btn-outline btn-info btn-xs">Download</a>
                             <?php else: ?>
                               <a href="#" class="btn btn-default btn-xs disabled">Download</a>
                             <?php endif ?>
                           </td>
                         </tr>
                         <tr>
+                          <td>7</td>
+                          <td>Invoice 2</td>
+                          <td><?php echo $model->file7 ? $model->file7 : 'Tidak ada file' ?></td>
+                          <td>
+                            <?php if ($model->file7): ?>
+                              <a href="<?php echo $model->getUrlImage('file7') ?>" class="btn btn-outline btn-info btn-xs">Download</a>
+                              <span class="btn btn-outline btn-warning btn-file btn-xs">Re-upload<input class="auto-submit" type="file" name="file7"></span>
+                            <?php else: ?>
+                              <span class="btn btn-outline btn-success btn-file btn-xs">Upload<input class="auto-submit"  type="file"  name="file7"></span>
+                            <?php endif ?>
+                          </td>
+                        </tr>
+                        <tr>
                           <td>8</td>
                           <td>Bukti Bayar 2</td>
-                           <td><?php echo $model->file8 ? $model->file8 : 'Tidak ada file' ?></td>
+                          <td><?php echo $model->file8 ? $model->file8 : 'Belum tersedia' ?></td>
                           <td>
                             <?php if ($model->file8): ?>
                               <a href="<?php echo $model->getUrlImage('file8') ?>" class="btn btn-outline btn-info btn-xs">Download</a>
-                              <span class="btn btn-outline btn-warning btn-file btn-xs">Re-upload<input class="auto-submit" type="file" name="file8"></span>
                             <?php else: ?>
-                              <span class="btn btn-outline btn-success btn-file btn-xs">Upload<input class="auto-submit"  type="file"  name="file8"></span>
+                              <a href="#" class="btn btn-default btn-xs disabled">Download</a>
                             <?php endif ?>
                           </td>
                         </tr>
@@ -261,6 +261,7 @@
             </div>
 
         <!-- /#page-wrapper -->
+
 <?php
 //google maps render
 $js =    '
