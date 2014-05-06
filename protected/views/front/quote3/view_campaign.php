@@ -205,7 +205,7 @@
                             <?php endif ?>
                           </td>
                         </tr>
-                        <tr>
+   <!--                      <tr>
                           <td>7</td>
                           <td>Invoice 2</td>
                            <td><?php echo $model->file7 ? $model->file7 : 'Belum tersedia' ?></td>
@@ -216,7 +216,7 @@
                               <a href="#" class="btn btn-default btn-xs disabled">Download</a>
                             <?php endif ?>
                           </td>
-                        </tr>
+                        </tr> -->
                         <tr>
                           <td>8</td>
                           <td>Bukti Bayar 2</td>

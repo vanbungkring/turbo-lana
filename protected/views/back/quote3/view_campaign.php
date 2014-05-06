@@ -205,7 +205,7 @@
                             <?php endif ?>
                           </td>
                         </tr>
-                        <tr>
+                        <!-- <tr>
                           <td>7</td>
                           <td>Invoice 2</td>
                           <td><?php echo $model->file7 ? $model->file7 : 'Tidak ada file' ?></td>
@@ -217,7 +217,7 @@
                               <span class="btn btn-outline btn-success btn-file btn-xs">Upload<input class="auto-submit"  type="file"  name="file7"></span>
                             <?php endif ?>
                           </td>
-                        </tr>
+                        </tr> -->
                         <tr>
                           <td>8</td>
                           <td>Bukti Bayar 2</td>
