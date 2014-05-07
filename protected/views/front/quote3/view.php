@@ -31,13 +31,14 @@
               <td>Deskripsi</td>
               <td><?php echo CHtml::encode($model->deskripsi); ?></td>
             </tr>
+            <tr>
+              <td colspan=4>
+                <h4><i class="fa fa-info-circle"></i> Keterangan</h4>
+                <p><?php echo CHtml::encode($model->catatan); ?></p>
+              </div>
+            </tr>
           </tbody>
         </table>
-
-        <div class="well well-sm">
-          <h4><i class="fa fa-info-circle"></i> Keterangan</h4>
-          <p><?php echo CHtml::encode($model->catatan); ?></p>
-        </div>
         <!-- end table -->
       </div>
     </div>
