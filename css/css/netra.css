@@ -839,7 +839,7 @@ hr {
   position: fixed;
   z-index: 100;
   overflow-y: scroll;
-  width: 48%;
+  width: 38%;
   float: left;
   right: 0px;
   height: 100%;
@@ -854,7 +854,7 @@ hr {
   background: #fff;
   border-bottom: 1px solid #ccc;
   z-index: 100;
-  width: 48%;
+  width: 38%;
   right: 0px;
   padding: 10px;
 }
@@ -863,7 +863,7 @@ hr {
   margin-right: 10px;
 }
 .container-full .list .searchbar input[type="text"] {
-  width: 80.33333333333333%;
+  width: 79.33333333333333%;
   float: left;
   margin-right: 10px;
 }

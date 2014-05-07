@@ -1,7 +1,7 @@
 <?php $this->renderPartial('/shared/partial/navbar'); ?>
 <div class="container kivi city">
   <div class="row">
-    <img src="<?= Yii::app()->getBaseUrl(true) ?>/images/jakarta_big.jpg" alt="Tangerang" class="img-responsive">
+    <img src="<?= Yii::app()->getBaseUrl(true) ?>/images/tangerang_big.jpg" alt="Tangerang" class="img-responsive lazy">
     <h1>Tangerang, Indonesia</h1>
     <div class="city-information">
       <strong>Luas Wilayah: 164,54 km<sup>2</sup> | Jumlah Penduduk: 2.001.925 jiwa</strong>

@@ -1,6 +1,10 @@
 $("div.lazy").lazyload({
   effect: "fadeIn"
 });
+$("img.lazy").lazyload({
+  effect: "fadeIn"
+});
+
 var date = new Date();
 var d = date.getDate();
 var m = date.getMonth();
