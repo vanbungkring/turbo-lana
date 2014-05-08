@@ -3,8 +3,8 @@
 			<div class="row">
 
 				<div class="col-sm-12">
-					<h3>Featured Cities</h3>
-					<p>Not sure where to stay? We've created neighborhood guides for cities all around the world.</p>
+					<h3>Lokasi Papan Reklame</h3>
+					<p>tik papan reklame yang terdaftar pada Kiviads tersebar di kota-kota besar dibawah ini.</p>
 					<div class="col-sm-4">
 						<div class="panel panel-default overlayed">
 							<h2>Jakarta</h2>
