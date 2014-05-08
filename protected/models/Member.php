@@ -17,6 +17,10 @@ class Member extends CActiveRecord
 	public $passwordRegister1;
 	public $passwordRegister2;
 	public $newPassword;
+
+	public $updateOldPassword;
+	public $updateNewPassword1;
+	public $updateNewPassword2;
 	/**
 	 * @return string the associated database table name
 	 */
@@ -38,17 +42,27 @@ class Member extends CActiveRecord
 			array('email','unique'),
 			array('nomerTelpon', 'length', 'max'=>40),
 			array('password', 'length', 'max'=>32),
-			array('newPassword','safe'),
+			array('newPassword,negara,kota,kodePos,tanggalLahir','safe'),
 
 			array('namaDepan, namaBelakang, email','required'),
 			array('passwordRegister1, passwordRegister2','required','on'=>'register'),
 			array('passwordRegister2', 'compare', 'compareAttribute'=>'passwordRegister1','on'=>'register'),
+
+			array('updateNewPassword2', 'compare', 'compareAttribute'=>'updateNewPassword1','on'=>'profile'),
+			array('updateOldPassword','chekUpdatePassword','on'=>'profile'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, namaDepan, namaBelakang, email, nomerTelpon, namaPerusahaan', 'safe', 'on'=>'search'),
 		);
 	}
 
+	public function chekUpdatePassword($attribute,$params){
+		if($this->updateOldPassword){
+			if(md5($this->updateOldPassword) != $this->password){
+				$this->addError($attribute, 'Password lama tidak cocok!');
+			}
+		}
+	}
 	/**
 	 * @return array relational rules.
 	 */
@@ -126,6 +140,12 @@ class Member extends CActiveRecord
 	public function beforeSave(){
 	   if($this->passwordRegister1 and $this->passwordRegister2 and $this->passwordRegister1==$this->passwordRegister2){
 	   		$this->password = md5($this->passwordRegister1);
+	   }
+
+	   if($this->updateOldPassword){
+	   		if($this->updateNewPassword1 and $this->updateNewPassword2 and $this->updateNewPassword1==$this->updateNewPassword2){
+		   		$this->password = md5($this->updateNewPassword1);
+		   }
 	   }
 	   if(!empty($this->newPassword)){
 	   		$this->password = md5($this->newPassword);
