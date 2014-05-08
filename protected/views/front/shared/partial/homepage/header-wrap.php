@@ -8,7 +8,7 @@
 	</div>
 </div>
  -->
-<div class="container-fluid top-section">
+<div class="container-fluid top-section lazy">
 	<div class="container">
 		<?php $this->renderPartial('/shared/partial/homepage/searchbar'); ?>
 	</div>

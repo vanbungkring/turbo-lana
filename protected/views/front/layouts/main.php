@@ -42,6 +42,7 @@
     <script src="//cdn.jsdelivr.net/fullcalendar/1.6.4/fullcalendar.js"></script>
     <script src="//cdn.jsdelivr.net/fullcalendar/1.6.4/fullcalendar.min.js"></script>
     <script src="//cdn.jsdelivr.net/fullcalendar/1.6.4/gcal.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
     <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/bxslider.js"></script>
     <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/sscroll.js"></script>
     <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/js.free.transform.js"></script>

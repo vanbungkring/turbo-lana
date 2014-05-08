@@ -839,7 +839,7 @@ hr {
   position: fixed;
   z-index: 100;
   overflow-y: scroll;
-  width: 48%;
+  width: 38%;
   float: left;
   right: 0px;
   height: 100%;
@@ -854,7 +854,7 @@ hr {
   background: #fff;
   border-bottom: 1px solid #ccc;
   z-index: 100;
-  width: 48%;
+  width: 38%;
   right: 0px;
   padding: 10px;
 }
@@ -863,36 +863,39 @@ hr {
   margin-right: 10px;
 }
 .container-full .list .searchbar input[type="text"] {
-  width: 40%;
+  width: 79.33333333333333%;
   float: left;
+  margin-right: 10px;
 }
 .container-full .list ul.assets-card-holder {
   margin-top: 60px;
   width: 100%;
   float: left;
+  margin-left: -15px;
   padding: 0px;
 }
 .container-full .list ul.assets-card-holder li.card:hover {
-  border: 1px solid #ccc;
   cursor: pointer;
 }
 .container-full .list ul.assets-card-holder li.card {
-  max-height: 350px;
   padding: 5px;
+  width: 102.33333%;
   list-style: none;
   float: left;
   margin: 5px;
-  border: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
   border-radius: 0;
 }
 .container-full .list ul.assets-card-holder li.card .card-body {
+  width: 100%;
   padding: 0.4em 0 0.4em 0.4em;
   float: left;
   display: inline-block;
 }
 .container-full .list ul.assets-card-holder li.card .card-body .card-image {
   float: left;
-  width: 100%;
+  width: 100px;
+  margin-right: 10px;
 }
 .container-full .list ul.assets-card-holder li.card .card-body .card-image img {
   width: 97%;
@@ -912,12 +915,12 @@ hr {
   color: #fff;
 }
 .container-full .list ul.assets-card-holder li.card .card-body .card-meta {
-  float: right;
-  width: 100%;
+  float: left;
 }
 .container-full .list ul.assets-card-holder li.card .card-body .card-meta .card-rate {
-  float: right;
-  width: 50%;
+  float: left;
+  width: 100%;
+  margin-top: 10px;
 }
 .container-full .list ul.assets-card-holder li.card .card-body .card-meta .card-rate .currency {
   font-size: 15px;

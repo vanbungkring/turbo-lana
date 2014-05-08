@@ -4,8 +4,8 @@
         <div class="container-fluid">
           <div class="searchbar">
             <form class="form-horizontal" role="form">
-             <button type="button" class="btn btn-default" id="btnSearch">Filter</button>
              <input name="lokasi" type="text" class="form-control"  placeholder="Refine Search" id="boxcari">
+             <button type="button" class="btn btn-default" id="btnSearch">Search</button>
              <input type="hidden" id="lat" value="-6.17511" />
              <input type="hidden" id="long" value="106.86503949999997" />
            </form>
@@ -18,7 +18,7 @@
 
    </div> 
    <template id="template-card">
-    <li class="card col-md-3">
+    <li class="card">
       <input type="hidden" value="{lat}" class="clat"/>
       <input type="hidden" value="{long}" class="clong"/>
       <input type="hidden" value="{id}" class="cid"/>
