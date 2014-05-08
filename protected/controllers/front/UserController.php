@@ -57,14 +57,12 @@ class UserController extends FrontEndController
 	}
 
 	public function actionProfile(){
-        print_r($_POST);exit;
-         
         $member = Member::model()->findByPk(Yii::app()->user->id);
         $member->scenario = 'profile';
        
-        if(isset($_POST['Member'])){    
-            $member->attributes = $_POST['Member'];exit;
-            if($this->save()){
+        if(isset($_GET['Member'])){    
+            $member->attributes = $_GET['Member'];
+            if($member->save()){
                 $this->redirect(array('/user/profile'));
             }
         }

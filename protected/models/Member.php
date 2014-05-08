@@ -42,7 +42,7 @@ class Member extends CActiveRecord
 			array('email','unique'),
 			array('nomerTelpon', 'length', 'max'=>40),
 			array('password', 'length', 'max'=>32),
-			array('newPassword,negara,kota,kodePos,tanggalLahir','safe'),
+			array('newPassword,negara,kota,kodePos,tanggalLahir,updateNewPassword2,updateNewPassword1','safe'),
 
 			array('namaDepan, namaBelakang, email','required'),
 			array('passwordRegister1, passwordRegister2','required','on'=>'register'),
@@ -143,6 +143,7 @@ class Member extends CActiveRecord
 	   }
 
 	   if($this->updateOldPassword){
+
 	   		if($this->updateNewPassword1 and $this->updateNewPassword2 and $this->updateNewPassword1==$this->updateNewPassword2){
 		   		$this->password = md5($this->updateNewPassword1);
 		   }
