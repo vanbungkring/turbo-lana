@@ -4,7 +4,7 @@
 
 				<div class="col-sm-12">
 					<h3>Lokasi Papan Reklame</h3>
-					<p>tik papan reklame yang terdaftar pada Kiviads tersebar di kota-kota besar dibawah ini.</p>
+					<p>Cari papan reklame yang Anda inginkan di lokasi pada kota-kota besar dibawah ini.</p>
 					<div class="col-sm-4">
 						<div class="panel panel-default overlayed">
 							<h2>Jakarta</h2>
