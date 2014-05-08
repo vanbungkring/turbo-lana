@@ -74,6 +74,7 @@ class Member extends CActiveRecord
 			'bookmarks'=>array(self::HAS_MANY,'MemberBookmark','idMember'),
 			'bannerBookmarks'=>array(self::MANY_MANY,'Banner','member_bookmark(idMember,idBanner)'),
 			'quotes3'=>array(self::HAS_MANY,'Quote3','idMember'),
+			'profilePerusahaan'=>array(self::HAS_ONE,'MemberProfilePerusahaan','idMember'),
 		);
 	}
 
@@ -212,5 +213,16 @@ class Member extends CActiveRecord
     
     public function getOpenQuote(){
         return Quote3::model()->findAll('idMember = :p1 and (status is null or status = 0)',array(':p1'=>$this->id));
+    }
+
+    public function afterFind(){
+    	if(!$this->profilePerusahaan){
+    		$newProfie = new MemberProfilePerusahaan();
+    		$newProfie->attributes = array(
+    			'idMember'=>$this->id,
+    		);
+    		$newProfie->save(false);
+    		$this->profilePerusahaan = $newProfie;
+    	}
     }
 }
