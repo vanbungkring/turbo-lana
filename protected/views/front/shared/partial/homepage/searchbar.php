@@ -1,5 +1,5 @@
 <div class="search-box">
-<h1>The easiest way to buy, sell and manage Outdoor Advertising!</h1>
+<h1>Cara termudah dalam membeli, menjual dan mengatur iklan Anda!</h1>
 
 <form action="<?php echo Yii::app()->createUrl('site/result'); ?>" method="GET">
 	<div class="row row-search">
@@ -19,5 +19,5 @@
 		<div class="check"></div>
 	</div>
 </form>
-<p>Search 12808 Media Spaces in 352 locations.</p>
+<p>Temukan lebih dari 100 titik papan reklame yang terletak pada kota-kota besar di Indonesia</p>
 </div>
