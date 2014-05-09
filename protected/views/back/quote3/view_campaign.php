@@ -1,4 +1,7 @@
-
+<?php
+/* @var $this Quote3Controller */
+/* @var $model Quote3 */
+?>
 
             <div class="row">
               <ul class="pager">
@@ -261,7 +264,13 @@
             </div>
 
         <!-- /#page-wrapper -->
-
+        <?php if ($model->status == Quote3::STATUS_APPROVED): ?>
+        <div class="row">
+            <div class="col-md-6 col-lg-4 col-centered">
+              <a href="<?php echo $this->createUrl('setStart',array('id'=>$model->id)); ?>" id="open-modal-dialog" class="btn btn-success btn-block">Start Campaign <i class="fa fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
+       <?php endif ?>
 <?php
 //google maps render
 $js =    '

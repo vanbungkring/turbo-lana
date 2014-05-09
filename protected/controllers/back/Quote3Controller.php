@@ -236,4 +236,10 @@ class Quote3Controller extends Controller
 			Yii::app()->end();
 		}
 	}
+    
+     public function actionSetStart($id){
+		$model = $this->loadModel($id);
+		$model->setStart();
+		$this->redirect(array('viewCampaign','id'=>$id));
+	}
 }

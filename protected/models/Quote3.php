@@ -19,6 +19,10 @@
  */
 class Quote3 extends CActiveRecord
 {
+    const STATUS_QUOTE = 0;
+    const STATUS_APPROVED = 1; // atau campaign pending
+    const STATUS_START = 2;
+    const STATUS_STOP = 3;
 	/**
 	 * @return string the associated database table name
 	 */
@@ -176,15 +180,17 @@ class Quote3 extends CActiveRecord
 		return parent::model($className);
 	}
 
-	const STATUS_APPROVED = 1; // atau campaign pending
+	
 
 	public static function getListTextStatus(){
 		return array(
 			self::STATUS_APPROVED=>'Pending',
+            self::STATUS_START=>'Start',
+            self::STATUS_STOP=>'Stop',
 		);
 	}
 	public function isStatusNotSet(){
-		if($this->status == 1 or $this->status ==2){
+		if($this->status != self::STATUS_QUOTE){
 			return false;
 		}
 		else
@@ -206,6 +212,19 @@ class Quote3 extends CActiveRecord
         foreach ($this->quoteBanners as $quoteBanner) {
             $quoteBanner->banner->status = Banner::STATUS_BOOKED;
             $quoteBanner->banner->save();
+        }
+        $this->save();
+    }
+    public function setStart(){
+        $this->status = self::STATUS_START;
+        if($this->tanggalMulai and $this->tanggalBerakhir){
+            foreach($this->quoteBanners as $quoteBanner){
+                $newJadwal = new BannerJadwal();
+                $newJadwal->idBanner = $quoteBanner->idBanner;
+                $newJadwal->start = $this->tanggalMulai;
+                $newJadwal->end = $this->tanggalBerakhir;
+                $newJadwal->save();
+            }
         }
         $this->save();
     }
