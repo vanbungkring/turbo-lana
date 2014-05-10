@@ -40,7 +40,7 @@
                           </div>
                           <div class="col-md-4 col-lg-4">
                             <label for="tanggallahir">Tanggal Lahir</label>
-                            <?php echo $form->textField($model,'tanggalLahir',array('class'=>'form-control')); ?>
+                            <?php echo $form->textField($model,'tanggalLahir',array('class'=>'form-control hasDatepicker_start')); ?>
                           </div>
                           <div class="col-md-4 col-lg-4">
                             <label for="negara">Negara</label>
