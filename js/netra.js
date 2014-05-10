@@ -10,21 +10,21 @@ var d = date.getDate();
 var m = date.getMonth();
 var y = date.getFullYear();
 
-$('.availibility-calendar').fullCalendar({
-  header: {
-    left: 'prev,next today',
-    center: 'title',
-    right: ''
-  },
-  editable: true,
-  events: [{
-      title: 'All Day Event',
-      start: new Date(y, m, d),
-      end: new Date(y, m, d - 2)
-    },
+// $('.availibility-calendar').fullCalendar({
+//   header: {
+//     left: 'prev,next today',
+//     center: 'title',
+//     right: ''
+//   },
+//   editable: true,
+//   events: [{
+//       title: 'All Day Event',
+//       start: new Date(y, m, d),
+//       end: new Date(y, m, d - 2)
+//     },
 
-  ]
-});
+//   ]
+// });
 
 //slide
 $('.carousel').carousel({
