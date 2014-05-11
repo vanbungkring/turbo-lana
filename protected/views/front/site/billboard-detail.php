@@ -70,7 +70,7 @@
 
     <section id="banner-detail-info-list" class="banner-info-body">
       <header class="banner-info-header">Ketersediaan Banner</header>
-      <div id='availibility-calendar-detail'></div>
+      <div class='availibility-calendar'></div>
       <div class="alert alert-info">
         Kalender diperbarui setiap lima menit dan hanya merupakan perkiraan ketersediaan. Beberapa host menetapkan harga kustom untuk hari-hari tertentu di kalender mereka, seperti akhir pekan atau liburan. Harga yang terdaftar per hari dan tidak mencakup biaya pembersihan atau tarif untuk orang tambahan tuan rumah mungkin memiliki untuk listing ini. Silakan lihat daftar Uraian tab untuk lebih jelasnya.
         Kami menyarankan Anda untuk menghubungi host untuk mengkonfirmasi ketersediaan dan harga sebelum mengirimkan permintaan pemesanan.</div>
@@ -257,8 +257,14 @@
       removeBookmark();
     });
 
-    $("#availibility-calendar-detail").fullCalendar({
-
+    $(".availibility-calendar").fullCalendar({
+      header: {
+        left: "prev,next today",
+        center: "title",
+        right: ""
+      },
+      editable: false,
+      events: '.CJavaScript::encode($banner->generateJadwal()).'
     });
     ';
     Yii::app()->clientScript->registerScript('bookmark',$jsbookmark,  CClientScript::POS_END);

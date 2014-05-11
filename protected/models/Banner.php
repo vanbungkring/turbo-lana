@@ -60,6 +60,7 @@ class Banner extends CActiveRecord
 		return array(
 			'kategoris'=>array(self::MANY_MANY,'KategoriBanner','banner_kategori(idBanner,idKategori)'),
 			'images'=>array(self::HAS_MANY,'BannerImage','idBanner'),
+			'jadwals'=>array(self::HAS_MANY,'BannerJadwal','idBanner'),
 		);
 	}
 
@@ -153,5 +154,19 @@ class Banner extends CActiveRecord
 
 	public function getImageUrl(){
 		return Yii::app()->request->baseUrl.'/files/banner/'.$this->id.'.jpg';
+	}
+
+	public function generateJadwal(){
+		$ar = array();	
+		foreach ($this->jadwals as $key => $value) {
+			$start = explode('-',$value->start);
+			$end = explode('-',$value->end);
+			$ar[] = array(
+				'title'=>'Disewa',
+				'start'=>'js:new Date('.(int)$start[0].', '.((int)$start[1]-1).', '.(int)$start[2].')',
+				'end'=>'js:new Date('.(int)$end[0].', '.((int)$end[1]-1).', '.(int)$end[2].')',
+			);
+		}
+		return $ar;
 	}
 }
