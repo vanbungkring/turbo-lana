@@ -18,7 +18,7 @@
 						<?php 
 						if(!Yii::app()->user->isGuest) {?>
 						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ photo }} {{username}} <b class="caret"></b></a>
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Hi, <?php echo $this->memberModel->namaDepan; ?>  <b class="caret"></b></a>
 							<ul class="dropdown-menu">
 								<li><a href="<?php echo Yii::app()->createUrl('user/dashboard'); ?>">Dashboard</a></li>
 								<li><a href="<?php echo Yii::app()->createUrl('user/MyBookmark'); ?>">My Bookmark</a></li>

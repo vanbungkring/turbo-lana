@@ -5,6 +5,7 @@ class FrontEndController extends CController
     public $menu=array();
     public $breadcrumbs=array();
     public $setting = null;
+    public $memberModel;
  
     public function filters()
     {
@@ -53,6 +54,9 @@ class FrontEndController extends CController
             $member->attributes = $_POST['Member'];
             $member->save();
             $this->redirect(Yii::app()->request->urlReferrer); 
+        }
+        if(!Yii::app()->user->isGuest){
+            $this->memberModel = Member::model()->findByPk(Yii::app()->user->id);
         }
         return true;
     }
