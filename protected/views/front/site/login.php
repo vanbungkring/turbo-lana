@@ -48,7 +48,7 @@
       								<?php echo CHtml::submitButton('Login',array('class'=>'btn btn-default login-button')); ?>
       								
       								<div class="signup_link">New to  kiviads? 
-      									<a href="http://sproutsocial.com/pricing">Sign Up »</a>
+      									<a href="<?php echo Yii::app()->createUrl('/site/Registrasi') ?>">Sign Up »</a>
       								</div>
       							
       							</div>

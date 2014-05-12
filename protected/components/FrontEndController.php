@@ -49,14 +49,12 @@ class FrontEndController extends CController
           }
           Yii::app()->end();
         }
-        if(isset($_POST['Member'])){
-            $member = new Member('register');
-            $member->attributes = $_POST['Member'];
-            $member->save();
-            $this->redirect(Yii::app()->request->urlReferrer); 
-        }
+        
         if(!Yii::app()->user->isGuest){
             $this->memberModel = Member::model()->findByPk(Yii::app()->user->id);
+            if($this->memberModel == null){
+                $this->redirect(array('/site/logout'));
+            }
         }
         return true;
     }

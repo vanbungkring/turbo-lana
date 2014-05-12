@@ -38,7 +38,7 @@
 
 					else{
 						echo  '<li><a href="'.Yii::app()->createUrl('site/login').'">Login</a></li>';
-						echo  '<li><a href="'.Yii::app()->createUrl('site/login').'">Register</a></li>';
+						echo  '<li><a href="'.Yii::app()->createUrl('site/Registrasi').'">Register</a></li>';
 						echo  '<li><a href="'.Yii::app()->createUrl('site/login').'">Help</a></li>';
 					}
 

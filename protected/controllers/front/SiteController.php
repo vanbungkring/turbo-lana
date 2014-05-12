@@ -430,6 +430,17 @@ class SiteController extends FrontEndController
 	{
 		// renders the view file 'protected/views/site/index.php'
 		// using the default layout 'protected/views/layouts/main.php'
+		if(isset($_POST['Member'])){
+            $member = new Member('register');
+            $member->attributes = $_POST['Member'];
+            $member->save();
+            $in = new UserIdentity($member->id,null);
+            $duration= 3600*24*30; // 30 days
+			if(Yii::app()->user->login($in,$duration)){
+				$this->redirect(array('/site/index')); 
+			}
+        }
+
 		$this->render('registrasi');
 	}
 	
