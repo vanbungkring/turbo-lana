@@ -38,7 +38,7 @@
       <!-- /.navbar-header -->
       <ul class="nav navbar-top-links navbar-right">
         <li>
-          <p> Hi, Dimas!</p>
+          <p> Hi, <?php echo $this->memberModel->namaDepan; ?>!</p>
         </li>
         <li class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown" href="#">
