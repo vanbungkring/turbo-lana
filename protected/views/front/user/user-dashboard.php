@@ -3,7 +3,7 @@
                 <div class="col-md-3 col-lg-3">
                   <div class="well well-blue">
                     <div class="text-center">
-                      <a href="profile.html">
+                       <a href="<?php echo Yii::app()->createUrl('/user/profile');?>">
                         <h1><i class="fa fa-user fa-fw"></i></h1>
                         <h4>My Profile</h4>
                       </a>
@@ -14,7 +14,7 @@
                 <div class="col-md-3 col-lg-3">
                   <div class="well well-blue-dark">
                     <div class="text-center">
-                      <a href="bookmarks.html">
+                       <a href="<?php echo Yii::app()->createUrl('/user/myBookmark');?>">
                         <h1><i class="fa fa-flag fa-fw"></i></h1>
                         <h4>My Bookmarks</h4>
                       </a>
@@ -29,7 +29,7 @@
                         <div class="text-center">
                           <a href="request-proposal.html">
                             <h1><i class="fa fa-caret-square-o-down fa-fw"></i></h1>
-                            <h4>RFP - Request For Proposal</h4>
+                            <a href="<?php echo Yii::app()->createUrl('/user/quote3');?>">
                           </a>
                         </div>
                       </div>
@@ -61,7 +61,7 @@
                     </div>
                     <div class="col-lg-6">
                       <div class="text-center">
-                        <a href="campaign.html">
+                        <a href="<?php echo Yii::app()->createUrl('/user/quote3/campaign');?>">
                           <h1><i class="fa fa-calendar fa-fw"></i></h1>
                           <h4>My Campaign</h4>
                         </a>
