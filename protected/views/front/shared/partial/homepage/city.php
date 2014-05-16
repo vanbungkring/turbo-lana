@@ -8,31 +8,31 @@
 					<div class="col-sm-4">
 						<div class="panel panel-default overlayed">
 							<h2>Jakarta</h2>
-							<div class="panel-body"><a href="<?php echo Yii::app()->createUrl('/jakarta');?>" title="Jakarta"> <img src="<?= Yii::app()->getBaseUrl(true) ?>/images/jakarta_big.jpg" alt="Jakarta" class="img-responsive"></a></div>
+							<div class="panel-body"><a href="<?php echo Yii::app()->createUrl('/jakarta');?>" title="Jakarta"> <img src="<?= Yii::app()->getBaseUrl(true) ?>/images/jakarta_small.jpg" alt="Jakarta" class="img-responsive"></a></div>
 						</div> 
 					</div>    
 					<div class="col-sm-4">
 						<div class="panel panel-default overlayed">
 							<h2>Bogor</h2>
-							<div class="panel-body"><a href="<?php echo Yii::app()->createUrl('/bogor');?>" title="Bogor"><img src="<?= Yii::app()->getBaseUrl(true) ?>/images/bogor_big.jpg" alt="Jakarta" class="img-responsive"></a></div>
+							<div class="panel-body"><a href="<?php echo Yii::app()->createUrl('/bogor');?>" title="Bogor"><img src="<?= Yii::app()->getBaseUrl(true) ?>/images/bogor_small.jpg" alt="Jakarta" class="img-responsive"></a></div>
 						</div> 
 					</div> 
 					<div class="col-sm-4">
 						<div class="panel panel-default overlayed">
 							<h2>Bekasi</h2>
-							<div class="panel-body"><a href="#"><a href="<?php echo Yii::app()->createUrl('/bekasi');?>" title="Bekasi"> <img src="<?= Yii::app()->getBaseUrl(true) ?>/images/bekasi_big.jpg" alt="Bali" class="img-responsive"></a></div>
+							<div class="panel-body"><a href="#"><a href="<?php echo Yii::app()->createUrl('/bekasi');?>" title="Bekasi"> <img src="<?= Yii::app()->getBaseUrl(true) ?>/images/bekasi_small.jpg" alt="Bali" class="img-responsive"></a></div>
 						</div> 
 					</div> 
 					<div class="col-sm-4">
 						<div class="panel panel-default overlayed">
 							<h2>Tangerang</h2>
-							<div class="panel-body"><a href="<?php echo Yii::app()->createUrl('/tangerang');?>" title="Tangerang"> <img src="<?= Yii::app()->getBaseUrl(true) ?>/images/jakarta_big.jpg" alt="Jakarta" class="img-responsive"></a></div>
+							<div class="panel-body"><a href="<?php echo Yii::app()->createUrl('/tangerang');?>" title="Tangerang"> <img src="<?= Yii::app()->getBaseUrl(true) ?>/images/tangerang_small.jpg" alt="Jakarta" class="img-responsive"></a></div>
 						</div> 
 					</div> 
 					<div class="col-sm-4">
 						<div class="panel panel-default overlayed">
 							<h2>Bandung</h2>
-							<div class="panel-body"><a href="<?php echo Yii::app()->createUrl('/bandung');?>" title="Bandung"><img src="<?= Yii::app()->getBaseUrl(true) ?>/images/jakarta_big.jpg" alt="Jakarta" class="img-responsive"></div>
+							<div class="panel-body"><a href="<?php echo Yii::app()->createUrl('/bandung');?>" title="Bandung"><img src="<?= Yii::app()->getBaseUrl(true) ?>/images/bandung_small.jpg" alt="Jakarta" class="img-responsive"></div>
 						</div> 
 					</div> 
 					<div class="col-sm-4">
