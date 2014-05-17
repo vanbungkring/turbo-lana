@@ -169,10 +169,10 @@
       var clat = $(this).children(".clat").val();
       var clong = $(this).children(".clong").val();
       var czoom = $(this).children(".czoom").val();
-      console.log(cid);
-      console.log(clat);
-      console.log(clong);
-      console.log($(this));
+      // console.log(cid);
+      // console.log(clat);
+      // console.log(clong);
+      // console.log($(this));
       if(cid=="" || cid == null){
         return;
       }
