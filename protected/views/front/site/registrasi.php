@@ -49,7 +49,7 @@
 						<input type="checkbox" value="remember-me" required="required">
 						<p>Dengan mencentang ‘LANJUTKAN dan menekan tombol ‘DAFTAR, Anda sebagai Advertiser telah memberikan kewenangan terhadap Kiviads terkait peggunaan data Anda untuk kepentingan proses penayangan iklan. Kiviads tidak akan pernah merilis data-data yang telah Anda masukkan kepada pihak manapun, kecuali apabila sebelumnya sudah mendapatkan izin dari Anda dan ada pembicaraan antara kedua belah pihak terkait penggunaan suatu data. Don’t worry! We will keep your privacy private!</p>
 					</label>
-					<button class="btn btn-lg btn-primary" type="submit">Sign in</button>
+					<button class="btn btn-lg btn-primary" type="submit">Daftar</button>
 					<?php $this->endWidget(); ?>
 				</div>
 			</div>
