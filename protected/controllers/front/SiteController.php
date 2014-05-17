@@ -62,7 +62,7 @@ class SiteController extends FrontEndController
 				'users'=>array('@'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('getListBanner','page','index','oauth','result','custom','dashboard','GetMarker','Registrasi','User','AjaxLogin','login','error'),
+				'actions'=>array('test','getListBanner','page','index','oauth','result','custom','dashboard','GetMarker','Registrasi','User','AjaxLogin','login','error'),
 				'users'=>array('*'),
 			),
 			array('deny',  // deny all users
@@ -88,7 +88,7 @@ class SiteController extends FrontEndController
 		$defLat = isset($_GET['lat']) ? $_GET['lat'] : -6.17511;
 		$defLong = isset($_GET['long']) ? $_GET['long'] : 106.86503949999997;
 		$defLokasi = 'jakarta';
-		$this->pageTitle = "Cari Iklan Billboard Di Indonesai | ".$this->setting->judul;
+		$this->pageTitle = "Cari Papan Reklame di Indonesia | ".$this->setting->judul;
 		if(isset($_GET['lokasi'])){
 			$url = 'http://maps.googleapis.com/maps/api/geocode/json?address='.urlencode($_GET['lokasi']).'&sensor=false';
 			$jdata = @file_get_contents($url);
@@ -118,7 +118,7 @@ class SiteController extends FrontEndController
         $lat_max = @$data->results[0]->geometry->bounds->northeast->lat;
         if($long_min > $long_max){
             $res = Yii::app()->db->createCommand("select banner.*,banner_image.id as `cover` from banner left join 
-            		banner_image on banner_image.idBanner = banner.id and status=1 
+            		banner_image on banner_image.idBanner = banner.id and banner_image.status=1 
             	 where 
                 `lat` >= :lat_min and `lat` <= :lat_max 
                 and
@@ -134,7 +134,7 @@ class SiteController extends FrontEndController
         }
         else{
             $res = Yii::app()->db->createCommand("select banner.*,banner_image.id as `cover` from banner left join 
-            		banner_image on banner_image.idBanner = banner.id and status=1 
+            		banner_image on banner_image.idBanner = banner.id and banner_image.status=1 
             	where
                 `lat` >= :lat_min and `lat` <= :lat_max 
                 and
@@ -169,7 +169,7 @@ class SiteController extends FrontEndController
 		// renders the view file 'protected/views/site/index.php'
 		// using the default layout 'protected/views/layouts/main.php'
 
-		$this->pageTitle = "Sewa Billboard di {$banner->formatedAddress}, {$banner->lokasi} | {$this->setting->judul}";
+		$this->pageTitle = "Sewa Papan Reklame di {$banner->formatedAddress}, {$banner->lokasi} | {$this->setting->judul}";
 
 		$member->addLog(MemberLog::TYPE_VIEW_DETAIL_BILLBOARD,array(
 			'idBanner'=>$banner->id
@@ -394,7 +394,7 @@ class SiteController extends FrontEndController
         $lat_max = (double)@$_GET['bounds']['ta_b'];
         if($long_min > $long_max){
             $res = Yii::app()->db->createCommand("select banner.*,banner_image.id as `cover` from banner left join 
-            		banner_image on banner_image.idBanner = banner.id and status=1 
+            		banner_image on banner_image.idBanner = banner.id and banner_image.status=1 
             	 where 
                 `lat` >= :lat_min and `lat` <= :lat_max 
                 and
@@ -410,7 +410,7 @@ class SiteController extends FrontEndController
         }
         else{
             $res = Yii::app()->db->createCommand("select banner.*,banner_image.id as `cover` from banner left join 
-            		banner_image on banner_image.idBanner = banner.id and status=1 
+            		banner_image on banner_image.idBanner = banner.id and banner_image.status=1 
             	where
                 `lat` >= :lat_min and `lat` <= :lat_max 
                 and
@@ -430,6 +430,17 @@ class SiteController extends FrontEndController
 	{
 		// renders the view file 'protected/views/site/index.php'
 		// using the default layout 'protected/views/layouts/main.php'
+		if(isset($_POST['Member'])){
+            $member = new Member('register');
+            $member->attributes = $_POST['Member'];
+            $member->save();
+            $in = new UserIdentity($member->id,null);
+            $duration= 3600*24*30; // 30 days
+			if(Yii::app()->user->login($in,$duration)){
+				$this->redirect(array('/user/profile')); 
+			}
+        }
+
 		$this->render('registrasi');
 	}
 	
@@ -453,6 +464,7 @@ class SiteController extends FrontEndController
 	 */
 	public function actionLogin()
 	{
+		$this->pageTitle = "Masuk Ke dashboard";
 		$model=new LoginForm('Front');
 
 		// if it is ajax validation request
@@ -506,5 +518,15 @@ class SiteController extends FrontEndController
 	{
 		Yii::app()->user->logout();
 		$this->redirect(Yii::app()->homeUrl);
+	}
+
+	public function actionTest(){
+		$message = Yii::app()->mailgun->newMessage();
+		$message->setFrom('me@example.com', 'Andrei Baibaratsky');
+		$message->addTo('lateph@gmail.com', 'My dear user');
+		$message->setSubject('Mailgun API library test');
+		$message->renderText('test', array('myParam' => 'Awesome!'));
+
+		echo $message->send();
 	}
 }

@@ -33,16 +33,17 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="index.html">KIVIADS</a>
+        <a class="navbar-brand" href="<?= Yii::app()->getBaseUrl() ?>/"><img src="<?= Yii::app()->getBaseUrl(true) ?>/images/logo.png" alt="Kiviads"></a>
       </div>
       <!-- /.navbar-header -->
       <ul class="nav navbar-top-links navbar-right">
         <li>
-          <p> Hi, Dimas!</p>
+          <p> Hi, <?php echo $this->memberModel->namaDepan; ?>!</p>
         </li>
         <li class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-            <i class="fa fa-envelope fa-fw"></i>  <i class="fa fa-caret-down"></i>
+            <i class="fa fa-envelope fa-fw"></i>
+            <i class="fa fa-caret-down"></i>
           </a>
           <ul class="dropdown-menu dropdown-messages">
             <li>
@@ -105,22 +106,22 @@
         <div class="sidebar-collapse">
           <ul class="nav" id="side-menu">
             <li>
-              <a href="<?php echo Yii::app()->createUrl('/user/dashboard'); ?>"><i class="fa fa-home fa-fw"></i> Dashboard<span class="fa fa-circle flright"></span></a>
+              <a href="<?php echo Yii::app()->createUrl('/user/dashboard'); ?>"><i class="fa fa-home fa-fw"></i> Dashboard<span class="fa <?php echo $this->activeType == FrontEndController::TYPE_DASBOARD ? 'fa-circle' : 'fa-circle-o'  ?> flright"></span></a>
             </li>
             <li>
-              <a href="<?php echo Yii::app()->createUrl('/user/profile'); ?>"><i class="fa fa-user fa-fw"></i> Profile<span class="fa fa-circle-o flright"></span></a>
+              <a href="<?php echo Yii::app()->createUrl('/user/profile'); ?>"><i class="fa fa-user fa-fw"></i> Profile<span class="fa <?php echo $this->activeType == FrontEndController::TYPE_PROFILE ? 'fa-circle' : 'fa-circle-o'  ?> flright"></span></a>
             </li>
             <li>
-              <a href="<?php echo Yii::app()->createUrl('/user/myBookmark'); ?>"><i class="fa fa-flag fa-fw"></i> Bookmarks<span class="fa fa-circle-o flright"></span></a>
+              <a href="<?php echo Yii::app()->createUrl('/user/myBookmark'); ?>"><i class="fa fa-flag fa-fw"></i> Bookmarks<span class="fa <?php echo $this->activeType == FrontEndController::TYPE_BOOKMARK ? 'fa-circle' : 'fa-circle-o'  ?> flright"></span></a>
             </li>
             <li>
-              <a href="<?php echo Yii::app()->createUrl('/user/history'); ?>"><i class="fa fa-clock-o fa-fw"></i> History<span class="fa fa-circle-o flright"></span></a>
+              <a href="<?php echo Yii::app()->createUrl('/user/history'); ?>"><i class="fa fa-clock-o fa-fw"></i> History<span class="fa <?php echo $this->activeType == FrontEndController::TYPE_HISTORY ? 'fa-circle' : 'fa-circle-o'  ?> flright"></span></a>
             </li>
             <li>
-              <a href="<?php echo Yii::app()->createUrl('/quote3'); ?>"><i class="fa fa-book fa-fw"></i> Quotes<span class="fa fa-circle-o flright"></span></a>
+              <a href="<?php echo Yii::app()->createUrl('/quote3'); ?>"><i class="fa fa-book fa-fw"></i> Quotes<span class="fa <?php echo $this->activeType == FrontEndController::TYPE_QUOTES ? 'fa-circle' : 'fa-circle-o'  ?> flright"></span></a>
             </li>
             <li>
-              <a href="<?php echo Yii::app()->createUrl('/quote3/campaign'); ?>"><i class="fa fa-calendar fa-fw"></i> Campaign<span class="fa fa-circle-o flright"></span></a>
+              <a href="<?php echo Yii::app()->createUrl('/quote3/campaign'); ?>"><i class="fa fa-calendar fa-fw"></i> Campaign<span class="fa <?php echo $this->activeType == FrontEndController::TYPE_CAMPAIGN ? 'fa-circle' : 'fa-circle-o'  ?> flright"></span></a>
             </li>
           </ul>
           <!-- /#side-menu -->
@@ -140,6 +141,8 @@
   <!-- /#wrapper -->
 
   <!-- Core Scripts - Include with every page -->
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDs1qmbiT6eTk-57wbzQ3Ivk8TRx02lXm4&sensor=true&libraries=places"></script>
+    
   <script src="<?php echo Yii::app()->request->baseUrl; ?>/assets-dashboard/js/jquery-1.10.2.js"></script>
    <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
   <script src="<?php echo Yii::app()->request->baseUrl; ?>/assets-dashboard/js/bootstrap.min.js"></script>

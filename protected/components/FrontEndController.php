@@ -1,10 +1,20 @@
 <?php
 class FrontEndController extends CController
 {
+    const TYPE_DASBOARD = 81;
+    const TYPE_PROFILE = 82;
+    const TYPE_BOOKMARK = 83;
+    const TYPE_HISTORY = 84;
+    const TYPE_QUOTES = 85;
+    const TYPE_CAMPAIGN = 86;
+
+    public $activeType = null;
+
     public $layout='none';
     public $menu=array();
     public $breadcrumbs=array();
     public $setting = null;
+    public $memberModel;
  
     public function filters()
     {
@@ -48,11 +58,12 @@ class FrontEndController extends CController
           }
           Yii::app()->end();
         }
-        if(isset($_POST['Member'])){
-            $member = new Member('register');
-            $member->attributes = $_POST['Member'];
-            $member->save();
-            $this->redirect(Yii::app()->request->urlReferrer); 
+        
+        if(!Yii::app()->user->isGuest){
+            $this->memberModel = Member::model()->findByPk(Yii::app()->user->id);
+            if($this->memberModel == null){
+                $this->redirect(array('/site/logout'));
+            }
         }
         return true;
     }

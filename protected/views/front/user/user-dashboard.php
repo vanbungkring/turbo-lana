@@ -3,7 +3,7 @@
                 <div class="col-md-3 col-lg-3">
                   <div class="well well-blue">
                     <div class="text-center">
-                      <a href="profile.html">
+                       <a href="<?php echo Yii::app()->createUrl('/user/profile');?>">
                         <h1><i class="fa fa-user fa-fw"></i></h1>
                         <h4>My Profile</h4>
                       </a>
@@ -14,7 +14,7 @@
                 <div class="col-md-3 col-lg-3">
                   <div class="well well-blue-dark">
                     <div class="text-center">
-                      <a href="bookmarks.html">
+                       <a href="<?php echo Yii::app()->createUrl('/user/myBookmark');?>">
                         <h1><i class="fa fa-flag fa-fw"></i></h1>
                         <h4>My Bookmarks</h4>
                       </a>
@@ -29,7 +29,7 @@
                         <div class="text-center">
                           <a href="request-proposal.html">
                             <h1><i class="fa fa-caret-square-o-down fa-fw"></i></h1>
-                            <h4>RFP - Request For Proposal</h4>
+                            <a href="<?php echo Yii::app()->createUrl('/user/quote3');?>">
                           </a>
                         </div>
                       </div>
@@ -53,7 +53,10 @@
                         <h4>Buat Quotes</h4>
                         <p>Dapatkan quotes dari titik yang anda inginkan. Cari titik untuk iklan anda sekarang!</p>
                       <div class="input-group custom-search-form">
-                        <input type="text" class="form-control" placeholder="Masukkan lokasi...">
+                        <form action="<?php echo Yii::app()->createUrl("/site/result") ?>" method="GET" id="formSearch">
+                        <input name="lokasi" type="text" class="form-control" placeholder="Masukkan lokasi..." id="boxcari">
+                        <input type="submit" style="display:none" />
+                        </form>
                         <span class="input-group-btn">
                           <button class="btn btn-default"><i class="fa fa-search"></i></button>
                         </span>
@@ -61,7 +64,7 @@
                     </div>
                     <div class="col-lg-6">
                       <div class="text-center">
-                        <a href="campaign.html">
+                        <a href="<?php echo Yii::app()->createUrl('/user/quote3/campaign');?>">
                           <h1><i class="fa fa-calendar fa-fw"></i></h1>
                           <h4>My Campaign</h4>
                         </a>
@@ -94,3 +97,14 @@
                 <!-- end of panel -->
               </div>
             </div>
+
+          <?php
+
+
+  Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl.'/js/jquery.geocomplete.js',  CClientScript::POS_END);
+  Yii::app()->clientScript->registerScript('script-box','$("#boxcari").geocomplete().bind("geocode:result", function(event, result){
+    $("#lat").val(result.geometry.location.lat());
+    $("#long").val(result.geometry.location.lng());
+    $("#formSearch").submit();
+ // map.setCenter(new google.maps.LatLng(result.geometry.location.lat(), result.geometry.location.lng()))
+  });;',  CClientScript::POS_END);

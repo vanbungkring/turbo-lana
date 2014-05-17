@@ -32,7 +32,7 @@ $this->breadcrumbs=array(
 					<?php $this->widget('zii.widgets.grid.CGridView', array(
 						'id'=>'quote3-grid',
 						'cssFile'=>false,
-						'dataProvider'=>$model->search(),
+						'dataProvider'=>$model->searchQuote3(),
 						'itemsCssClass' => 'table table-striped table-bordered table-hover',
 						'summaryText'=>false,
 						

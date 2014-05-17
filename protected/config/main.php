@@ -37,7 +37,7 @@ return array(
 			'allowAutoLogin'=>true,
 		),
 		// uncomment the following to enable URLs in path-format
-		/*
+		
 		'urlManager'=>array(
 			'urlFormat'=>'path',
 			'rules'=>array(
@@ -46,7 +46,7 @@ return array(
 				'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
 			),
 		),
-		*/
+		
 		// uncomment the following to use a MySQL database
 		
 		'db'=>include dirname(__FILE__) . '/db.php',
@@ -70,6 +70,13 @@ return array(
 				*/
 			),
 		),
+		'mailgun' => array(
+            'class' => 'application.extensions.php-mailgun.MailgunYii',
+            'domain' => 'example.com',
+            'key' => 'key-0wztik6tn-zbm1gkcv1h95jh08m1aiu3',
+            'tags' => array(), // You may also specify some Mailgun parameters
+            'enableTracking' => false,
+        ),
 	),
 
 	'behaviors'=>array(

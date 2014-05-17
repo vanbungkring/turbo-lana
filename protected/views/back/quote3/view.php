@@ -115,10 +115,5 @@
               <!-- end of maps -->
             </div>
             <!-- end row -->
-            <div class="row">
-              <div class="col-md-6 col-lg-4 col-centered">
-                <a href="#" class="btn btn-success btn-block">APPROVE QUOTES <i class="fa fa-arrow-circle-right"></i></a>
-              </div>
-            </div>
         
 <?php $this->endWidget(); ?>

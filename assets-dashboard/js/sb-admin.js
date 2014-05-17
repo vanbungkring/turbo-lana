@@ -34,4 +34,13 @@ $(function() {
 
     }
   });
+  $( ".hasDatepicker_biasa" ).datepicker({
+    dateFormat: 'dd-mm-yy',
+    changeMonth: false,
+    numberOfMonths: 1,
+    onClose: function( selectedDate ) {
+      $( ".hasDatepicker_end" ).datepicker( "option", "minDate", selectedDate);
+      $(".hasDatepicker_end").datepicker("show");
+    }
+  });
 })

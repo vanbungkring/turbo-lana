@@ -1,8 +1,14 @@
 <?php
 
-class Quote3Controller extends Controller
+class Quote3Controller extends FrontEndController
 {
 	public $layout = 'dashboard';
+	public function beforeAction($action)
+	{
+		$this->activeType = FrontEndController::TYPE_QUOTES;
+  		return parent::beforeAction($action);
+	}
+
 	public function filters()
 	{
 		return array(
@@ -48,6 +54,7 @@ class Quote3Controller extends Controller
 
 	public function actionViewCampaign($id)
 	{
+		$this->activeType = FrontEndController::TYPE_CAMPAIGN;
 		$model=Quote3::model()->with(array('quoteBanners'=>array(
 			'with'=>array(
 				'banner',
@@ -55,6 +62,32 @@ class Quote3Controller extends Controller
 		)))->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
+
+		if(isset($_POST)){
+			$file2=CUploadedFile::getInstanceByName('file2');
+			if($file2){
+				$model->uploadFilePendukung('file2',$file2);
+                $this->redirect(array('viewCampaign','id'=>$id));
+			}
+
+			$file4=CUploadedFile::getInstanceByName('file4');
+			if($file4){
+				$model->uploadFilePendukung('file4',$file4);
+                $this->redirect(array('viewCampaign','id'=>$id));
+			}
+
+			$file6=CUploadedFile::getInstanceByName('file6');
+			if($file6){
+				$model->uploadFilePendukung('file6',$file6);
+                $this->redirect(array('viewCampaign','id'=>$id));
+			}
+
+			$file8=CUploadedFile::getInstanceByName('file8');
+			if($file8){
+				$model->uploadFilePendukung('file8',$file8);
+                $this->redirect(array('viewCampaign','id'=>$id));
+			}
+		}
 
 		$this->render('view_campaign',array(
 			'model'=>$model,
@@ -143,7 +176,7 @@ class Quote3Controller extends Controller
 	 */
 	public function actionIndex()
 	{
-		$quotes = Quote3::model()->findAll('idMember = :p1 and (status is null or status = 0)',array(':p1'=>Yii::app()->user->id));
+		$quotes = Quote3::model()->findAll('idMember = :p1 and status = 0',array(':p1'=>Yii::app()->user->id));
 		$this->render('index',array(
 		//	'dataProvider'=>$dataProvider,
 			'quotes'=>$quotes,
@@ -152,10 +185,39 @@ class Quote3Controller extends Controller
 
 	public function actionCampaign()
 	{
-		$quotes = Quote3::model()->findAll('idMember = :p1 and status = 1',array(':p1'=>Yii::app()->user->id));
+		$this->activeType = FrontEndController::TYPE_CAMPAIGN;
+		$countQuoteActive = Quote3::model()->count('idMember = :p1 and (status = :pt2 or status = :pt3 )',
+			array(
+					':p1'=>Yii::app()->user->id,
+					':pt2'=>Quote3::STATUS_APPROVED,
+					':pt3'=>Quote3::STATUS_START,
+				)
+		);
+		$countQuoteArchieve = Quote3::model()->count('idMember = :p1 and status = :pt2',
+			array(':p1'=>Yii::app()->user->id,
+				':pt2'=>Quote3::STATUS_STOP
+			)
+		);
+		if(isset($_GET['archieve']) and $_GET['archieve'] == true){
+			$quotes = Quote3::model()->findAll('idMember = :p1 and status = :pt2',
+				array(':p1'=>Yii::app()->user->id,
+					':pt2'=>Quote3::STATUS_STOP
+				));		
+		}
+		else{
+			$quotes = Quote3::model()->findAll('idMember = :p1 and (status = :pt2 or status = :pt3 )',
+				array(
+					':p1'=>Yii::app()->user->id,
+					':pt2'=>Quote3::STATUS_APPROVED,
+					':pt3'=>Quote3::STATUS_START,
+				)
+			);
+		}
 		$this->render('campaign',array(
 		//	'dataProvider'=>$dataProvider,
 			'quotes'=>$quotes,
+			'countQuoteActive'=>$countQuoteActive,
+			'countQuoteArchieve'=>$countQuoteArchieve,
 		));
 	}
 
@@ -183,7 +245,9 @@ class Quote3Controller extends Controller
 	 */
 	public function loadModel($id)
 	{
-		$model=Quote3::model()->findByPk($id);
+		$model=Quote3::model()->with(array('quoteBanners'=>array(
+            'with'=>array('banner')
+        )))->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
@@ -204,12 +268,7 @@ class Quote3Controller extends Controller
 
 	public function actionApprove($id){
 		$model = $this->loadModel($id);
-		$model->status = 1;
-		$model->save();
-		foreach ($model->quoteBanners as $key => $quoteBanner) {
-			$quoteBanner->status = Quote3Banner::STATUS_BOOKED;
-			$quoteBanner->save();
-		}
+		$model->approveToCampaign();
 		$this->redirect(array('view','id'=>$id));
 	}
 }

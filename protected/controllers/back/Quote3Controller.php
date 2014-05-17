@@ -141,6 +141,59 @@ class Quote3Controller extends Controller
 			'model'=>$model,
 		));
 	}
+
+	public function actionCampaign()
+	{
+		$model=new Quote3('search');
+		$model->unsetAttributes();  // clear any default values
+		if(isset($_GET['Quote3']))
+			$model->attributes=$_GET['Quote3'];
+
+		$this->render('campaign',array(
+			'model'=>$model,
+		));
+	}
+
+	public function actionViewCampaign($id)
+	{
+		$model=Quote3::model()->with(array('quoteBanners'=>array(
+			'with'=>array(
+				'banner',
+			)
+		)))->findByPk($id);
+		if($model===null)
+			throw new CHttpException(404,'The requested page does not exist.');
+
+		if(isset($_POST)){
+			$file1=CUploadedFile::getInstanceByName('file1');
+			if($file1){
+				$model->uploadFilePendukung('file1',$file1);
+                $this->redirect(array('viewCampaign','id'=>$id));
+			}
+
+			$file3=CUploadedFile::getInstanceByName('file3');
+			if($file3){
+				$model->uploadFilePendukung('file3',$file3);
+                $this->redirect(array('viewCampaign','id'=>$id));
+			}
+
+			$file5=CUploadedFile::getInstanceByName('file5');
+			if($file5){
+				$model->uploadFilePendukung('file5',$file5);
+                $this->redirect(array('viewCampaign','id'=>$id));
+			}
+
+			$file7=CUploadedFile::getInstanceByName('file7');
+			if($file7){
+				$model->uploadFilePendukung('file7',$file7);
+                $this->redirect(array('viewCampaign','id'=>$id));
+			}
+		}
+
+		$this->render('view_campaign',array(
+			'model'=>$model,
+		));
+	}
 	/**
 	 * Manages all models.
 	 */
@@ -182,5 +235,11 @@ class Quote3Controller extends Controller
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
 		}
+	}
+    
+     public function actionSetStart($id){
+		$model = $this->loadModel($id);
+		$model->setStart();
+		$this->redirect(array('viewCampaign','id'=>$id));
 	}
 }

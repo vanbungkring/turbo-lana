@@ -34,6 +34,7 @@ class UserController extends FrontEndController
 	}
 
 	public function actionDashboard(){
+		$this->activeType = FrontEndController::TYPE_DASBOARD;
 		$member = Member::model()->findByPk(Yii::app()->user->id);
 		$logs = MemberLog::model()->findAll(array(
 			'condition'=>'idMember = :p1',
@@ -57,7 +58,47 @@ class UserController extends FrontEndController
 	}
 
 	public function actionProfile(){
-		$this->render('profile');
+		$this->activeType = FrontEndController::TYPE_PROFILE;
+
+        $member = Member::model()->findByPk(Yii::app()->user->id);
+        $member->scenario = 'profile';
+       
+        if(isset($_GET['Member'])){    
+            $member->attributes = $_GET['Member'];
+            if($member->save()){
+                $this->redirect(array('/user/profile'));
+            }
+        }
+        if(isset($_POST['MemberProfilePerusahaan'])){
+        	$member->profilePerusahaan->attributes = $_POST['MemberProfilePerusahaan'];
+        	$member->profilePerusahaan->file=CUploadedFile::getInstance($member->profilePerusahaan,'file');
+        	if($member->profilePerusahaan->save()){
+        		if($member->profilePerusahaan->file){
+        			if($member->profilePerusahaan->logoPerusahaan){
+	        			$oldFile = $member->profilePerusahaan->getFilePath();
+	        			if(file_exists($oldFile)){
+							unlink($oldFile);
+	        			}	
+        			}
+        			
+	                $member->profilePerusahaan->logoPerusahaan = $member->profilePerusahaan->file->getName();
+	                $file = $member->profilePerusahaan->getFilePath();
+					if(file_exists($file)){
+						unlink($file);
+					}
+					if($member->profilePerusahaan->file->saveAs($file)){
+						$member->profilePerusahaan->save();
+					}
+				}
+                $this->redirect(array('/user/profile'));
+            }
+        }
+        $member->updateOldPassword  = '';
+		$member->updateNewPassword1 = '';
+		$member->updateNewPassword2 = '';
+		$this->render('profile',array(
+            'model'=>$member,
+        ));
 	}
 
 	public function actionCampaign(){
@@ -72,6 +113,8 @@ class UserController extends FrontEndController
 	}
 
 	public function actionHistory(){
+		$this->activeType = FrontEndController::TYPE_HISTORY;
+		
 		$member = Member::model()->findByPk(Yii::app()->user->id);
 		$logs = MemberLog::model()->findAll(array(
 			'condition'=>'idMember = :p1',
@@ -97,6 +140,8 @@ class UserController extends FrontEndController
 
 	public function actionMyBookmark()
 	{
+		$this->activeType = FrontEndController::TYPE_BOOKMARK;
+
 		$criteria = new CDbCriteria();
 		$criteria->compare('idMember',Yii::app()->user->id);
 		$criteria->with = array('banner');

@@ -2,8 +2,6 @@
       /* @var $this SiteController */
       /* @var $model LoginForm */
       /* @var $form CActiveForm  */
-
-      $this->pageTitle=Yii::app()->name . ' - Login';
       $this->breadcrumbs=array(
       	'Login',
       	);
@@ -12,7 +10,7 @@
       		<div class="row">
       			<div class="login-form">
 
-      				<h1 id="signin_logo" class="login-top"><a href="http://sproutsocial.com ">kiviads</a></h1>
+      				<h1 id="signin_logo" class="login-top"><a href="http://sproutsocial.com ">Kiviads</a></h1>
       				<?php $form=$this->beginWidget('CActiveForm', array(
       					'id'=>'login-form',
       					'enableClientValidation'=>true,
@@ -42,13 +40,13 @@
       							</div>
 
       							<div class="col-md-6">
-	      								<a href="#" class="forgot_pw">Forgot your password?</a>
+	      								<a href="#" class="forgot_pw">Lupa Kata Sandi Anda?</a>
       							</div>
       							<div class="col-md-12">
-      								<?php echo CHtml::submitButton('Login',array('class'=>'btn btn-default login-button')); ?>
+      								<?php echo CHtml::submitButton('Masuk',array('class'=>'btn btn-default login-button')); ?>
       								
-      								<div class="signup_link">New to  kiviads? 
-      									<a href="http://sproutsocial.com/pricing">Sign Up »</a>
+      								<div class="signup_link">Belum daftar?
+      									<a href="<?php echo Yii::app()->createUrl('/site/Registrasi') ?>">Register Disini »</a>
       								</div>
       							
       							</div>

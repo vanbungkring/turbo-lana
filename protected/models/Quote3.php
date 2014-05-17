@@ -14,9 +14,15 @@
  * @property string $catatan
  * @property string $description
  * @property string $time
+ * @property integer $status
+ * @property Quote3Banner[] $quoteBanners Description
  */
 class Quote3 extends CActiveRecord
 {
+    const STATUS_QUOTE = 0;
+    const STATUS_APPROVED = 1; // atau campaign pending
+    const STATUS_START = 2;
+    const STATUS_STOP = 3;
 	/**
 	 * @return string the associated database table name
 	 */
@@ -117,6 +123,52 @@ class Quote3 extends CActiveRecord
 		));
 	}
 
+	public function searchQuote3()
+	{
+		// @todo Please modify the following code to remove attributes that should not be searched.
+
+		$criteria=new CDbCriteria;
+
+		$criteria->compare('id',$this->id);
+		$criteria->compare('idMember',$this->idMember);
+		$criteria->compare('name',$this->name,true);
+		$criteria->compare('tanggalMulai',$this->tanggalMulai,true);
+		$criteria->compare('tanggalBerakhir',$this->tanggalBerakhir,true);
+		$criteria->compare('budget',$this->budget,true);
+		$criteria->compare('deskripsi',$this->deskripsi);
+		$criteria->compare('catatan',$this->catatan,true);
+		$criteria->compare('time',$this->time,true);
+
+		$criteria->addCondition('status = 0');
+        
+		return new CActiveDataProvider($this, array(
+			'criteria'=>$criteria,
+		));
+	}
+    
+    public function searchCampaign()
+	{
+		// @todo Please modify the following code to remove attributes that should not be searched.
+
+		$criteria=new CDbCriteria;
+
+		$criteria->compare('id',$this->id);
+		$criteria->compare('idMember',$this->idMember);
+		$criteria->compare('name',$this->name,true);
+		$criteria->compare('tanggalMulai',$this->tanggalMulai,true);
+		$criteria->compare('tanggalBerakhir',$this->tanggalBerakhir,true);
+		$criteria->compare('budget',$this->budget,true);
+		$criteria->compare('deskripsi',$this->deskripsi);
+		$criteria->compare('catatan',$this->catatan,true);
+		$criteria->compare('time',$this->time,true);
+
+		$criteria->addCondition('status <> 0');
+        
+		return new CActiveDataProvider($this, array(
+			'criteria'=>$criteria,
+		));
+	}
+
 	/**
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
@@ -128,18 +180,88 @@ class Quote3 extends CActiveRecord
 		return parent::model($className);
 	}
 
-	const STATUS_APPROVED = 1; // atau campaign pending
-
-	public static function getListTextStatus(){
-		return array(
-			self::STATUS_APPROVED=>'Pending',
-		);
-	}
 	public function isStatusNotSet(){
-		if($this->status == 1 or $this->status ==2){
+		if($this->status != self::STATUS_QUOTE){
 			return false;
 		}
 		else
 			return true;
+	}
+    public function isAbleToApprove(){
+        foreach ($this->quoteBanners as $quoteBanner) {
+            if($quoteBanner->status != Quote3Banner::STATUS_AVALIABLE){
+                return false;
+            }
+            if ($quoteBanner->banner->status == Banner::STATUS_BOOKED) {
+                return false;
+            }
+        }
+        return true;
+    }
+    public function approveToCampaign(){
+        $this->status = self::STATUS_APPROVED;
+        foreach ($this->quoteBanners as $quoteBanner) {
+            $quoteBanner->banner->status = Banner::STATUS_BOOKED;
+            $quoteBanner->banner->save();
+        }
+        $this->save();
+    }
+    public function setStart(){
+        $this->status = self::STATUS_START;
+        if($this->tanggalMulai and $this->tanggalBerakhir){
+            foreach($this->quoteBanners as $quoteBanner){
+                $newJadwal = new BannerJadwal();
+                $newJadwal->idBanner = $quoteBanner->idBanner;
+                $newJadwal->start = $this->tanggalMulai;
+                $newJadwal->end = $this->tanggalBerakhir;
+                $newJadwal->save();
+            }
+        }
+        $this->save();
+    }
+    
+    /**
+     * 
+     * @param string $field
+     * @param CUploadedFile $file
+     */
+    public function uploadFilePendukung($field,$file){
+        $path = $this->getFilePath($field);
+        if(file_exists($path)){
+            unlink($path);
+        }
+        $this->$field = $file->getName();
+        $npath = $this->getFilePath($field);
+        if($file->saveAs($npath)){
+            $this->save();
+        }
+        
+    }
+
+    public function getFilePath($field){
+		$path = Yii::app()->params['uploadPath'];
+		return $path.'/quote3/'.$this->id.'-'.$field.'-'.$this->$field;
+	}
+
+	public function getUrlImage($field){
+		return Yii::app()->request->baseUrl.'/files/quote3/'.$this->id.'-'.$field.'-'.$this->$field;
+	}
+
+	public static function getListTextStatus(){
+		return array(
+			self::STATUS_QUOTE=>'Pending',
+			self::STATUS_APPROVED=>'Pending',
+			self::STATUS_START=>'Start',
+			self::STATUS_STOP=>'Archieve',
+		);
+	}
+	public function getTextStatus(){
+		$ar = self::getListTextStatus();
+		if(isset($ar[$this->status])){
+			return $ar[$this->status];
+		}
+		else{
+			return 'Belum Diterima';
+		}
 	}
 }

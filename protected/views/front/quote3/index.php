@@ -58,8 +58,8 @@
                   <td><?php echo $value->totalInventori ?></td>
                   <td>-</td>
                   <td>-</td>
-                  <td><a href="<?php echo $this->createUrl('view',array('id'=>$value->id)); ?>" class="btn btn-outline btn-primary btn-xs">Lihat Detil</a>
-                    <a href="#" class="btn btn-outline btn-danger btn-xs">Archieved</a>
+                  <td>
+                    <a href="<?php echo $this->createUrl('view',array('id'=>$value->id)); ?>" class="btn btn-outline btn-primary btn-xs">Lihat Detil</a>
                   </td>
                 </tr>
               <?php endforeach ?>

@@ -29,7 +29,7 @@
        </div>
       <div class="col-md-6">
       <div class="table-responsive">
-        <table class="table table-striped">
+        <table class="table table-bordered">
           <tbody>
 
             <tr>
@@ -153,7 +153,8 @@
           </div>
           <div class="modal-body">
             <?php echo CHtml::dropDownList('quote_list', 'M', 
-            CHtml::listData($member->quotes3,'id','name'),array('class'=>'form-control')); ?>
+            CHtml::listData($member->getOpenQuote(),'id','name'),array('class'=>'form-control')); ?>
+            <p><a href="<?php echo $this->createUrl('quote3/create')?>">Create new quote now</a></p>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -254,6 +255,16 @@
   });
     $("#removeBookmark").click(function(){
       removeBookmark();
+    });
+
+    $(".availibility-calendar").fullCalendar({
+      header: {
+        left: "prev,next today",
+        center: "title",
+        right: ""
+      },
+      editable: false,
+      events: '.CJavaScript::encode($banner->generateJadwal()).'
     });
     ';
     Yii::app()->clientScript->registerScript('bookmark',$jsbookmark,  CClientScript::POS_END);
