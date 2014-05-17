@@ -22,8 +22,8 @@
 							<ul class="dropdown-menu">
 								<li><a href="<?php echo Yii::app()->createUrl('user/dashboard'); ?>">Dashboard</a></li>
 								<li><a href="<?php echo Yii::app()->createUrl('user/MyBookmark'); ?>">My Bookmark</a></li>
-								<li><a href="<?php echo Yii::app()->createUrl('rfp2/list'); ?>">Campaign</a></li>
-								<li><a href="<?php echo Yii::app()->createUrl('rfp2/list'); ?>">Quote</a></li>
+								<li><a href="<?php echo Yii::app()->createUrl('quote3/campaign'); ?>">My Campaign</a></li>
+								<li><a href="<?php echo Yii::app()->createUrl('quote3/'); ?>">Quote</a></li>
 							</ul>
 							<li><a href="#">Notification</a></li>
 							<li>
