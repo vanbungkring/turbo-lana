@@ -25,10 +25,10 @@
 								<li><a href="<?php echo Yii::app()->createUrl('quote3/campaign'); ?>">My Campaign</a></li>
 								<li><a href="<?php echo Yii::app()->createUrl('quote3/'); ?>">Quote</a></li>
 							</ul>
-							<li><a href="#">Notification</a></li>
+							<li><a href="#">Notifikasi</a></li>
 							<li>
 								<a href="<?php echo Yii::app()->createUrl('site/Logout'); ?>">
-									<div class="btn btn-outline btn-danger btn-sm"><i class="fa fa-sign-out fa-fw"></i> LOG OUT</div>
+									<div class="btn btn-outline btn-danger btn-sm"><i class="fa fa-sign-out fa-fw"></i> Keluar</div>
 								</a>
 							</li>
 						</li>
