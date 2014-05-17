@@ -37,9 +37,9 @@
 					}
 
 					else{
-						echo  '<li><a href="'.Yii::app()->createUrl('site/login').'">Login</a></li>';
-						echo  '<li><a href="'.Yii::app()->createUrl('site/Registrasi').'">Register</a></li>';
-						echo  '<li><a href="'.Yii::app()->createUrl('site/login').'">Help</a></li>';
+						echo  '<li><a href="'.Yii::app()->createUrl('site/login').'">Masuk</a></li>';
+						echo  '<li><a href="'.Yii::app()->createUrl('site/Registrasi').'">Daftar</a></li>';
+						echo  '<li><a href="'.Yii::app()->createUrl('site/login').'">Bantuan</a></li>';
 					}
 
 					?>
