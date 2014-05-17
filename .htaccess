@@ -8,7 +8,7 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond $1 !^(index\.php)
  
 # otherwise forward it to index.php
-RewriteRule ^(.+)$ yourproject/index.php?$1 [PT,L,QSA]
+RewriteRule ^(.*)\?*$ index.php/$1 [PT,L,QSA]
 </IfModule>
 
 ## EXPIRES CACHING ##
