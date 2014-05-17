@@ -9,7 +9,7 @@
     <div class="col-md-2">
       <h3>Help</h3>
       <ul>
-       <li><a href="<?php echo Yii::app()->createUrl('/advertiser');?>">Advertiser</a></li>
+       <li><a href="<?php echo Yii::app()->createUrl('/advertiser');?>">Pengikla</a></li>
        <li><a href="<?php echo Yii::app()->createUrl('/media-owner');?>">Media Owner</a></li>
        <!-- <li><a href="<?php echo Yii::app()->createUrl('/faq');?>">FAQ</a></li> -->
 

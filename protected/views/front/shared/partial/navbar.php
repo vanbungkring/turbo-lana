@@ -10,9 +10,9 @@
 
 				<div class="navbar-collapse collapse">
 					<ul class="nav navbar-nav">
-						<li><a href="<?php echo Yii::app()->createUrl('/about'); ?>">About</a></li>
-						<li><a href="<?php echo Yii::app()->createUrl('/advertiser'); ?>">Advertiser</a></li>
-						<li><a href="<?php echo Yii::app()->createUrl('/media-owner'); ?>">Media Owner</a></li>
+						<li><a href="<?php echo Yii::app()->createUrl('/about'); ?>">Tentang Kami</a></li>
+						<li><a href="<?php echo Yii::app()->createUrl('/advertiser'); ?>">Pengiklan</a></li>
+						<li><a href="<?php echo Yii::app()->createUrl('/media-owner'); ?>">Pemilik Media</a></li>
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
 						<?php 
@@ -25,7 +25,7 @@
 								<li><a href="<?php echo Yii::app()->createUrl('quote3/campaign'); ?>">My Campaign</a></li>
 								<li><a href="<?php echo Yii::app()->createUrl('quote3/'); ?>">Quote</a></li>
 							</ul>
-							<li><a href="#">Notification</a></li>
+							<!-- <li><a href="#">Notification</a></li> -->
 							<li>
 								<a href="<?php echo Yii::app()->createUrl('site/Logout'); ?>">
 									<div class="btn btn-outline btn-danger btn-sm"><i class="fa fa-sign-out fa-fw"></i> LOG OUT</div>
