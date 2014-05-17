@@ -9,7 +9,7 @@
     <div class="col-md-2">
       <h3>Help</h3>
       <ul>
-       <li><a href="<?php echo Yii::app()->createUrl('/advertiser');?>">Pengikla</a></li>
+       <li><a href="<?php echo Yii::app()->createUrl('/advertiser');?>">Advertiser</a></li>
        <li><a href="<?php echo Yii::app()->createUrl('/media-owner');?>">Media Owner</a></li>
        <!-- <li><a href="<?php echo Yii::app()->createUrl('/faq');?>">FAQ</a></li> -->
 
@@ -26,7 +26,7 @@
  </div>
 
  <div class="col-md-3">
-  <h3Tinggalkan Pesan</h3>
+  <h3>Tinggalkan Pesan</h3>
   <br>
   <form role="form" action="#" method="post" enctype="plain"> 
     <div class="form-group">
