@@ -38,7 +38,7 @@
 					<div class="col-sm-4">
 						<div class="panel panel-default overlayed">
 							<h2>Bali</h2>
-							<div class="panel-body"><a href="<?php echo Yii::app()->createUrl('/denpasar');?>" title="Bali"> <img src="<?= Yii::app()->getBaseUrl(true) ?>/images/bali_small.jpg" alt="Jakarta" class="img-responsive"></a></div>
+							<div class="panel-body"><a href="<?php echo Yii::app()->createUrl('/denpasar');?>" title="Denpasar"> <img src="<?= Yii::app()->getBaseUrl(true) ?>/images/bali_small.jpg" alt="Jakarta" class="img-responsive"></a></div>
 						</div> 
 					</div>         
 				</div>	            

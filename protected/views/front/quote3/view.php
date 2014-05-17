@@ -1,8 +1,8 @@
 
 <div class="row">
   <ul class="pager">
-    <li class="previous"><a href="#">&larr; Kembali</a></li>
-    <li class="next"><a href="#" data-toggle="modal" data-target="#myModal">Approve Quotes &rarr;</a></li>
+<!--     <li class="previous"><a href="#">&larr; Kembali</a></li>
+    <li class="next"><a href="#" data-toggle="modal" data-target="#myModal">Approve Quotes &rarr;</a></li> -->
   </ul>
   <h4 class="text-center">DETIL QUOTES CAMPAIGN #<?php echo CHtml::encode($model->id); ?></h4>
 </div>
