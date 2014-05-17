@@ -45,7 +45,7 @@
 	      								<a href="#" class="forgot_pw">Lupa Kata Sandi Anda?</a>
       							</div>
       							<div class="col-md-12">
-      								<?php echo CHtml::submitButton('Login',array('class'=>'btn btn-default login-button')); ?>
+      								<?php echo CHtml::submitButton('Masuk',array('class'=>'btn btn-default login-button')); ?>
       								
       								<div class="signup_link">Belum daftar?
       									<a href="<?php echo Yii::app()->createUrl('/site/Registrasi') ?>">Register Disini »</a>
