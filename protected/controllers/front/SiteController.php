@@ -88,7 +88,7 @@ class SiteController extends FrontEndController
 		$defLat = isset($_GET['lat']) ? $_GET['lat'] : -6.17511;
 		$defLong = isset($_GET['long']) ? $_GET['long'] : 106.86503949999997;
 		$defLokasi = 'jakarta';
-		$this->pageTitle = "Cari Iklan Billboard Di Indonesai | ".$this->setting->judul;
+		$this->pageTitle = "Cari Papan Reklame di Indonesia | ".$this->setting->judul;
 		if(isset($_GET['lokasi'])){
 			$url = 'http://maps.googleapis.com/maps/api/geocode/json?address='.urlencode($_GET['lokasi']).'&sensor=false';
 			$jdata = @file_get_contents($url);
@@ -169,7 +169,7 @@ class SiteController extends FrontEndController
 		// renders the view file 'protected/views/site/index.php'
 		// using the default layout 'protected/views/layouts/main.php'
 
-		$this->pageTitle = "Sewa Billboard di {$banner->formatedAddress}, {$banner->lokasi} | {$this->setting->judul}";
+		$this->pageTitle = "Sewa Papan Reklame di {$banner->formatedAddress}, {$banner->lokasi} | {$this->setting->judul}";
 
 		$member->addLog(MemberLog::TYPE_VIEW_DETAIL_BILLBOARD,array(
 			'idBanner'=>$banner->id
