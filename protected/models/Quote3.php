@@ -180,15 +180,6 @@ class Quote3 extends CActiveRecord
 		return parent::model($className);
 	}
 
-	
-
-	public static function getListTextStatus(){
-		return array(
-			self::STATUS_APPROVED=>'Pending',
-            self::STATUS_START=>'Start',
-            self::STATUS_STOP=>'Stop',
-		);
-	}
 	public function isStatusNotSet(){
 		if($this->status != self::STATUS_QUOTE){
 			return false;
@@ -254,5 +245,23 @@ class Quote3 extends CActiveRecord
 
 	public function getUrlImage($field){
 		return Yii::app()->request->baseUrl.'/files/quote3/'.$this->id.'-'.$field.'-'.$this->$field;
+	}
+
+	public static function getListTextStatus(){
+		return array(
+			self::STATUS_QUOTE=>'Pending',
+			self::STATUS_APPROVED=>'Pending',
+			self::STATUS_START=>'Start',
+			self::STATUS_STOP=>'Archieve',
+		);
+	}
+	public function getTextStatus(){
+		$ar = self::getListTextStatus();
+		if(isset($ar[$this->status])){
+			return $ar[$this->status];
+		}
+		else{
+			return 'Belum Diterima';
+		}
 	}
 }
