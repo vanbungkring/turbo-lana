@@ -57,10 +57,14 @@
                                 <td><?php echo $value->totalInventori ?></td>
                                 <td>-</td>
                                 <td>-</td>
-                              <td><a href="<?php echo $this->createUrl('viewCampaign',array('id'=>$value->id)); ?>" class="btn btn-outline btn-primary btn-xs">Lihat Detil</a>
-                                  <a href="#" class="btn btn-outline btn-danger btn-xs">Archieved</a>
+                              <td>
+                                <?php if ($value->status == Quote3::STATUS_STOP): ?>
+                                    <a href="<?php echo $this->createUrl('viewCampaign',array('id'=>$value->id)); ?>" class="btn btn-outline btn-danger btn-xs">Archieved</a>  
+                                <?php else: ?>  
+                                  <a href="<?php echo $this->createUrl('viewCampaign',array('id'=>$value->id)); ?>" class="btn btn-outline btn-primary btn-xs">Lihat Detil</a>
+                                <?php endif ?>
                               </td>
-                              <td> Pending
+                              <td> <?php echo $value->getTextStatus(); ?>
                               </td>
                             </tr>
                             <?php endforeach ?>
