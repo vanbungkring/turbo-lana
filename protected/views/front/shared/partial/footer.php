@@ -7,17 +7,17 @@
       </p>
     </div>
     <div class="col-md-2">
-      <h3>Help</h3>
+      <h3>Pusat Bantuan</h3>
       <ul>
-       <li><a href="<?php echo Yii::app()->createUrl('/advertiser');?>">Advertiser</a></li>
-       <li><a href="<?php echo Yii::app()->createUrl('/media-owner');?>">Media Owner</a></li>
+       <li><a href="<?php echo Yii::app()->createUrl('/advertiser');?>">Pengiklan</a></li>
+       <li><a href="<?php echo Yii::app()->createUrl('/media-owner');?>">Pemilik Media</a></li>
        <!-- <li><a href="<?php echo Yii::app()->createUrl('/faq');?>">FAQ</a></li> -->
 
-       <li><a href="<?php echo Yii::app()->createUrl('/contact');?>">Contact US</a></li>
+       <li><a href="<?php echo Yii::app()->createUrl('/contact');?>">Hubungi Kami</a></li>
      </ul>
    </div>
    <div class="col-md-2">
-    <h3>News</h3>
+    <h3>berita</h3>
     <ul>
      <li>Marketing</li>
      <li>Advertising</li>
