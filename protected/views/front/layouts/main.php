@@ -43,10 +43,10 @@
     <script src="http://cdn.jsdelivr.net/fullcalendar/1.6.4/fullcalendar.min.js"></script>
     <script src="http://cdn.jsdelivr.net/fullcalendar/1.6.4/gcal.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
-    <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/bxslider.js"></script>
+    <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/bxslider-ck.js"></script>
     <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/sscroll.js"></script>
-    <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/js.free.transform.js"></script>
-    <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/matrix.js"></script>
+    <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/js.free.transform-ck.js"></script>
+    <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/matrix-ck.js"></script>
     <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/netra-ck.js"></script>
   </body>
   </html>
