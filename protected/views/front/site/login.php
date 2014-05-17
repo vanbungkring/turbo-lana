@@ -47,8 +47,8 @@
       							<div class="col-md-12">
       								<?php echo CHtml::submitButton('Login',array('class'=>'btn btn-default login-button')); ?>
       								
-      								<div class="signup_link">New to  kiviads? 
-      									<a href="<?php echo Yii::app()->createUrl('/site/Registrasi') ?>">Sign Up »</a>
+      								<div class="signup_link">Belum daftar?
+      									<a href="<?php echo Yii::app()->createUrl('/site/Registrasi') ?>">Register Disini »</a>
       								</div>
       							
       							</div>
