@@ -186,10 +186,38 @@ class Quote3Controller extends FrontEndController
 	public function actionCampaign()
 	{
 		$this->activeType = FrontEndController::TYPE_CAMPAIGN;
-		$quotes = Quote3::model()->findAll('idMember = :p1 and status = 1',array(':p1'=>Yii::app()->user->id));
+		$countQuoteActive = Quote3::model()->count('idMember = :p1 and (status = :pt2 or status = :pt3 )',
+			array(
+					':p1'=>Yii::app()->user->id,
+					':pt2'=>Quote3::STATUS_APPROVED,
+					':pt3'=>Quote3::STATUS_START,
+				)
+		);
+		$countQuoteArchieve = Quote3::model()->count('idMember = :p1 and status = :pt2',
+			array(':p1'=>Yii::app()->user->id,
+				':pt2'=>Quote3::STATUS_STOP
+			)
+		);
+		if(isset($_GET['archieve']) and $_GET['archieve'] == true){
+			$quotes = Quote3::model()->findAll('idMember = :p1 and status = :pt2',
+				array(':p1'=>Yii::app()->user->id,
+					':pt2'=>Quote3::STATUS_STOP
+				));		
+		}
+		else{
+			$quotes = Quote3::model()->findAll('idMember = :p1 and (status = :pt2 or status = :pt3 )',
+				array(
+					':p1'=>Yii::app()->user->id,
+					':pt2'=>Quote3::STATUS_APPROVED,
+					':pt3'=>Quote3::STATUS_START,
+				)
+			);
+		}
 		$this->render('campaign',array(
 		//	'dataProvider'=>$dataProvider,
 			'quotes'=>$quotes,
+			'countQuoteActive'=>$countQuoteActive,
+			'countQuoteArchieve'=>$countQuoteArchieve,
 		));
 	}
 

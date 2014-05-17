@@ -10,9 +10,9 @@
                       <div class="col-xs-6 col-md-3 padded-top">
                         <div id="actcamp">
                           <ul class="campsum">
-                            <li class="campnumber"><?php echo count($quotes)?></li>
+                            <li class="campnumber"><?php echo $countQuoteActive; ?></li>
                             <li class="campdesc">
-                              <a href="#">
+                              <a href="<?php echo Yii::app()->createUrl('/quote3/campaign') ?>">
                                 <i class="fa fa-caret-square-o-down"></i> Active Campaign
                               </a>
                             </li>
@@ -23,9 +23,9 @@
                       <div class="col-xs-6 col-md-3 padded-top">
                         <div id="archcamp">
                           <ul class="campsum">
-                            <li class="campnumber">2</li>
+                            <li class="campnumber"><?php echo $countQuoteArchieve; ?></li>
                             <li class="campdesc">
-                              <a href="#">
+                              <a href="<?php echo Yii::app()->createUrl('/quote3/campaign',array('archieve'=>true)) ?>">
                                 <i class="fa fa-caret-square-o-down"></i> Archieve Campaign
                               </a>
                             </li>
