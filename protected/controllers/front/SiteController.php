@@ -464,6 +464,7 @@ class SiteController extends FrontEndController
 	 */
 	public function actionLogin()
 	{
+		$this->pageTitle = "Masuk Ke dashboard";
 		$model=new LoginForm('Front');
 
 		// if it is ajax validation request
