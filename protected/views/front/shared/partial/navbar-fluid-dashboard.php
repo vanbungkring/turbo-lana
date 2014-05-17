@@ -9,11 +9,11 @@
 				</div>
 
 				<div class="navbar-collapse collapse">
-					<ul class="nav navbar-nav">
-						<li><a href="#">About</a></li>
-						<li><a href="#">Advertiser</a></li>
-						<li><a href="#">Billboard Owner</a></li>
-					</ul>
+          <ul class="nav navbar-nav">
+            <li><a href="<?php echo Yii::app()->createUrl('/about'); ?>">About</a></li>
+            <li><a href="<?php echo Yii::app()->createUrl('/advertiser'); ?>">Advertiser</a></li>
+            <li><a href="<?php echo Yii::app()->createUrl('/media-owner'); ?>">Media Owner</a></li>
+          </ul>
 					<ul class="nav navbar-nav navbar-right">
 						<?php 
 						if(!Yii::app()->user->isGuest) {?>
