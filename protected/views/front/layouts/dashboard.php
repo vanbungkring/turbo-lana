@@ -105,22 +105,22 @@
         <div class="sidebar-collapse">
           <ul class="nav" id="side-menu">
             <li>
-              <a href="<?php echo Yii::app()->createUrl('/user/dashboard'); ?>"><i class="fa fa-home fa-fw"></i> Dashboard<span class="fa fa-circle flright"></span></a>
+              <a href="<?php echo Yii::app()->createUrl('/user/dashboard'); ?>"><i class="fa fa-home fa-fw"></i> Dashboard<span class="fa <?php echo $this->activeType == FrontEndController::TYPE_DASBOARD ? 'fa-circle' : 'fa-circle-o'  ?> flright"></span></a>
             </li>
             <li>
-              <a href="<?php echo Yii::app()->createUrl('/user/profile'); ?>"><i class="fa fa-user fa-fw"></i> Profile<span class="fa fa-circle-o flright"></span></a>
+              <a href="<?php echo Yii::app()->createUrl('/user/profile'); ?>"><i class="fa fa-user fa-fw"></i> Profile<span class="fa <?php echo $this->activeType == FrontEndController::TYPE_PROFILE ? 'fa-circle' : 'fa-circle-o'  ?> flright"></span></a>
             </li>
             <li>
-              <a href="<?php echo Yii::app()->createUrl('/user/myBookmark'); ?>"><i class="fa fa-flag fa-fw"></i> Bookmarks<span class="fa fa-circle-o flright"></span></a>
+              <a href="<?php echo Yii::app()->createUrl('/user/myBookmark'); ?>"><i class="fa fa-flag fa-fw"></i> Bookmarks<span class="fa <?php echo $this->activeType == FrontEndController::TYPE_BOOKMARK ? 'fa-circle' : 'fa-circle-o'  ?> flright"></span></a>
             </li>
             <li>
-              <a href="<?php echo Yii::app()->createUrl('/user/history'); ?>"><i class="fa fa-clock-o fa-fw"></i> History<span class="fa fa-circle-o flright"></span></a>
+              <a href="<?php echo Yii::app()->createUrl('/user/history'); ?>"><i class="fa fa-clock-o fa-fw"></i> History<span class="fa <?php echo $this->activeType == FrontEndController::TYPE_HISTORY ? 'fa-circle' : 'fa-circle-o'  ?> flright"></span></a>
             </li>
             <li>
-              <a href="<?php echo Yii::app()->createUrl('/quote3'); ?>"><i class="fa fa-book fa-fw"></i> Quotes<span class="fa fa-circle-o flright"></span></a>
+              <a href="<?php echo Yii::app()->createUrl('/quote3'); ?>"><i class="fa fa-book fa-fw"></i> Quotes<span class="fa <?php echo $this->activeType == FrontEndController::TYPE_QUOTES ? 'fa-circle' : 'fa-circle-o'  ?> flright"></span></a>
             </li>
             <li>
-              <a href="<?php echo Yii::app()->createUrl('/quote3/campaign'); ?>"><i class="fa fa-calendar fa-fw"></i> Campaign<span class="fa fa-circle-o flright"></span></a>
+              <a href="<?php echo Yii::app()->createUrl('/quote3/campaign'); ?>"><i class="fa fa-calendar fa-fw"></i> Campaign<span class="fa <?php echo $this->activeType == FrontEndController::TYPE_CAMPAIGN ? 'fa-circle' : 'fa-circle-o'  ?> flright"></span></a>
             </li>
           </ul>
           <!-- /#side-menu -->

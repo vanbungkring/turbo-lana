@@ -1,8 +1,14 @@
 <?php
 
-class Quote3Controller extends Controller
+class Quote3Controller extends FrontEndController
 {
 	public $layout = 'dashboard';
+	public function beforeAction($action)
+	{
+		$this->activeType = FrontEndController::TYPE_QUOTES;
+  		return parent::beforeAction($action);
+	}
+
 	public function filters()
 	{
 		return array(
@@ -48,6 +54,7 @@ class Quote3Controller extends Controller
 
 	public function actionViewCampaign($id)
 	{
+		$this->activeType = FrontEndController::TYPE_CAMPAIGN;
 		$model=Quote3::model()->with(array('quoteBanners'=>array(
 			'with'=>array(
 				'banner',
@@ -178,6 +185,7 @@ class Quote3Controller extends Controller
 
 	public function actionCampaign()
 	{
+		$this->activeType = FrontEndController::TYPE_CAMPAIGN;
 		$quotes = Quote3::model()->findAll('idMember = :p1 and status = 1',array(':p1'=>Yii::app()->user->id));
 		$this->render('campaign',array(
 		//	'dataProvider'=>$dataProvider,
