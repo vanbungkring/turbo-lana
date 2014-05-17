@@ -164,7 +164,7 @@
 
           $("#card-place").append(_card);
         });
-    $(".card").click(function(){
+    $(".card").hover(function(){
       var cid = $(this).children(".cid").val();
       var clat = $(this).children(".clat").val();
       var clong = $(this).children(".clong").val();
