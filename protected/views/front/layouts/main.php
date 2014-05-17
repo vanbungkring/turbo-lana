@@ -39,10 +39,10 @@
     <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDs1qmbiT6eTk-57wbzQ3Ivk8TRx02lXm4&sensor=true&libraries=places"></script>
     <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
-    <script src="//cdn.jsdelivr.net/fullcalendar/1.6.4/fullcalendar.js"></script>
-    <script src="//cdn.jsdelivr.net/fullcalendar/1.6.4/fullcalendar.min.js"></script>
-    <script src="//cdn.jsdelivr.net/fullcalendar/1.6.4/gcal.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script src="http://cdn.jsdelivr.net/fullcalendar/1.6.4/fullcalendar.js"></script>
+    <script src="http://cdn.jsdelivr.net/fullcalendar/1.6.4/fullcalendar.min.js"></script>
+    <script src="http://cdn.jsdelivr.net/fullcalendar/1.6.4/gcal.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
     <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/bxslider.js"></script>
     <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/sscroll.js"></script>
     <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/js.free.transform.js"></script>
