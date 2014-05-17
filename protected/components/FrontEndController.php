@@ -1,6 +1,15 @@
 <?php
 class FrontEndController extends CController
 {
+    const TYPE_DASBOARD = 81;
+    const TYPE_PROFILE = 82;
+    const TYPE_BOOKMARK = 83;
+    const TYPE_HISTORY = 84;
+    const TYPE_QUOTES = 85;
+    const TYPE_CAMPAIGN = 86;
+
+    public $activeType = null;
+
     public $layout='none';
     public $menu=array();
     public $breadcrumbs=array();

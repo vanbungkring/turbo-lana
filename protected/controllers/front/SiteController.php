@@ -62,7 +62,7 @@ class SiteController extends FrontEndController
 				'users'=>array('@'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('getListBanner','page','index','oauth','result','custom','dashboard','GetMarker','Registrasi','User','AjaxLogin','login','error'),
+				'actions'=>array('test','getListBanner','page','index','oauth','result','custom','dashboard','GetMarker','Registrasi','User','AjaxLogin','login','error'),
 				'users'=>array('*'),
 			),
 			array('deny',  // deny all users
@@ -437,7 +437,7 @@ class SiteController extends FrontEndController
             $in = new UserIdentity($member->id,null);
             $duration= 3600*24*30; // 30 days
 			if(Yii::app()->user->login($in,$duration)){
-				$this->redirect(array('/site/index')); 
+				$this->redirect(array('/user/profile')); 
 			}
         }
 
@@ -517,5 +517,15 @@ class SiteController extends FrontEndController
 	{
 		Yii::app()->user->logout();
 		$this->redirect(Yii::app()->homeUrl);
+	}
+
+	public function actionTest(){
+		$message = Yii::app()->mailgun->newMessage();
+		$message->setFrom('me@example.com', 'Andrei Baibaratsky');
+		$message->addTo('lateph@gmail.com', 'My dear user');
+		$message->setSubject('Mailgun API library test');
+		$message->renderText('test', array('myParam' => 'Awesome!'));
+
+		echo $message->send();
 	}
 }

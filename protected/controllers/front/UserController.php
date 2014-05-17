@@ -34,6 +34,7 @@ class UserController extends FrontEndController
 	}
 
 	public function actionDashboard(){
+		$this->activeType = FrontEndController::TYPE_DASBOARD;
 		$member = Member::model()->findByPk(Yii::app()->user->id);
 		$logs = MemberLog::model()->findAll(array(
 			'condition'=>'idMember = :p1',
@@ -57,6 +58,8 @@ class UserController extends FrontEndController
 	}
 
 	public function actionProfile(){
+		$this->activeType = FrontEndController::TYPE_PROFILE;
+
         $member = Member::model()->findByPk(Yii::app()->user->id);
         $member->scenario = 'profile';
        
@@ -110,6 +113,8 @@ class UserController extends FrontEndController
 	}
 
 	public function actionHistory(){
+		$this->activeType = FrontEndController::TYPE_HISTORY;
+		
 		$member = Member::model()->findByPk(Yii::app()->user->id);
 		$logs = MemberLog::model()->findAll(array(
 			'condition'=>'idMember = :p1',
@@ -135,6 +140,8 @@ class UserController extends FrontEndController
 
 	public function actionMyBookmark()
 	{
+		$this->activeType = FrontEndController::TYPE_BOOKMARK;
+
 		$criteria = new CDbCriteria();
 		$criteria->compare('idMember',Yii::app()->user->id);
 		$criteria->with = array('banner');
