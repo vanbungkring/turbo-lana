@@ -53,7 +53,10 @@
                         <h4>Buat Quotes</h4>
                         <p>Dapatkan quotes dari titik yang anda inginkan. Cari titik untuk iklan anda sekarang!</p>
                       <div class="input-group custom-search-form">
-                        <input type="text" class="form-control" placeholder="Masukkan lokasi...">
+                        <form action="<?php echo Yii::app()->createUrl("/site/result") ?>" method="GET" id="formSearch">
+                        <input name="lokasi" type="text" class="form-control" placeholder="Masukkan lokasi..." id="boxcari">
+                        <input type="submit" style="display:none" />
+                        </form>
                         <span class="input-group-btn">
                           <button class="btn btn-default"><i class="fa fa-search"></i></button>
                         </span>
@@ -94,3 +97,14 @@
                 <!-- end of panel -->
               </div>
             </div>
+
+          <?php
+
+
+  Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl.'/js/jquery.geocomplete.js',  CClientScript::POS_END);
+  Yii::app()->clientScript->registerScript('script-box','$("#boxcari").geocomplete().bind("geocode:result", function(event, result){
+    $("#lat").val(result.geometry.location.lat());
+    $("#long").val(result.geometry.location.lng());
+    $("#formSearch").submit();
+ // map.setCenter(new google.maps.LatLng(result.geometry.location.lat(), result.geometry.location.lng()))
+  });;',  CClientScript::POS_END);
