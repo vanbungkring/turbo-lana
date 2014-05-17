@@ -1,3 +1,5 @@
+
+<IfModule mod_rewrite>
 RewriteEngine on
 RewriteBase /
 # if a directory or a file exists, use it directly
@@ -7,7 +9,7 @@ RewriteCond $1 !^(index\.php)
  
 # otherwise forward it to index.php
 RewriteRule ^(.+)$ yourproject/index.php?$1 [PT,L,QSA]
-
+</IfModule>
 
 ## EXPIRES CACHING ##
 <IfModule mod_expires.c>
