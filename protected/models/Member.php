@@ -225,4 +225,12 @@ class Member extends CActiveRecord
     		$this->profilePerusahaan = $newProfie;
     	}
     }
+
+    public function getRecentNotifikasi(){
+    	return MemberNotifikasi::model()->findAll(array(
+    		'condition'=>'status = :p1',
+    		'limit'=>5,
+    		'params'=>array(':p1'=>MemberNotifikasi::STATUS_UNREAD),
+    	));
+    }
 }
