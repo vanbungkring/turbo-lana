@@ -154,7 +154,7 @@
           <div class="modal-body">
             <?php echo CHtml::dropDownList('quote_list', 'M', 
             CHtml::listData($member->getOpenQuote(),'id','name'),array('class'=>'form-control')); ?>
-            <p><a href="<?php echo $this->createUrl('quote3/create')?>">Create new quote now</a></p>
+            <p><a href="<?php echo $this->createUrl('quote3/create',array('idBanner'=>$banner->id))?>">Create new quote now</a></p>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
