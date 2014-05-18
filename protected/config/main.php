@@ -72,7 +72,7 @@ return array(
 		),
 		'mailgun' => array(
             'class' => 'application.extensions.php-mailgun.MailgunYii',
-            'domain' => 'example.com',
+            'domain' => 'beta.kiviads.net',
             'key' => 'key-0wztik6tn-zbm1gkcv1h95jh08m1aiu3',
             'tags' => array(), // You may also specify some Mailgun parameters
             'enableTracking' => false,
