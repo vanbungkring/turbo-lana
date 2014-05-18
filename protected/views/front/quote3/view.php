@@ -112,19 +112,7 @@
     <div class="panel-heading">
       Peta Lokasi
     </div>
-    <div class="panel-body">
-      <p>MAPS</p>
-      <p>MAPS</p>
-      <p>MAPS</p>
-      <p>MAPS</p>
-      <p>MAPS</p>
-      <p>MAPS</p>
-      <p>MAPS</p>
-      <p>MAPS</p>
-      <p>MAPS</p>
-      <p>MAPS</p>
-      <p>MAPS</p>
-    </div>
+    <div class="panel-body" id="map-lokasi" style="height:400px"></div>
   </div>
 </div>
 <!-- end of maps -->
@@ -201,3 +189,34 @@ $("#open-modal-dialog").click(function(){
 // });
 ';
 Yii::app()->clientScript->registerScript('script-modal',$js,  CClientScript::POS_END);
+
+
+
+//google maps render
+    $js =    '
+    function initialize() {
+      var mapOptions = {
+        zoom: 8,
+        center: new google.maps.LatLng(-6.17511, 106.86503949999997),
+      };
+      var map = new google.maps.Map(document.getElementById("map-lokasi"),mapOptions);
+      var markerCluster = new MarkerClusterer(map, []);
+      var bounds = new google.maps.LatLngBounds();
+      var markers = '.CJSON::encode($model->banners).';
+
+      for (i=0; i < markers.length; i++) { 
+        console.log(markers[i]);
+        bounds.extend(new google.maps.LatLng(markers[i].lat, markers[i].long));
+        markerCluster.addMarker(new google.maps.Marker({
+          position: new google.maps.LatLng(markers[i].lat, markers[i].long)
+        }));
+      }
+  
+      map.fitBounds(bounds);
+      map.panToBounds(bounds);  
+  }
+
+  google.maps.event.addDomListener(window, "load", initialize);
+    ';
+    Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl.'/js/markerclusterer.js',  CClientScript::POS_END);
+    Yii::app()->clientScript->registerScript('script-map',$js,  CClientScript::POS_END);
