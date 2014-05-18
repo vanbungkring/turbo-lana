@@ -113,6 +113,12 @@ class Quote3Controller extends FrontEndController
 			$model->tanggalBerakhir = DateHelper::toYmd($model->tanggalBerakhir);
 			$model->status = 0;
 			if($model->save()){
+				if(isset($_GET['idBanner'])){
+					$banner = Banner::model()->findByPk($_GET['idBanner']);
+					if($banner != null){
+						$model->addBanner($_GET['idBanner']);
+					}
+				}
 				$this->redirect(array('view','id'=>$model->id));
 			}
 		}
