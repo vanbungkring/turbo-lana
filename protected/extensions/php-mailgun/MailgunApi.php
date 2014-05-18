@@ -623,6 +623,7 @@ class MailgunApi
         $curl = $this->_getCurl();
         curl_setopt($curl, CURLOPT_CUSTOMREQUEST, $method);
         curl_setopt($curl, CURLOPT_URL, $url);
+        curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
 
         if ($object !== null) {
             $params = array_merge($object->getPostData(), $params);
