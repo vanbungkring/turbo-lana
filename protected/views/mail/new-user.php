@@ -77,17 +77,6 @@ ul
 
 <div class=WordSection1>
 
-<p class=MsoNormal align=center style='text-align:center;line-height:115%'><b><span
-style='font-size:18.0pt;line-height:115%'>Email Notification Contents for
-User(s)</span></b></p>
-
-<p class=MsoNormal style='text-align:justify;line-height:115%'>&nbsp;</p>
-
-<p class=MsoNormal style='text-align:justify;line-height:115%'>&nbsp;</p>
-
-<p class=MsoNormal style='text-align:justify;line-height:115%'><b><u>1.
-Welcoming Email to New User(s)</u></b></p>
-
 <p class=MsoNormal style='text-align:justify;line-height:115%'>&nbsp;</p>
 
 <p class=MsoNormal align=center style='text-align:center;line-height:115%'>&nbsp;</p>
