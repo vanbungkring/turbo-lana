@@ -92,7 +92,7 @@
     });
     var contentInfo = "<div class=tooltip-maps>";
     if(row.cover != null){
-      contentInfo += "<img class=\"tooltip-image\" src=\"'.Yii::app()->request->baseUrl.'/files/bannerimage/"+row.cover+".jpg\" />";
+      contentInfo += "<img class=\"tooltip-image\" src=\"'.Yii::app()->request->baseUrl.'/files/bannerimage/"+row.cover_file+"\" />";
     }
     
     contentInfo += "<div class=tooltip-name> <h1>"+row.nama+" </h1></div>";
@@ -160,7 +160,7 @@
           _card = _card.replace(/{id}/g, row.id);
           _card = _card.replace(/{harga}/g, row.hargaPerBulan);
           _card = _card.replace(/{alt}/g,"Billboard "+row.formatedAddress);
-          _card = _card.replace(/{img}/g, "'.Yii::app()->request->baseUrl.'/files/bannerimage/"+row.cover+".jpg");
+          _card = _card.replace(/{img}/g, "'.Yii::app()->request->baseUrl.'/files/bannerimage/"+row.cover_file);
 
           $("#card-place").append(_card);
         });
