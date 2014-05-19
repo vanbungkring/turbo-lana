@@ -49,6 +49,7 @@ class BannerController extends BackEndController
 			$modelBannerImage->idBanner = $model->id;
 			$modelBannerImage->status   = 0;
 			$modelBannerImage->image=CUploadedFile::getInstance($modelBannerImage,'image');
+			$modelBannerImage->namaFile = $modelBannerImage->image->getName();
 			if($modelBannerImage->save()){
 				if($modelBannerImage->image){
 					$file = $modelBannerImage->getImagePath();
