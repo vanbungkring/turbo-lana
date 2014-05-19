@@ -152,6 +152,11 @@ class Member extends CActiveRecord
 	   if(!empty($this->newPassword)){
 	   		$this->password = md5($this->newPassword);
 	   }
+
+	   if($this->isNewRecord){
+    		$this->sendNewJoinEmail();
+    	}
+
 	   return parent::beforeSave();
 	}
 
@@ -232,5 +237,14 @@ class Member extends CActiveRecord
     		'limit'=>5,
     		'params'=>array(':p1'=>MemberNotifikasi::STATUS_UNREAD),
     	));
+    }
+
+    public function sendNewJoinEmail(){
+    	$message = Yii::app()->mailgun->newMessage();
+		$message->addTo($this->email, $this->namaDepan);
+		$message->setSubject('Wellcome To Kiviads');
+		$message->renderHtml('new-user', array('member' => $this));
+
+		$message->send();
     }
 }

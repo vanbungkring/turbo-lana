@@ -621,9 +621,9 @@ class MailgunApi
     protected function _performRequest($method, $url, MailgunObject $object = null, $params = array())
     {
         $curl = $this->_getCurl();
+        curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
         curl_setopt($curl, CURLOPT_CUSTOMREQUEST, $method);
         curl_setopt($curl, CURLOPT_URL, $url);
-        curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
 
         if ($object !== null) {
             $params = array_merge($object->getPostData(), $params);

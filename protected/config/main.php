@@ -72,10 +72,12 @@ return array(
 		),
 		'mailgun' => array(
             'class' => 'application.extensions.php-mailgun.MailgunYii',
-            'domain' => 'beta.kiviads.net',
+            'domain' => 'kiviads.net',
             'key' => 'key-0wztik6tn-zbm1gkcv1h95jh08m1aiu3',
             'tags' => array(), // You may also specify some Mailgun parameters
             'enableTracking' => false,
+            'fromAddress'=>'support@kiviads.net',
+            'fromName'=>'Suport kiviads',
         ),
 	),
 
@@ -89,7 +91,7 @@ return array(
 	// using Yii::app()->params['paramName']
 	'params'=>array(
 		// this is used in contact page
-		'adminEmail'=>'webmaster@example.com',
+		'adminEmail'=>'arie@kivibyte.net',
 		'uploadPath' => dirname(__FILE__).DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'files'
 	),
 );
