@@ -97,6 +97,7 @@ class BannerController extends BackEndController
 			if($model->save()){
 				$model->updateKategori();
 				if($model->image){
+					$model->namaFile = $model->image->getName();
 					$file = $model->getImagePath();
 					if(file_exists($file)){
 						unlink($file);

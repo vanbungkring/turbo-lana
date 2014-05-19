@@ -28,7 +28,7 @@ class BannerImage extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('idBanner, status', 'numerical', 'integerOnly'=>true),
-			array('image', 'file', 'types'=>'jpg','on'=>'create'),
+			array('image', 'file', 'types'=>'jpg,png,gif','on'=>'create'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, idBanner, status', 'safe', 'on'=>'search'),
@@ -100,10 +100,10 @@ class BannerImage extends CActiveRecord
 	}
 	public function getImagePath(){
 		$path = Yii::app()->params['uploadPath'];
-		return $path.'/bannerimage/'.$this->id.'.jpg';
+		return $path.'/bannerimage/'.$this->id.'-'.$this->namaFile;
 	}
 
 	public function getImageUrl(){
-		return Yii::app()->request->baseUrl.'/files/bannerimage/'.$this->id.'.jpg';
+		return Yii::app()->request->baseUrl.'/files/bannerimage/'.$this->id.'-'.$this->namaFile;
 	}
 }
