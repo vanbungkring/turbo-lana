@@ -98,7 +98,7 @@
 </table>
 <?php if ($model->isStatusNotSet()): ?>
   <a href="<?php echo Yii::app()->createUrl('/search'); ?>" class="btn btn-success btn-outline btn-sm">Tambah Media</a>
-  <a href="<?php echo Yii::app()->createUrl('/search'); ?>" class="btn btn-success btn-outline btn-sm">Update Quote</a>
+  <a href="<?php echo Yii::app()->createUrl('/quote3/kirim',array('id'=>$model->id)); ?>" class="btn btn-success btn-outline btn-sm">Update Quote</a>
 <?php endif ?>
 </br>
 </br>

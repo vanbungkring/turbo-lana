@@ -156,7 +156,7 @@ class Member extends CActiveRecord
 	   if($this->isNewRecord){
     		$this->sendNewJoinEmail();
     	}
-    	
+
 	   return parent::beforeSave();
 	}
 
@@ -245,6 +245,6 @@ class Member extends CActiveRecord
 		$message->setSubject('Wellcome To Kiviads');
 		$message->renderHtml('new-user', array('member' => $this));
 
-		echo $message->send();
+		$message->send();
     }
 }

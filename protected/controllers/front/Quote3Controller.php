@@ -277,4 +277,25 @@ class Quote3Controller extends FrontEndController
 		$model->approveToCampaign();
 		$this->redirect(array('view','id'=>$id));
 	}
+
+	public function actionKirim($id){
+		$email = Yii::app()->params['adminEmail'];
+		$quote = $this->loadModel($id);
+
+		$message = Yii::app()->mailgun->newMessage();
+		$message->addTo($quote->member->email, $quote->member->namaDepan);
+		$message->setSubject('Your Detail Quote');
+		$message->renderHtml('quote', array('member' => $quote->member , 'quote'=>$quote));
+
+		$message->send();
+
+		$messageAdmin = Yii::app()->mailgun->newMessage();
+		$messageAdmin->addTo($email, $quote->member->namaDepan);
+		$messageAdmin->setSubject('Request Detail Quote');
+		$messageAdmin->renderHtml('quote-admin', array('member' => $quote->member , 'quote'=>$quote));
+
+		$messageAdmin->send();
+
+		$this->redirect(array('/quote3/view','id'=>$id));
+	}
 }
