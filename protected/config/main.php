@@ -32,6 +32,17 @@ return array(
 
 	// application components
 	'components'=>array(
+		'memCache' => array(
+            'class'=>'system.caching.CMemCache',
+            //'useMemcached'=>true,
+            'servers'=>array(
+                array(
+                    'host'=>'127.0.0.1',
+                    'port'=>11211,
+                    'weight'=>100,
+                ),
+            ),
+        ),
 		'user'=>array(
 			// enable cookie-based authentication
 			'allowAutoLogin'=>true,
@@ -49,7 +60,11 @@ return array(
 		
 		// uncomment the following to use a MySQL database
 		
-		'db'=>include dirname(__FILE__) . '/db.php',
+		'db'=>CMap::mergeArray(include dirname(__FILE__) . '/db.php',array(
+			// 'schemaCacheID'=>'memCache',
+			// 'queryCacheID'=>'memCache',
+			// 'schemaCachingDuration'=>'3600',
+		)),
 		
 		'errorHandler'=>array(
 			// use 'site/error' action to display errors
