@@ -44,7 +44,7 @@ class FrontEndController extends CController
 
     protected function beforeAction($action)
     {
-        $this->setting = Setting::model()->find('active=1');
+        $this->setting = Setting::model()->cache(1000)->find('active=1');
         if($this->setting == null){
             throw new Exception("Setting Not Found", 1);
         }
@@ -60,7 +60,7 @@ class FrontEndController extends CController
         }
         
         if(!Yii::app()->user->isGuest){
-            $this->memberModel = Member::model()->findByPk(Yii::app()->user->id);
+            $this->memberModel = Member::model()->cache(300)->with(array('profilePerusahaan'))->findByPk(Yii::app()->user->id);
             if($this->memberModel == null){
                 $this->redirect(array('/site/logout'));
             }
