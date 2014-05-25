@@ -16,6 +16,7 @@
  * @property string $time
  * @property integer $status
  * @property Quote3Banner[] $quoteBanners Description
+ * @property Member $member;
  */
 class Quote3 extends CActiveRecord
 {
@@ -205,6 +206,8 @@ class Quote3 extends CActiveRecord
             $quoteBanner->banner->save();
         }
         $this->save();
+
+        KiviMail::sendQuoteApproveMail($this->id);
     }
     public function setStart(){
         $this->status = self::STATUS_START;
