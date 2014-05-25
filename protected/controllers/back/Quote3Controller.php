@@ -58,12 +58,23 @@ class Quote3Controller extends Controller
 				$mqp->price = $value['price'];
 				$mqp->save(false);
 			}
+			$this->sendUpdateQuoteMail($id);
 			$this->redirect(array('view','id'=>$id));
 		}
 
 		$this->render('view',array(
 			'model'=>$model,
 		));
+	}
+
+	public function sendUpdateQuoteMail($id){
+		$quote = Quote3::model()->findByPk($id);
+		$message = Yii::app()->mailgun->newMessage();
+		$message->addTo($quote->member->email, $quote->member->namaDepan);
+		$message->setSubject('Campaign Quotes Updates');
+		$message->renderHtml('quote-update', array('quote' => $quote));
+
+		echo $message->send();
 	}
 
 	/**

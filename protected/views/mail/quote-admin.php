@@ -52,7 +52,7 @@ div.WordSection1
 
 <p class=MsoNormal style='text-align:justify;line-height:115%'>&nbsp;</p>
 
-<p class=MsoNormal style='text-align:justify;line-height:115%'>Klik <b><a href="<?php echo Yii::app()->createAbsoluteUrl('/quote3/view',array('id'=>$quote->id)) ?>"><span
+<p class=MsoNormal style='text-align:justify;line-height:115%'>Klik <b><a href="<?php echo @LHtml::createAdminUrl('/quote3/view',array('id'=>$quote->id)) ?>"><span
 style='color:#C0504D'>DISINI </span></a></b><span style='background:yellow'></span>untuk menuju ke dashboard dan mengatur Quotes
 Detail  Anda! </p>
 
