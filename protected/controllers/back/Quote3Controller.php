@@ -74,7 +74,7 @@ class Quote3Controller extends Controller
 		$message->setSubject('Campaign Quotes Updates');
 		$message->renderHtml('quote-update', array('quote' => $quote));
 
-		echo $message->send();
+		$message->send();
 	}
 
 	/**
