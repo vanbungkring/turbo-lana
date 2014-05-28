@@ -131,6 +131,7 @@ class Quote3Controller extends Controller
 	 */
 	public function actionDelete($id)
 	{
+		// TODO :: pengecekan banner 0
 		$this->loadModel($id)->delete();
 
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
