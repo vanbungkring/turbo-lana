@@ -73,7 +73,7 @@
                       <tbody>
                       	<?php foreach ($model->quoteBanners as $key => $quoteBanner): ?>
                       		<tr>
-	                          <td><a href="#"><?php echo $quoteBanner->banner->sku; ?></a></td>
+	                          <td><a href="<?php echo LHtml::createClientUrl('site/detail',array('id'=>$quoteBanner->idBanner)); ?>"><?php echo $quoteBanner->banner->sku; ?></a></td>
 	                          <td><?php echo CHtml::activeDropDownList($quoteBanner,'status',
 	                          	array(1=>'available',2=>'reject'),array('name'=>"quote3_banner[{$quoteBanner->id}][status]",'empty'=>'- status -')); ?>
 	                          	<?php echo CHtml::activeTextArea($quoteBanner,'keterangan',array('name'=>"quote3_banner[{$quoteBanner->id}][keterangan]")); ?></td>
