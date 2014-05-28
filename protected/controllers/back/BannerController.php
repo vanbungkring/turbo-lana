@@ -58,6 +58,9 @@ class BannerController extends BackEndController
 					}
 					$modelBannerImage->image->saveAs($file);
 				}
+				// TODO: asem manis
+
+//				$data = "select * from quote3_banners inner join quote3 on quote3.status = :status where quote3_banner"
 				$this->redirect(array('view','id'=>$model->id));
 			}
 		}
@@ -66,6 +69,19 @@ class BannerController extends BackEndController
 			'model'=>$model,
 			'modelBannerImage'=>$modelBannerImage
 		));
+	}
+
+	public function actionDeleteImage($id){
+		$model=BannerImage::model()->findByPk($id);
+		if($model===null)
+			throw new CHttpException(404,'The requested page does not exist.');
+		$file = $model->getImagePath();
+		if(file_exists($file)){
+			unlink($file);
+		}
+		$idBanner = $model->idBanner;
+		$model->delete();
+		$this->redirect(array('view','id'=>$idBanner));
 	}
 
 	public function actionSetCover($id){
