@@ -200,6 +200,14 @@ class Quote3Controller extends Controller
 				$model->uploadFilePendukung('file7',$file7);
                 $this->redirect(array('viewCampaign','id'=>$id));
 			}
+
+			foreach ($model->quoteBanners as $key => $quoteBanner) {
+				$fileProgress=CUploadedFile::getInstanceByName('fileProgress['.$quoteBanner->id.']');
+				if($fileProgress){
+					$quoteBanner->uploadfileProgress($fileProgress);
+	                $this->redirect(array('viewCampaign','id'=>$id));
+				}
+			}
 		}
 
 		$this->render('view_campaign',array(
