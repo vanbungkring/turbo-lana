@@ -205,6 +205,7 @@ class Quote3Controller extends Controller
 				$fileProgress=CUploadedFile::getInstanceByName('fileProgress['.$quoteBanner->id.']');
 				if($fileProgress){
 					$quoteBanner->uploadfileProgress($fileProgress);
+					KiviMail::sendIventoriUpdate7($quoteBanner->id);
 	                $this->redirect(array('viewCampaign','id'=>$id));
 				}
 			}

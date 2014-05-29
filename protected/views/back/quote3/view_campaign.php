@@ -109,7 +109,7 @@
                           </td>
                           <td>
                             <?php if ($quoteBanner->fileProgress): ?>
-                              <a href="<?php echo $quoteBanner->getFileProgressUrl() ?>" target="_blank" class="btn btn-outline btn-info btn-xs">Download</a>
+                              <a href="<?php echo $quoteBanner->getFileProgressUrl(true) ?>" target="_blank" class="btn btn-outline btn-info btn-xs">Download</a>
                               <span class="btn btn-outline btn-warning btn-file btn-xs">Re-upload<input class="auto-submit-2" type="file" name="fileProgress[<?php echo $quoteBanner->id ?>]"></span>
                             <?php else: ?>
                               <span class="btn btn-outline btn-success btn-file btn-xs">Upload<input class="auto-submit-2"  type="file"  name="fileProgress[<?php echo $quoteBanner->id ?>]"></span>

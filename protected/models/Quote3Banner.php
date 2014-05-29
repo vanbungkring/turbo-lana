@@ -44,6 +44,7 @@ class Quote3Banner extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
 			'banner'=>array(self::BELONGS_TO,'Banner','idBanner'),
+			'quote3'=>array(self::BELONGS_TO,'Quote3','idQuote'),
 		);
 	}
 
@@ -128,8 +129,13 @@ class Quote3Banner extends CActiveRecord
 		return $path.'/quote3banner/'.$this->id.'-'.$this->fileProgress;
 	}
 
-	public function getFileProgressUrl(){
-		return Yii::app()->request->baseUrl.'/files/quote3banner/'.$this->id.'-'.$this->fileProgress;
+	public function getFileProgressUrl($absolute=false){
+		if($absolute){
+			return Yii::app()->getBaseUrl(true).'/files/quote3banner/'.$this->id.'-'.$this->fileProgress;
+		}
+		else{
+			return Yii::app()->request->baseUrl.'/files/quote3banner/'.$this->id.'-'.$this->fileProgress;		
+		}
 	}
 
 	public function uploadfileProgress($fileUpload){
