@@ -8,6 +8,7 @@
  * @property integer $idQuote
  * @property integer $idBanner
  * @property Banner $banner Description
+ * @property string $fileProgress
  */
 class Quote3Banner extends CActiveRecord
 {
@@ -43,6 +44,7 @@ class Quote3Banner extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
 			'banner'=>array(self::BELONGS_TO,'Banner','idBanner'),
+			'quote3'=>array(self::BELONGS_TO,'Quote3','idQuote'),
 		);
 	}
 
@@ -121,4 +123,29 @@ class Quote3Banner extends CActiveRecord
         }
         return $str;
     }
+
+    public function getFileProgessPath(){
+		$path = Yii::app()->params['uploadPath'];
+		return $path.'/quote3banner/'.$this->id.'-'.$this->fileProgress;
+	}
+
+	public function getFileProgressUrl($absolute=false){
+		if($absolute){
+			return Yii::app()->getBaseUrl(true).'/files/quote3banner/'.$this->id.'-'.$this->fileProgress;
+		}
+		else{
+			return Yii::app()->request->baseUrl.'/files/quote3banner/'.$this->id.'-'.$this->fileProgress;		
+		}
+	}
+
+	public function uploadfileProgress($fileUpload){
+		$this->fileProgress = $fileUpload->getName();
+		$file = $this->getFileProgessPath();
+		if(file_exists($file)){
+			unlink($file);
+		}
+		if($fileUpload->saveAs($file)){
+            $this->save();
+        }
+	}
 }

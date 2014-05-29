@@ -72,6 +72,15 @@
             </div>
             <!-- end row -->
             <div class="row">
+               <?php $form=$this->beginWidget('CActiveForm', array(
+                   'id'=>'upload-file-pendukung-form-2',
+                  // Please note: When you enable ajax validation, make sure the corresponding
+                  // controller action is handling ajax validation correctly.
+                  // There is a call to performAjaxValidation() commented in generated controller code.
+                  // See class documentation of CActiveForm for details on this.
+                   'enableAjaxValidation'=>false,
+                   'htmlOptions'=>array('enctype'=>'multipart/form-data'),
+                   )); ?>
               <div class="col-md-12 col-lg-12">
                 <div class="panel panel-default">
                   <div class="panel-heading">
@@ -85,6 +94,7 @@
                           <td>Status</td>
                           <td>Nilai Kontrak</td>
                           <td>Tindakan</td>
+                          <td>Gambar Progres Pemasangan</td>
                         </tr>
                       </thead>
                       <tbody>
@@ -97,6 +107,14 @@
                             <a href="#" class="btn btn-outline btn-info btn-xs">Tanya</a>
                             <a href="#" class="btn btn-outline btn-success btn-xs"><i class="fa fa-picture-o"></i></a>
                           </td>
+                          <td>
+                            <?php if ($quoteBanner->fileProgress): ?>
+                              <a href="<?php echo $quoteBanner->getFileProgressUrl(true) ?>" target="_blank" class="btn btn-outline btn-info btn-xs">Download</a>
+                              <span class="btn btn-outline btn-warning btn-file btn-xs">Re-upload<input class="auto-submit-2" type="file" name="fileProgress[<?php echo $quoteBanner->id ?>]"></span>
+                            <?php else: ?>
+                              <span class="btn btn-outline btn-success btn-file btn-xs">Upload<input class="auto-submit-2"  type="file"  name="fileProgress[<?php echo $quoteBanner->id ?>]"></span>
+                            <?php endif ?>
+                          </td>
                         </tr>
                         <?php endforeach ?>
                       </tbody>
@@ -104,6 +122,7 @@
                   </div>
                 </div>
               </div>
+              <?php $this->endWidget(); ?>
               <!-- end div inventory list -->
             </div>
             <!-- end row -->
@@ -276,6 +295,10 @@
 $js =    '
 $(".auto-submit").change(function() {
       $("#upload-file-pendukung-form").submit();
+    }
+  );
+$(".auto-submit-2").change(function() {
+      $("#upload-file-pendukung-form-2").submit();
     }
   );
 ';

@@ -131,6 +131,7 @@ class Quote3Controller extends Controller
 	 */
 	public function actionDelete($id)
 	{
+		// TODO :: pengecekan banner 0
 		$this->loadModel($id)->delete();
 
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
@@ -198,6 +199,15 @@ class Quote3Controller extends Controller
 			if($file7){
 				$model->uploadFilePendukung('file7',$file7);
                 $this->redirect(array('viewCampaign','id'=>$id));
+			}
+
+			foreach ($model->quoteBanners as $key => $quoteBanner) {
+				$fileProgress=CUploadedFile::getInstanceByName('fileProgress['.$quoteBanner->id.']');
+				if($fileProgress){
+					$quoteBanner->uploadfileProgress($fileProgress);
+					KiviMail::sendIventoriUpdate7($quoteBanner->id);
+	                $this->redirect(array('viewCampaign','id'=>$id));
+				}
 			}
 		}
 
