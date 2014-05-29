@@ -1,7 +1,7 @@
 <?php
 return array(
 	// this is used in contact page
-	'adminEmail'=>'arie@kivibyte.net',
+	'adminEmail'=>'prasetyo.mailbox@gmail.com',
 	'uploadPath' => dirname(__FILE__).DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'files',
 	
 	// perlu untuk email / masih solusi jelek belum dapat paling baik
