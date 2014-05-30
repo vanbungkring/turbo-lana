@@ -45,4 +45,19 @@ class KiviMail
 			//throw $e;
 		}
 	}
+
+	public static function sendFileUpdate8($idQuote){
+		try {
+			$quote3 = Quote3::model()->findByPk($idQuote);
+			
+			$message = Yii::app()->mailgun->newMessage();
+			$message->addTo($quote3->member->email, $quote3->member->namaDepan);
+			$message->setSubject('Campaign Quotes Approval');
+			$message->renderHtml('file-update-8', array('quote3' => $quote3));
+
+			$message->send();
+		} catch (Exception $e) {
+			//throw $e;
+		}
+	}
 }

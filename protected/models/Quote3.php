@@ -246,8 +246,8 @@ class Quote3 extends CActiveRecord
 		return $path.'/quote3/'.$this->id.'-'.$field.'-'.$this->$field;
 	}
 
-	public function getUrlImage($field){
-		return Yii::app()->request->baseUrl.'/files/quote3/'.$this->id.'-'.$field.'-'.$this->$field;
+	public function getUrlImage($field,$absolute=false){
+		return Yii::app()->getBaseUrl($absolute).'/files/quote3/'.$this->id.'-'.$field.'-'.$this->$field;
 	}
 
 	public static function getListTextStatus(){

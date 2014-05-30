@@ -192,6 +192,7 @@ class Quote3Controller extends Controller
 			$file5=CUploadedFile::getInstanceByName('file5');
 			if($file5){
 				$model->uploadFilePendukung('file5',$file5);
+				KiviMail::sendFileUpdate8($model->id);
                 $this->redirect(array('viewCampaign','id'=>$id));
 			}
 
