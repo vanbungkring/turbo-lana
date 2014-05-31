@@ -60,6 +60,7 @@
                   <td>-</td>
                   <td>
                     <a href="<?php echo $this->createUrl('view',array('id'=>$value->id)); ?>" class="btn btn-outline btn-primary btn-xs">Lihat Detil</a>
+                    <a href="<?php echo $this->createUrl('delete',array('id'=>$value->id)); ?>" class="btn btn-outline btn-primary btn-xs">Hapus</a>
                   </td>
                 </tr>
               <?php endforeach ?>
