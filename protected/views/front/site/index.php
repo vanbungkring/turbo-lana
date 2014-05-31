@@ -10,7 +10,7 @@
 	<?php
 
 
-	Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl.'/js/jquery.geocomplete.js',  CClientScript::POS_END);
+	Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl.'/js/jquery.geocomplete.min.js',  CClientScript::POS_END);
 	Yii::app()->clientScript->registerScript('script-box','$("#boxcari").geocomplete().bind("geocode:result", function(event, result){
 		$("#lat").val(result.geometry.location.lat());
 		$("#long").val(result.geometry.location.lng());
