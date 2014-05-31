@@ -62,7 +62,7 @@ class SiteController extends FrontEndController
 				'users'=>array('@'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('test','getListBanner','page','index','oauth','result','custom','dashboard','GetMarker','Registrasi','User','AjaxLogin','login','error'),
+				'actions'=>array('ResetPassword','forgotPassword','test','getListBanner','page','index','oauth','result','custom','dashboard','GetMarker','Registrasi','User','AjaxLogin','login','error'),
 				'users'=>array('*'),
 			),
 			array('deny',  // deny all users
@@ -533,5 +533,43 @@ class SiteController extends FrontEndController
 		$message->renderText('test', array('myParam' => 'Awesome!'));
 
 		$message->send();
+	}
+
+	public function actionForgotPassword(){
+		if(isset($_POST['email'])){
+			$member = Member::model()->find('email = :email',array(':email'=>@$_POST['email']));
+			if($member == null){
+				Yii::app()->user->setFlash('error', "Email Tidak ditemukan cek pengisian email anda !");
+			}
+			else{
+				Yii::app()->user->setFlash('success', "Email Sudah Dikirim Silahkan cek email anda dan ikuti langkah untuk mereset password!");
+				KiviMail::sendLinkResetPassword($member);
+				$this->redirect('forgotPassword');
+			}
+		}
+		$this->render('forgotPassword');
+	}
+
+	public function actionResetPassword(){
+		$member = Member::model()->findByPk(@$_GET['member']);
+		if($member===null)
+			throw new CHttpException(404,'Halaman Tidak ditemukan.');
+		$model = new ResetPassword();
+		if(isset($_POST['ResetPassword'])){
+			$model->attributes = $_POST['ResetPassword'];
+			if($model->validate()){
+				$member->password = Member::createPassword($model->pass1);
+				if($member->save()){
+					Yii::app()->user->setFlash('success', "Password Berhasil Dirubah , ".CHtml::link('Klik',array('login'))." untuk kehalam login!");
+					$this->redirect(array('resetPassword','token'=>@$_GET['token'],'member'=>@$_GET['member']));
+				}
+			}
+		}
+		if($member->createTokenReset() != $_GET['token']){
+			$this->render('resetPasswordNotValid');
+		}
+		else{
+			$this->render('resetPassword',array('member'=>$member,'model'=>$model));
+		}
 	}
 }

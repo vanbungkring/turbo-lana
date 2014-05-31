@@ -73,4 +73,17 @@ class KiviMail
 			//throw $e;
 		}
     }
+
+    public static function sendLinkResetPassword($member){
+		try {
+	    	$message = Yii::app()->mailgun->newMessage();
+			$message->addTo($member->email, $member->namaDepan);
+			$message->setSubject('Wellcome To Kiviads');
+			$message->renderHtml('reset-password', array('member' => $member));
+
+			$message->send();
+		} catch (Exception $e) {
+			throw $e;
+		}
+    }
 }

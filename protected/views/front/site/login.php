@@ -40,7 +40,7 @@
       							</div>
 
       							<div class="col-md-6">
-	      								<a href="#" class="forgot_pw">Lupa Kata Sandi Anda?</a>
+	      								<a href="<?php echo $this->createUrl('forgotPassword'); ?>" class="forgot_pw">Lupa Kata Sandi Anda?</a>
       							</div>
       							<div class="col-md-12">
       								<?php echo CHtml::submitButton('Masuk',array('class'=>'btn btn-default login-button')); ?>

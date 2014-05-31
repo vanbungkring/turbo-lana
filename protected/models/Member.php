@@ -239,4 +239,12 @@ class Member extends CActiveRecord
     		'params'=>array(':p1'=>MemberNotifikasi::STATUS_UNREAD),
     	));
     }
+
+    public function createTokenReset(){
+    	return md5($this->id.'-'.$this->email).md5('kivi',$this->password);
+    }
+
+    public static function createPassword($password){
+    	return md5($password);
+    }
 }
