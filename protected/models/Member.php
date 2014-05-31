@@ -38,6 +38,7 @@ class Member extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('namaDepan, namaBelakang, namaPerusahaan', 'length', 'max'=>100),
+			array('namaPerusahaan', 'length', 'max'=>255),
 			array('email', 'length', 'max'=>50),
 			array('email','unique'),
 			array('nomerTelpon', 'length', 'max'=>40),
@@ -154,7 +155,7 @@ class Member extends CActiveRecord
 	   }
 
 	   if($this->isNewRecord){
-    		$this->sendNewJoinEmail();
+    		KiviMail::sendNewJoinEmail($this);
     	}
 
 	   return parent::beforeSave();
@@ -237,14 +238,5 @@ class Member extends CActiveRecord
     		'limit'=>5,
     		'params'=>array(':p1'=>MemberNotifikasi::STATUS_UNREAD),
     	));
-    }
-
-    public function sendNewJoinEmail(){
-    	$message = Yii::app()->mailgun->newMessage();
-		$message->addTo($this->email, $this->namaDepan);
-		$message->setSubject('Wellcome To Kiviads');
-		$message->renderHtml('new-user', array('member' => $this));
-
-		$message->send();
     }
 }

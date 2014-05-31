@@ -60,4 +60,17 @@ class KiviMail
 			//throw $e;
 		}
 	}
+
+	public static function sendNewJoinEmail($member){
+		try {
+	    	$message = Yii::app()->mailgun->newMessage();
+			$message->addTo($member->email, $member->namaDepan);
+			$message->setSubject('Wellcome To Kiviads');
+			$message->renderHtml('new-user', array('member' => $member));
+
+			$message->send();
+		} catch (Exception $e) {
+			//throw $e;
+		}
+    }
 }

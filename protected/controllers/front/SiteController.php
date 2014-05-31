@@ -435,6 +435,11 @@ class SiteController extends FrontEndController
             $member->attributes = $_POST['Member'];
             $member->save();
             $in = new UserIdentity($member->id,null);
+
+            $member = Member::model()->findByPk($member->id);
+            $member->profilePerusahaan->namaBadanUsaha= $_POST['Member']['namaPerusahaan'];
+            $member->profilePerusahaan->save();
+
             $duration= 3600*24*30; // 30 days
 			if(Yii::app()->user->login($in,$duration)){
 				$this->redirect(array('/user/profile')); 
@@ -527,6 +532,6 @@ class SiteController extends FrontEndController
 		$message->setSubject('Mailgun API library test');
 		$message->renderText('test', array('myParam' => 'Awesome!'));
 
-		echo $message->send();
+		$message->send();
 	}
 }
