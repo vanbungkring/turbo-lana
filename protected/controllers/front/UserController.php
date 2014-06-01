@@ -65,6 +65,10 @@ class UserController extends FrontEndController
        
         if(isset($_GET['Member'])){    
             $member->attributes = $_GET['Member'];
+            if($_GET['Member']['tanggalLahir']){
+            	$_tgl = explode("-", $_GET['Member']['tanggalLahir']);
+            	$member->tanggalLahir = @$_tgl[2].'-'.@$_tgl[1].'-'.@$_tgl[0];
+            }
             if($member->save()){
                 $this->redirect(array('/user/profile'));
             }
@@ -96,6 +100,12 @@ class UserController extends FrontEndController
         $member->updateOldPassword  = '';
 		$member->updateNewPassword1 = '';
 		$member->updateNewPassword2 = '';
+
+		if($member->tanggalLahir){
+			$_tgl = explode("-", $member->tanggalLahir);
+       		$member->tanggalLahir = @$_tgl[2].'-'.@$_tgl[1].'-'.@$_tgl[0];
+		}
+		
 		$this->render('profile',array(
             'model'=>$member,
         ));
@@ -138,8 +148,7 @@ class UserController extends FrontEndController
 	}
 
 
-	public function actionMyBookmark()
-	{
+	public function actionMyBookmark(){
 		$this->activeType = FrontEndController::TYPE_BOOKMARK;
 
 		$criteria = new CDbCriteria();
