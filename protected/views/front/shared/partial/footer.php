@@ -25,6 +25,15 @@
    </ul>
  </div>
 
+<?php $form=$this->beginWidget('CActiveForm', array(
+  'id'=>'contact-form',
+  'enableClientValidation'=>true,
+  'clientOptions'=>array(
+    'validateOnSubmit'=>true,
+  ),
+)); 
+$contact = new ContactForm();
+?>
  <div class="col-md-3">
   <h3>Tinggalkan Pesan</h3>
   <br>
@@ -41,10 +50,24 @@
       <label>Pesan Anda</label>
       <textarea class="form-control" name="Message" rows="3"></textarea>
     </div>
+    <?php if(CCaptcha::checkRequirements()): ?>
+     <div class="form-group">
+      <?php echo $form->labelEx($contact,'verifyCode'); ?>
+      <div>
+      <?php $this->widget('CCaptcha'); ?>
+      <?php echo $form->textField($contact,'verifyCode'); ?>
+      </div>
+      <div class="hint">Please enter the letters as they are shown in the image above.
+      <br/>Letters are not case-sensitive.</div>
+      <?php echo $form->error($contact,'verifyCode'); ?>
+    </div>
+    <?php endif; ?>
     <br>
     <button type="submit" class="btn btn-large btn-success">Kirim</button>
   </form>
 </div>
+<?php $this->endWidget(); ?>
+
 </div>
 </div>
 <div class="bottom-line">

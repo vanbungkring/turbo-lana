@@ -39,6 +39,11 @@ class SiteController extends FrontEndController
 	      	'page'=>array(
             	'class'=>'CViewAction',
         	),
+
+        	'captcha'=>array(
+				'class'=>'CCaptchaAction',
+				'backColor'=>0xFFFFFF,
+			),
         );
     }
 
@@ -62,7 +67,7 @@ class SiteController extends FrontEndController
 				'users'=>array('@'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('ResetPassword','forgotPassword','test','getListBanner','page','index','oauth','result','custom','dashboard','GetMarker','Registrasi','User','AjaxLogin','login','error'),
+				'actions'=>array('captcha','ResetPassword','forgotPassword','test','getListBanner','page','index','oauth','result','custom','dashboard','GetMarker','Registrasi','User','AjaxLogin','login','error'),
 				'users'=>array('*'),
 			),
 			array('deny',  // deny all users

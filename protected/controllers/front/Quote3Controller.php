@@ -37,8 +37,7 @@ class Quote3Controller extends FrontEndController
 	 * Displays a particular model.
 	 * @param integer $id the ID of the model to be displayed
 	 */
-	public function actionView($id)
-	{
+	public function actionView($id){
 		$model=Quote3::model()->with(array('quoteBanners'=>array(
 			'with'=>array(
 				'banner',
@@ -52,8 +51,7 @@ class Quote3Controller extends FrontEndController
 		));
 	}
 
-	public function actionViewCampaign($id)
-	{
+	public function actionViewCampaign($id){
 		$this->activeType = FrontEndController::TYPE_CAMPAIGN;
 		$model=Quote3::model()->with(array('quoteBanners'=>array(
 			'with'=>array(
