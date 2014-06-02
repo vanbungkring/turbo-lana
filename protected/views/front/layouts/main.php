@@ -34,10 +34,9 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <?php $this->renderPartial('/shared/analytics/ga'); ?>
     <?php Yii::app()->getClientScript()->registerCoreScript('jquery'); ?>
-    <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.min.js"></script>
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDs1qmbiT6eTk-57wbzQ3Ivk8TRx02lXm4&sensor=true&libraries=places"></script>
     <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
-    <script src="http://cdn.jsdelivr.net/fullcalendar/1.6.4/fullcalendar.js"></script>
     <script src="http://cdn.jsdelivr.net/fullcalendar/1.6.4/fullcalendar.min.js"></script>
     <script src="http://cdn.jsdelivr.net/fullcalendar/1.6.4/gcal.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>

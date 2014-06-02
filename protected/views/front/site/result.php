@@ -158,10 +158,14 @@
           _card = _card.replace(/{long}/g, row.long);
           _card = _card.replace(/{zoom}/g, row.zoom);
           _card = _card.replace(/{id}/g, row.id);
-          _card = _card.replace(/{harga}/g, row.hargaPerBulan);
+          _card = _card.replace(/{harga}/g, row.hargaPerBulan.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
           _card = _card.replace(/{alt}/g,"Billboard "+row.formatedAddress);
-          _card = _card.replace(/{img}/g, "'.Yii::app()->request->baseUrl.'/files/bannerimage/"+row.cover_file);
-
+          if(row.cover_file!=null){
+            _card = _card.replace(/{img}/g, "'.Yii::app()->request->baseUrl.'/files/bannerimage/"+row.cover_file);
+          }
+          else{
+            _card = _card.replace(/{img}/g, "'.Yii::app()->request->baseUrl.'/images/null.jpg");
+          }
           $("#card-place").append(_card);
         });
     $(".card").hover(function(){
@@ -191,7 +195,7 @@
   });
     $( ".card" ).hover( function(){
       var cid = $(this).children(".cid").val();
-      console.log($(this));
+      //console.log($(this));
       if(cid=="" || cid == null){
         return;
       }
