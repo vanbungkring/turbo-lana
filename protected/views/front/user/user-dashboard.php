@@ -27,9 +27,9 @@
                     <div class="row">
                       <div class="col-md-5 col-lg-5">
                         <div class="text-center">
-                          <a href="request-proposal.html">
+                          <a href="#">
                             <h1><i class="fa fa-caret-square-o-down fa-fw"></i></h1>
-                            <a href="<?php echo Yii::app()->createUrl('/user/quote3');?>">
+                            <a href="#">
                           </a>
                         </div>
                       </div>
@@ -64,7 +64,7 @@
                     </div>
                     <div class="col-lg-6">
                       <div class="text-center">
-                        <a href="<?php echo Yii::app()->createUrl('/user/quote3/campaign');?>">
+                        <a href="<?php echo Yii::app()->createUrl('/quote3/campaign');?>">
                           <h1><i class="fa fa-calendar fa-fw"></i></h1>
                           <h4>My Campaign</h4>
                         </a>
