@@ -4,13 +4,13 @@
 <form action="<?php echo Yii::app()->createUrl('site/result'); ?>" method="GET">
 	<div class="row row-search">
 		<div class="col-xs-6 free-transform">
-			<input name="lokasi" type="text" class="form-control search-form " placeholder="Search Location" id="boxcari" autocomplete="off">
+			<input name="lokasi" type="text" class="form-control search-form " placeholder="Cari Lokasi" id="boxcari" autocomplete="off">
 		</div>
 		<div class="col-xs-2 free-transform">
-			<input type="text" class="form-control search-form hasDatepicker_start" placeholder="Date Start" autocomplete="off">
+			<input type="text" class="form-control search-form hasDatepicker_start" placeholder="Tanggal Mulai" autocomplete="off">
 		</div>
 		<div class="col-xs-2 free-transform">
-			<input type="text" class="form-control search-form hasDatepicker_end" placeholder="Date End" autocomplete="off">
+			<input type="text" class="form-control search-form hasDatepicker_end" placeholder="Tanggal Berakhir" autocomplete="off">
 		</div>
 
 		<div class="col-xs-1 free-transform">
