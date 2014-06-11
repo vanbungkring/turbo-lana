@@ -70,8 +70,8 @@ div.WordSection1
 
 <p class=MsoNormal style='line-height:115%'>&nbsp;</p>
 
-<p class=MsoNormal style='line-height:115%'>Berikut adalah informasi <i>quotation</i>
-dari titik <i>billboard</i> yang telah di-<i>request</i>:</p>
+<p class=MsoNormal style='line-height:115%'>Berikut adalah informasi quotation
+dari titik billboard yang telah di-request:</p>
 
 <?php foreach ($quote->quoteBanners as $key => $quoteBanner): ?>
 	<p class=MsoNormal style='line-height:115%'>&nbsp;</p>
@@ -88,14 +88,40 @@ dari titik <i>billboard</i> yang telah di-<i>request</i>:</p>
 <?php endforeach ?>
 
 
-<p class=MsoNormal style='line-height:115%'>Untuk mengkonfirmasi titik <i>billboard</i>
+<p class=MsoNormal style='line-height:115%'>Untuk mengkonfirmasi titik billboard
 yang telah Anda pilih atau melakukan perubahan, silahkan klik <a href="<?php echo LHtml::createClientUrl('/quote3/view',array('id'=>$quote->id)); ?>" /><b><span
-style='color:#C0504D'>DISINI</span></b></a>. <span style='background:yellow'>(<i>di
-link ke quotes-detail</i>)</span></p>
+style='color:#C0504D'>DISINI</span></b></a>.</p>
 
 <p class=MsoNormal style='line-height:115%'>&nbsp;</p>
 
 <p class=MsoNormal style='line-height:115%'>Terima kasih!</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal style='text-align:justify;line-height:115%'>---</p>
+
+<p class=MsoNormal style='text-align:justify;line-height:115%'>&nbsp;</p>
+
+<p class=MsoNormal style='text-align:justify;line-height:115%'>Apabila Anda
+memerlukan bantuan, jangan ragu untuk menghubungi kami di:</p>
+
+<p class=MsoNormal style='text-align:justify;line-height:115%'>&nbsp;</p>
+
+<p class=MsoNormal style='text-align:justify;line-height:115%'>Telp: 021 71 29
+29 73</p>
+
+<p class=MsoNormal style='text-align:justify;line-height:115%'>Email:
+support@kiviads.net</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal style='text-align:justify;line-height:115%'>Kiviads by <a href="www.kivibyte.com">Kivibyte</a></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:115%'>Follow
+akun Twitter kami: <a href="https://twitter.com/Kivibyte">@kivibyte</a></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:115%'>Gabung
+di Facebook Fanpage: <a href="https://www.facebook.com/Kivibyte">Kivibyte</a></p>
 
 <p class=MsoNormal>&nbsp;</p>
 

@@ -88,7 +88,7 @@ bergabung di Kiviads!</p>
 
 <p class=MsoNormal style='text-align:justify;line-height:115%'>Terima kasih
 telah mendaftarkan diri Anda di Kiviads. Melalui Kiviads Anda dapat mencari,
-memilih, mengatur, serta memproses semua kebutuhan <i>campaign</i> iklan Anda
+memilih, mengatur, serta memproses semua kebutuhan campaign iklan Anda
 dengan cepat dan mudah.</p>
 
 <p class=MsoNormal style='text-align:justify;line-height:115%'>&nbsp;</p>
@@ -100,35 +100,29 @@ yang dapat Anda lakukan dengan Kiviads:</p>
 
 <p class=MsoListParagraphCxSpFirst style='margin-left:.25in;text-align:justify;
 text-indent:-.25in;line-height:115%'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span><u>Update profil perusahaan Anda</u> <span style='background:yellow'>(Link
-ke http://dev.oddro.com/turbo-lana/index.php/user/profile)</span></p>
+</span><a href="http://staging.kiviads.net/index.php/user/profile">Update profil pribadi dan perusahaan Anda</a></p>
 
 <p class=MsoListParagraphCxSpMiddle style='margin-left:.25in;text-align:justify;
 text-indent:-.25in;line-height:115%'>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span><u>Cari titik <i>billboard</i></u> <span style='background:yellow'>(link
-ke </span><a href="http://dev.oddro.com/turbo-lana/index.php/search"><span
-style='background:yellow'>http://dev.oddro.com/turbo-lana/index.php/search</span></a><span
-style='background:yellow'>?)</span> di lebih dari 100 titik yang terdaftar di
-Kiviads </p>
+</span><a href="http://staging.kiviads.net/index.php/site/result?lokasi">Cari titik billboard</a> di lebih dari 100 titik yang terdaftar di Kiviads </p>
 
 <p class=MsoListParagraphCxSpMiddle style='margin-left:.25in;text-align:justify;
 text-indent:-.25in;line-height:115%'>3.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span><u>Rencanakan <i>campaign</i> iklan Anda</u> <span style='background:
-yellow'>(link http://dev.oddro.com/turbo-lana/index.php/quote3)</span> dengan
+</span><a href="http://staging.kiviads.net/index.php/quote3">Rencanakan campaign iklan Anda</a> dengan
 sempurna</p>
 
 <p class=MsoListParagraphCxSpLast style='margin-left:.25in;text-align:justify;
 line-height:115%'>&nbsp;</p>
 
 <p class=MsoNormal style='text-align:justify;line-height:115%'>Nikmati
-kemudahan serta proses persiapan hingga pelaksanaan <i>campaign</i> yang serba
+kemudahan serta proses persiapan hingga pelaksanaan campaign yang serba
 cepat!</p>
 
 <p class=MsoNormal style='text-align:justify;line-height:115%'>&nbsp;</p>
 
 <p class=MsoNormal style='text-align:justify;line-height:115%'>Tidak perlu lagi
-membuang waktu untuk pergi <i>meeting</i> dan terjebak kemacetan karena semua
-dapat dilakukan melalui Kiviads, termasuk Anda yang berada diluar Jakarta!</p>
+membuang waktu untuk pergi meeting dan terjebak kemacetan karena semua
+dapat dilakukan melalui Kiviads, termasuk Anda yang berada di luar Jakarta!</p>
 
 <p class=MsoNormal style='text-align:justify;line-height:115%'>&nbsp;</p>
 
@@ -137,16 +131,15 @@ menyenangkan!</p>
 
 <p class=MsoNormal style='text-align:justify;line-height:115%'>&nbsp;</p>
 
-<p class=MsoNormal align=center style='text-align:center;line-height:115%'>(Logo
-Kiviads by Kivibyte)</p>
-
 <p class=MsoNormal style='text-align:justify;line-height:115%'>&nbsp;</p>
 
+<p class=MsoNormal align=center style='text-align:center;line-height:115%'>Kiviads by <a href="www.kivibyte.com">Kivibyte</a></p>
+
 <p class=MsoNormal align=center style='text-align:center;line-height:115%'>Follow
-akun Twitter kami: @kivibyte (kasih logo Twitter)</p>
+akun Twitter kami: <a href="https://twitter.com/Kivibyte">@kivibyte</a></p>
 
 <p class=MsoNormal align=center style='text-align:center;line-height:115%'>Gabung
-di Facebook Fanpage: Kivibyte (kasih logo Facebook)</p>
+di Facebook Fanpage: <a href="https://www.facebook.com/Kivibyte">Kivibyte</a></p>
 
 <p class=MsoNormal style='text-align:justify;line-height:115%'>&nbsp;</p>
 
@@ -165,7 +158,7 @@ memerlukan bantuan, jangan ragu untuk menghubungi kami di:</p>
 29 73</p>
 
 <p class=MsoNormal style='text-align:justify;line-height:115%'>Email:
-support@kiviads.net </p>
+<a href="mailto:support@kiviads.net">support@kiviads.net</a> </p>
 
 <p class=MsoNormal>&nbsp;</p>
 

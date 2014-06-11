@@ -38,8 +38,8 @@ div.WordSection1
 
 <p class=MsoNormal style='text-align:justify;line-height:115%'>&nbsp;</p>
 
-<p class=MsoNormal style='text-align:justify;line-height:115%'><i>Request</i> <i>quote</i>
-Anda telah terkirim dengan sukses! Berikut titik <i>billboard</i> yang Anda <i>request</i>:</p>
+<p class=MsoNormal style='text-align:justify;line-height:115%'>Request Quote
+Anda telah terkirim dengan sukses! Berikut titik billboard yang Anda request:</p>
 
 <p class=MsoNormal style='text-align:justify;line-height:115%'>&nbsp;</p>
 
@@ -51,13 +51,12 @@ Anda telah terkirim dengan sukses! Berikut titik <i>billboard</i> yang Anda <i>r
 <p class=MsoNormal style='text-align:justify;line-height:115%'>&nbsp;</p>
 
 <p class=MsoNormal style='text-align:justify;line-height:115%'>Kami akan segera
-mengirimkan informasi <i>quotation</i> titik <i>billboard</i> yang telah Anda <i>request</i>.</p>
+mengirimkan informasi quotation titik billboard yang telah Anda request.</p>
 
 <p class=MsoNormal style='text-align:justify;line-height:115%'>&nbsp;</p>
 
 <p class=MsoNormal style='text-align:justify;line-height:115%'>Klik <b><a href="<?php echo Yii::app()->createAbsoluteUrl('/quote3/view',array('id'=>$quote->id)) ?>"><span
-style='color:#C0504D'>DISINI </span></a></b><span style='background:yellow'></span>untuk menuju ke dashboard dan mengatur Quotes
-Detail  Anda! </p>
+style='color:#C0504D'>DISINI </span></a></b><span style='background:yellow'></span>untuk menuju ke dashboard dan mengatur Campaign anda lebih lanjut. </p>
 
 <p class=MsoNormal style='text-align:justify;line-height:115%'>&nbsp;</p>
 
@@ -79,6 +78,16 @@ memerlukan bantuan, jangan ragu untuk menghubungi kami di:</p>
 
 <p class=MsoNormal style='text-align:justify;line-height:115%'>Email:
 support@kiviads.net</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal style='text-align:justify;line-height:115%'>Kiviads by <a href="www.kivibyte.com">Kivibyte</a></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:115%'>Follow
+akun Twitter kami: <a href="https://twitter.com/Kivibyte">@kivibyte</a></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:115%'>Gabung
+di Facebook Fanpage: <a href="https://www.facebook.com/Kivibyte">Kivibyte</a></p>
 
 <p class=MsoNormal>&nbsp;</p>
 

@@ -284,14 +284,14 @@ class Quote3Controller extends FrontEndController
 
 		$message = Yii::app()->mailgun->newMessage();
 		$message->addTo($quote->member->email, $quote->member->namaDepan);
-		$message->setSubject('Your Detail Quote');
+		$message->setSubject('Permintaan Rincian Quote');
 		$message->renderHtml('quote', array('member' => $quote->member , 'quote'=>$quote));
 
 		$message->send();
 
 		$messageAdmin = Yii::app()->mailgun->newMessage();
 		$messageAdmin->addTo($email, $quote->member->namaDepan);
-		$messageAdmin->setSubject('Request Detail Quote');
+		$messageAdmin->setSubject('Permintaan Rincian Quote');
 		$messageAdmin->renderHtml('quote-admin', array('member' => $quote->member , 'quote'=>$quote));
 
 		$messageAdmin->send();

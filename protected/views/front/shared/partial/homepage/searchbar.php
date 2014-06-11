@@ -19,5 +19,5 @@
 		<div class="check"></div>
 	</div>
 </form>
-<p>Temukan lebih dari 100 titik papan reklame yang terletak pada kota-kota besar di Indonesia</p>
+<p>Temukan lebih dari 100 titik billboard yang terletak pada kota-kota besar di Indonesia</p>
 </div>

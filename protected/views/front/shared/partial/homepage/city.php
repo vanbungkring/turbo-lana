@@ -3,8 +3,8 @@
 			<div class="row">
 
 				<div class="col-sm-12">
-					<h3>Lokasi Papan Reklame</h3>
-					<p>Cari papan reklame yang Anda inginkan di lokasi pada kota-kota besar dibawah ini.</p>
+					<h3>Lokasi Billboard</h3>
+					<p>Cari papan reklame yang Anda inginkan di lokasi pada kota-kota besar dibawah ini</p>
 					<div class="col-sm-4">
 						<div class="panel panel-default overlayed">
 							<h2>Jakarta</h2>
@@ -44,7 +44,7 @@
 				</div>	            
 			</div>
 			<div class="row start-adv">
-				<h3>Start Advertising now. Get more clients. Increase your sale</h3>
+				<h3>Beriklan Sekarang Untuk Meraih Penjualan Maksimal!</h3>
 			</div>
 		</div><!--/ .container -->
 	</div>

@@ -38,39 +38,64 @@ div.WordSection1
 
 <p class=MsoNormal style='text-align:justify;line-height:115%'>&nbsp;</p>
 
-<p class=MsoNormal style='text-align:justify;line-height:115%'><i>Invoice</i>
+<p class=MsoNormal style='text-align:justify;line-height:115%'>Invoice
 untuk pembayaran campaign #<?php echo $quote3->id.' '.$quote3->name; ?> sudah tersedia di sistem Kiviads.</p>
 
 <p class=MsoNormal style='text-align:justify;line-height:115%'>&nbsp;</p>
 
 <p class=MsoNormal style='text-align:justify;line-height:115%'>Klik <b><a href="<?php echo $quote3->getUrlImage('file5',true); ?>"><span
-style='color:#C0504D'>DISINI</span></a></b> ini untuk unduh <i>invoice</i> <span
-style='background:yellow'></span></p>
+style='color:#C0504D'>DISINI</span></a></b> ini untuk unduh invoice</p>
 
 <p class=MsoNormal style='text-align:justify;line-height:115%'>&nbsp;</p>
 
 <p class=MsoNormal style='text-align:justify;line-height:115%'>Catatan:</p>
 
-<p class=MsoNormal style='line-height:115%'>Pembayaran DP (<i>down payment</i>)
-sebesar 50% harap segera dilunasi selambat-lambatnya 1 (satu) minggu setelah <i>invoice</i>
+<p class=MsoNormal style='line-height:115%'>Pembayaran DP (down payment)
+sebesar 50% harap segera dilunasi selambat-lambatnya 1 (satu) minggu setelah invoice
 dikirim.</p>
 
 <p class=MsoNormal style='line-height:115%'>&nbsp;</p>
 
-<p class=MsoNormal style='line-height:115%'>Silahkan <i>upload</i> bukti
-pembayaran DP (<i>down payment</i>) Anda pada sistem kami agar dapat kami
+<p class=MsoNormal style='line-height:115%'>Silahkan upload bukti
+pembayaran DP (down payment) Anda pada sistem kami agar dapat kami
 proses ke tahapan selanjutnya.</p>
 
 <p class=MsoNormal style='line-height:115%'>&nbsp;</p>
 
-<p class=MsoNormal style='line-height:115%'>Klik <b><span style='color:#C0504D'>DISINI</span></b>
-(<i><span style='background:yellow'>di link ke dashboard mereka</span></i>)
+<p class=MsoNormal style='line-height:115%'>Klik <a href="http://beta.kiviads.net/index.php/quote3/campaign">DI SINI</a>
 untuk menuju ke dashboard Anda.</p>
 
 <p class=MsoNormal style='text-align:justify;line-height:115%'>&nbsp;</p>
 
 <p class=MsoNormal style='text-align:justify;line-height:115%'>Terima kasih
 telah menggunakan Kiviads!</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal style='text-align:justify;line-height:115%'>---</p>
+
+<p class=MsoNormal style='text-align:justify;line-height:115%'>&nbsp;</p>
+
+<p class=MsoNormal style='text-align:justify;line-height:115%'>Apabila Anda
+memerlukan bantuan, jangan ragu untuk menghubungi kami di:</p>
+
+<p class=MsoNormal style='text-align:justify;line-height:115%'>&nbsp;</p>
+
+<p class=MsoNormal style='text-align:justify;line-height:115%'>Telp: 021 71 29
+29 73</p>
+
+<p class=MsoNormal style='text-align:justify;line-height:115%'>Email:
+support@kiviads.net</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal style='text-align:justify;line-height:115%'>Kiviads by <a href="www.kivibyte.com">Kivibyte</a></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:115%'>Follow
+akun Twitter kami: <a href="https://twitter.com/Kivibyte">@kivibyte</a></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:115%'>Gabung
+di Facebook Fanpage: <a href="https://www.facebook.com/Kivibyte">Kivibyte</a></p>
 
 <p class=MsoNormal>&nbsp;</p>
 
