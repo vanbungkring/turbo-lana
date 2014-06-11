@@ -9,7 +9,7 @@
 		<div class="row">
 			<div class="col-md-6 col-md-offset-3">
 				<div class="col-md-12">
-					<h2>Lupas Password ?</h2>
+					<h2>Lupa Password ?</h2>
 					<p>Kiviads membantu Anda untuk megatur ulang passwrod anda, masukan email anda maka kami akan mengirim link untuk mereset password anda !</p>
 					
 					<?php if(Yii::app()->user->hasFlash('success')):?>

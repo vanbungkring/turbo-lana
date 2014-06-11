@@ -71,7 +71,7 @@ class Quote3Controller extends Controller
 		$quote = Quote3::model()->findByPk($id);
 		$message = Yii::app()->mailgun->newMessage();
 		$message->addTo($quote->member->email, $quote->member->namaDepan);
-		$message->setSubject('Campaign Quotes Updates');
+		$message->setSubject('Jawaban Rincian Quotes');
 		$message->renderHtml('quote-update', array('quote' => $quote));
 
 		$message->send();

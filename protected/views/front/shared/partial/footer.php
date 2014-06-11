@@ -3,7 +3,7 @@
     <div class="col-md-5">
       <h3>Kiviads</h3>
       <p>
-       Saat ini beriklan di billboard dapat dengan cepat meningkatkan kesadaran masyarakan akan brand tersebut. Tidak hanya kesadaran, namun peningkatan angka penjualan pun dapat diraih oleh pemilik brand.</p><p> Untuk itulah Kiviads ada! Sebuah marketplace dimana pengiklan dapat memilih secara langsung titik-titik papan reklame yang berada di lokasi strategis, serta melakukan kampanye iklan melalui sistem online secara cepat dan mudah.
+       Saat ini beriklan di billboard dapat dengan cepat meningkatkan kesadaran masyarakan akan brand tersebut. Tidak hanya kesadaran, namun peningkatan angka penjualan pun dapat diraih oleh pemilik brand.</p><p> Untuk itulah Kiviads ada! Sebuah marketplace dimana pengiklan dapat memilih secara langsung titik-titik billboard yang berada di lokasi strategis, serta melakukan kampanye iklan melalui sistem online secara cepat dan mudah.
       </p>
     </div>
     <div class="col-md-2">
@@ -17,11 +17,10 @@
      </ul>
    </div>
    <div class="col-md-2">
-    <h3>berita</h3>
+    <h3>Tautan</h3>
     <ul>
-     <li>Marketing</li>
-     <li>Advertising</li>
-     <li>Media</li>
+     <li><a href="www.kivibyte.com">Kivibyte.com</a></li>
+     <li><a href="www.kivibyte.com/blog/">Internet Marketing Blog</a></li>
    </ul>
  </div>
 
@@ -57,8 +56,8 @@ $contact = new ContactForm();
       <?php $this->widget('CCaptcha'); ?>
       <?php echo $form->textField($contact,'verifyCode'); ?>
       </div>
-      <div class="hint">Please enter the letters as they are shown in the image above.
-      <br/>Letters are not case-sensitive.</div>
+      <div class="hint">Harap masukkan huruf di atas untuk membuktikan anda bukan robot.
+      <br/>Besar kecil huruf tidak sensitif.</div>
       <?php echo $form->error($contact,'verifyCode'); ?>
     </div>
     <?php endif; ?>

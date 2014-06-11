@@ -47,19 +47,48 @@ dari <?php echo $quote3Banner->banner->sku; ?> untuk campaign #<?php echo $quote
 
 <p class=MsoNormal style='line-height:115%'>&nbsp;</p>
 
-<p class=MsoNormal style='line-height:115%'>Gunakan <i>dashboard</i> Kiviads
-untuk memantau kelanjutan proses dan <i>progress campaign</i> Anda dengan lebih
+<p class=MsoNormal style='line-height:115%'>Gunakan dashboard Kiviads
+untuk memantau kelanjutan proses dan progress campaign Anda dengan lebih
 cepat dan mudah.</p>
 
 <p class=MsoNormal style='line-height:115%'>&nbsp;</p>
 
-<p class=MsoNormal style='line-height:115%'>Klik <b><span style='color:#C0504D'>DISINI</span></b>
-(<i><span style='background:yellow'>di link ke campaign-detail)</span></i>
+<p class=MsoNormal style='line-height:115%'>Klik <a href="http://beta.kiviads.net/index.php/quote3/campaign">DI SINI</a>
 untuk menuju ke dashboard Anda.</p>
 
 <p class=MsoNormal style='line-height:115%'>&nbsp;</p>
 
 <p class=MsoNormal style='line-height:115%'>Terima kasih!</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal style='text-align:justify;line-height:115%'>---</p>
+
+<p class=MsoNormal style='text-align:justify;line-height:115%'>&nbsp;</p>
+
+<p class=MsoNormal style='text-align:justify;line-height:115%'>Apabila Anda
+memerlukan bantuan, jangan ragu untuk menghubungi kami di:</p>
+
+<p class=MsoNormal style='text-align:justify;line-height:115%'>&nbsp;</p>
+
+<p class=MsoNormal style='text-align:justify;line-height:115%'>Telp: 021 71 29
+29 73</p>
+
+<p class=MsoNormal style='text-align:justify;line-height:115%'>Email:
+support@kiviads.net</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal style='text-align:justify;line-height:115%'>Kiviads by <a href="www.kivibyte.com">Kivibyte</a></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:115%'>Follow
+akun Twitter kami: <a href="https://twitter.com/Kivibyte">@kivibyte</a></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:115%'>Gabung
+di Facebook Fanpage: <a href="https://www.facebook.com/Kivibyte">Kivibyte</a></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
 
 </div>
 
