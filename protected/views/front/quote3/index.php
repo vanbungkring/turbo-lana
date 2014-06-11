@@ -24,7 +24,7 @@
         <div class="col-md-6">
           <div class="well well-orange well-sm">
             <div class="text-center">
-              <a href="<?php echo $this->createUrl('create');  ?>">
+              <a href="#">
                 <i class="fa fa-caret-square-o-down fa-fw" style="font-size: 44px;"></i>
                 <h4 class="bordered">Request Proposal</h4>
               </a>
