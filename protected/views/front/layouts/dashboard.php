@@ -36,21 +36,21 @@
         <a class="navbar-brand" href="<?= Yii::app()->getBaseUrl() ?>/"><img src="<?= Yii::app()->getBaseUrl(true) ?>/images/logo.png" alt="Kiviads"></a>
       </div>
       <!-- /.navbar-header -->
-      <ul class="nav navbar-top-links navbar-right">
+      <ul class="nav navbar-top-links navbar-right" style="margin-top:10px;">
         <li>
           <p> Hi, <?php echo $this->memberModel->namaDepan; ?>!</p>
         </li>
-        <li class="dropdown">
+<!--         <li class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown" href="#">
             <i class="fa fa-envelope fa-fw"></i>
             <i class="fa fa-caret-down"></i>
           </a>
-          <ul class="dropdown-menu dropdown-messages">
+        <ul class="dropdown-menu dropdown-messages">
             <?php 
-              $notifikasis = $this->memberModel->getRecentNotifikasi();
-              foreach ($notifikasis as $key => $value): 
-                $this->renderPartial('/shared/partial/dashboard-notifikasi');
-              endforeach ?>
+              //$notifikasis = $this->memberModel->getRecentNotifikasi();
+              //foreach ($notifikasis as $key => $value): 
+                //$this->renderPartial('/shared/partial/dashboard-notifikasi');
+              //endforeach ?>
             <li>
               <a class="text-center" href="#">
                 <strong>Read All Messages</strong>
@@ -58,8 +58,7 @@
               </a>
             </li>
           </ul>
-          <!-- /.dropdown-messages -->
-        </li>
+        </li> -->
         <li>
           <div>
             <a href="<?php echo Yii::app()->createUrl('site/Logout'); ?>">
