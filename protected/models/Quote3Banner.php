@@ -103,8 +103,8 @@ class Quote3Banner extends CActiveRecord
 
 	public static function getListTextStatus(){
 		return array(
-			self::STATUS_AVALIABLE=>'Available',
-			self::STATUS_REJECT=>'Reject',
+			self::STATUS_AVALIABLE=>'Tersedia',
+			self::STATUS_REJECT=>'Tidak Tersedia ',
 		);
 	}
 	public function getTextStatus(){
@@ -119,7 +119,7 @@ class Quote3Banner extends CActiveRecord
     public function getTextQuoteStatus(){
         $str = $this->getTextStatus();
         if($this->banner->status == Banner::STATUS_BOOKED){
-            $str .= ' ( Booked ) ';
+            $str .= ' ( Waiting List ) ';
         }
         return $str;
     }
