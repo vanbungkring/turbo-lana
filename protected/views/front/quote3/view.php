@@ -73,6 +73,7 @@
             <tr>
               <td>Unit</td>
               <td>Unit Status</td>
+              <td>Keterangan</td>
               <td>Unit Price (IDR)</td>
               <?php if ($model->isStatusNotSet()): ?>
               <td>Tindakan</td>
@@ -83,6 +84,7 @@
          <?php foreach ($model->quoteBanners as $key => $quoteBanner): ?>
          <tr>
            <td><a href="#"><?php echo $quoteBanner->banner->sku; ?></a></td>
+           <td><?php echo $quoteBanner->getTextQuoteStatus(); ?></td>
            <td><?php echo $quoteBanner->getTextQuoteStatus(); ?></td>
            <td><?php echo $quoteBanner->price; ?></td>
            <?php if ($model->isStatusNotSet()): ?>
