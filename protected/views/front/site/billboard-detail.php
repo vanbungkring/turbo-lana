@@ -135,8 +135,8 @@
            </section> -->
 
            <section class="banner-info-body svw">
-            <button type="button" class="btn btn-default btn-block whislist" id="addBookmark">Save To Whislist</button>
-            <button type="button" class="btn btn-default btn-block whislist" id="removeBookmark">Remove From Whislist</button>
+            <button type="button" class="btn btn-default btn-block whislist" id="addBookmark">Bookmark</button>
+            <button type="button" class="btn btn-default btn-block whislist" id="removeBookmark">Remove From Bookmark</button>
           </section>
         </div>
       </div>
