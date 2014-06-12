@@ -43,7 +43,7 @@ dari <?php echo $quote3Banner->banner->sku; ?> untuk campaign #<?php echo $quote
 
 <p class=MsoNormal style='line-height:115%'>&nbsp;</p>
 
-<p class=MsoNormal style='line-height:115%'><span style='background:yellow'><img src="<?php echo $quote3Banner->getFileProgressUrl(true); ?>" /></span></p>
+<p class=MsoNormal style='line-height:115%'><img src="<?php echo $quote3Banner->getFileProgressUrl(true); ?>" /></p>
 
 <p class=MsoNormal style='line-height:115%'>&nbsp;</p>
 
