@@ -73,8 +73,8 @@
             <tr>
               <td>Unit</td>
               <td>Unit Status</td>
-              <td>Keterangan</td>
               <td>Unit Price (IDR)</td>
+                <td>Keterangan</td>
               <?php if ($model->isStatusNotSet()): ?>
               <td>Tindakan</td>
             <?php endif ?>
@@ -85,8 +85,10 @@
          <tr>
            <td><a href="#"><?php echo $quoteBanner->banner->sku; ?></a></td>
            <td><?php echo $quoteBanner->getTextQuoteStatus(); ?></td>
-           <td><?php echo $quoteBanner->getTextQuoteStatus(); ?></td>
            <td><?php echo $quoteBanner->price; ?></td>
+           <?phpif($quoteBanner->getTextQuoteStatus()=="Waiting List") ?>
+            <td>Maksimal 7 hari</td>
+            <td><?php echo $quoteBanner->getTextQuoteStatus(); ?></td>
            <?php if ($model->isStatusNotSet()): ?>
            <td>
             <!--                              <a href="#" class="btn btn-outline btn-info btn-xs">Tanya</a> -->
