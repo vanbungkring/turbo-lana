@@ -86,8 +86,6 @@
            <td><a href="#"><?php echo $quoteBanner->banner->sku; ?></a></td>
            <td><?php echo $quoteBanner->getTextQuoteStatus(); ?></td>
            <td><?php echo $quoteBanner->price; ?></td>
-           <?phpif($quoteBanner->getTextQuoteStatus()=="Waiting List") ?>
-            <td>Maksimal 7 hari</td>
             <td><?php echo $quoteBanner->getTextQuoteStatus(); ?></td>
            <?php if ($model->isStatusNotSet()): ?>
            <td>
