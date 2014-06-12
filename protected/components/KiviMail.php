@@ -6,7 +6,7 @@ class KiviMail
 			$quote = Quote3::model()->findByPk($id);
 			$message = Yii::app()->mailgun->newMessage();
 			$message->addTo($quote->member->email, $quote->member->namaDepan);
-			$message->setSubject('Campaign Quotes Approval');
+			$message->setSubject('Konfirmasi Campaign');
 			$message->renderHtml('quote-approve', array('quote' => $quote));
 
 			$message->send();
@@ -52,7 +52,7 @@ class KiviMail
 			
 			$message = Yii::app()->mailgun->newMessage();
 			$message->addTo($quote3->member->email, $quote3->member->namaDepan);
-			$message->setSubject('Campaign Quotes Approval');
+			$message->setSubject('Update Inventori (Bukti Foto)');
 			$message->renderHtml('file-update-8', array('quote3' => $quote3));
 
 			$message->send();
@@ -65,7 +65,7 @@ class KiviMail
 		try {
 	    	$message = Yii::app()->mailgun->newMessage();
 			$message->addTo($member->email, $member->namaDepan);
-			$message->setSubject('Wellcome To Kiviads');
+			$message->setSubject('Selamat Bergabung di Kiviads');
 			$message->renderHtml('new-user', array('member' => $member));
 
 			$message->send();
@@ -78,7 +78,7 @@ class KiviMail
 		try {
 	    	$message = Yii::app()->mailgun->newMessage();
 			$message->addTo($member->email, $member->namaDepan);
-			$message->setSubject('Wellcome To Kiviads');
+			$message->setSubject('Reset Password');
 			$message->renderHtml('reset-password', array('member' => $member));
 
 			$message->send();

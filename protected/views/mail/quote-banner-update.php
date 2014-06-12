@@ -48,8 +48,8 @@ image)</span></p>
 
 <p class=MsoNormal style='line-height:115%'>&nbsp;</p>
 
-<p class=MsoNormal style='line-height:115%'>Gunakan <i>dashboard</i> Kiviads
-untuk memantau kelanjutan proses dan <i>progress campaign</i> Anda dengan lebih
+<p class=MsoNormal style='line-height:115%'>Gunakan dashboard Kiviads
+untuk memantau kelanjutan proses dan progress campaign Anda dengan lebih
 cepat dan mudah.</p>
 
 <p class=MsoNormal style='line-height:115%'>&nbsp;</p>

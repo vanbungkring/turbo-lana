@@ -75,12 +75,12 @@ ul
 
 <p class=MsoNormal style='line-height:115%'>&nbsp;</p>
 
-<p class=MsoNormal style='line-height:115%'>Anda telah mengkonfirmasi <i>campaign</i>
-pada titik <i>billboard</i>:</p>
+<p class=MsoNormal style='line-height:115%'>Anda telah mengkonfirmasi campaign
+pada titik billboard:</p>
 
 <p class=MsoNormal style='line-height:115%'>&nbsp;</p>
 
-<p class=MsoNormal style='line-height:115%'><span style='background:yellow'>QUOTES CAMPAIGN #<?php echo $quote->id; ?></span>
+<p class=MsoNormal style='line-height:115%'>QUOTES CAMPAIGN #<?php echo $quote->id; ?>
 </p>
 
 <table>
@@ -118,42 +118,41 @@ pada titik <i>billboard</i>:</p>
 
 <p class=MsoListParagraphCxSpFirst style='margin-left:.25in;text-indent:-.25in;
 line-height:115%'>A.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Tim kami akan menghubungi untuk finalisasi kontrak <i>campaign</i></p>
+</span>Tim kami akan menghubungi untuk finalisasi kontrak campaign</p>
 
 <p class=MsoListParagraphCxSpMiddle style='margin-left:.25in;text-indent:-.25in;
 line-height:115%'>B.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Kirimkan PO (Purchase Order) kepada kami agar <i>campaign</i> dapat
+</span>Kirimkan PO (Purchase Order) kepada kami agar campaign dapat
 segera kami proses.</p>
 
 <p class=MsoListParagraphCxSpMiddle style='margin-left:.25in;text-indent:-.25in;
 line-height:115%'>C.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span><i>Invoice</i> akan segera dikirimkan setelah PO (Purchase Order) kami
+</span>Invoice akan segera dikirimkan setelah PO (Purchase Order) kami
 terima.</p>
 
 <p class=MsoListParagraphCxSpMiddle style='margin-left:.25in;text-indent:-.25in;
 line-height:115%'>D.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Pembayaran DP (<i>down payment</i>) sebesar 50% harap segera dilunasi
-selambat-lambatnya 1 (satu) minggu setelah <i>invoice</i> dikirim.</p>
+</span>Pembayaran DP (down payment) sebesar 50% harap segera dilunasi
+selambat-lambatnya 1 (satu) minggu setelah invoice dikirim.</p>
 
 <p class=MsoListParagraphCxSpMiddle style='margin-left:.25in;text-indent:-.25in;
 line-height:115%'>E.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Silahkan <i>upload</i> bukti pembayaran DP (<i>down payment</i>) Anda
+</span>Silahkan upload bukti pembayaran DP (down payment) Anda
 pada sistem kami agar dapat kami proses ke tahapan selanjutnya.</p>
 
 <p class=MsoListParagraphCxSpMiddle style='margin-left:.25in;text-indent:-.25in;
 line-height:115%'>F.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Silahkan <i>upload</i> materi kreatif untuk iklan Anda pada sistem kami.</p>
+</span>Silahkan upload materi kreatif untuk iklan Anda pada sistem kami.</p>
 
 <p class=MsoListParagraphCxSpLast style='margin-left:.25in;text-indent:-.25in;
 line-height:115%'>G.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>DO (Delivery Order) akan dikirimkan begitu <i>campaign</i> Anda
+</span>DO (Delivery Order) akan dikirimkan begitu campaign Anda
 berjalan,</p>
 
 <p class=MsoNormal style='line-height:115%'>&nbsp;</p>
 
-<p class=MsoNormal style='line-height:115%'>Semua dapat Anda lakukan pada <i><u>dashboard
-</u></i><u>Campaign anda di Kiviads </u><span style='background:yellow'>(link
-ke campaign detail)</span></p>
+<p class=MsoNormal style='line-height:115%'>Semua dapat Anda lakukan pada <a href="http://beta.kiviads.net/index.php/quote3/campaign">dashboard
+Campaign anda di Kiviads</a>
 
 <p class=MsoNormal style='line-height:115%'>&nbsp;</p>
 
@@ -162,6 +161,40 @@ ke campaign detail)</span></p>
 <p class=MsoNormal style='line-height:115%'>Terima kasih!</p>
 
 <p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal style='text-align:justify;line-height:115%'>---</p>
+
+<p class=MsoNormal style='text-align:justify;line-height:115%'>&nbsp;</p>
+
+<p class=MsoNormal style='text-align:justify;line-height:115%'>Apabila Anda
+memerlukan bantuan, jangan ragu untuk menghubungi kami di:</p>
+
+<p class=MsoNormal style='text-align:justify;line-height:115%'>&nbsp;</p>
+
+<p class=MsoNormal style='text-align:justify;line-height:115%'>Telp: 021 71 29
+29 73</p>
+
+<p class=MsoNormal style='text-align:justify;line-height:115%'>Email:
+support@kiviads.net</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal style='text-align:justify;line-height:115%'>Kiviads by <a href="www.kivibyte.com">Kivibyte</a></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:115%'>Follow
+akun Twitter kami: <a href="https://twitter.com/Kivibyte">@kivibyte</a></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:115%'>Gabung
+di Facebook Fanpage: <a href="https://www.facebook.com/Kivibyte">Kivibyte</a></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+</div>
+
+</body>
+
+</html>
+
 
 </div>
 
