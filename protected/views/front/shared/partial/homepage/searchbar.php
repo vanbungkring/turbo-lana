@@ -7,10 +7,10 @@
 			<input name="lokasi" type="text" class="form-control search-form " placeholder="Cari Lokasi" id="boxcari" autocomplete="off">
 		</div>
 		<div class="col-xs-2 free-transform">
-			<input type="text" class="form-control search-form hasDatepicker_start" placeholder="Tanggal Mulai" autocomplete="off">
+			<input type="text" class="form-control search-form hasDatepicker_start" placeholder="Mulai" autocomplete="off">
 		</div>
 		<div class="col-xs-2 free-transform">
-			<input type="text" class="form-control search-form hasDatepicker_end" placeholder="Tanggal Berakhir" autocomplete="off">
+			<input type="text" class="form-control search-form hasDatepicker_end" placeholder="Berakhir" autocomplete="off">
 		</div>
 
 		<div class="col-xs-1 free-transform">

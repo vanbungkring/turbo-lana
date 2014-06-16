@@ -6,8 +6,8 @@ renderPartial('/shared/partial/navbar'); ?>
       </h1>
       <div class="row">
         <div class="col-md-12">
-          <h4>Kami menyediakan sebuah wadah marketplace untuk membantu memudahkan proses transaksi antara pemilik billboard atau papan reklame dengan calon pengiklan dan agency. Temukan berbagai fitur yang akan membantu pekerjaan anda di Kiviads!
-          </h4>
+          <p>Kami menyediakan sebuah wadah marketplace untuk membantu memudahkan proses transaksi antara pemilik billboard atau papan reklame dengan calon pengiklan dan agency. Temukan berbagai fitur yang akan membantu pekerjaan anda di Kiviads!
+          </p>
         </div>
         <div class="col-md-4">
           <div class="text-center" style="margin-top: 20px;">
@@ -71,10 +71,10 @@ renderPartial('/shared/partial/navbar'); ?>
         <div class="col-md-12" style="margin:30px 0; border-top: solid 1px #e2e2e2;"></div>
       </div>
       <!-- end of line row -->
-      <div class="row">
+      <!-- <div class="row">
         <h3 class="text-center">Strategic Partner Kami</h3>
         <div></div>
-      </div>
+      </div> -->
       <!-- end of row -->
       <div class="row">
         <div class="col-md-12" style="margin:30px 0; border-top: solid 1px #e2e2e2;"></div>
@@ -82,8 +82,9 @@ renderPartial('/shared/partial/navbar'); ?>
       <!-- end of line row -->
       <div class="row">
         <div class="text-center">
+          <h3>Mulai Kampanye Iklan Anda Sekarang</h3>
+          <p>Dapatkan lebih banyak pelanggan. Tingkatkan penjualan anda!</p>
           <a href="http://staging.kiviads.net/index.php/site/Registrasi" class="btn btn-success">DAFTAR SEKARANG!</a>
-          <h4>Dapatkan lebih banyak pelanggan. Tingkatkan penjualan anda!</h4>
         </div>
       </div>
 </div>
