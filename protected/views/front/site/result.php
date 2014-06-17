@@ -10,7 +10,7 @@
              <input type="hidden" id="long" value="106.86503949999997" />
            </form>
          </div>
-        <!--  <ul class="assets-card-holder" id="card-place"> -->
+         <ul class="assets-card-holder" id="card-place">
          </ul>
        </div>
      </div>
@@ -24,22 +24,24 @@
       <input type="hidden" value="{id}" class="cid"/>
       <input type="hidden" value="{zoom}" class="czoom"/>
       <div class="card-body">
+        
         <div class="card-image">
           <img alt="{alt}" src="{img}">
         </div>
         <div class="card-meta">
+          <div class="card-main-title"><strong class="price"> {harga}</strong></div>
           <div class="card-main-title">{nama}</div>
           <div class="card-main">
             <div class="card-status">Status : Available</div>
           </div>
-          <div class="card-rate">
+<!--           <div class="card-rate">
             <span class="currency">Rp</span>
             <strong class="price"> {harga}
             </strong>
-          </div>
+          </div> -->
         </div>
-        <button type="button" class="btn btn-default">Default</button>
-        <button type="button" class="btn btn-default">Default</button>
+<!--         <button type="button" class="btn btn-default btn-xs">Maps</button>
+        <button type="button" class="btn btn-default btn-xs">Detail</button> -->
       </div>
     </li>
   </template>
@@ -160,7 +162,7 @@
           _card = _card.replace(/{long}/g, row.long);
           _card = _card.replace(/{zoom}/g, row.zoom);
           _card = _card.replace(/{id}/g, row.id);
-          _card = _card.replace(/{harga}/g, row.hargaPerBulan.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
+          _card = _card.replace(/{harga}/g, parseInt(row.hargaPerBulan).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
           _card = _card.replace(/{alt}/g,"Billboard "+row.formatedAddress);
           if(row.cover_file!=null){
             _card = _card.replace(/{img}/g, "'.Yii::app()->request->baseUrl.'/files/bannerimage/"+row.cover_file);
