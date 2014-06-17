@@ -92,7 +92,7 @@ renderPartial('/shared/partial/navbar'); ?>
           <a href="http://staging.kiviads.net/index.php/site/Registrasi" class="btn btn-success">DAFTAR SEKARANG!</a>
         </div>
       </div>
-  </div>
-    <!-- end container -->
+</div>
+  <!-- end container -->
 <?php $this->
 renderPartial('/shared/partial/footer');?>

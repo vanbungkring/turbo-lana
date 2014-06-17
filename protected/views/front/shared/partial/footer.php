@@ -11,9 +11,8 @@
       <ul>
        <li><a href="<?php echo Yii::app()->createUrl('/advertiser');?>">Pengiklan</a></li>
        <li><a href="<?php echo Yii::app()->createUrl('/media-owner');?>">Pemilik Media</a></li>
-       <!-- <li><a href="<?php echo Yii::app()->createUrl('/faq');?>">FAQ</a></li> -->
-
-       <li><a href="<?php echo Yii::app()->createUrl('/contact');?>">Hubungi Kami</a></li>
+       <li><a href="<?php echo Yii::app()->createUrl('/bantuan');?>">Bantuan</a></li>
+       <!-- <li><a href="<?php echo Yii::app()->createUrl('/contact');?>">Hubungi Kami</a></li> -->
      </ul>
    </div>
    <div class="col-md-2">
