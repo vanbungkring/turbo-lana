@@ -274,10 +274,6 @@
           <li>
             <a href="#"><i class="fa fa-thumb-tack fa-fw"></i> Campaign Management<span class="fa arrow"></span></a>
             <ul class="nav nav-second-level">
-
-              <li>
-                <a href="<?php echo Yii::app()->createUrl('/quote')?>"><i class="fa fa-table fa-fw"></i> Quotation</a>
-              </li>
               <li>
                 <a href="<?php echo Yii::app()->createUrl('/quote3')?>"><i class="fa fa-table fa-fw"></i> Quotation 3</a>
               </li>
