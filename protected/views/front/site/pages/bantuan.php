@@ -20,6 +20,52 @@ renderPartial('/shared/partial/navbar'); ?>
 					<a href="tel:+622171292973">
 						<i class="fa fa-phone-square" style="font-size: 70px;"></i>
 						<p>Hubungi 021-71292973</p>
+
+						<!-- KONTAK -->
+						<?php $form=$this->beginWidget('CActiveForm', array(
+							'id'=>'contact-form',
+							'enableClientValidation'=>true,
+							'clientOptions'=>array(
+								'validateOnSubmit'=>true,
+								),
+							)); 
+						$contact = new ContactForm();
+						?>
+						<div class="col-md-3">
+							<h3>KIVIBYTE DIGITAL MEDIA</h3>
+							<br>
+							<form role="form" action="#" method="post" enctype="plain"> 
+								<div class="form-group">
+									<label for="name1">Nama</label>
+									<input type="name" name="Name" class="form-control" id="name1" placeholder="Nama Anda">
+								</div>
+								<div class="form-group">
+									<label for="email1">Email</label>
+									<input type="email" name="Mail" class="form-control" id="email1" placeholder="Email Anda">
+								</div>
+								<div class="form-group">
+									<label>Pesan Anda</label>
+									<textarea class="form-control" name="Message" rows="3"></textarea>
+								</div>
+								<?php if(CCaptcha::checkRequirements()): ?>
+								<div class="form-group">
+									<?php echo $form->labelEx($contact,'verifyCode'); ?>
+									<div>
+										<?php $this->widget('CCaptcha'); ?>
+										<?php echo $form->textField($contact,'verifyCode'); ?>
+									</div>
+									<div class="hint">Harap masukkan huruf di atas untuk membuktikan anda bukan robot.
+										<br/>Besar kecil huruf tidak sensitif.</div>
+										<?php echo $form->error($contact,'verifyCode'); ?>
+									</div>
+								<?php endif; ?>
+								<br>
+								<button type="submit" class="btn btn-large btn-success">Kirim</button>
+							</form>
+						</div>
+						<?php $this->endWidget(); ?>
+
+						<!-- KONTAK END -->
 					</a>
 				</div>
 			</div>
