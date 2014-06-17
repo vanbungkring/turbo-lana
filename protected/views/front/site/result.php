@@ -29,7 +29,7 @@
           <img alt="{alt}" src="{img}">
         </div>
         <div class="card-meta">
-          <div class="card-main-title"><strong class="price"> {harga}</strong></div>
+          <div class="card-main-title"><strong class="price">Rp {harga}</strong></div>
           <div class="card-main-title">{nama}</div>
           <div class="card-main">
             <div class="card-status">Status : Available</div>
