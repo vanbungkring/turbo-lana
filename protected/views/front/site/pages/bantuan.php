@@ -22,7 +22,7 @@ renderPartial('/shared/partial/navbar'); ?>
 						<p>Hubungi 021-71292973</p>
 					</a>
 				</div>
-				<div class="col-md-12">
+				<div class="col-md-12" style="border-top: 1px solid #e2e2e2;">
 					<!-- KONTAK -->
 					<?php $form=$this->beginWidget('CActiveForm', array(
 						'id'=>'contact-form',
@@ -33,7 +33,9 @@ renderPartial('/shared/partial/navbar'); ?>
 						)); 
 					$contact = new ContactForm();
 					?>
-					<h3>KIVIBYTE DIGITAL MEDIA</h3>
+					<h4>Atau, Tinggalkan Pesan Untuk Kami:</h4>
+					<p style="margin-bottom:0;">Silahkan email kami di <a href="mailto:cs@kiviads.net">help@kiviads.net</a> atau isi form di bawah ini untuk meninggalkan pesan
+						kepada kami.</p>
 					<br>
 					<form role="form" action="#" method="post" enctype="plain"> 
 						<div class="form-group">
@@ -69,17 +71,32 @@ renderPartial('/shared/partial/navbar'); ?>
 			</div>
 		</div>
 		<div class="col-md-6 faq-list">
-			<h4>Jawaban Untuk Pertanyaan Yang Sering Ditanyakan</h4>
-			<ul>
-				<li><a href="#">Apa itu Kiviads?</a></li>
-				<li><a href="#">Apa keunggulan Kiviads?</a></li>
-				<li><a href="#">Kenapa menggunakan Kiviads?</a></li>
-				<li><a href="#">Bagaiman cara menggunakan Kiviads?</a></li>
-				<li><a href="#">Apa manfaat Kiviads bagi PENGIKLAN dan AGENSI?</a></li>
-				<li><a href="#">Apa manfaat Kiviads bagi PEMILIK BILLBOARD?</a></li>
-				<li><a href="#">Fakta penting untuk PENGIKLAN / AGENSI</a></li>
-				<li><a href="#">Fakta penting untuk PEMILIK BILLBOARD</a></li>
-			</ul>
+			<div class="row">
+				<div class="col-md-12" style="border-top: 1px solid #e2e2e2;">
+					<h4>Jawaban Untuk Pertanyaan Yang Sering Ditanyakan</h4>
+					<ul>
+						<li><a href="#">Apa itu Kiviads?</a></li>
+						<li><a href="#">Apa keunggulan Kiviads?</a></li>
+						<li><a href="#">Kenapa menggunakan Kiviads?</a></li>
+						<li><a href="#">Bagaiman cara menggunakan Kiviads?</a></li>
+						<li><a href="#">Apa manfaat Kiviads bagi PENGIKLAN dan AGENSI?</a></li>
+						<li><a href="#">Apa manfaat Kiviads bagi PEMILIK BILLBOARD?</a></li>
+						<li><a href="#">Fakta penting untuk PENGIKLAN / AGENSI</a></li>
+						<li><a href="#">Fakta penting untuk PEMILIK BILLBOARD</a></li>
+					</ul>
+				</div>
+				<div class="col-md-12" style="border-top: 1px solid #e2e2e2;">
+					<h4>Perlu bertemu dengan tim kami secara langsung?</h4>
+					<p>Kiviads adalah produk buatan Kivibyte. Anda bisa menemukan kami di lokasi ini:</p>
+					<address>
+						<h5>KIVIBYTE DIGITAL NUSANTARA</h5>
+						Jl. Fatmawati Raya No.39<br>
+						Jakarta Selatan<br>
+						12560<br>
+
+					</address>
+				</div>
+			</div>
 		</div>
 	</div>
 </div>
