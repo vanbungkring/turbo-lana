@@ -68,7 +68,7 @@ renderPartial('/shared/partial/navbar'); ?>
 				</div>
 			</div>
 		</div>
-		<div class="col-md-6">
+		<div class="col-md-6 faq-list">
 			<h4>Jawaban Untuk Pertanyaan Yang Sering Ditanyakan</h4>
 			<ul>
 				<li><a href="#">Apa itu Kiviads?</a></li>
