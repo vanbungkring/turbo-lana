@@ -1,19 +1,19 @@
     <?php $this->renderPartial('/shared/partial/navbar-fluid'); ?>
     <div class="container container-full fill">
-<!--       <div class="list">
+      <div class="list">
         <div class="container-fluid">
           <div class="searchbar">
             <form class="form-horizontal" role="form">
              <input name="lokasi" type="text" class="form-control"  placeholder="Refine Search" id="boxcari">
-             <button type="button" class="btn btn-default" id="btnSearch">Search</button>
+             <button type="button" class="btn btn-default" id="btnSearch"><i class="fa fa-search"></i></button>
              <input type="hidden" id="lat" value="-6.17511" />
              <input type="hidden" id="long" value="106.86503949999997" />
            </form>
          </div>
-         <ul class="assets-card-holder" id="card-place">
+        <!--  <ul class="assets-card-holder" id="card-place"> -->
          </ul>
        </div>
-     </div> -->
+     </div>
      <div id="map-wrapper"></div>
 
    </div> 
