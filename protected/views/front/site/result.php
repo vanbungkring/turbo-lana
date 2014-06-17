@@ -5,7 +5,7 @@
           <div class="searchbar">
             <form class="form-horizontal" role="form">
              <input name="lokasi" type="text" class="form-control"  placeholder="Refine Search" id="boxcari">
-             <button type="button" class="btn btn-default" id="btnSearch">Search</button>
+             <button type="button" class="btn btn-default" id="btnSearch"><i class="fa fa-search"></i></button>
              <input type="hidden" id="lat" value="-6.17511" />
              <input type="hidden" id="long" value="106.86503949999997" />
            </form>
@@ -24,10 +24,12 @@
       <input type="hidden" value="{id}" class="cid"/>
       <input type="hidden" value="{zoom}" class="czoom"/>
       <div class="card-body">
+        
         <div class="card-image">
           <img alt="{alt}" src="{img}">
         </div>
         <div class="card-meta">
+          <div class="card-main-title"><strong class="price">Rp {harga}</strong></div>
           <div class="card-main-title">{nama}</div>
           <div class="card-main">
             <div class="card-status">Status : Available</div>
@@ -38,8 +40,8 @@
             </strong>
           </div> -->
         </div>
-        <button type="button" class="btn btn-default">Default</button>
-        <button type="button" class="btn btn-default">Default</button>
+<!--         <button type="button" class="btn btn-default btn-xs">Maps</button>
+        <button type="button" class="btn btn-default btn-xs">Detail</button> -->
       </div>
     </li>
   </template>
@@ -160,7 +162,7 @@
           _card = _card.replace(/{long}/g, row.long);
           _card = _card.replace(/{zoom}/g, row.zoom);
           _card = _card.replace(/{id}/g, row.id);
-          _card = _card.replace(/{harga}/g, row.hargaPerBulan.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
+          _card = _card.replace(/{harga}/g, parseInt(row.hargaPerBulan).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
           _card = _card.replace(/{alt}/g,"Billboard "+row.formatedAddress);
           if(row.cover_file!=null){
             _card = _card.replace(/{img}/g, "'.Yii::app()->request->baseUrl.'/files/bannerimage/"+row.cover_file);
