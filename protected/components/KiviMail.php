@@ -37,7 +37,7 @@ class KiviMail
 			
 			$message = Yii::app()->mailgun->newMessage();
 			$message->addTo($quoteBanner->quote3->member->email, $quoteBanner->quote3->member->namaDepan);
-			$message->setSubject('Campaign Quotes Approval');
+			$message->setSubject('Update Inventori (Bukti Foto)');
 			$message->renderHtml('inventory-update-7', array('quote3Banner' => $quoteBanner));
 
 			$message->send();
@@ -52,7 +52,7 @@ class KiviMail
 			
 			$message = Yii::app()->mailgun->newMessage();
 			$message->addTo($quote3->member->email, $quote3->member->namaDepan);
-			$message->setSubject('Update Inventori (Bukti Foto)');
+			$message->setSubject('Invoice Campaign');
 			$message->renderHtml('file-update-8', array('quote3' => $quote3));
 
 			$message->send();
