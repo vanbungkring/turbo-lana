@@ -62,7 +62,7 @@ renderPartial('/shared/partial/navbar'); ?>
                 <i class="fa fa-phone-square" style="font-size: 20px;">+62 21 712 929 73</i>
               </a>
               <a href="www.twitter.com/kivibyte">
-                <i class="fa fa-twitter-square" style="font-size: 20px;">Tweet @Kivibyte</i>
+                <i class="fa fa-twitter-square" style="font-size: 20px;">@Kivibyte</i>
               </a>
             </dd>
           </div>
