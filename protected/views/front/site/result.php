@@ -32,12 +32,14 @@
           <div class="card-main">
             <div class="card-status">Status : Available</div>
           </div>
-          <div class="card-rate">
+<!--           <div class="card-rate">
             <span class="currency">Rp</span>
             <strong class="price"> {harga}
             </strong>
-          </div>
+          </div> -->
         </div>
+        <button type="button" class="btn btn-default">Default</button>
+        <button type="button" class="btn btn-default">Default</button>
       </div>
     </li>
   </template>
@@ -168,7 +170,7 @@
           }
           $("#card-place").append(_card);
         });
-    $(".card").hover(function(){
+    $(".card").click(function(){
       var cid = $(this).children(".cid").val();
       var clat = $(this).children(".clat").val();
       var clong = $(this).children(".clong").val();
@@ -193,20 +195,7 @@
         google.maps.event.removeListener(listener); 
       });
   });
-    $( ".card" ).hover( function(){
-      var cid = $(this).children(".cid").val();
-      //console.log($(this));
-      if(cid=="" || cid == null){
-        return;
-      }
-      markers[cid].obj.setIcon(blueIcon);
-    }, function(){
-      var cid = $(this).children(".cid").val();
-      if(cid=="" || cid == null){
-        return;
-      }
-      markers[cid].obj.setIcon(redIcon);
-    } ); 
+
   });
 
   }
