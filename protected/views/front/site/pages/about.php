@@ -48,7 +48,7 @@ renderPartial('/shared/partial/navbar'); ?>
           <a href="http://staging.kiviads.net/index.php/site/result?" class="btn btn-success">Cari Titik Billboard Sekarang</a>
         </div>
         <div class="col-md-6 col-lg-6">
-          <img src="http://staging.kiviads.net/images/dd.png" alt="search engine" class="img-responsive">
+          <img src="<?= Yii::app()->getBaseUrl(true) ?>/images/dd.png" alt="search engine" class="img-responsive">
         </div>
       </div>
       <!-- end of row -->
@@ -63,13 +63,13 @@ renderPartial('/shared/partial/navbar'); ?>
           <a href="http://staging.kiviads.net/index.php/site/login" class="btn btn-success">Masuk Ke Dashboard Sekarang</a>
         </div>
         <div class="col-md-6 col-md-pull-6">
-          <img src="http://staging.kiviads.net/images/d.jpg" alt="Dashboard" class="img-responsive">
+          <img src="<?= Yii::app()->getBaseUrl(true) ?>/images/d.jpg" alt="Dashboard" class="img-responsive">
         </div>
       </div>
       <!-- end of row -->
-      <div class="row">
+      <!-- <div class="row">
         <div class="col-md-12" style="margin:30px 0; border-top: solid 1px #e2e2e2;"></div>
-      </div>
+      </div> -->
       <!-- end of line row -->
       <!-- <div class="row">
         <h3 class="text-center">Strategic Partner Kami</h3>
