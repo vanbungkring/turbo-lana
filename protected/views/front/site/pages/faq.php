@@ -58,12 +58,13 @@ renderPartial('/shared/partial/navbar'); ?>
               Jl. Fatmawati Raya No.39<br>
               Jakarta Selatan<br>
               12560<br>
-              <a href="tel:+622171292973">
-                <i class="fa fa-phone-square" style="font-size: 20px;">+62 21 712 929 73</i>
-              </a>
-              <a href="www.twitter.com/kivibyte">
-                <i class="fa fa-twitter-square" style="font-size: 20px;">@Kivibyte</i>
-              </a>
+            </address>
+            <a href="tel:+622171292973">
+              <i class="fa fa-phone-square" style="font-size: 20px;">+62 21 712 929 73</i>
+            </a>
+            <a href="www.twitter.com/kivibyte">
+              <i class="fa fa-twitter-square" style="font-size: 20px;">@Kivibyte</i>
+            </a>
             </dd>
           </div>
         </div>
