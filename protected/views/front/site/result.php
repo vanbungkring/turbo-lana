@@ -1,6 +1,6 @@
     <?php $this->renderPartial('/shared/partial/navbar-fluid'); ?>
     <div class="container container-full fill">
-      <div class="list">
+<!--       <div class="list">
         <div class="container-fluid">
           <div class="searchbar">
             <form class="form-horizontal" role="form">
@@ -13,7 +13,7 @@
          <ul class="assets-card-holder" id="card-place">
          </ul>
        </div>
-     </div>
+     </div> -->
      <div id="map-wrapper"></div>
 
    </div> 
@@ -38,6 +38,8 @@
             </strong>
           </div>
         </div>
+        <button type="button" class="btn btn-default">Default</button>
+        <button type="button" class="btn btn-default">Default</button>
       </div>
     </li>
   </template>
@@ -168,7 +170,7 @@
           }
           $("#card-place").append(_card);
         });
-    $(".card").hover(function(){
+    $(".card").click(function(){
       var cid = $(this).children(".cid").val();
       var clat = $(this).children(".clat").val();
       var clong = $(this).children(".clong").val();
@@ -193,20 +195,7 @@
         google.maps.event.removeListener(listener); 
       });
   });
-    $( ".card" ).hover( function(){
-      var cid = $(this).children(".cid").val();
-      //console.log($(this));
-      if(cid=="" || cid == null){
-        return;
-      }
-      markers[cid].obj.setIcon(blueIcon);
-    }, function(){
-      var cid = $(this).children(".cid").val();
-      if(cid=="" || cid == null){
-        return;
-      }
-      markers[cid].obj.setIcon(redIcon);
-    } ); 
+
   });
 
   }
