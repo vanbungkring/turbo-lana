@@ -4,7 +4,6 @@ renderPartial('/shared/partial/navbar'); ?>
 
   <h1 class="entry-title">Frequently Asked Questions</h1>
   <div class="col-md-8">
-    <div class="entry-content" id="gig-div-buttons-392-top_gig_containerParent">
       <article id="1">
         <h3><strong>Apa keunggulan Kiviads?</strong></h3>
         <ul class="faq-list-real">
@@ -45,7 +44,6 @@ renderPartial('/shared/partial/navbar'); ?>
           <li> Membantu memudahkan proses transaksi antara calon pengiklan dan agensi dengan pemilik billboard</li>
         </ul>
       </article>
-    </div>
   </div>
   <div class="col-md-4 sidebar">
     <ul class="xoxo">
