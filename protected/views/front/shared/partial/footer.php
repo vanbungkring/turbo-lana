@@ -30,13 +30,13 @@
         12560<br>
       </address>
       <div class="row">
-        <div class="col-md-4">
+        <div class="col-xs-4 col-sm-4 col-md-4">
           <a href="www.twitter.com/kivibyte"><i class="fa fa-twitter"></i></a>
         </div>
-        <div class="col-md-4">
+        <div class="col-xs-4 col-sm-4 col-md-4">
           <a href="www.facebook.com/kivibyte"><i class="fa fa-facebook"></i></a>
         </div>
-        <div class="col-md-4">
+        <div class="col-xs-4 col-sm-4 col-md-4">
           <a href="https://plus.google.com/+Kivibyte/"><i class="fa fa-google-plus"></i></a>
         </div>
       </div>
