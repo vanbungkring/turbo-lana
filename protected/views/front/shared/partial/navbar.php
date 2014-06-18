@@ -5,6 +5,12 @@
 			<div class="container">
 
 				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".collapse">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
 					<a class="navbar-brand" href="<?= Yii::app()->getBaseUrl() ?>/"><img src="<?= Yii::app()->getBaseUrl(true) ?>/images/logo.png" alt="Kiviads"></a>
 				</div>
 
@@ -37,7 +43,7 @@
 					}
 
 					else{
-			echo  '<li><a href="'.Yii::app()->createUrl('site/login').'">Masuk</a></li>';
+						echo  '<li><a href="'.Yii::app()->createUrl('site/login').'">Masuk</a></li>';
 						echo  '<li><a href="'.Yii::app()->createUrl('site/Registrasi').'">Daftar</a></li>';
 						echo  '<li><a href="'.Yii::app()->createUrl('bantuan').'">Bantuan</a></li>';
 					}
