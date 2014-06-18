@@ -40,6 +40,8 @@
             </strong>
           </div> -->
         </div>
+         <button type="button" class="btn btn-success btn-sm maps" title="Maps"><i class="fa fa-map-marker"></i></button>
+         <button type="button" class="btn btn-info btn-sm details" title="Detail" id="details"><i class="fa fa-caret-square-o-right"></i></button>
 <!--         <button type="button" class="btn btn-default btn-xs">Maps</button>
         <button type="button" class="btn btn-default btn-xs">Detail</button> -->
       </div>
@@ -48,6 +50,9 @@
   <?php
 //google maps render
   $js = '
+$( "#details" ).click(function() {
+  alert( "Handler for .click() called." );
+});
   $("body").css("height","100%");
   var afterloginurl = "";
   var defLokasi = "'.$defLokasi.'";

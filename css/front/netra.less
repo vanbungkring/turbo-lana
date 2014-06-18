@@ -573,9 +573,24 @@ hr {
 					padding: 0px;
 					li.card:hover{
 						cursor: pointer;
-						border-bottom: 1px solid #000;
+						border-bottom: 1px solid #666;
+						.maps{
+							display: inline;
+						}
+						.details{
+							display: inline;
+							// margin-left: -10px;
+						}
 					}
 					li.card{
+						.maps{
+							margin-left: -20px;
+							display: none;
+						}
+						.details{
+							display: none;
+							// margin-left: -10px;
+						}
 						padding: 5px;
 						width: 100%;
 						list-style: none;
@@ -623,7 +638,7 @@ hr {
 									}
 								}
 								.card-main-title{
-									width: 100%;
+									width: 90%;
 									font-weight: normal;
 									font-family: Arial;
 									font-size: 14px;
