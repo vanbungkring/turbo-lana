@@ -96,12 +96,6 @@
               <div class="from">Dari</div>          
               <div id="spanharga" class="price-currency"> <sup>Rp</sup> <?php echo number_format($banner->hargaPerBulan,0, '.', '.');?></div>
             </div>
-            <ul>
-              <li>Included Tax</li>
-              <li> 100.000 Day Traffic</li>
-              <li> 100.000 Day Traffic</li>
-
-            </ul>
           </div>
           <?php if (!$member->isQuoted($banner->id)): ?>
              <button type="button" class="btn btn-default btn-block whislist" data-target="#addtoQuote" id="modal_show">Request Quote</button>  
