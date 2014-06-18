@@ -93,7 +93,7 @@
          <section class="banner-info-body">
           <div class="price">
             <div class="price-detail">
-              <div class="from">Dari</div>          
+              <div class="from">Mulai Dari</div>          
               <div id="spanharga" class="price-currency"> <sup>Rp</sup> <?php echo number_format($banner->hargaPerBulan,0, '.', '.');?></div>
             </div>
           </div>
