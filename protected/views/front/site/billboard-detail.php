@@ -1,7 +1,6 @@
     <?php $this->renderPartial('/shared/partial/navbar'); ?>
 
     <div class="container kivi">
-
       <div class="row">
        <div class="col-md-8 no-padding">
         <h1><?php echo CHtml::encode($banner->nama); ?>, <?php echo CHtml::encode($banner->lokasi); ?></h1>
@@ -60,7 +59,7 @@
             </tr>
             <tr>
               <td class="front">Status</td>
-              <td>{{Status Here}}</td>
+              <td>Hubungi Kami</td>
             </tr>
           </tbody>
         </table>

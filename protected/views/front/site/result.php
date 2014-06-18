@@ -32,7 +32,7 @@
           <div class="card-main-title"><strong class="price">Rp {harga}</strong></div>
           <div class="card-main-title">{nama}</div>
           <div class="card-main">
-            <div class="card-status">Status : Available</div>
+            <div class="card-status">Status : Hubungi kami</div>
           </div>
 <!--           <div class="card-rate">
             <span class="currency">Rp</span>

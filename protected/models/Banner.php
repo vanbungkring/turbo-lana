@@ -155,7 +155,6 @@ class Banner extends CActiveRecord
 	public function getImageUrl(){
 		return Yii::app()->request->baseUrl.'/files/banner/'.$this->id.'.jpg';
 	}
-
 	public function generateJadwal(){
 		$ar = array();	
 		foreach ($this->jadwals as $key => $value) {
