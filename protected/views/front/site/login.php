@@ -10,7 +10,7 @@
       		<div class="row">
       			<div class="login-form">
 
-      				<h1 id="signin_logo" class="login-top"><a href="http://sproutsocial.com ">Kiviads</a></h1>
+      				<h1 id="signin_logo" class="login-top"><a href=""<?php Yii::app()->getBaseUrl() ?>"/>Kiviads</a></h1>
       				<?php $form=$this->beginWidget('CActiveForm', array(
       					'id'=>'login-form',
       					'enableClientValidation'=>true,
